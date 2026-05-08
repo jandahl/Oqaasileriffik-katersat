@@ -54,7 +54,7 @@ print('Converting longest match...')
 con = sqlite3.connect('katersat.sqlite.new')
 db = con.cursor()
 
-db.execute("SELECT DISTINCT * FROM (SELECT lex_id, lex_lexeme, lex_stem, lex_valence FROM kat_lexemes WHERE lex_language = 'kal' AND lex_lexeme NOT LIKE '% %' UNION SELECT lex_id, lex_lexeme, lex_stem, lex_valence FROM kat_lexemes WHERE lex_language = 'kal' AND lex_lexeme LIKE '% Der/%')")
+db.execute("SELECT lex_id, lex_lexeme, lex_stem, lex_valence FROM kat_lexemes WHERE lex_language = 'kal'")
 rows = db.fetchall()
 for row in rows:
 	id = row[0]
