@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# Copyright 2023 Oqaasileriffik <oqaasileriffik@oqaasileriffik.gl> at https://oqaasileriffik.gl/
+# Licensed under the GNU GPL v3 or later - https://www.gnu.org/licenses/gpl-3.0.en.html
+
 import sys
 import os
 import re
