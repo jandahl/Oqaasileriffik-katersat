@@ -1,6 +1,11 @@
 name: Export katersat to JSON
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/export.yml'
   schedule:
     - cron: '0 2 * * 0'   # weekly, Sunday 02:00 UTC
   workflow_dispatch:
