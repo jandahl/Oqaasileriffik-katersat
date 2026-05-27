@@ -1,5 +1,8 @@
 .vscode/
-data.sql
-etag.txt
-headers.txt
+__pycache__/
 *.sqlite
+*.sqlite.new
+data.sql
+etag*.txt
+headers.txt
+extracted/

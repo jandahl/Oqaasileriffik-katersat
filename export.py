@@ -1,0 +1,221 @@
+#!/usr/bin/env python3
+# Copyright 2024 Oqaasileriffik <oqaasileriffik@oqaasileriffik.gl>
+# Licensed under the GNU GPL v3 or later - https://www.gnu.org/licenses/gpl-3.0.en.html
+
+import argparse
+import gzip
+import json
+import os
+import sqlite3
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+from schema_info import ATTR_BITS, META, SANDHI_VALUES
+
+
+def has_attr(bits: int, name: str) -> bool:
+    return bool(bits & ATTR_BITS[name])
+
+
+def _meta() -> dict:
+    return {**META, 'generated_at': datetime.now(timezone.utc).isoformat()}
+
+
+def _load_registers(db) -> dict:
+    """Return {reg_code: {english, danish, kalaallisut}}, empty dict if table absent."""
+    try:
+        db.execute("SELECT reg_code, reg_eng, reg_dan, reg_kal FROM kat_registers")
+        return {r[0]: {'english': r[1], 'danish': r[2], 'kalaallisut': r[3]}
+                for r in db.fetchall()}
+    except sqlite3.OperationalError:
+        return {}
+
+
+def export_word_classes(db) -> dict:
+    db.execute(
+        "SELECT wc_class, wc_eng, wc_dan, wc_kal FROM kat_wordclasses ORDER BY wc_class"
+    )
+    return {
+        'meta': _meta(),
+        'word_classes': [
+            {'id': f'wc_{r[0]}', 'code': r[0], 'english': r[1], 'danish': r[2], 'kalaallisut': r[3]}
+            for r in db.fetchall()
+        ],
+    }
+
+
+def export_semantic_classes(db) -> dict:
+    db.execute(
+        "SELECT sem_code, sem_eng, sem_dan, sem_kal FROM kat_semclasses ORDER BY sem_code"
+    )
+    return {
+        'meta': _meta(),
+        'semantic_classes': [
+            {'id': f'sem_{r[0]}', 'code': r[0], 'english': r[1], 'danish': r[2], 'kalaallisut': r[3]}
+            for r in db.fetchall()
+        ],
+    }
+
+
+def export_valence_frames(db) -> dict:
+    db.execute(
+        "SELECT val_id, val_code, val_eng, val_dan, val_kal FROM kat_valence ORDER BY val_id"
+    )
+    return {
+        'meta': _meta(),
+        'valence_frames': [
+            {
+                'id': f'val_{r[0]}',
+                'code': r[1],
+                'english': r[2],
+                'danish': r[3],
+                'kalaallisut': r[4],
+            }
+            for r in db.fetchall()
+        ],
+    }
+
+
+def _fetch_translations(db, lang: str) -> dict:
+    """Return {lex_id: [translation_string, ...]} for the given ISO language code."""
+    db.execute(
+        """
+        SELECT gls.lex_id, tr.lex_lexeme
+          FROM glue_lexeme_synonyms gls
+          JOIN kat_lexemes tr ON gls.lex_syn = tr.lex_id
+         WHERE tr.lex_language = ?
+         ORDER BY gls.lex_id, gls.syn_order, tr.lex_id
+        """,
+        [lang],
+    )
+    result: dict = {}
+    for lex_id, lexeme in db.fetchall():
+        result.setdefault(lex_id, []).append(lexeme)
+    return result
+
+
+def export_lexicon(db) -> dict:
+    registers = _load_registers(db)
+
+    eng = _fetch_translations(db, 'eng')
+    dan = _fetch_translations(db, 'dan')
+
+    db.execute(
+        """
+        SELECT
+            l.lex_id,
+            l.lex_lexeme,
+            l.lex_wordclass,
+            l.lex_language,
+            l.lex_semclass,
+            l.lex_sem2,
+            l.lex_valence,
+            l.lex_register,
+            l.lex_gender,
+            l.lex_definition,
+            l.lex_info,
+            l.lex_verbframe,
+            l.lex_oldspelling,
+            COALESCE(a.let_attrs, 0),
+            COALESCE(a.lex_sandhi, 0),
+            v.val_code
+          FROM kat_lexemes l
+          LEFT JOIN kat_lexeme_attrs a ON l.lex_id = a.lex_id
+          LEFT JOIN kat_valence v ON l.lex_valence = v.val_id
+         WHERE l.lex_language = 'kal'
+           AND NOT (COALESCE(a.let_attrs, 0) & 1)  -- exclude hidden
+         ORDER BY l.lex_lexeme, l.lex_id
+        """
+    )
+    rows = db.fetchall()
+
+    lexemes = []
+    for row in rows:
+        (lex_id, lexeme, wc, _lang, semclass, sem2, val_id, register,
+         gender, definition, info, verbframe, oldspelling, attrs_bits,
+         sandhi_int, val_code) = row
+
+        sem_classes = [s for s in (semclass, sem2) if s and s != 'UNK']
+
+        reg_code = register if register != 'nnn' else None
+        reg_info = registers.get(reg_code) if reg_code else None
+
+        entry = {
+            'id': f'lex_{lex_id}',
+            'kalaallisut': lexeme,
+            'english': eng.get(lex_id, []),
+            'danish': dan.get(lex_id, []),
+            'word_class': wc,
+            'semantic_classes': sem_classes,
+            'valence': val_code,
+            'register': reg_code,
+            'register_labels': reg_info,
+            'gender': gender,
+            'definition': definition or None,
+            'info': info or None,
+            'verb_frame': verbframe or None,
+            'old_spelling': oldspelling or None,
+            'sandhi': SANDHI_VALUES.get(sandhi_int),
+            'attrs': {
+                'archaic': has_attr(attrs_bits, 'archaic'),
+                'plural_only': has_attr(attrs_bits, 'plural'),
+                'mass': has_attr(attrs_bits, 'mass'),
+                'abbreviation': has_attr(attrs_bits, 'abbreviation'),
+                'acronym': has_attr(attrs_bits, 'acronym'),
+                'derived_morph': has_attr(attrs_bits, 'dermorph'),
+                'enclitic': has_attr(attrs_bits, 'enclitic'),
+            },
+        }
+        lexemes.append(entry)
+
+    return {'meta': _meta(), 'lexemes': lexemes}
+
+
+def write_json(data: dict, path: str, compress: bool = False) -> None:
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    text = json.dumps(data, ensure_ascii=False, indent=2)
+    p.write_text(text, encoding='utf-8')
+    size = p.stat().st_size
+    print(f'  {p}  ({size:,} bytes)', file=sys.stderr)
+    if compress:
+        gz = p.with_suffix(p.suffix + '.gz')
+        with gzip.open(gz, 'wt', encoding='utf-8', compresslevel=9) as f:
+            f.write(text)
+        print(f'  {gz}  ({gz.stat().st_size:,} bytes)', file=sys.stderr)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description='Export katersat.sqlite to JSON')
+    parser.add_argument('--db', default='katersat.sqlite', help='Path to katersat.sqlite')
+    parser.add_argument('--output', '-o', default='extracted', help='Output directory')
+    parser.add_argument('--compress', action='store_true', help='Write .json.gz alongside .json')
+    args = parser.parse_args()
+
+    if not os.path.exists(args.db):
+        print(f'Error: {args.db!r} not found. Run update.py first.', file=sys.stderr)
+        sys.exit(1)
+
+    con = sqlite3.connect(f'file:{args.db}?mode=ro', uri=True, isolation_level=None)
+    db = con.cursor()
+
+    exports = [
+        ('word_classes.json', export_word_classes),
+        ('semantic_classes.json', export_semantic_classes),
+        ('valence_frames.json', export_valence_frames),
+        ('lexicon.json', export_lexicon),
+    ]
+
+    out = args.output
+    for fname, fn in exports:
+        label = fname.replace('.json', '').replace('_', ' ')
+        print(f'Exporting {label}...', file=sys.stderr)
+        write_json(fn(db), f'{out}/{fname}', args.compress)
+
+    con.close()
+    print('Done.', file=sys.stderr)
+
+
+if __name__ == '__main__':
+    main()
