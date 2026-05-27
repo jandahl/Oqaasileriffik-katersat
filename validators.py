@@ -80,21 +80,24 @@ def check_valence_frames(data: dict) -> list:
 
 
 def cross_check(out: Path) -> list:
-    """Verify that word_class and valence codes in lexicon.json exist in their reference files."""
+    """Verify that word_class, valence, domain codes in lexicon.json exist in reference files."""
     errors = []
-    lexicon_path = out / 'lexicon.json'
-    wc_path = out / 'word_classes.json'
-    val_path = out / 'valence_frames.json'
-    sem_path = out / 'semantic_classes.json'
-
-    if not all(p.exists() for p in [lexicon_path, wc_path, val_path, sem_path]):
+    paths = {
+        'lexicon': out / 'lexicon.json',
+        'wc': out / 'word_classes.json',
+        'val': out / 'valence_frames.json',
+        'sem': out / 'semantic_classes.json',
+        'dom': out / 'domains.json',
+    }
+    if not all(p.exists() for p in paths.values()):
         return ['cross_check skipped: not all files present']
 
-    known_wc = {wc['code'] for wc in load(wc_path).get('word_classes', [])}
-    known_val = {vf['code'] for vf in load(val_path).get('valence_frames', [])} | {None}
-    known_sem = {sc['code'] for sc in load(sem_path).get('semantic_classes', [])}
+    known_wc = {wc['code'] for wc in load(paths['wc']).get('word_classes', [])}
+    known_val = {vf['code'] for vf in load(paths['val']).get('valence_frames', [])} | {None}
+    known_sem = {sc['code'] for sc in load(paths['sem']).get('semantic_classes', [])}
+    known_dom = {d['id'] for d in load(paths['dom']).get('domains', [])} | {None}
 
-    for lex in load(lexicon_path).get('lexemes', []):
+    for lex in load(paths['lexicon']).get('lexemes', []):
         lid = lex.get('id', '?')
         if lex.get('word_class') not in known_wc:
             errors.append(f'{lid}: unknown word_class {lex.get("word_class")!r}')
@@ -103,7 +106,24 @@ def cross_check(out: Path) -> list:
         for sc in lex.get('semantic_classes', []):
             if sc not in known_sem:
                 errors.append(f'{lid}: unknown semantic class {sc!r}')
+        dom = lex.get('domain')
+        if dom is not None and dom.get('id') not in known_dom:
+            errors.append(f'{lid}: unknown domain id {dom.get("id")!r}')
 
+    return errors
+
+
+def check_domains(data: dict) -> list:
+    errors = []
+    ids: set = set()
+    for dom in data.get('domains', []):
+        did = dom.get('id', '')
+        if not did:
+            errors.append('domain missing id')
+            continue
+        if did in ids:
+            errors.append(f'duplicate domain id: {did}')
+        ids.add(did)
     return errors
 
 
@@ -112,6 +132,7 @@ CHECKS = [
     ('semantic_classes.json', check_semantic_classes),
     ('word_classes.json', check_word_classes),
     ('valence_frames.json', check_valence_frames),
+    ('domains.json', check_domains),
 ]
 
 

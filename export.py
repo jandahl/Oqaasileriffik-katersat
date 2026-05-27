@@ -6,10 +6,10 @@ import argparse
 import gzip
 import json
 import os
-import sqlite3
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+import sqlite3
 
 from schema_info import ATTR_BITS, META, SANDHI_VALUES
 
@@ -20,16 +20,6 @@ def has_attr(bits: int, name: str) -> bool:
 
 def _meta() -> dict:
     return {**META, 'generated_at': datetime.now(timezone.utc).isoformat()}
-
-
-def _load_registers(db) -> dict:
-    """Return {reg_code: {english, danish, kalaallisut}}, empty dict if table absent."""
-    try:
-        db.execute("SELECT reg_code, reg_eng, reg_dan, reg_kal FROM kat_registers")
-        return {r[0]: {'english': r[1], 'danish': r[2], 'kalaallisut': r[3]}
-                for r in db.fetchall()}
-    except sqlite3.OperationalError:
-        return {}
 
 
 def export_word_classes(db) -> dict:
@@ -77,6 +67,25 @@ def export_valence_frames(db) -> dict:
     }
 
 
+def export_domains(db) -> dict:
+    db.execute(
+        "SELECT dom_id, dom_code, dom_eng, dom_dan, dom_kal FROM kat_domains ORDER BY dom_id"
+    )
+    return {
+        'meta': _meta(),
+        'domains': [
+            {
+                'id': f'dom_{r[0]}',
+                'code': r[1],
+                'english': r[2],
+                'danish': r[3],
+                'kalaallisut': r[4],
+            }
+            for r in db.fetchall()
+        ],
+    }
+
+
 def _fetch_translations(db, lang: str) -> dict:
     """Return {lex_id: [translation_string, ...]} for the given ISO language code."""
     db.execute(
@@ -96,7 +105,13 @@ def _fetch_translations(db, lang: str) -> dict:
 
 
 def export_lexicon(db) -> dict:
-    registers = _load_registers(db)
+    # lex_register stores dom_id as a string after the registers→domains rename.
+    # dom_id=0 means "General / Not Special" — treat as unspecified domain.
+    db.execute("SELECT dom_id, dom_code, dom_eng, dom_dan, dom_kal FROM kat_domains")
+    domains = {
+        str(r[0]): {'id': f'dom_{r[0]}', 'code': r[1], 'english': r[2], 'danish': r[3], 'kalaallisut': r[4]}
+        for r in db.fetchall()
+    }
 
     eng = _fetch_translations(db, 'eng')
     dan = _fetch_translations(db, 'dan')
@@ -107,12 +122,10 @@ def export_lexicon(db) -> dict:
             l.lex_id,
             l.lex_lexeme,
             l.lex_wordclass,
-            l.lex_language,
             l.lex_semclass,
             l.lex_sem2,
-            l.lex_valence,
             l.lex_register,
-            l.lex_gender,
+            NULLIF(l.lex_gender, ''),
             l.lex_definition,
             l.lex_info,
             l.lex_verbframe,
@@ -124,7 +137,7 @@ def export_lexicon(db) -> dict:
           LEFT JOIN kat_lexeme_attrs a ON l.lex_id = a.lex_id
           LEFT JOIN kat_valence v ON l.lex_valence = v.val_id
          WHERE l.lex_language = 'kal'
-           AND NOT (COALESCE(a.let_attrs, 0) & 1)  -- exclude hidden
+           AND NOT (COALESCE(a.let_attrs, 0) & 1)
          ORDER BY l.lex_lexeme, l.lex_id
         """
     )
@@ -132,14 +145,12 @@ def export_lexicon(db) -> dict:
 
     lexemes = []
     for row in rows:
-        (lex_id, lexeme, wc, _lang, semclass, sem2, val_id, register,
-         gender, definition, info, verbframe, oldspelling, attrs_bits,
-         sandhi_int, val_code) = row
+        (lex_id, lexeme, wc, semclass, sem2, dom_key,
+         gender, definition, info, verbframe, oldspelling,
+         attrs_bits, sandhi_int, val_code) = row
 
         sem_classes = [s for s in (semclass, sem2) if s and s != 'UNK']
-
-        reg_code = register if register != 'nnn' else None
-        reg_info = registers.get(reg_code) if reg_code else None
+        domain = domains.get(str(dom_key)) if dom_key and str(dom_key) != '0' else None
 
         entry = {
             'id': f'lex_{lex_id}',
@@ -149,8 +160,7 @@ def export_lexicon(db) -> dict:
             'word_class': wc,
             'semantic_classes': sem_classes,
             'valence': val_code,
-            'register': reg_code,
-            'register_labels': reg_info,
+            'domain': domain,
             'gender': gender,
             'definition': definition or None,
             'info': info or None,
@@ -204,6 +214,7 @@ def main() -> None:
         ('word_classes.json', export_word_classes),
         ('semantic_classes.json', export_semantic_classes),
         ('valence_frames.json', export_valence_frames),
+        ('domains.json', export_domains),
         ('lexicon.json', export_lexicon),
     ]
 
