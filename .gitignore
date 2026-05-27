@@ -1,5 +1,4 @@
 .vscode/
-data.sql
 etag.txt
 headers.txt
 *.sqlite
