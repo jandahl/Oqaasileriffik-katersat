@@ -118,8 +118,8 @@ def check_domains(data: dict) -> list:
 def cross_check(loaded: dict) -> list:
     """Verify referential integrity using already-loaded data (avoids re-reading lexicon.json)."""
     required = {'lexicon', 'word_classes', 'valence_frames', 'semantic_classes', 'domains'}
-    if not required.issubset(loaded):
-        return ['cross_check skipped: not all files loaded']
+    if not required.issubset(loaded) or not all(isinstance(loaded[k], dict) for k in required):
+        return ['cross_check skipped: not all files loaded or some are invalid']
 
     known_wc = {wc.get('code') for wc in loaded['word_classes'].get('word_classes', [])
                 if isinstance(wc, dict) and 'code' in wc}
@@ -128,7 +128,7 @@ def cross_check(loaded: dict) -> list:
     known_sem = {sc.get('code') for sc in loaded['semantic_classes'].get('semantic_classes', [])
                  if isinstance(sc, dict) and 'code' in sc}
     known_dom = {d.get('id') for d in loaded['domains'].get('domains', [])
-                 if isinstance(d, dict) and 'id' in d} | {None}
+                 if isinstance(d, dict) and 'id' in d}
 
     errors = []
     for lex in loaded['lexicon'].get('lexemes', []):
@@ -177,7 +177,10 @@ def main() -> None:
             continue
         data = load(path)
         loaded[key] = data
-        errs = checker(data)
+        if not isinstance(data, dict):
+            errs = ['invalid data format: expected a dictionary']
+        else:
+            errs = checker(data)
         if errs:
             all_errors.extend(f'{fname}: {e}' for e in errs)
         else:
