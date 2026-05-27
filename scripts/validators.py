@@ -20,6 +20,9 @@ def check_lexicon(data: dict) -> list:
     errors = []
     ids: set = set()
     for lex in lexemes:
+        if not isinstance(lex, dict):
+            errors.append('lexeme entry is not a dictionary')
+            continue
         lid = lex.get('id', '')
         if not lid:
             errors.append('lexeme missing id')

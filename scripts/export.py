@@ -5,7 +5,6 @@
 import argparse
 import gzip
 import json
-import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -156,8 +155,10 @@ def export_lexicon(db) -> dict:
 
         dom_str = str(dom_key) if dom_key else '0'
         if dom_str not in ('0', 'nnn') and dom_str not in domains:
-            raise ValueError(f'Invalid domain key {dom_key!r} for lexeme {lex_id}')
-        domain = domains.get(dom_str) if dom_str not in ('0', 'nnn') else None
+            print(f'Warning: unknown domain key {dom_key!r} for lexeme {lex_id}, exporting as null', file=sys.stderr)
+            domain = None
+        else:
+            domain = domains.get(dom_str) if dom_str not in ('0', 'nnn') else None
 
         if sandhi_int not in SANDHI_VALUES:
             print(f'Warning: unknown sandhi value {sandhi_int!r} for lexeme {lex_id}, exporting as null', file=sys.stderr)
@@ -199,13 +200,16 @@ def write_json(data: dict, path: str, compress: bool = False) -> None:
     p = Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
     text = json.dumps(data, ensure_ascii=False, indent=2)
-    p.write_text(text, encoding='utf-8')
-    size = p.stat().st_size
-    print(f'  {p}  ({size:,} bytes)', file=sys.stderr)
+    tmp = p.with_suffix(p.suffix + '.tmp')
+    tmp.write_text(text, encoding='utf-8')
+    tmp.replace(p)
+    print(f'  {p}  ({p.stat().st_size:,} bytes)', file=sys.stderr)
     if compress:
         gz = p.with_suffix(p.suffix + '.gz')
-        with gzip.open(gz, 'wt', encoding='utf-8', compresslevel=9) as f:
+        tmp_gz = gz.with_suffix(gz.suffix + '.tmp')
+        with gzip.open(tmp_gz, 'wt', encoding='utf-8', compresslevel=9) as f:
             f.write(text)
+        tmp_gz.replace(gz)
         print(f'  {gz}  ({gz.stat().st_size:,} bytes)', file=sys.stderr)
 
 
@@ -216,28 +220,29 @@ def main() -> None:
     parser.add_argument('--compress', action='store_true', help='Write .json.gz alongside .json')
     args = parser.parse_args()
 
-    if not os.path.exists(args.db):
+    db_path = Path(args.db).resolve()
+    if not db_path.exists():
         print(f'Error: {args.db!r} not found. Run update.py first.', file=sys.stderr)
         sys.exit(1)
 
-    con = sqlite3.connect(f'file:{args.db}?mode=ro', uri=True, isolation_level=None)
-    db = con.cursor()
+    from contextlib import closing
+    with closing(sqlite3.connect(db_path.as_uri() + '?mode=ro', uri=True, isolation_level=None)) as con:
+        db = con.cursor()
 
-    exports = [
-        ('word_classes.json', export_word_classes),
-        ('semantic_classes.json', export_semantic_classes),
-        ('valence_frames.json', export_valence_frames),
-        ('domains.json', export_domains),
-        ('lexicon.json', export_lexicon),
-    ]
+        exports = [
+            ('word_classes.json', export_word_classes),
+            ('semantic_classes.json', export_semantic_classes),
+            ('valence_frames.json', export_valence_frames),
+            ('domains.json', export_domains),
+            ('lexicon.json', export_lexicon),
+        ]
 
-    out = args.output
-    for fname, fn in exports:
-        label = fname.replace('.json', '').replace('_', ' ')
-        print(f'Exporting {label}...', file=sys.stderr)
-        write_json(fn(db), f'{out}/{fname}', args.compress)
+        out = args.output
+        for fname, fn in exports:
+            label = fname.replace('.json', '').replace('_', ' ')
+            print(f'Exporting {label}...', file=sys.stderr)
+            write_json(fn(db), f'{out}/{fname}', args.compress)
 
-    con.close()
     print('Done.', file=sys.stderr)
 
 
