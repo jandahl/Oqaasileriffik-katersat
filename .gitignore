@@ -1,4 +1,7 @@
 .vscode/
-etag.txt
-headers.txt
+__pycache__/
 *.sqlite
+*.sqlite.new
+etag*.txt
+headers.txt
+exports/
