@@ -15,6 +15,8 @@ def check_lexicon(data: dict) -> list:
     lexemes = data.get('lexemes')
     if lexemes is None:
         return ['missing "lexemes" key']
+    if not isinstance(lexemes, list):
+        return ['"lexemes" must be a list']
     if not lexemes:
         return ['"lexemes" list is empty']
     errors = []
@@ -46,10 +48,13 @@ def check_lexicon(data: dict) -> list:
 
 
 def check_semantic_classes(data: dict) -> list:
+    sem_classes = data.get('semantic_classes')
+    if not isinstance(sem_classes, list):
+        return ['missing or invalid "semantic_classes" list']
     errors = []
     codes: set = set()
-    for sc in data.get('semantic_classes', []):
-        code = sc.get('code', '')
+    for sc in sem_classes:
+        code = sc.get('code', '') if isinstance(sc, dict) else ''
         if not code:
             errors.append('semantic class missing code')
             continue
@@ -60,10 +65,13 @@ def check_semantic_classes(data: dict) -> list:
 
 
 def check_word_classes(data: dict) -> list:
+    word_classes = data.get('word_classes')
+    if not isinstance(word_classes, list):
+        return ['missing or invalid "word_classes" list']
     errors = []
     codes: set = set()
-    for wc in data.get('word_classes', []):
-        code = wc.get('code', '')
+    for wc in word_classes:
+        code = wc.get('code', '') if isinstance(wc, dict) else ''
         if not code:
             errors.append('word class missing code')
             continue
@@ -74,10 +82,13 @@ def check_word_classes(data: dict) -> list:
 
 
 def check_valence_frames(data: dict) -> list:
+    valence_frames = data.get('valence_frames')
+    if not isinstance(valence_frames, list):
+        return ['missing or invalid "valence_frames" list']
     errors = []
     ids: set = set()
-    for vf in data.get('valence_frames', []):
-        vid = vf.get('id', '')
+    for vf in valence_frames:
+        vid = vf.get('id', '') if isinstance(vf, dict) else ''
         if not vid:
             errors.append('valence frame missing id')
             continue
@@ -88,10 +99,13 @@ def check_valence_frames(data: dict) -> list:
 
 
 def check_domains(data: dict) -> list:
+    domains = data.get('domains')
+    if not isinstance(domains, list):
+        return ['missing or invalid "domains" list']
     errors = []
     ids: set = set()
-    for dom in data.get('domains', []):
-        did = dom.get('id', '')
+    for dom in domains:
+        did = dom.get('id', '') if isinstance(dom, dict) else ''
         if not did:
             errors.append('domain missing id')
             continue
@@ -107,13 +121,19 @@ def cross_check(loaded: dict) -> list:
     if not required.issubset(loaded):
         return ['cross_check skipped: not all files loaded']
 
-    known_wc = {wc['code'] for wc in loaded['word_classes'].get('word_classes', [])}
-    known_val = {vf['code'] for vf in loaded['valence_frames'].get('valence_frames', [])} | {None}
-    known_sem = {sc['code'] for sc in loaded['semantic_classes'].get('semantic_classes', [])}
-    known_dom = {d['id'] for d in loaded['domains'].get('domains', [])} | {None}
+    known_wc = {wc.get('code') for wc in loaded['word_classes'].get('word_classes', [])
+                if isinstance(wc, dict) and 'code' in wc}
+    known_val = {vf.get('code') for vf in loaded['valence_frames'].get('valence_frames', [])
+                 if isinstance(vf, dict) and 'code' in vf} | {None}
+    known_sem = {sc.get('code') for sc in loaded['semantic_classes'].get('semantic_classes', [])
+                 if isinstance(sc, dict) and 'code' in sc}
+    known_dom = {d.get('id') for d in loaded['domains'].get('domains', [])
+                 if isinstance(d, dict) and 'id' in d} | {None}
 
     errors = []
     for lex in loaded['lexicon'].get('lexemes', []):
+        if not isinstance(lex, dict):
+            continue
         lid = lex.get('id', '?')
         if lex.get('word_class') not in known_wc:
             errors.append(f'{lid}: unknown word_class {lex.get("word_class")!r}')
@@ -123,7 +143,7 @@ def cross_check(loaded: dict) -> list:
             if sc not in known_sem:
                 errors.append(f'{lid}: unknown semantic class {sc!r}')
         dom = lex.get('domain')
-        if dom is not None and dom.get('id') not in known_dom:
+        if isinstance(dom, dict) and dom.get('id') not in known_dom:
             errors.append(f'{lid}: unknown domain id {dom.get("id")!r}')
     return errors
 
@@ -143,6 +163,10 @@ def main() -> None:
         sys.exit(1)
 
     out = Path(sys.argv[1])
+    if not out.is_dir():
+        print(f'Error: {out} is not a directory', file=sys.stderr)
+        sys.exit(1)
+
     all_errors: list = []
     loaded: dict = {}
 

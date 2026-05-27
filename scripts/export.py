@@ -221,8 +221,8 @@ def main() -> None:
     args = parser.parse_args()
 
     db_path = Path(args.db).resolve()
-    if not db_path.exists():
-        print(f'Error: {args.db!r} not found. Run update.py first.', file=sys.stderr)
+    if not db_path.is_file():
+        print(f'Error: {args.db!r} is not a file. Run update.py first.', file=sys.stderr)
         sys.exit(1)
 
     from contextlib import closing
