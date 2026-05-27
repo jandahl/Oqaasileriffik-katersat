@@ -8,7 +8,8 @@ from pathlib import Path
 
 
 def load(path: Path) -> dict:
-    return json.loads(path.read_text(encoding='utf-8'))
+    with path.open('r', encoding='utf-8') as f:
+        return json.load(f)
 
 
 def check_lexicon(data: dict) -> list:
@@ -44,6 +45,9 @@ def check_lexicon(data: dict) -> list:
             errors.append(f'{lid}: semantic_classes must be a list')
         if not isinstance(lex.get('attrs'), dict):
             errors.append(f'{lid}: attrs must be a dict')
+        dom = lex.get('domain')
+        if dom is not None and not isinstance(dom, dict):
+            errors.append(f'{lid}: domain must be a dict or null')
     return errors
 
 
@@ -187,11 +191,12 @@ def main() -> None:
             count = next((len(v) for v in data.values() if isinstance(v, list)), 0)
             print(f'  {fname}: OK ({count} entries)', file=sys.stderr)
 
-    cross = cross_check(loaded)
-    if cross and cross[0].startswith('cross_check skipped'):
-        print(f'  {cross[0]}', file=sys.stderr)
-    else:
-        all_errors.extend(cross)
+    if not all_errors:
+        cross = cross_check(loaded)
+        if cross and cross[0].startswith('cross_check skipped'):
+            print(f'  {cross[0]}', file=sys.stderr)
+        else:
+            all_errors.extend(cross)
 
     if all_errors:
         for e in all_errors:
