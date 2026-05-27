@@ -2,7 +2,18 @@
 
 This is a fork of [Oqaasileriffik/katersat](https://github.com/Oqaasileriffik/katersat), the linguistic database underlying Oqaasileriffik's NLP tools for Kalaallisut (West Greenlandic). This fork adds a JSON export pipeline so the data can be consumed by web tools such as [KalaalliCut](https://github.com/jandahl/kalaalliCut).
 
-Pre-built exports live in [`exports/`](exports/).
+Pre-built exports are published to **GitHub Pages**:
+
+```
+https://jandahl.github.io/Oqaasileriffik-katersat/lexicon.json
+https://jandahl.github.io/Oqaasileriffik-katersat/lexicon.json.gz
+https://jandahl.github.io/Oqaasileriffik-katersat/word_classes.json
+https://jandahl.github.io/Oqaasileriffik-katersat/semantic_classes.json
+https://jandahl.github.io/Oqaasileriffik-katersat/valence_frames.json
+https://jandahl.github.io/Oqaasileriffik-katersat/domains.json
+```
+
+> **Setup**: enable GitHub Pages in repo Settings → Pages → Source: `gh-pages` branch, `/ (root)`.
 
 ---
 
@@ -232,7 +243,7 @@ Every file includes a top-level `meta` object:
 1. Runs `update.py` to fetch the latest `data.sql` from upstream and rebuild `katersat.sqlite`
 2. Runs `scripts/export.py --compress` to regenerate all JSON exports
 3. Runs `scripts/validators.py` to verify integrity
-4. Commits any changed files in `exports/` back to the branch
+4. Force-pushes the contents of `exports/` to the `gh-pages` branch, which GitHub Pages serves directly
 
 Trigger a manual run from the GitHub Actions tab if you need an out-of-cycle refresh.
 

@@ -30,11 +30,15 @@ jobs:
       - name: Validate exports
         run: python3 scripts/validators.py exports
 
-      - name: Commit and push exports
+      - name: Deploy to GitHub Pages
         run: |
           git config user.name "katersat-bot"
           git config user.email "actions@github.com"
-          git add exports/
-          git diff --cached --quiet && echo "No changes to commit" || \
-            git commit -m "chore: update katersat JSON exports [skip ci]"
-          git push
+          cd exports
+          git init -b gh-pages
+          touch .nojekyll
+          git add .
+          git commit -m "chore: update JSON exports $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push --force \
+            "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" \
+            gh-pages
