@@ -37,10 +37,10 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          git config user.name "katersat-bot"
-          git config user.email "actions@github.com"
           cd exports
           git init -b gh-pages
+          git config user.name "katersat-bot"
+          git config user.email "actions@github.com"
           touch .nojekyll
           git add .
           git commit -m "chore: update JSON exports $(date -u +%Y-%m-%dT%H:%M:%SZ)"
