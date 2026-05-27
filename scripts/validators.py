@@ -12,9 +12,14 @@ def load(path: Path) -> dict:
 
 
 def check_lexicon(data: dict) -> list:
+    lexemes = data.get('lexemes')
+    if lexemes is None:
+        return ['missing "lexemes" key']
+    if not lexemes:
+        return ['"lexemes" list is empty']
     errors = []
     ids: set = set()
-    for lex in data.get('lexemes', []):
+    for lex in lexemes:
         lid = lex.get('id', '')
         if not lid:
             errors.append('lexeme missing id')
@@ -79,40 +84,6 @@ def check_valence_frames(data: dict) -> list:
     return errors
 
 
-def cross_check(out: Path) -> list:
-    """Verify that word_class, valence, domain codes in lexicon.json exist in reference files."""
-    errors = []
-    paths = {
-        'lexicon': out / 'lexicon.json',
-        'wc': out / 'word_classes.json',
-        'val': out / 'valence_frames.json',
-        'sem': out / 'semantic_classes.json',
-        'dom': out / 'domains.json',
-    }
-    if not all(p.exists() for p in paths.values()):
-        return ['cross_check skipped: not all files present']
-
-    known_wc = {wc['code'] for wc in load(paths['wc']).get('word_classes', [])}
-    known_val = {vf['code'] for vf in load(paths['val']).get('valence_frames', [])} | {None}
-    known_sem = {sc['code'] for sc in load(paths['sem']).get('semantic_classes', [])}
-    known_dom = {d['id'] for d in load(paths['dom']).get('domains', [])} | {None}
-
-    for lex in load(paths['lexicon']).get('lexemes', []):
-        lid = lex.get('id', '?')
-        if lex.get('word_class') not in known_wc:
-            errors.append(f'{lid}: unknown word_class {lex.get("word_class")!r}')
-        if lex.get('valence') not in known_val:
-            errors.append(f'{lid}: unknown valence {lex.get("valence")!r}')
-        for sc in lex.get('semantic_classes', []):
-            if sc not in known_sem:
-                errors.append(f'{lid}: unknown semantic class {sc!r}')
-        dom = lex.get('domain')
-        if dom is not None and dom.get('id') not in known_dom:
-            errors.append(f'{lid}: unknown domain id {dom.get("id")!r}')
-
-    return errors
-
-
 def check_domains(data: dict) -> list:
     errors = []
     ids: set = set()
@@ -127,12 +98,39 @@ def check_domains(data: dict) -> list:
     return errors
 
 
+def cross_check(loaded: dict) -> list:
+    """Verify referential integrity using already-loaded data (avoids re-reading lexicon.json)."""
+    required = {'lexicon', 'word_classes', 'valence_frames', 'semantic_classes', 'domains'}
+    if not required.issubset(loaded):
+        return ['cross_check skipped: not all files loaded']
+
+    known_wc = {wc['code'] for wc in loaded['word_classes'].get('word_classes', [])}
+    known_val = {vf['code'] for vf in loaded['valence_frames'].get('valence_frames', [])} | {None}
+    known_sem = {sc['code'] for sc in loaded['semantic_classes'].get('semantic_classes', [])}
+    known_dom = {d['id'] for d in loaded['domains'].get('domains', [])} | {None}
+
+    errors = []
+    for lex in loaded['lexicon'].get('lexemes', []):
+        lid = lex.get('id', '?')
+        if lex.get('word_class') not in known_wc:
+            errors.append(f'{lid}: unknown word_class {lex.get("word_class")!r}')
+        if lex.get('valence') not in known_val:
+            errors.append(f'{lid}: unknown valence {lex.get("valence")!r}')
+        for sc in lex.get('semantic_classes', []):
+            if sc not in known_sem:
+                errors.append(f'{lid}: unknown semantic class {sc!r}')
+        dom = lex.get('domain')
+        if dom is not None and dom.get('id') not in known_dom:
+            errors.append(f'{lid}: unknown domain id {dom.get("id")!r}')
+    return errors
+
+
 CHECKS = [
-    ('lexicon.json', check_lexicon),
-    ('semantic_classes.json', check_semantic_classes),
-    ('word_classes.json', check_word_classes),
-    ('valence_frames.json', check_valence_frames),
-    ('domains.json', check_domains),
+    ('lexicon.json', 'lexicon', check_lexicon),
+    ('semantic_classes.json', 'semantic_classes', check_semantic_classes),
+    ('word_classes.json', 'word_classes', check_word_classes),
+    ('valence_frames.json', 'valence_frames', check_valence_frames),
+    ('domains.json', 'domains', check_domains),
 ]
 
 
@@ -143,13 +141,15 @@ def main() -> None:
 
     out = Path(sys.argv[1])
     all_errors: list = []
+    loaded: dict = {}
 
-    for fname, checker in CHECKS:
+    for fname, key, checker in CHECKS:
         path = out / fname
         if not path.exists():
             all_errors.append(f'missing file: {fname}')
             continue
         data = load(path)
+        loaded[key] = data
         errs = checker(data)
         if errs:
             all_errors.extend(f'{fname}: {e}' for e in errs)
@@ -157,7 +157,7 @@ def main() -> None:
             count = next((len(v) for v in data.values() if isinstance(v, list)), 0)
             print(f'  {fname}: OK ({count} entries)', file=sys.stderr)
 
-    cross = cross_check(out)
+    cross = cross_check(loaded)
     if cross and cross[0].startswith('cross_check skipped'):
         print(f'  {cross[0]}', file=sys.stderr)
     else:

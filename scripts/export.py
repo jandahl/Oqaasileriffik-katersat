@@ -153,7 +153,15 @@ def export_lexicon(db) -> dict:
          attrs_bits, sandhi_int, val_code) = row
 
         sem_classes = [s for s in (semclass, sem2) if s and s != 'UNK']
-        domain = domains.get(str(dom_key)) if dom_key and str(dom_key) != '0' else None
+
+        dom_str = str(dom_key) if dom_key else '0'
+        if dom_str not in ('0', 'nnn') and dom_str not in domains:
+            raise ValueError(f'Invalid domain key {dom_key!r} for lexeme {lex_id}')
+        domain = domains.get(dom_str) if dom_str not in ('0', 'nnn') else None
+
+        if sandhi_int not in SANDHI_VALUES:
+            print(f'Warning: unknown sandhi value {sandhi_int!r} for lexeme {lex_id}, exporting as null', file=sys.stderr)
+
         fst_analyses = [s for s in (stem or '').splitlines() if s.strip()] or None
 
         entry = {
