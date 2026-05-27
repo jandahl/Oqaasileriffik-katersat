@@ -4,3 +4,4 @@ __pycache__/
 *.sqlite.new
 etag*.txt
 headers.txt
+exports/
