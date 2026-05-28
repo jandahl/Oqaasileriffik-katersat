@@ -229,19 +229,32 @@ def main() -> None:
     with closing(sqlite3.connect(db_path.as_uri() + '?mode=ro', uri=True, isolation_level=None)) as con:
         db = con.cursor()
 
-        exports = [
+        reference_exports = [
             ('word_classes.json', export_word_classes),
             ('semantic_classes.json', export_semantic_classes),
             ('valence_frames.json', export_valence_frames),
             ('domains.json', export_domains),
-            ('lexicon.json', export_lexicon),
         ]
 
         out = args.output
-        for fname, fn in exports:
+        for fname, fn in reference_exports:
             label = fname.replace('.json', '').replace('_', ' ')
             print(f'Exporting {label}...', file=sys.stderr)
             write_json(fn(db), f'{out}/{fname}', args.compress)
+
+        print('Exporting lexicon...', file=sys.stderr)
+        lexicon = export_lexicon(db)
+        write_json(lexicon, f'{out}/lexicon.json', args.compress)
+
+        print('Splitting lexicon by first letter...', file=sys.stderr)
+        by_letter: dict = {}
+        for lex in lexicon['lexemes']:
+            first = lex['kalaallisut'][0].lower() if lex.get('kalaallisut') else '_'
+            key = first if first.isalpha() else '_'
+            by_letter.setdefault(key, []).append(lex)
+        for key, entries in sorted(by_letter.items()):
+            write_json({'meta': lexicon['meta'], 'lexemes': entries}, f'{out}/by-letter/{key}.json')
+        print(f'  {len(by_letter)} letter shards', file=sys.stderr)
 
     print('Done.', file=sys.stderr)
 
