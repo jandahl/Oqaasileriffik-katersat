@@ -247,6 +247,11 @@ def main() -> None:
         write_json(lexicon, f'{out}/lexicon.json', args.compress)
 
         print('Splitting lexicon by first letter...', file=sys.stderr)
+        by_letter_dir = Path(out) / 'by-letter'
+        if by_letter_dir.is_dir():
+            for f in by_letter_dir.iterdir():
+                if f.is_file():
+                    f.unlink()
         by_letter: dict[str, list[dict]] = {}
         for lex in lexicon['lexemes']:
             kalaallisut = lex.get('kalaallisut')
