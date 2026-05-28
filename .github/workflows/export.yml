@@ -29,6 +29,17 @@ jobs:
       - name: Fetch latest katersat data
         run: python3 update.py
 
+      - name: Archive data if changed
+        run: python3 scripts/archive_data.py
+
+      - name: Commit data archive to main
+        run: |
+          git config user.name "katersat-bot"
+          git config user.email "actions@github.com"
+          git add data.sql data/
+          git diff --cached --quiet && echo "  No data changes to commit" || \
+            git commit -m "data: archive katersat $(date -u +%Y-%m-%d) [skip ci]" && git push
+
       - name: Export to JSON
         run: python3 scripts/export.py --output exports --compress
 
