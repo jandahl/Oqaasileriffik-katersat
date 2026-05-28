@@ -7,6 +7,8 @@ Pre-built exports are published to **GitHub Pages**:
 ```
 https://jandahl.github.io/Oqaasileriffik-katersat/lexicon.json
 https://jandahl.github.io/Oqaasileriffik-katersat/lexicon.json.gz
+https://jandahl.github.io/Oqaasileriffik-katersat/by-letter/a.json
+https://jandahl.github.io/Oqaasileriffik-katersat/by-letter/n.json
 https://jandahl.github.io/Oqaasileriffik-katersat/word_classes.json
 https://jandahl.github.io/Oqaasileriffik-katersat/semantic_classes.json
 https://jandahl.github.io/Oqaasileriffik-katersat/valence_frames.json
@@ -30,7 +32,7 @@ python3 scripts/export.py
 python3 scripts/validators.py exports
 ```
 
-The exporter reads only from `katersat.sqlite` and writes five JSON files to the output directory. Dependencies are Python 3.11+ stdlib only.
+The exporter reads only from `katersat.sqlite` and writes JSON files to the output directory (full lexicon + per-letter shards + reference files). Dependencies are Python 3.11+ stdlib only.
 
 ---
 
@@ -255,11 +257,8 @@ Trigger a manual run from the GitHub Actions tab if you need an out-of-cycle ref
 
 ## Possible improvements
 
-- **Split `lexicon.json` by initial letter** — at ~72 MB uncompressed the full lexicon is heavy for in-browser fetching; per-letter shards (`lexicon_a.json` … `lexicon_aa.json`) would allow lazy loading
 - **Brotli compression** — Brotli typically gives ~15% better ratio than gzip for text; useful for GitHub Pages serving
-- **Data hash in `meta`** — include a SHA-1 of `data.sql` so consumers can detect when the underlying data actually changed without diffing the full JSON
-- **Live fetch in CI** — `update.py` already supports fetching from `https://tech.oqaasileriffik.gl/katersat/export-katersat.php`; the `data.sql` can be removed from git once network access is available in CI
-- **Latin/French/German translations** — the DB contains `lat` (902 entries), `fra` (12), and `deu` (1) language entries linked via `glue_lexeme_synonyms`; trivial to add to the lexicon export
+- **Latin/French/German translations** — tracked in [issue #6](https://github.com/jandahl/Oqaasileriffik-katersat/issues/6); the DB already has `lat` (902 entries), `fra` (12), and `deu` (1) linked via `glue_lexeme_synonyms`
 - **Structured `fst_analyses`** — currently exported as raw strings; could be parsed into structured objects (`{"lemma": "nammineq", "tags": ["Pron", "Abs", "Sg"]}`)
 
 ---
