@@ -1,0 +1,2356 @@
+{
+  "meta": {
+    "version": "1",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "Oqaasileriffik / Greenland Language Secretariat",
+    "source": "https://github.com/Oqaasileriffik/katersat",
+    "generated_at": "2026-05-28T23:57:40.929727+00:00"
+  },
+  "lexemes": [
+    {
+      "id": "lex_255150",
+      "kalaallisut": "-lersuisuuvoq",
+      "english": [],
+      "danish": [
+        "yde"
+      ],
+      "word_class": "v",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_236929",
+      "kalaallisut": "-livik",
+      "english": [],
+      "danish": [
+        "beholder"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_250063",
+      "kalaallisut": "-mik ilisimasaqalerpoq",
+      "english": [],
+      "danish": [
+        "tilegner sig kundskab om"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_102",
+        "code": "9.0.0",
+        "english": "MED MEDICINE",
+        "danish": "MED MEDICIN",
+        "kalaallisut": "MED NAKORSAANERMIK ILISIMATUSAATIT"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_255901",
+      "kalaallisut": "-mik nuannarisalik",
+      "english": [],
+      "danish": [
+        "entusiast"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_256679",
+      "kalaallisut": "-mut kuussaanngitsoq",
+      "english": [],
+      "danish": [
+        "fanatiker"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_186033",
+      "kalaallisut": "-nngornianik ilinniartitsisoq",
+      "english": [],
+      "danish": [
+        "professionsfaglærer"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "ac"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": "ilinniarfimmi aalajangersimasumik sammivilimmi ilinniartitsisoq",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_254325",
+      "kalaallisut": "-nnguatsiarpoq",
+      "english": [],
+      "danish": [
+        "åbenbart"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_260761",
+      "kalaallisut": "-palaannguakasik",
+      "english": [],
+      "danish": [
+        "kasse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_255461",
+      "kalaallisut": "-passuit",
+      "english": [],
+      "danish": [
+        "væld"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_254748",
+      "kalaallisut": "-rnisaq",
+      "english": [],
+      "danish": [
+        "årgang"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": true,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_255729",
+      "kalaallisut": "-ssaq",
+      "english": [],
+      "danish": [
+        "vordende"
+      ],
+      "word_class": "adj",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_257211",
+      "kalaallisut": "-vissuaq",
+      "english": [],
+      "danish": [
+        "veritabel"
+      ],
+      "word_class": "adj",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187370",
+      "kalaallisut": "1-inik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 1 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_163804",
+      "kalaallisut": "1. assistenti",
+      "english": [],
+      "danish": [
+        "1. assistent"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Hprof"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Oqaasiliortut 2010-mi atorfiit taaguutaanni akuerisaat",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187401",
+      "kalaallisut": "1. klassinut",
+      "english": [],
+      "danish": [
+        "for 1. klasse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187371",
+      "kalaallisut": "10-nik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 10 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_190682",
+      "kalaallisut": "10-p akimornera",
+      "english": [],
+      "danish": [
+        "tierovergang"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "geom-line"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_244915",
+      "kalaallisut": "10-p akimornera",
+      "english": [],
+      "danish": [
+        "tierovergang"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187402",
+      "kalaallisut": "10. klassinut",
+      "english": [],
+      "danish": [
+        "for 10. klasse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187372",
+      "kalaallisut": "11-nik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 11 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187403",
+      "kalaallisut": "11. klassinut",
+      "english": [],
+      "danish": [
+        "for 11. klasse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187373",
+      "kalaallisut": "12-inik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 12 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187404",
+      "kalaallisut": "12. klassinut",
+      "english": [],
+      "danish": [
+        "for 12. klasse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187374",
+      "kalaallisut": "13-inik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 13 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187375",
+      "kalaallisut": "14-inik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 14 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187376",
+      "kalaallisut": "15-inik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 15 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_254126",
+      "kalaallisut": "16-inik ukiulik",
+      "english": [],
+      "danish": [
+        "-årig"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187377",
+      "kalaallisut": "16-inik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 16 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187378",
+      "kalaallisut": "17-inik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 17 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187379",
+      "kalaallisut": "18-inik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 18 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187380",
+      "kalaallisut": "19-inik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 19 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_254137",
+      "kalaallisut": "1900-kkunni",
+      "english": [],
+      "danish": [
+        "århundrede"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "1900+iNum+KKUT+Der/nn+N+Lok+Pl",
+        "1900+iNum+iVia+iSg+N+Lok+Pl"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_230461",
+      "kalaallisut": "1984 1988 1988 1988 1988 198",
+      "english": [],
+      "danish": [
+        "pålydende"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_12",
+        "code": "3.0.0",
+        "english": "ØK ECONOMY & TRADE",
+        "danish": "ØK ØKONOMI og HANDEL",
+        "kalaallisut": "ØK ANINGAASAQARNEQ NIUERNERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_2",
+      "kalaallisut": "2",
+      "english": [
+        "two"
+      ],
+      "danish": [
+        "to",
+        "2"
+      ],
+      "word_class": "num",
+      "semantic_classes": [
+        "ac-sign"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "2+Err/Sub+Num+Rel+Pl",
+        "2+Num+Abs+Pl",
+        "2+Num+Abs+Sg",
+        "2+Sem/ac-cat+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187381",
+      "kalaallisut": "2-nik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 2 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187405",
+      "kalaallisut": "2. klassinut",
+      "english": [],
+      "danish": [
+        "for 2. klasse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_1",
+      "kalaallisut": "20",
+      "english": [
+        "twenty"
+      ],
+      "danish": [
+        "tyve",
+        "20",
+        "toti"
+      ],
+      "word_class": "num",
+      "semantic_classes": [
+        "ac-sign"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "20+Err/Sub+Num+Rel+Pl",
+        "20+Num+Abs+Pl",
+        "20+Num+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_147787",
+      "kalaallisut": "20-at",
+      "english": [
+        "twentieth"
+      ],
+      "danish": [
+        "20.",
+        "tyvende"
+      ],
+      "word_class": "num",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "20+Num+Abs+Sg+3PlPoss"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_147797",
+      "kalaallisut": "20-t missaat",
+      "english": [
+        "score"
+      ],
+      "danish": [
+        "snes"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "amount"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "20+Num+Abs+Pl",
+        "missaq+N+Abs+Pl+3PlPoss"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_205539",
+      "kalaallisut": "200 sømilinik killeqarfik",
+      "english": [],
+      "danish": [
+        "tohundrede (200) sømile zone"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_12",
+        "code": "3.0.0",
+        "english": "ØK ECONOMY & TRADE",
+        "danish": "ØK ØKONOMI og HANDEL",
+        "kalaallisut": "ØK ANINGAASAQARNEQ NIUERNERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187382",
+      "kalaallisut": "3-nik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 3 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187406",
+      "kalaallisut": "3. klassinut",
+      "english": [],
+      "danish": [
+        "for 3. klasse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187383",
+      "kalaallisut": "4-nik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 4 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187407",
+      "kalaallisut": "4. klassinut",
+      "english": [],
+      "danish": [
+        "for 4. klasse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187384",
+      "kalaallisut": "5-inik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 5 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187408",
+      "kalaallisut": "5. klassinut",
+      "english": [],
+      "danish": [
+        "for 5. klasse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187385",
+      "kalaallisut": "6-inik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 6 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187409",
+      "kalaallisut": "6. klassinut",
+      "english": [],
+      "danish": [
+        "for 6. klasse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_205547",
+      "kalaallisut": "60/40 (80/20)-tunngavigalugu sanaartorneq",
+      "english": [],
+      "danish": [
+        "tres/fyrre. 60/40 (80/20)-byggeri"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_12",
+        "code": "3.0.0",
+        "english": "ØK ECONOMY & TRADE",
+        "danish": "ØK ØKONOMI og HANDEL",
+        "kalaallisut": "ØK ANINGAASAQARNEQ NIUERNERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187386",
+      "kalaallisut": "7-inik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 7 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187410",
+      "kalaallisut": "7. klassinut",
+      "english": [],
+      "danish": [
+        "for 7. klasse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_259593",
+      "kalaallisut": "70-issaanik katiffissiorneq",
+      "english": [],
+      "danish": [
+        "jernbryllup"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187387",
+      "kalaallisut": "8-nik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 8 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187411",
+      "kalaallisut": "8. klassinut",
+      "english": [],
+      "danish": [
+        "for 8. klasse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187388",
+      "kalaallisut": "9-nik ukiulinnut",
+      "english": [],
+      "danish": [
+        "for 9 år"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187412",
+      "kalaallisut": "9. klassinut",
+      "english": [],
+      "danish": [
+        "for 9. klasse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani saqqummersitap sumut/kikkunnut naleqquttuuneranut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_254191",
+      "kalaallisut": "99-inik ukioqarluni suli utinngilaq",
+      "english": [],
+      "danish": [
+        "åndsfrisk"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_254370",
+      "kalaallisut": "[atuagaq] sungiusaat",
+      "english": [],
+      "danish": [
+        "øvebog"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_244768",
+      "kalaallisut": "[ilisarnaat pineqartoq: / ]",
+      "english": [],
+      "danish": [
+        "skråstreg"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_244771",
+      "kalaallisut": "[ilisarnaat pineqartoq: \\ ]",
+      "english": [],
+      "danish": [
+        "skråstreg"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_244765",
+      "kalaallisut": "[ilisarnaatit pineqartut: \\ aamma / ]",
+      "english": [],
+      "danish": [
+        "skråstreg"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_238999",
+      "kalaallisut": "[naalagaaffiup inuisa] imminnut sorsuunnerat",
+      "english": [],
+      "danish": [
+        "borgerkrig"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_238502",
+      "kalaallisut": "[uumasoq] qimerloqanngitsoq",
+      "english": [],
+      "danish": [
+        "bløddyr"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_246001",
+      "kalaallisut": "”anillaqqinnissaq”",
+      "english": [],
+      "danish": [
+        "stille sig udenfor igen"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_102",
+        "code": "9.0.0",
+        "english": "MED MEDICINE",
+        "danish": "MED MEDICIN",
+        "kalaallisut": "MED NAKORSAANERMIK ILISIMATUSAATIT"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_243272",
+      "kalaallisut": "∨",
+      "english": [],
+      "danish": [
+        "disjunktion",
+        "∨"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": "annertussutsinut marlunnut ataqatigiissitsisoq ima isumalik: \"imaluunniit\", ass. annertussutsip A- B-p imminnut ataqatigiinnerat ima oqaatigineqarsinnaalluni: \"A imaluunniit B\"",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_220482",
+      "kalaallisut": "≈",
+      "english": [],
+      "danish": [
+        "cirkategn"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_75",
+        "code": "7.1.0",
+        "english": "MAT Mathematic",
+        "danish": "MAT Matematik",
+        "kalaallisut": "MAT Matematikki"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "≈+PUNCT"
+      ],
+      "definition": "≈ (tilde) missik nalunaarniarlugu ilisarnaat atorneqartartoq",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    }
+  ]
+}

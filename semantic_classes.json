@@ -1,0 +1,5961 @@
+{
+  "meta": {
+    "version": "1",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "Oqaasileriffik / Greenland Language Secretariat",
+    "source": "https://github.com/Oqaasileriffik/katersat",
+    "generated_at": "2026-05-28T23:57:39.858542+00:00"
+  },
+  "semantic_classes": [
+    {
+      "id": "sem_A",
+      "code": "A",
+      "english": "Animal",
+      "danish": "Dyr",
+      "kalaallisut": "Uumasoq"
+    },
+    {
+      "id": "sem_AA",
+      "code": "AA",
+      "english": "Animal, group of",
+      "danish": "Dyr, gruppe af",
+      "kalaallisut": "Uumasoq, arlallit"
+    },
+    {
+      "id": "sem_Acell",
+      "code": "Acell",
+      "english": "Animal, cellular",
+      "danish": "Dyr, celle",
+      "kalaallisut": "Uumasoq, celle"
+    },
+    {
+      "id": "sem_Adom",
+      "code": "Adom",
+      "english": "Animal, domestic",
+      "danish": "Dyr, husdyr",
+      "kalaallisut": "Uumasoq, nujuitsoq"
+    },
+    {
+      "id": "sem_Aent",
+      "code": "Aent",
+      "english": "Animal, insect",
+      "danish": "Dyr, insekt",
+      "kalaallisut": "Uumasoq, sullineq"
+    },
+    {
+      "id": "sem_Aich",
+      "code": "Aich",
+      "english": "Animal, water",
+      "danish": "Dyr, i vandet, havdyr",
+      "kalaallisut": "Uumasoq, imarmiu/ imermiu"
+    },
+    {
+      "id": "sem_Amyth",
+      "code": "Amyth",
+      "english": "Animal, mythical",
+      "danish": "Dyr, mytisk",
+      "kalaallisut": "Uumasoq, piviunngitsoq"
+    },
+    {
+      "id": "sem_Aorn",
+      "code": "Aorn",
+      "english": "Animal, ornithological",
+      "danish": "Dyr, ornitologisk",
+      "kalaallisut": "Uumasoq, timmisoq"
+    },
+    {
+      "id": "sem_Azo",
+      "code": "Azo",
+      "english": "Animal, land",
+      "danish": "Dyr, i landet, landdyr",
+      "kalaallisut": "Uumasoq, nunamiu"
+    },
+    {
+      "id": "sem_B",
+      "code": "B",
+      "english": "Plant",
+      "danish": "Plante",
+      "kalaallisut": "Naasoq"
+    },
+    {
+      "id": "sem_BB",
+      "code": "BB",
+      "english": "Plant, area",
+      "danish": "Plante, område",
+      "kalaallisut": "Naasoq, sumiiffik"
+    },
+    {
+      "id": "sem_Bbush",
+      "code": "Bbush",
+      "english": "Plant, bush, shrub",
+      "danish": "Plante, busk",
+      "kalaallisut": "Naasoq, orpikkat"
+    },
+    {
+      "id": "sem_Bflo",
+      "code": "Bflo",
+      "english": "Plant, flower",
+      "danish": "Plante, blomster",
+      "kalaallisut": "Naasoq, naasoq"
+    },
+    {
+      "id": "sem_Btree",
+      "code": "Btree",
+      "english": "Plant, tree",
+      "danish": "Plante, træ",
+      "kalaallisut": "Naasoq, orpik"
+    },
+    {
+      "id": "sem_Bveg",
+      "code": "Bveg",
+      "english": "Plant, vegetable",
+      "danish": "Plante, grøntsag/køkkenurt",
+      "kalaallisut": "Naasoq, nerisassaq"
+    },
+    {
+      "id": "sem_H",
+      "code": "H",
+      "english": "Human",
+      "danish": "Menneske",
+      "kalaallisut": "Inuk"
+    },
+    {
+      "id": "sem_HH",
+      "code": "HH",
+      "english": "Human, group of",
+      "danish": "Menneske, gruppe af",
+      "kalaallisut": "Inuk, arlallit"
+    },
+    {
+      "id": "sem_HHorg",
+      "code": "HHorg",
+      "english": "Human, organisation",
+      "danish": "Menneske, organisation",
+      "kalaallisut": "Inuk, kattuffik"
+    },
+    {
+      "id": "sem_Hattr",
+      "code": "Hattr",
+      "english": "Human, attribute",
+      "danish": "Menneske, egenskab",
+      "kalaallisut": "Inuk, ilisarnaat"
+    },
+    {
+      "id": "sem_Hbio",
+      "code": "Hbio",
+      "english": "Human, biological",
+      "danish": "Menneske, biologisk",
+      "kalaallisut": "Inuk, pinngortitaq"
+    },
+    {
+      "id": "sem_Hfam",
+      "code": "Hfam",
+      "english": "Human, family",
+      "danish": "Menneske, familie",
+      "kalaallisut": "Inuk, ilaqutariinni"
+    },
+    {
+      "id": "sem_Hideo",
+      "code": "Hideo",
+      "english": "Human, idelogical",
+      "danish": "Menneske, ideologisk",
+      "kalaallisut": "Inuk, eqqarsartaaseq"
+    },
+    {
+      "id": "sem_Hmyth",
+      "code": "Hmyth",
+      "english": "Human, mythological",
+      "danish": "Menneske, mytologisk",
+      "kalaallisut": "Inuk, piviunngitsoq"
+    },
+    {
+      "id": "sem_Hnat",
+      "code": "Hnat",
+      "english": "Human, nationality",
+      "danish": "Menneske, nationalitet",
+      "kalaallisut": "Inuk, kinaassuseq"
+    },
+    {
+      "id": "sem_Hprof",
+      "code": "Hprof",
+      "english": "Human, profession",
+      "danish": "Menneske, profession",
+      "kalaallisut": "Inuk, atorfik"
+    },
+    {
+      "id": "sem_Hsick",
+      "code": "Hsick",
+      "english": "Human, sick",
+      "danish": "Menneske, syg/sygdom",
+      "kalaallisut": "Inuk, nappaat"
+    },
+    {
+      "id": "sem_Htit",
+      "code": "Htit",
+      "english": "Human, title",
+      "danish": "Menneske, titel",
+      "kalaallisut": "Inuk, taaguut"
+    },
+    {
+      "id": "sem_L",
+      "code": "L",
+      "english": "Location",
+      "danish": "Sted/placering/beliggenhed",
+      "kalaallisut": "Sumiiffik"
+    },
+    {
+      "id": "sem_La",
+      "code": "La",
+      "english": "Location, animal",
+      "danish": "Sted/placering/beliggenhed, dyr",
+      "kalaallisut": "Sumiiffik, uumasoq"
+    },
+    {
+      "id": "sem_Labs",
+      "code": "Labs",
+      "english": "Location, abstract",
+      "danish": "Sted/placering/beliggenhed, abstrakt",
+      "kalaallisut": "Sumiiffik, timitaqanngitsoq"
+    },
+    {
+      "id": "sem_Lbar",
+      "code": "Lbar",
+      "english": "Location, barrier",
+      "danish": "Sted/placering/beliggenhed, barriere",
+      "kalaallisut": "Sumiiffik, assiaqut/akimmiffik"
+    },
+    {
+      "id": "sem_Lciv",
+      "code": "Lciv",
+      "english": "Location, civilized",
+      "danish": "Sted/placering/beliggenhed, civiliseret",
+      "kalaallisut": "Sumiiffik, atugartuunngorsarsimasoq"
+    },
+    {
+      "id": "sem_Lcountry",
+      "code": "Lcountry",
+      "english": "Location, country",
+      "danish": "Sted/placering/beliggenhed, land",
+      "kalaallisut": "Sumiiffik, nuna"
+    },
+    {
+      "id": "sem_Lcover",
+      "code": "Lcover",
+      "english": "Location, cover, lid",
+      "danish": "Sted/placering/beliggenhed, dækning, låg",
+      "kalaallisut": "Sumiiffik, assiaqut, qalequt/matuliussaq"
+    },
+    {
+      "id": "sem_Ldoor",
+      "code": "Ldoor",
+      "english": "Location, door",
+      "danish": "Sted/placering/beliggenhed, dør",
+      "kalaallisut": "Sumiiffik, matu"
+    },
+    {
+      "id": "sem_Lh",
+      "code": "Lh",
+      "english": "Location, functional",
+      "danish": "Sted/placering/beliggenhed, funktionel",
+      "kalaallisut": "Sumiiffik, atuuffimmut aalajangersimasumut atortussatut tulluarsagaq"
+    },
+    {
+      "id": "sem_Lisland",
+      "code": "Lisland",
+      "english": "Location, island",
+      "danish": "Sted/placering/beliggenhed, ø",
+      "kalaallisut": "Sumiiffik, qeqertaq"
+    },
+    {
+      "id": "sem_Llake",
+      "code": "Llake",
+      "english": "Location, lake",
+      "danish": "Sted/placering/beliggenhed, sø",
+      "kalaallisut": "Sumiiffik, taseq"
+    },
+    {
+      "id": "sem_Lmountain",
+      "code": "Lmountain",
+      "english": "Location, mountain",
+      "danish": "Sted/placering/beliggenhed, bjerg",
+      "kalaallisut": "Sumiiffik, qaqqaq"
+    },
+    {
+      "id": "sem_Lmyth",
+      "code": "Lmyth",
+      "english": "Location, mythological",
+      "danish": "Sted/placering/beliggenhed, mytologisk",
+      "kalaallisut": "Sumiiffik, piviunngitsoq"
+    },
+    {
+      "id": "sem_Lopening",
+      "code": "Lopening",
+      "english": "Location, opening",
+      "danish": "Sted/placering/beliggenhed, åbning/hul",
+      "kalaallisut": "Sumiiffik, ammaneq"
+    },
+    {
+      "id": "sem_Lpath",
+      "code": "Lpath",
+      "english": "Location, path, road",
+      "danish": "Sted/placering/beliggenhed, sti, vej",
+      "kalaallisut": "Sumiiffik, aqqusininnguaq, aqqusineq"
+    },
+    {
+      "id": "sem_Lregion",
+      "code": "Lregion",
+      "english": "Location, region",
+      "danish": "Sted/placering/beliggenhed, region",
+      "kalaallisut": "Sumiiffik, nunap immikkoortua"
+    },
+    {
+      "id": "sem_Lriver",
+      "code": "Lriver",
+      "english": "Location, river",
+      "danish": "Sted/placering/beliggenhed, flod/vandløb",
+      "kalaallisut": "Sumiiffik, kuuk"
+    },
+    {
+      "id": "sem_Lsem",
+      "code": "Lsem",
+      "english": "Location, semantic",
+      "danish": "Sted/placering/beliggenhed, semantisk betydningsmæssig",
+      "kalaallisut": "Sumiiffik, oqaatsip isumaanut tunngasoq"
+    },
+    {
+      "id": "sem_Lsoc",
+      "code": "Lsoc",
+      "english": "Location, social",
+      "danish": "Sted/placering/beliggenhed, social/samfund",
+      "kalaallisut": "Sumiiffik, inoqatigiinnut tunngasoq"
+    },
+    {
+      "id": "sem_Lstar",
+      "code": "Lstar",
+      "english": "Location, astronomical",
+      "danish": "Sted/placering/beliggenhed, astronomisk",
+      "kalaallisut": "Sumiiffik, ulloriarsiornermut tunngasoq"
+    },
+    {
+      "id": "sem_Lsurf",
+      "code": "Lsurf",
+      "english": "Location, surface",
+      "danish": "Sted/placering/beliggenhed, overflade",
+      "kalaallisut": "Sumiiffik, qaaq"
+    },
+    {
+      "id": "sem_Ltip",
+      "code": "Ltip",
+      "english": "Location, tip, edge",
+      "danish": "Sted/placering/beliggenhed, spids, udkant",
+      "kalaallisut": "Sumiiffik, nuua, sini"
+    },
+    {
+      "id": "sem_Ltop",
+      "code": "Ltop",
+      "english": "Location, topological",
+      "danish": "Sted/placering/beliggenhed, topologisk",
+      "kalaallisut": "Sumiiffik, pissuseq/iluseq"
+    },
+    {
+      "id": "sem_Ltown",
+      "code": "Ltown",
+      "english": "Location, town/city",
+      "danish": "Sted/placering/beliggenhed, by",
+      "kalaallisut": "Sumiiffik, illoqarfik"
+    },
+    {
+      "id": "sem_Ltrap",
+      "code": "Ltrap",
+      "english": "Location, trap",
+      "danish": "Sted/placering/beliggenhed, fælde",
+      "kalaallisut": "Sumiiffik, pullat"
+    },
+    {
+      "id": "sem_Lwater",
+      "code": "Lwater",
+      "english": "Location, water",
+      "danish": "Sted/placering/beliggenhed, vand/hav",
+      "kalaallisut": "Sumiiffik, imeq/imaq"
+    },
+    {
+      "id": "sem_UNK",
+      "code": "UNK",
+      "english": "Unknown",
+      "danish": "Ukendt",
+      "kalaallisut": "Ilisimaneqanngitsoq"
+    },
+    {
+      "id": "sem_V",
+      "code": "V",
+      "english": "Vehicle",
+      "danish": "Køretøj",
+      "kalaallisut": "Qamut/angallat"
+    },
+    {
+      "id": "sem_V.1.1",
+      "code": "V.1.1",
+      "english": ":be_copula, Be",
+      "danish": ":være_kopula, Være",
+      "kalaallisut": ":suuvoq_susoq oqaluutinngortitaq, Ippoq/-uvoq"
+    },
+    {
+      "id": "sem_V.1.2",
+      "code": "V.1.2",
+      "english": ":be_place, Be",
+      "danish": ":befinde_sig, Være",
+      "kalaallisut": ":inissisimavoq, Ippoq"
+    },
+    {
+      "id": "sem_V.1.3",
+      "code": "V.1.3",
+      "english": ":consist, Be",
+      "danish": ":indeholde, Være",
+      "kalaallisut": ":imaqarpoq, Ippoq"
+    },
+    {
+      "id": "sem_V.1.4",
+      "code": "V.1.4",
+      "english": ":be_name, Be",
+      "danish": ":hedde, Være",
+      "kalaallisut": ":ateqarpoq/taaguuteqarpoq, Ippoq/-uvoq"
+    },
+    {
+      "id": "sem_V.1.5",
+      "code": "V.1.5",
+      "english": ":be_part, Be",
+      "danish": ":være en del af, Være",
+      "kalaallisut": ":ilaavoq, Ippoq/-uvoq"
+    },
+    {
+      "id": "sem_V.1.6",
+      "code": "V.1.6",
+      "english": ":be_like, Be",
+      "danish": ":være som, Være",
+      "kalaallisut": ":assinguvoq, Ippoq"
+    },
+    {
+      "id": "sem_V.1.7.1",
+      "code": "V.1.7.1",
+      "english": ":be_attribute, Be",
+      "danish": ":karakterisere, Være",
+      "kalaallisut": ":ilisarnaatigaa, Ippoq"
+    },
+    {
+      "id": "sem_V.1.7.2",
+      "code": "V.1.7.2",
+      "english": ":be_valid, Be",
+      "danish": ":gælde, Være",
+      "kalaallisut": ":atuuppoq, Ippoq/-uvoq"
+    },
+    {
+      "id": "sem_V.1.8.1",
+      "code": "V.1.8.1",
+      "english": ":abound, Be",
+      "danish": ":være rigelig af, Være",
+      "kalaallisut": ":peqarluarpoq, Ippoq"
+    },
+    {
+      "id": "sem_V.1.8.2",
+      "code": "V.1.8.2",
+      "english": ":lack_itr, Be",
+      "danish": ":mangle, Være",
+      "kalaallisut": ":amigarpoq, Ippoq"
+    },
+    {
+      "id": "sem_V.10.1.1",
+      "code": "V.10.1.1",
+      "english": ":remove, Remove",
+      "danish": ":fjerne, Fjernelse",
+      "kalaallisut": ":peerpaa, Peersineq"
+    },
+    {
+      "id": "sem_V.10.1.2",
+      "code": "V.10.1.2",
+      "english": ":exclude, Remove",
+      "danish": ":ekskludere, Fjernelse",
+      "kalaallisut": ":minippaa, Peersineq"
+    },
+    {
+      "id": "sem_V.10.1.3",
+      "code": "V.10.1.3",
+      "english": ":come_off, Remove",
+      "danish": ":komme_af, Fjernelse",
+      "kalaallisut": ":katappoq, Peersineq"
+    },
+    {
+      "id": "sem_V.10.10",
+      "code": "V.10.10",
+      "english": ":unhire, Remove",
+      "danish": ":opsige, Fjernelse",
+      "kalaallisut": ":soraarsippaa, Peersineq"
+    },
+    {
+      "id": "sem_V.10.11.1",
+      "code": "V.10.11.1",
+      "english": ":resign, Remove",
+      "danish": ":fratræde, Fjernelse",
+      "kalaallisut": ":soraarpoq, Peersineq"
+    },
+    {
+      "id": "sem_V.10.11.2",
+      "code": "V.10.11.2",
+      "english": ":renounce, Remove",
+      "danish": ":renoncere, Fjernelse",
+      "kalaallisut": ":taamaatippaa, Peersineq"
+    },
+    {
+      "id": "sem_V.10.2",
+      "code": "V.10.2",
+      "english": ":banish, Remove",
+      "danish": ":forvise, Fjernelse",
+      "kalaallisut": ":qimagutitippaa, Peersineq"
+    },
+    {
+      "id": "sem_V.10.3",
+      "code": "V.10.3",
+      "english": ":empty, Remove",
+      "danish": ":tømme, Fjernelse",
+      "kalaallisut": ":imaarpaa, Peersineq"
+    },
+    {
+      "id": "sem_V.10.4.1",
+      "code": "V.10.4.1",
+      "english": ":wipe, Remove",
+      "danish": ":tørre, Fjernelse",
+      "kalaallisut": ":allarterpaa, Peersineq"
+    },
+    {
+      "id": "sem_V.10.4.4",
+      "code": "V.10.4.4",
+      "english": ":clean, Remove",
+      "danish": ":rengøre, Fjernelse",
+      "kalaallisut": ":asappaa, Peersineq"
+    },
+    {
+      "id": "sem_V.10.4.5",
+      "code": "V.10.4.5",
+      "english": ":suck, Remove",
+      "danish": ":sutte, Fjernelse",
+      "kalaallisut": ":milluarpaa, Peersineq"
+    },
+    {
+      "id": "sem_V.10.5",
+      "code": "V.10.5",
+      "english": ":steal, Remove",
+      "danish": ":stjæle, Fjernelse",
+      "kalaallisut": ":tillippaa, Peersineq"
+    },
+    {
+      "id": "sem_V.10.6.1",
+      "code": "V.10.6.1",
+      "english": ":rid, Remove",
+      "danish": ":afskaffe/slippe_af_med, Fjernelse",
+      "kalaallisut": ":atorunnaarsippaa/iperarpaa/peerpaa, Peersineq"
+    },
+    {
+      "id": "sem_V.10.6.2",
+      "code": "V.10.6.2",
+      "english": ":cheat, Remove",
+      "danish": ":snyde, Fjernelse",
+      "kalaallisut": ":pututippaa/peqquserluffigaa, Peersineq"
+    },
+    {
+      "id": "sem_V.10.6.3",
+      "code": "V.10.6.3",
+      "english": ":exonerate, Remove",
+      "danish": ":fritage, Fjernelse",
+      "kalaallisut": ":pisussaajunnaarsippaa/pinngitsoortippaa, Peersineq"
+    },
+    {
+      "id": "sem_V.10.7",
+      "code": "V.10.7",
+      "english": ":peel, Remove",
+      "danish": ":skrælle, Fjernelse",
+      "kalaallisut": ":qalipaajarpaa/qalliutaarpaa, Peersineq"
+    },
+    {
+      "id": "sem_V.10.9",
+      "code": "V.10.9",
+      "english": ":mine, Remove",
+      "danish": ":mine, Fjernelse",
+      "kalaallisut": ":piiarpaa_piiaaffik/mine, Peersineq"
+    },
+    {
+      "id": "sem_V.100.1",
+      "code": "V.100.1",
+      "english": ":own, Misc",
+      "danish": ":eje, Diverse",
+      "kalaallisut": ":pigaa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.100.2",
+      "code": "V.100.2",
+      "english": ":belong_to, Misc",
+      "danish": ":tilhøre, Diverse",
+      "kalaallisut": ":pigineqarpoq, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.101",
+      "code": "V.101",
+      "english": ":patent, Misc",
+      "danish": ":patentere, Diverse",
+      "kalaallisut": ":pantenteqarfigaa/kisermaassisussaatitaaffigaa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.102",
+      "code": "V.102",
+      "english": ":promote, Misc",
+      "danish": ":promovere, Diverse",
+      "kalaallisut": ":saqqummiuppaa/siammarsarpaa, Diverse "
+    },
+    {
+      "id": "sem_V.103",
+      "code": "V.103",
+      "english": ":require, Misc",
+      "danish": ":kræve, Diverse",
+      "kalaallisut": ":piumasaraa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.104",
+      "code": "V.104",
+      "english": ":spend_time, Misc",
+      "danish": ":bruge_tid, Diverse",
+      "kalaallisut": ":atorpaa_piffissaq, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.105.1",
+      "code": "V.105.1",
+      "english": ":use, Misc",
+      "danish": ":bruge, Diverse",
+      "kalaallisut": ":atorpaa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.105.3",
+      "code": "V.105.3",
+      "english": ":serve_to, Misc",
+      "danish": ":servicere/betjene, Diverse",
+      "kalaallisut": ":sullippaa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.106",
+      "code": "V.106",
+      "english": ":void, Misc",
+      "danish": ":udlede, Diverse",
+      "kalaallisut": ":aniatippaa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.107.1",
+      "code": "V.107.1",
+      "english": ":include, Misc",
+      "danish": ":inkludere, Diverse",
+      "kalaallisut": ":ilaatippaa/ilannguppa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.107.2",
+      "code": "V.107.2",
+      "english": ":involve, Misc",
+      "danish": ":involvere, Diverse",
+      "kalaallisut": ":akuutippaa/akuliutsippaa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.108",
+      "code": "V.108",
+      "english": ":math, Misc",
+      "danish": ":beregne, Diverse",
+      "kalaallisut": ":kisippaa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.11.1.1",
+      "code": "V.11.1.1",
+      "english": ":transfer, Take/Bring",
+      "danish": ":flytte, Tage/Bringe",
+      "kalaallisut": ":nuuppaa/nuutsippaa, Tiguaa/Aappaa"
+    },
+    {
+      "id": "sem_V.11.1.2",
+      "code": "V.11.1.2",
+      "english": ":send, Take/Bring",
+      "danish": ":sende, Tage/Bringe",
+      "kalaallisut": ":nassiuppaa/aallartippaa, Tiguaa/Aappaa"
+    },
+    {
+      "id": "sem_V.11.2",
+      "code": "V.11.2",
+      "english": ":moveO, Take/Bring",
+      "danish": ":flytte_objektet, Tage/Bringe",
+      "kalaallisut": ":nuuppaa/nuutsippaa_susaq, Tiguaa/Aappaa"
+    },
+    {
+      "id": "sem_V.11.3.1",
+      "code": "V.11.3.1",
+      "english": ":take, Take/Bring",
+      "danish": ":tage, Tage/Bringe",
+      "kalaallisut": ":tiguaa, Tiguaa/Aappaa"
+    },
+    {
+      "id": "sem_V.11.3.2",
+      "code": "V.11.3.2",
+      "english": ":bring, Take/Bring",
+      "danish": ":bringe, Tage/Bringe",
+      "kalaallisut": ":aappaa, Tiguaa/Aappaa"
+    },
+    {
+      "id": "sem_V.11.4",
+      "code": "V.11.4",
+      "english": ":carry, Take/Bring",
+      "danish": ":bære, Tage/Bringe",
+      "kalaallisut": ":tigumiarpaa/nammappaa/ersuppaa, Tiguaa/Aappaa"
+    },
+    {
+      "id": "sem_V.11.5",
+      "code": "V.11.5",
+      "english": ":transport, Take/Bring",
+      "danish": ":transportere, Tage/Bringe",
+      "kalaallisut": ":angallappaa, Tiguaa/Aappaa"
+    },
+    {
+      "id": "sem_V.12.1",
+      "code": "V.12.1",
+      "english": ":pull, Pull/Push",
+      "danish": ":trække, Trække/Skubbe",
+      "kalaallisut": ":nusuppaa, Nusuppaa/Ajappaa"
+    },
+    {
+      "id": "sem_V.12.2",
+      "code": "V.12.2",
+      "english": ":push, Pull/Push",
+      "danish": ":skubbe, Trække/Skubbe",
+      "kalaallisut": ":ajappaa, Nusuppaa/Ajappaa"
+    },
+    {
+      "id": "sem_V.13.1.1",
+      "code": "V.13.1.1",
+      "english": ":give, Give/Get",
+      "danish": ":give, Give/Få",
+      "kalaallisut": ":tunniuppaa, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.1.2",
+      "code": "V.13.1.2",
+      "english": ":sell, Give/Get",
+      "danish": ":sælge, Give/Få",
+      "kalaallisut": ":tunivaa, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.1.3",
+      "code": "V.13.1.3",
+      "english": ":accrue_to, Give/Get",
+      "danish": ":tilfalder, Give/Få",
+      "kalaallisut": ":pivaa, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.2.1",
+      "code": "V.13.2.1",
+      "english": ":contribute, Give/Get",
+      "danish": ":bidrage, Give/Få",
+      "kalaallisut": ":ilanngussivoq/tapersiivoq, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.2.2",
+      "code": "V.13.2.2",
+      "english": ":salary, Give/Get",
+      "danish": ":lønne, Give/Få",
+      "kalaallisut": ":akissarsisippaa/akissarsivoq, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.3",
+      "code": "V.13.3",
+      "english": ":future_having, Give/Get",
+      "danish": ":fremtid_at have, Give/Få",
+      "kalaallisut": ":pissarsiassaraa, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.4.1",
+      "code": "V.13.4.1",
+      "english": ":supply, Give/Get",
+      "danish": ":forsyne, Give/Få",
+      "kalaallisut": ":pilersorpaa, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.4.2",
+      "code": "V.13.4.2",
+      "english": ":equip, Give/Get",
+      "danish": ":udstyre, Give/Få",
+      "kalaallisut": ":pilersorpaa_atortussaq, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.4.3",
+      "code": "V.13.4.3",
+      "english": ":man, Give/Get",
+      "danish": ":bemande, Give/Få",
+      "kalaallisut": ":inuttalerpaa, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.4.4",
+      "code": "V.13.4.4",
+      "english": ":burden, Give/Get",
+      "danish": ":bebyrde, Give/Få",
+      "kalaallisut": ":pisarissersorpaa, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.5.1",
+      "code": "V.13.5.1",
+      "english": ":buy, Give/Get",
+      "danish": ":købe, Give/Få",
+      "kalaallisut": ":pisiaraa, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.5.2.1",
+      "code": "V.13.5.2.1",
+      "english": ":gain, Give/Get",
+      "danish": ":vinde/opnå, Give/Få",
+      "kalaallisut": ":pissarsiaraa/anguaa, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.5.2.2",
+      "code": "V.13.5.2.2",
+      "english": ":obtain, Give/Get",
+      "danish": ":få/opnå, Give/Få",
+      "kalaallisut": ":pivaa/anguaa, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.5.3",
+      "code": "V.13.5.3",
+      "english": ":employ, Give/Get",
+      "danish": ":beskæftige/ansætte, Give/Få",
+      "kalaallisut": ":atorfinitsippaa, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.5.4",
+      "code": "V.13.5.4",
+      "english": ":get, Give/Get",
+      "danish": ":få, Give/Få",
+      "kalaallisut": ":pivaa, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.5.5",
+      "code": "V.13.5.5",
+      "english": ":lose, Give/Get",
+      "danish": ":tabe, Give/Få",
+      "kalaallisut": ":annaavaa, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.5.6",
+      "code": "V.13.5.6",
+      "english": ":cause_gain, Give/Get",
+      "danish": ":forårsage_opnå, Give/Få",
+      "kalaallisut": ":pitippaa_anguaa, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.6",
+      "code": "V.13.6",
+      "english": ":exchange, Give/Get",
+      "danish": ":udveksle, Give/Få",
+      "kalaallisut": ":paarlaasseqatigaa, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.6.2",
+      "code": "V.13.6.2",
+      "english": ":trade, Give/Get",
+      "danish": ":handle, Give/Få",
+      "kalaallisut": ":niueqatigaa, Tunniussineq/Pissarsineq"
+    },
+    {
+      "id": "sem_V.13.7",
+      "code": "V.13.7",
+      "english": ":berry, Give/Get",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.14.1.1",
+      "code": "V.14.1.1",
+      "english": ":learn, Learn",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.14.1.2",
+      "code": "V.14.1.2",
+      "english": ":study, Learn",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.14.2",
+      "code": "V.14.2",
+      "english": ":get_to_know, Learn",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.14.3",
+      "code": "V.14.3",
+      "english": ":forget, Learn",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.14.4",
+      "code": "V.14.4",
+      "english": ":check_if, Learn",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.14.5",
+      "code": "V.14.5",
+      "english": ":read, Learn",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.15.1.1",
+      "code": "V.15.1.1",
+      "english": ":hold, Handle",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.15.1.2",
+      "code": "V.15.1.2",
+      "english": ":grasp, Handle",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.15.2",
+      "code": "V.15.2",
+      "english": ":keep, Handle",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.15.3",
+      "code": "V.15.3",
+      "english": ":handle, Handle",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.16",
+      "code": "V.16",
+      "english": ":hide, Hide",
+      "danish": ":gemme, Gemme",
+      "kalaallisut": ":toqqorpaa, Toqqorsineq"
+    },
+    {
+      "id": "sem_V.17.1",
+      "code": "V.17.1",
+      "english": ":throw, Throw",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.17.2",
+      "code": "V.17.2",
+      "english": ":pelt, Throw",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.17.3",
+      "code": "V.17.3",
+      "english": ":discard, Throw",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.18.1.1",
+      "code": "V.18.1.1",
+      "english": ":hit, Hit",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.18.1.2",
+      "code": "V.18.1.2",
+      "english": ":beat, Hit",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.18.1.3",
+      "code": "V.18.1.3",
+      "english": ":hit_goal, Hit",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.18.2",
+      "code": "V.18.2",
+      "english": ":hurt, Hit",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.18.3",
+      "code": "V.18.3",
+      "english": ":spank, Hit",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.18.4",
+      "code": "V.18.4",
+      "english": ":bump, Hit",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.19",
+      "code": "V.19",
+      "english": ":poke, Touch",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.2.1",
+      "code": "V.2.1",
+      "english": ":become, Become",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.2.3",
+      "code": "V.2.3",
+      "english": ":become_be, Become",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.2.4",
+      "code": "V.2.4",
+      "english": ":become_part, Become",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.2.5",
+      "code": "V.2.5",
+      "english": ":get_part, Become",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.20.1",
+      "code": "V.20.1",
+      "english": ":touch, Touch",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.20.2",
+      "code": "V.20.2",
+      "english": ":touch_exp, Touch",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.21.1",
+      "code": "V.21.1",
+      "english": ":cut, Cut",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.21.2.1",
+      "code": "V.21.2.1",
+      "english": ":crush, Cut",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.21.2.2",
+      "code": "V.21.2.2",
+      "english": ":perforate, Cut",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.21.2.3",
+      "code": "V.21.2.3",
+      "english": ":prune, Cut",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.22.1.1",
+      "code": "V.22.1.1",
+      "english": ":combine, Combine",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.22.1.2",
+      "code": "V.22.1.2",
+      "english": ":add, Combine",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.22.1.3",
+      "code": "V.22.1.3",
+      "english": ":absorb, Combine",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.22.1.4",
+      "code": "V.22.1.4",
+      "english": ":connect, Combine",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.22.2.1",
+      "code": "V.22.2.1",
+      "english": ":integrate, Combine",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.22.2.2",
+      "code": "V.22.2.2",
+      "english": ":associate, Combine",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.22.2.3",
+      "code": "V.22.2.3",
+      "english": ":contrast, Combine",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.22.2.4.1",
+      "code": "V.22.2.4.1",
+      "english": ":link_soc, Combine",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.22.2.4.2",
+      "code": "V.22.2.4.2",
+      "english": ":register, Combine",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.22.2.5",
+      "code": "V.22.2.5",
+      "english": ":exempt, Combine",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.22.3.1",
+      "code": "V.22.3.1",
+      "english": ":scramble, Combine",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.22.3.2",
+      "code": "V.22.3.2",
+      "english": ":group, Combine",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.22.3.3",
+      "code": "V.22.3.3",
+      "english": ":bond, Combine",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.22.4",
+      "code": "V.22.4",
+      "english": ":fasten, Combine",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.22.5",
+      "code": "V.22.5",
+      "english": ":cling, Combine",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.23.1.1",
+      "code": "V.23.1.1",
+      "english": ":separate, Separate",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.23.1.2",
+      "code": "V.23.1.2",
+      "english": ":divide, Separate",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.23.2",
+      "code": "V.23.2",
+      "english": ":split, Separate",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.23.3",
+      "code": "V.23.3",
+      "english": ":unattach, Separate",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.23.4",
+      "code": "V.23.4",
+      "english": ":differ, Separate",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.24.1",
+      "code": "V.24.1",
+      "english": ":colouring, Color",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.24.2",
+      "code": "V.24.2",
+      "english": ":lighting, Color",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.25.1",
+      "code": "V.25.1",
+      "english": ":mark, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.25.2.1",
+      "code": "V.25.2.1",
+      "english": ":write, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.25.2.2",
+      "code": "V.25.2.2",
+      "english": ":note, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.25.3",
+      "code": "V.25.3",
+      "english": ":label, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.25.4",
+      "code": "V.25.4",
+      "english": ":transcribe, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.25.5",
+      "code": "V.25.5",
+      "english": ":imitate, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.1",
+      "code": "V.26.1",
+      "english": ":make, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.10",
+      "code": "V.26.10",
+      "english": ":process, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.2.1",
+      "code": "V.26.2.1",
+      "english": ":grow, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.2.2",
+      "code": "V.26.2.2",
+      "english": ":breed, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.2.3",
+      "code": "V.26.2.3",
+      "english": ":cultivate, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.3.1",
+      "code": "V.26.3.1",
+      "english": ":create_food, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.3.2",
+      "code": "V.26.3.2",
+      "english": ":prepare_food, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.3.3",
+      "code": "V.26.3.3",
+      "english": ":prepare, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.4.1",
+      "code": "V.26.4.1",
+      "english": ":create, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.4.2",
+      "code": "V.26.4.2",
+      "english": ":create_finish, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.4.3",
+      "code": "V.26.4.3",
+      "english": ":create_semantic, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.5.1",
+      "code": "V.26.5.1",
+      "english": ":shape, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.5.2",
+      "code": "V.26.5.2",
+      "english": ":deflect, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.6.1",
+      "code": "V.26.6.1",
+      "english": ":turn_into, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.6.2",
+      "code": "V.26.6.2",
+      "english": ":convert, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.6.3",
+      "code": "V.26.6.3",
+      "english": ":modify, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.7",
+      "code": "V.26.7",
+      "english": ":perform, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.8",
+      "code": "V.26.8",
+      "english": ":rehearse, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.26.9",
+      "code": "V.26.9",
+      "english": ":adjust, Make",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.27.1",
+      "code": "V.27.1",
+      "english": ":cause, Cause",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.27.2",
+      "code": "V.27.2",
+      "english": ":interact, Cause",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.27.4",
+      "code": "V.27.4",
+      "english": ":implement, Cause",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.28",
+      "code": "V.28",
+      "english": ":spawn, Spawn",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.1.1",
+      "code": "V.29.1.1",
+      "english": ":appoint, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.1.2",
+      "code": "V.29.1.2",
+      "english": ":predestine, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.10",
+      "code": "V.29.10",
+      "english": ":classify, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.12.1",
+      "code": "V.29.12.1",
+      "english": ":decide, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.12.2",
+      "code": "V.29.12.2",
+      "english": ":choose, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.2.1",
+      "code": "V.29.2.1",
+      "english": ":characterize, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.2.2",
+      "code": "V.29.2.2",
+      "english": ":portray, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.3",
+      "code": "V.29.3",
+      "english": ":name, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.4.1",
+      "code": "V.29.4.1",
+      "english": ":declare, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.4.2",
+      "code": "V.29.4.2",
+      "english": ":declare_oc, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.4.3",
+      "code": "V.29.4.3",
+      "english": ":proclaim, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.5.1",
+      "code": "V.29.5.1",
+      "english": ":assume, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.5.2",
+      "code": "V.29.5.2",
+      "english": ":predict, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.6.1",
+      "code": "V.29.6.1",
+      "english": ":behave, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.6.2",
+      "code": "V.29.6.2",
+      "english": ":role_as, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.7",
+      "code": "V.29.7",
+      "english": ":role_oc, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.8",
+      "code": "V.29.8",
+      "english": ":role_sc, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.9.1",
+      "code": "V.29.9.1",
+      "english": ":know, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.9.2",
+      "code": "V.29.9.2",
+      "english": ":think, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.9.3",
+      "code": "V.29.9.3",
+      "english": ":regard_as, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.29.9.4",
+      "code": "V.29.9.4",
+      "english": ":remember, Cognitive Making",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.3.0",
+      "code": "V.3.0",
+      "english": ":do, Do",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.3.1.1",
+      "code": "V.3.1.1",
+      "english": ":work, Do",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.3.1.2",
+      "code": "V.3.1.2",
+      "english": ":work_as, Do",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.3.1.3",
+      "code": "V.3.1.3",
+      "english": ":work_for, Do",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.3.2",
+      "code": "V.3.2",
+      "english": ":function, Do",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.3.3",
+      "code": "V.3.3",
+      "english": ":do_leisure, Do",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.3.4",
+      "code": "V.3.4",
+      "english": ":take_action, Do",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.3.5",
+      "code": "V.3.5",
+      "english": ":resist, Do",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.3.6",
+      "code": "V.3.6",
+      "english": ":train, Do",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.30.1.1",
+      "code": "V.30.1.1",
+      "english": ":see, Percieve",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.30.1.2",
+      "code": "V.30.1.2",
+      "english": ":hear, Percieve",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.30.1.3",
+      "code": "V.30.1.3",
+      "english": ":sense, Percieve",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.30.1.4",
+      "code": "V.30.1.4",
+      "english": ":undergo, Percieve",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.30.2",
+      "code": "V.30.2",
+      "english": ":notice, Percieve",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.30.3.1",
+      "code": "V.30.3.1",
+      "english": ":watch, Percieve",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.30.3.2",
+      "code": "V.30.3.2",
+      "english": ":listen, Percieve",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.30.3.3",
+      "code": "V.30.3.3",
+      "english": ":percep, Percieve",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.30.4",
+      "code": "V.30.4",
+      "english": ":stimulus_subj, Percieve",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.31.1",
+      "code": "V.31.1",
+      "english": ":affect_exp, Emote",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.31.2",
+      "code": "V.31.2",
+      "english": ":emote_obj, Emote",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.31.2.1",
+      "code": "V.31.2.1",
+      "english": ":like, Emote",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.31.2.2",
+      "code": "V.31.2.2",
+      "english": ":dislike, Emote",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.31.2.3",
+      "code": "V.31.2.3",
+      "english": ":obey, Emote",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.31.2.4",
+      "code": "V.31.2.4",
+      "english": ":disobey, Emote",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.31.3.1",
+      "code": "V.31.3.1",
+      "english": ":emote, Emote",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.31.3.4",
+      "code": "V.31.3.4",
+      "english": ":suffer, Emote",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.31.3.8",
+      "code": "V.31.3.8",
+      "english": ":marvel, Emote",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.31.4.2",
+      "code": "V.31.4.2",
+      "english": ":repel, Emote",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.31.5",
+      "code": "V.31.5",
+      "english": ":attract, Emote",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.32.1.1",
+      "code": "V.32.1.1",
+      "english": ":wish, Want",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.32.1.2",
+      "code": "V.32.1.2",
+      "english": ":prefer_to, Want",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.32.1.3",
+      "code": "V.32.1.3",
+      "english": ":prefer_oc, Want",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.32.2",
+      "code": "V.32.2",
+      "english": ":long, Want",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.33.1",
+      "code": "V.33.1",
+      "english": ":judge, Judge",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.33.2",
+      "code": "V.33.2",
+      "english": ":accuse, Judge",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.33.3",
+      "code": "V.33.3",
+      "english": ":praise, Judge",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.33.4",
+      "code": "V.33.4",
+      "english": ":speak_affect, Judge",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.34",
+      "code": "V.34",
+      "english": ":analyze, Judge",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.35.1.1",
+      "code": "V.35.1.1",
+      "english": ":hunt, Hunt",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.35.1.2",
+      "code": "V.35.1.2",
+      "english": ":capture, Hunt",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.35.2",
+      "code": "V.35.2",
+      "english": ":search, Hunt",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.35.4",
+      "code": "V.35.4",
+      "english": ":investigate, Hunt",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.35.5",
+      "code": "V.35.5",
+      "english": ":rummage, Hunt",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.36.1",
+      "code": "V.36.1",
+      "english": ":socialize, Socialize",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.36.2",
+      "code": "V.36.2",
+      "english": ":socializeO, Socialize",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.36.3.1",
+      "code": "V.36.3.1",
+      "english": ":play, Socialize",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.36.3.3",
+      "code": "V.36.3.3",
+      "english": ":encounter, Socialize",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.36.4.1",
+      "code": "V.36.4.1",
+      "english": ":fight, Socialize",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.36.4.2",
+      "code": "V.36.4.2",
+      "english": ":dispute, Socialize",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.1.1.1",
+      "code": "V.37.1.1.1",
+      "english": ":explain, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.1.1.2",
+      "code": "V.37.1.1.2",
+      "english": ":quote, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.1.1.3",
+      "code": "V.37.1.1.3",
+      "english": ":dedicate, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.1.2",
+      "code": "V.37.1.2",
+      "english": ":inquire, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.1.3",
+      "code": "V.37.1.3",
+      "english": ":interrogate, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.1.4",
+      "code": "V.37.1.4",
+      "english": ":teach, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.10",
+      "code": "V.37.10",
+      "english": ":concede, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.11",
+      "code": "V.37.11",
+      "english": ":elaborate, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.12",
+      "code": "V.37.12",
+      "english": ":emphasize, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.13",
+      "code": "V.37.13",
+      "english": ":promise, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.14",
+      "code": "V.37.14",
+      "english": ":invoke, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.15",
+      "code": "V.37.15",
+      "english": ":reveal, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.2.1",
+      "code": "V.37.2.1",
+      "english": ":tell, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.2.2",
+      "code": "V.37.2.2",
+      "english": ":identify, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.3",
+      "code": "V.37.3",
+      "english": ":speak_mnr, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.4",
+      "code": "V.37.4",
+      "english": ":speak_tool, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.5",
+      "code": "V.37.5",
+      "english": ":talk, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.6",
+      "code": "V.37.6",
+      "english": ":discuss, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.7.1",
+      "code": "V.37.7.1",
+      "english": ":say, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.7.2",
+      "code": "V.37.7.2",
+      "english": ":suggest, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.7.3",
+      "code": "V.37.7.3",
+      "english": ":hint, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.7.4",
+      "code": "V.37.7.4",
+      "english": ":answer, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.7.5",
+      "code": "V.37.7.5",
+      "english": ":refuse, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.7.6",
+      "code": "V.37.7.6",
+      "english": ":advertise, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.7.7",
+      "code": "V.37.7.7",
+      "english": ":lie, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.8",
+      "code": "V.37.8",
+      "english": ":speak_emot, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.37.9",
+      "code": "V.37.9",
+      "english": ":advise, Talk",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.38",
+      "code": "V.38",
+      "english": ":sound_biocom, Body",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.39.1.1",
+      "code": "V.39.1.1",
+      "english": ":eat, Eat",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.39.1.2",
+      "code": "V.39.1.2",
+      "english": ":drink, Eat",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.39.1.3",
+      "code": "V.39.1.3",
+      "english": ":booze, Eat",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.39.2",
+      "code": "V.39.2",
+      "english": ":chew, Eat",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.39.4",
+      "code": "V.39.4",
+      "english": ":swallow, Eat",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.39.5",
+      "code": "V.39.5",
+      "english": ":dine, Eat",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.39.6",
+      "code": "V.39.6",
+      "english": ":thrive, Eat",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.39.7",
+      "code": "V.39.7",
+      "english": ":feed, Eat",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.39.8",
+      "code": "V.39.8",
+      "english": ":digest, Eat",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.40.1.1",
+      "code": "V.40.1.1",
+      "english": ":sound_body, Body",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.40.1.2",
+      "code": "V.40.1.2",
+      "english": ":excrete, Body",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.40.1.3",
+      "code": "V.40.1.3",
+      "english": ":breathe, Body",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.40.2",
+      "code": "V.40.2",
+      "english": ":show_emot, Body",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.40.3.1",
+      "code": "V.40.3.1",
+      "english": ":gesture, Body",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.40.3.2",
+      "code": "V.40.3.2",
+      "english": ":body_moveO, Body",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.40.3.3",
+      "code": "V.40.3.3",
+      "english": ":politing, Body",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.40.4",
+      "code": "V.40.4",
+      "english": ":bodystate, Body",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.40.5",
+      "code": "V.40.5",
+      "english": ":body_moveSA, Body",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.40.7",
+      "code": "V.40.7",
+      "english": ":die, Body",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.40.8.1",
+      "code": "V.40.8.1",
+      "english": ":pain, Body",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.40.8.3",
+      "code": "V.40.8.3",
+      "english": ":hurt_self, Body",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.40.8.4",
+      "code": "V.40.8.4",
+      "english": ":change_bodystate, Body",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.41.1",
+      "code": "V.41.1",
+      "english": ":body_care, Body Care",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.41.2",
+      "code": "V.41.2",
+      "english": ":comb, Body Care",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.41.3.1",
+      "code": "V.41.3.1",
+      "english": ":dress, Body Care",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.41.3.2",
+      "code": "V.41.3.2",
+      "english": ":undress, Body Care",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.41.4",
+      "code": "V.41.4",
+      "english": ":serve, Body Care",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.42.1",
+      "code": "V.42.1",
+      "english": ":kill, Kill",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.42.2",
+      "code": "V.42.2",
+      "english": ":kill_method, Kill",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.42.3",
+      "code": "V.42.3",
+      "english": ":subjugate, Kill",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.43.1",
+      "code": "V.43.1",
+      "english": ":light_emission, Emit",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.43.2.1",
+      "code": "V.43.2.1",
+      "english": ":sound_emission, Emit",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.43.2.2",
+      "code": "V.43.2.2",
+      "english": ":make_noise, Emit",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.43.3",
+      "code": "V.43.3",
+      "english": ":smell_emission, Emit",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.43.4",
+      "code": "V.43.4",
+      "english": ":substance_emission, Emit",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.43.5",
+      "code": "V.43.5",
+      "english": ":reflect, Emit",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.43.6",
+      "code": "V.43.6",
+      "english": ":burn, Emit",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.43.7",
+      "code": "V.43.7",
+      "english": ":emit, Emit",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.44.1",
+      "code": "V.44.1",
+      "english": ":destroy, Destroy",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.44.2",
+      "code": "V.44.2",
+      "english": ":collapse, Destroy",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.1",
+      "code": "V.45.1",
+      "english": ":break, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.10",
+      "code": "V.45.10",
+      "english": ":damage, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.2",
+      "code": "V.45.2",
+      "english": ":deform, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.3.1",
+      "code": "V.45.3.1",
+      "english": ":heat, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.3.2",
+      "code": "V.45.3.2",
+      "english": ":cool, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.4.1",
+      "code": "V.45.4.1",
+      "english": ":alter, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.4.10",
+      "code": "V.45.4.10",
+      "english": ":thicken, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.4.11",
+      "code": "V.45.4.11",
+      "english": ":soften, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.4.2",
+      "code": "V.45.4.2",
+      "english": ":activate, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.4.3",
+      "code": "V.45.4.3",
+      "english": ":deactivate, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.4.4",
+      "code": "V.45.4.4",
+      "english": ":open, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.4.5",
+      "code": "V.45.4.5",
+      "english": ":close, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.4.6",
+      "code": "V.45.4.6",
+      "english": ":improve, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.4.7",
+      "code": "V.45.4.7",
+      "english": ":worsen, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.4.8",
+      "code": "V.45.4.8",
+      "english": ":tighten, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.4.9",
+      "code": "V.45.4.9",
+      "english": ":loosen, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.5.1",
+      "code": "V.45.5.1",
+      "english": ":change_process, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.5.2",
+      "code": "V.45.5.2",
+      "english": ":decay, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.6.1.1",
+      "code": "V.45.6.1.1",
+      "english": ":increase, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.6.1.2",
+      "code": "V.45.6.1.2",
+      "english": ":decrease, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.6.1.3",
+      "code": "V.45.6.1.3",
+      "english": ":oscillate, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.6.2",
+      "code": "V.45.6.2",
+      "english": ":double, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.7",
+      "code": "V.45.7",
+      "english": ":changeS, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.8",
+      "code": "V.45.8",
+      "english": ":calibrate, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.9.1",
+      "code": "V.45.9.1",
+      "english": ":repair, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.9.2",
+      "code": "V.45.9.2",
+      "english": ":therapy, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.45.9.3",
+      "code": "V.45.9.3",
+      "english": ":solve, Change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.46.1",
+      "code": "V.46.1",
+      "english": ":lodge, Enter",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.46.2",
+      "code": "V.46.2",
+      "english": ":enter, Enter",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.46.3",
+      "code": "V.46.3",
+      "english": ":invade, Enter",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.46.4",
+      "code": "V.46.4",
+      "english": ":usurp, Enter",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.46.5",
+      "code": "V.46.5",
+      "english": ":permeate, Enter",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.1.1.1",
+      "code": "V.47.1.1.1",
+      "english": ":exist, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.1.1.2",
+      "code": "V.47.1.1.2",
+      "english": ":persist, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.1.1.3",
+      "code": "V.47.1.1.3",
+      "english": ":endure, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.1.1.4",
+      "code": "V.47.1.1.4",
+      "english": ":future, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.1.2",
+      "code": "V.47.1.2",
+      "english": ":depend, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.2.1",
+      "code": "V.47.2.1",
+      "english": ":moveS_fluidic, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.2.2",
+      "code": "V.47.2.2",
+      "english": ":moveO_fluidic, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.3.1",
+      "code": "V.47.3.1",
+      "english": ":moveO_local, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.3.2",
+      "code": "V.47.3.2",
+      "english": ":moveS_local, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.3.3",
+      "code": "V.47.3.3",
+      "english": ":orient, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.4",
+      "code": "V.47.4",
+      "english": ":sound_move, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.5.1",
+      "code": "V.47.5.1",
+      "english": ":swarm, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.5.2.1",
+      "code": "V.47.5.2.1",
+      "english": ":collect, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.5.2.2",
+      "code": "V.47.5.2.2",
+      "english": ":accumulate, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.5.2.3",
+      "code": "V.47.5.2.3",
+      "english": ":gather, Exist",
+      "danish": ":samle, Eksistere",
+      "kalaallisut": ":katersuupput, Piuvoq"
+    },
+    {
+      "id": "sem_V.47.5.3",
+      "code": "V.47.5.3",
+      "english": ":bulge, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.6.1",
+      "code": "V.47.6.1",
+      "english": ":spatial_conf, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.6.2",
+      "code": "V.47.6.2",
+      "english": ":shape_change, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.7",
+      "code": "V.47.7",
+      "english": ":meander, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.8.1",
+      "code": "V.47.8.1",
+      "english": ":border, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.8.2",
+      "code": "V.47.8.2",
+      "english": ":cross, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.47.8.3",
+      "code": "V.47.8.3",
+      "english": ":stretch, Exist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.48.1.1",
+      "code": "V.48.1.1",
+      "english": ":appear, Appear",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.48.1.2",
+      "code": "V.48.1.2",
+      "english": ":show, Appear",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.48.1.3",
+      "code": "V.48.1.3",
+      "english": ":originate, Appear",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.48.1.4",
+      "code": "V.48.1.4",
+      "english": ":result, Appear",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.48.2",
+      "code": "V.48.2",
+      "english": ":disappear, Appear",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.48.3.1",
+      "code": "V.48.3.1",
+      "english": ":occur, Appear",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.48.3.2",
+      "code": "V.48.3.2",
+      "english": ":befall, Appear",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.48.3.3",
+      "code": "V.48.3.3",
+      "english": ":occur_dynamic, Appear",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.49",
+      "code": "V.49",
+      "english": ":body_moveSC, Body Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.5.0",
+      "code": "V.5.0",
+      "english": ":have, Have",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.5.1",
+      "code": "V.5.1",
+      "english": ":have_attr, Have",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.5.2",
+      "code": "V.5.2",
+      "english": ":have_part, Have",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.5.3",
+      "code": "V.5.3",
+      "english": ":lack, Have",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.5.4",
+      "code": "V.5.4",
+      "english": ":contain_have, Have",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.50.1",
+      "code": "V.50.1",
+      "english": ":change_body_pos, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.50.2",
+      "code": "V.50.2",
+      "english": ":body_pos, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.51.1.1",
+      "code": "V.51.1.1",
+      "english": ":move_dir, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.51.1.2",
+      "code": "V.51.1.2",
+      "english": ":rise, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.51.1.3",
+      "code": "V.51.1.3",
+      "english": ":fall, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.51.2",
+      "code": "V.51.2",
+      "english": ":leave, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.51.3.1",
+      "code": "V.51.3.1",
+      "english": ":roll, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.51.3.2",
+      "code": "V.51.3.2",
+      "english": ":run, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.51.4.1",
+      "code": "V.51.4.1",
+      "english": ":vehicle, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.51.4.2",
+      "code": "V.51.4.2",
+      "english": ":steer, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.51.5",
+      "code": "V.51.5",
+      "english": ":dance, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.51.6",
+      "code": "V.51.6",
+      "english": ":chase, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.51.7",
+      "code": "V.51.7",
+      "english": ":accompany, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.51.8",
+      "code": "V.51.8",
+      "english": ":reach, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.52",
+      "code": "V.52",
+      "english": ":avoid, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.53.1.1",
+      "code": "V.53.1.1",
+      "english": ":linger, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.53.1.2",
+      "code": "V.53.1.2",
+      "english": ":delay, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.53.2",
+      "code": "V.53.2",
+      "english": ":rush, Mode of Movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.54.1.1",
+      "code": "V.54.1.1",
+      "english": ":measure_tr, Measure",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.54.1.2",
+      "code": "V.54.1.2",
+      "english": ":measure_itr, Measure",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.54.2",
+      "code": "V.54.2",
+      "english": ":cost, Measure",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.54.3.2",
+      "code": "V.54.3.2",
+      "english": ":fit, Measure",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.54.4",
+      "code": "V.54.4",
+      "english": ":assess, Measure",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.54.5",
+      "code": "V.54.5",
+      "english": ":bill, Measure",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.55.1.1",
+      "code": "V.55.1.1",
+      "english": ":start, Start/Stop",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.55.1.2",
+      "code": "V.55.1.2",
+      "english": ":begin, Start/Stop",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.55.1.3",
+      "code": "V.55.1.3",
+      "english": ":start_movement, Start/Stop",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.55.2",
+      "code": "V.55.2",
+      "english": ":complete_process, Start/Stop",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.55.3",
+      "code": "V.55.3",
+      "english": ":continue, Start/Stop",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.55.4.1",
+      "code": "V.55.4.1",
+      "english": ":stop, Start/Stop",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.55.4.2",
+      "code": "V.55.4.2",
+      "english": ":end, Start/Stop",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.55.4.3",
+      "code": "V.55.4.3",
+      "english": ":hinder, Start/Stop",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_V.55.4.4",
+      "code": "V.55.4.4",
+      "english": ":halt, Start/Stop",
+      "danish": ":standse, Start/Stop",
+      "kalaallisut": ":unitsippaa, Aallartinneq/Uninneq"
+    },
+    {
+      "id": "sem_V.55.5.1",
+      "code": "V.55.5.1",
+      "english": ":establish, Start/Stop",
+      "danish": ":etablere, Start/Stop",
+      "kalaallisut": ":atuutilersippaa, Aallartinneq/Uninneq"
+    },
+    {
+      "id": "sem_V.55.5.2",
+      "code": "V.55.5.2",
+      "english": ":unestablish, Start/Stop",
+      "danish": ":uetablere, Start/Stop",
+      "kalaallisut": ":atuukkunnaarsippaa, Aallartinneq/Uninneq"
+    },
+    {
+      "id": "sem_V.55.5.3",
+      "code": "V.55.5.3",
+      "english": ":run_obj, Start/Stop",
+      "danish": ":drive_objekt, Start/Stop",
+      "kalaallisut": ":ingerlappaa, Aallartinneq/Uninneq"
+    },
+    {
+      "id": "sem_V.55.6",
+      "code": "V.55.6",
+      "english": ":sustain, Start/Stop",
+      "danish": ":opretholde, Start/Stop",
+      "kalaallisut": ":attatiinnarpaa, Aallartitsineq/Unitsitsineq"
+    },
+    {
+      "id": "sem_V.57",
+      "code": "V.57",
+      "english": ":weather, Weather",
+      "danish": ":vejr, Vejr",
+      "kalaallisut": ":silap qanoq innera, Silap pissusia"
+    },
+    {
+      "id": "sem_V.58.1",
+      "code": "V.58.1",
+      "english": ":urge, Influence",
+      "danish": ":presse, Indflydelse",
+      "kalaallisut": ":tuavisaarpaa, Sunniuteqarneq"
+    },
+    {
+      "id": "sem_V.58.2",
+      "code": "V.58.2",
+      "english": ":beg, Influence",
+      "danish": ":tigge, Indflydelse",
+      "kalaallisut": ":kimigiiserfigaa, Sunniuteqarneq"
+    },
+    {
+      "id": "sem_V.59",
+      "code": "V.59",
+      "english": ":force, Influence",
+      "danish": ":tvinge, Indflydelse",
+      "kalaallisut": ":pinngitsaalivaa, Sunniuteqarneq"
+    },
+    {
+      "id": "sem_V.6",
+      "code": "V.6",
+      "english": ":must, Must/Can",
+      "danish": ":måtte, Måtte/Kunne",
+      "kalaallisut": ":susariaqarpoq, Susariaqarneq/Susinnaaneq"
+    },
+    {
+      "id": "sem_V.60.1",
+      "code": "V.60.1",
+      "english": ":order, Influence",
+      "danish": ":befale, Indflydelse",
+      "kalaallisut": ":peqquaa/piumaffigaa, Sunniuteqarneq"
+    },
+    {
+      "id": "sem_V.60.2",
+      "code": "V.60.2",
+      "english": ":demand, Influence",
+      "danish": ":kræve, Indflydelse",
+      "kalaallisut": ":piumasaraa, Sunniuteqarneq"
+    },
+    {
+      "id": "sem_V.60.4",
+      "code": "V.60.4",
+      "english": ":summon, Influence",
+      "danish": ":tilkalde, Indflydelse",
+      "kalaallisut": ":aggeqquaa, Sunniuteqarneq"
+    },
+    {
+      "id": "sem_V.61.1",
+      "code": "V.61.1",
+      "english": ":try_to, Influence",
+      "danish": ":prøve at, Indflydelse",
+      "kalaallisut": "misilippaa/misiliivoq, Sunniuteqarneq"
+    },
+    {
+      "id": "sem_V.61.2",
+      "code": "V.61.2",
+      "english": ":test, Influence",
+      "danish": ":teste, Indflydelse",
+      "kalaallisut": ":misilerarpaa/misilittarpaa, Sunniuteqarneq"
+    },
+    {
+      "id": "sem_V.62",
+      "code": "V.62",
+      "english": ":plan, Influence",
+      "danish": ":planlægge, Indflydelse",
+      "kalaallisut": ":pilersaarusiorpaa, Sunniuteqarneq"
+    },
+    {
+      "id": "sem_V.63",
+      "code": "V.63",
+      "english": ":enforce, Influence",
+      "danish": ":fremtvinge, Indflydelse",
+      "kalaallisut": ":allatut ajulersippaa, Sunniuteqarneq"
+    },
+    {
+      "id": "sem_V.64.1",
+      "code": "V.64.1",
+      "english": ":allow, Influence",
+      "danish": ":tillade, Indflydelse",
+      "kalaallisut": ":pisinnaatippaa/akuersaarpaa, Sunniuteqarneq"
+    },
+    {
+      "id": "sem_V.64.2",
+      "code": "V.64.2",
+      "english": ":welcome, Influence",
+      "danish": ":tage godt imod, Indflydelse",
+      "kalaallisut": ":tikilluaqquaa/ilassilluarpaa, Sunniuteqarneq"
+    },
+    {
+      "id": "sem_V.65",
+      "code": "V.65",
+      "english": ":facilitate, Influence",
+      "danish": ":lette, Indflydelse",
+      "kalaallisut": ":oqilisaappaa, Sunniuteqarneq"
+    },
+    {
+      "id": "sem_V.66.1",
+      "code": "V.66.1",
+      "english": ":consume, Social Interaction",
+      "danish": ":anvende, Social Interaktion",
+      "kalaallisut": ":atorpaa/atuivoq, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.66.2",
+      "code": "V.66.2",
+      "english": ":economize, Social Interaction",
+      "danish": ":spare, Social Interaktion",
+      "kalaallisut": ":sipaarpaa/sipaarpoq, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.67",
+      "code": "V.67",
+      "english": ":forbid, Social Interaction",
+      "danish": ":forbyde, Social Interaktion",
+      "kalaallisut": ":inerteqqutigaa, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.68",
+      "code": "V.68",
+      "english": ":pay, Social Interaction",
+      "danish": ":betale, Social Interaktion",
+      "kalaallisut": ":akilerpaa/akiliivoq, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.69",
+      "code": "V.69",
+      "english": ":refrain, Social Interaction",
+      "danish": ":afstå, Social Interaktion",
+      "kalaallisut": ":iperarpaa/iperaavoq, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.7",
+      "code": "V.7",
+      "english": ":can, Must/Can",
+      "danish": ":kunne, Måtte/Kunne",
+      "kalaallisut": ":susinnaavoq, Susariaqarneq/Susinnaaneq"
+    },
+    {
+      "id": "sem_V.70",
+      "code": "V.70",
+      "english": ":rely, Social Interaction",
+      "danish": ":stole på, Social Interaktion",
+      "kalaallisut": ":tatigaa, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.71",
+      "code": "V.71",
+      "english": ":conspire, Social Interaction",
+      "danish": ":konspirere, Social Interaktin",
+      "kalaallisut": ":peqatigipiluppaa/peqatigiipilupput, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.72.1",
+      "code": "V.72.1",
+      "english": ":help, Social Interaction",
+      "danish": ":hjælpe, Social Interaktion",
+      "kalaallisut": ":ikiorpaa, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.72.2",
+      "code": "V.72.2",
+      "english": ":benefit, Social Interaction",
+      "danish": ":fordele, Social Interaktion",
+      "kalaallisut": ":iluaquserpaa, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.72.3",
+      "code": "V.72.3",
+      "english": ":detriment, Social Interaction",
+      "danish": ":skade, Social Interaktion",
+      "kalaallisut": ":ajoquserpaa, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.72.4",
+      "code": "V.72.4",
+      "english": ":affect, Social Interaction",
+      "danish": ":påvirke, Social Interaktion",
+      "kalaallisut": ":sunnerpaa, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.72.5",
+      "code": "V.72.5",
+      "english": ":punish, Social Interaction",
+      "danish": ":straffe, Social Interaktion",
+      "kalaallisut": ":pillarpaa, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.73.1",
+      "code": "V.73.1",
+      "english": ":cooperate, Social Interaction",
+      "danish": ":kooperere, Social Interaktion",
+      "kalaallisut": ":suleqataavoq, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.73.2",
+      "code": "V.73.2",
+      "english": ":participate, Social Interaction",
+      "danish": ":deltage, Social Interaktion",
+      "kalaallisut": ":peqataavoq, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.73.3",
+      "code": "V.73.3",
+      "english": ":vicariate, Social Interaction",
+      "danish": ":vikariere, Social Interaktion",
+      "kalaallisut": ":paarlappaa/taarserpaa, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.74.1",
+      "code": "V.74.1",
+      "english": ":succeed, Social Interaction",
+      "danish": ":lykkes, Social Interaktion",
+      "kalaallisut": ":iluatsippaa/iluatsippoq, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.74.2",
+      "code": "V.74.2",
+      "english": ":fail, Social Interaction",
+      "danish": ":fejle, Social Interaktion",
+      "kalaallisut": ":iluatsinngilaa/iluatinngilaq, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.75",
+      "code": "V.75",
+      "english": ":neglect, Social Interaction",
+      "danish": ":negligere, Social Interaktion ",
+      "kalaallisut": ":isiginngitsuusaarpaa/maluginngitsoorpaa, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.76",
+      "code": "V.76",
+      "english": ":limit, Social Interaction",
+      "danish": ":begrænse, Social Interaktion",
+      "kalaallisut": ":killilerpaa, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.77.1",
+      "code": "V.77.1",
+      "english": ":approve, Social Interaction",
+      "danish": ":godkende, Social Interaktion",
+      "kalaallisut": ":akueraa, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.77.2",
+      "code": "V.77.2",
+      "english": ":reject, Social Interaction",
+      "danish": ":afvise, Social Interaktion",
+      "kalaallisut": ":itigartippaa, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.78.1",
+      "code": "V.78.1",
+      "english": ":indicate, Social Interaction",
+      "danish": ":indikere, Social Interaktion",
+      "kalaallisut": ":paasinarsisippaa, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.78.2",
+      "code": "V.78.2",
+      "english": ":confirm, Social Interaction",
+      "danish": ":bekræfte, Social Interaktion",
+      "kalaallisut": ":uppernarsarpaa, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.79",
+      "code": "V.79",
+      "english": ":devote, Social Interaction",
+      "danish": ":dedikere, Social Interaktion",
+      "kalaallisut": ":pigitippaa, Inooqataanikkut pissusilersuuteqarneq"
+    },
+    {
+      "id": "sem_V.8.1",
+      "code": "V.8.1",
+      "english": ":be_before, Relative Time",
+      "danish": ":være_før, Relativ tid",
+      "kalaallisut": ":ippoq_sioqqullugu, Piffissamik naleqqiusineq"
+    },
+    {
+      "id": "sem_V.8.2",
+      "code": "V.8.2",
+      "english": ":be_after, Relative Time",
+      "danish": ":være_efter, Relativ Tid",
+      "kalaallisut": ":ippoq_kingorna, Piffissamik naleqqiusineq"
+    },
+    {
+      "id": "sem_V.80",
+      "code": "V.80",
+      "english": ":liberate, Handle Conflict",
+      "danish": ":befri, Håndtere konflikt",
+      "kalaallisut": ":aniguisippaa, Aaqqiagiinngissummik aqutsineq"
+    },
+    {
+      "id": "sem_V.82",
+      "code": "V.82",
+      "english": ":withdraw, Handle Conflict",
+      "danish": ":trække_sig_tilbage, Håndtere konflikt",
+      "kalaallisut": ":tunuarterpoq, Aaqqiagiinngissummik aqutsineq"
+    },
+    {
+      "id": "sem_V.83",
+      "code": "V.83",
+      "english": ":cope, Handle Conflict",
+      "danish": ":klare, Håndtere konflikt",
+      "kalaallisut": ":qaangerpaa, Aaqqiagiinngissummik aqutsineq"
+    },
+    {
+      "id": "sem_V.84",
+      "code": "V.84",
+      "english": ":discover, Handle Conflict",
+      "danish": ":opdage, Håndtere konflikt",
+      "kalaallisut": ":paasivaa, Aaqqiagiinngissummik aqutsineq"
+    },
+    {
+      "id": "sem_V.85.1",
+      "code": "V.85.1",
+      "english": ":defend_phys, Handle Conflict",
+      "danish": ":forsvare_fysisk, Håndtere konflikt",
+      "kalaallisut": ":illersorpaa_nukersornikkut, Aaqqiagiinngissummik aqutsineq"
+    },
+    {
+      "id": "sem_V.85.2",
+      "code": "V.85.2",
+      "english": ":defend_cog, Handle Conflict",
+      "danish": ":forsvare_kognition, Håndtere konflikt",
+      "kalaallisut": ":illersorpaa_tigussaanngitsoq/eqqarsaat, Aaqqiagiinngissummik aqutsineq "
+    },
+    {
+      "id": "sem_V.85.3",
+      "code": "V.85.3",
+      "english": ":attack, Handle Conflict",
+      "danish": ":angribe, Håndtere konflikt",
+      "kalaallisut": ":saassuppaa, Aaqqiagiinngissummik aqutsineq"
+    },
+    {
+      "id": "sem_V.86.1",
+      "code": "V.86.1",
+      "english": ":correlate, Relating",
+      "danish": ":korrelere, Relatering",
+      "kalaallisut": ":assigaa, Attuumassuteqarneq"
+    },
+    {
+      "id": "sem_V.86.2",
+      "code": "V.86.2",
+      "english": ":relate, Relating",
+      "danish": ":relatere, Relatering",
+      "kalaallisut": ":attuumassuserpaa, Attuumassuteqarneq"
+    },
+    {
+      "id": "sem_V.86.4",
+      "code": "V.86.4",
+      "english": ":compensate, Relating",
+      "danish": ":kompensere, Relatering",
+      "kalaallisut": ":taarsiuppaa, Attuumassuteqarneq"
+    },
+    {
+      "id": "sem_V.86.5",
+      "code": "V.86.5",
+      "english": ":match, Relating",
+      "danish": ":match, Relatere",
+      "kalaallisut": ":naleqquppoq, Attuumassuteqarneq"
+    },
+    {
+      "id": "sem_V.87.1",
+      "code": "V.87.1",
+      "english": ":focus, Relating",
+      "danish": ":fokusere, Relatering",
+      "kalaallisut": ":ukkataraa, Attuumassuteqarneq"
+    },
+    {
+      "id": "sem_V.87.2",
+      "code": "V.87.2",
+      "english": ":comprehend, Relating",
+      "danish": ":forstå, Relatering",
+      "kalaallisut": ":paasivaa, Attuumassuteqarneq"
+    },
+    {
+      "id": "sem_V.88",
+      "code": "V.88",
+      "english": ":mind, Relating",
+      "danish": ":minde, Relatering",
+      "kalaallisut": ":eqqaasippaa, Attuumassuteqarneq"
+    },
+    {
+      "id": "sem_V.89",
+      "code": "V.89",
+      "english": ":agree, Relating",
+      "danish": ":enig, Relatering",
+      "kalaallisut": ":isumaqatigaa, Attuumassuteqarneq"
+    },
+    {
+      "id": "sem_V.9.1.1",
+      "code": "V.9.1.1",
+      "english": ":put, Put",
+      "danish": ":sætte, Forsyning",
+      "kalaallisut": ":ilivaa, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.1.2",
+      "code": "V.9.1.2",
+      "english": ":put_deposit, Put",
+      "danish": ":sætte_deponering, Forsyning",
+      "kalaallisut": ":inissippaa_toqqorsineq/inissiineq, Pilersuineq "
+    },
+    {
+      "id": "sem_V.9.10.1",
+      "code": "V.9.10.1",
+      "english": ":confine, Put",
+      "danish": ":begrænse, Forsyning",
+      "kalaallisut": ":killilerpaa, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.10.2",
+      "code": "V.9.10.2",
+      "english": ":park, Put",
+      "danish": ":parkere, Forsyning",
+      "kalaallisut": ":inissippaa_angallassinnaasoq, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.2",
+      "code": "V.9.2",
+      "english": ":put_spatial, Put",
+      "danish": ":sætte_rumlige, Forsyning",
+      "kalaallisut": ":inissippaa_inississinnaasoq, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.3",
+      "code": "V.9.3",
+      "english": ":funnel, Put",
+      "danish": ":tragte, Forsyning",
+      "kalaallisut": ":nakkartippaa, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.4.1",
+      "code": "V.9.4.1",
+      "english": ":raise, Put",
+      "danish": ":hæve, Forsyning",
+      "kalaallisut": ":qullarpaa, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.4.2",
+      "code": "V.9.4.2",
+      "english": ":lower, Put",
+      "danish": ":sænke, Forsyning",
+      "kalaallisut": ":apparpaa, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.5.1",
+      "code": "V.9.5.1",
+      "english": ":flow, Put",
+      "danish": ":flyde, Forsyning",
+      "kalaallisut": ":kuuppoq, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.5.2",
+      "code": "V.9.5.2",
+      "english": ":pour, Put",
+      "danish": ":hælde, Forsyning",
+      "kalaallisut": ":kuivaa, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.5.3",
+      "code": "V.9.5.3",
+      "english": ":spread, Put",
+      "danish": ":sprede, Forsyning",
+      "kalaallisut": ":siammarpaa, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.6.1",
+      "code": "V.9.6.1",
+      "english": ":coil, Put",
+      "danish": ":vikle, Forsyning",
+      "kalaallisut": ":qilerpaa, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.6.2",
+      "code": "V.9.6.2",
+      "english": ":uncoil, Put",
+      "danish": ":afvikle, Forsyning",
+      "kalaallisut": ":qilerussaarpaa, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.7.1",
+      "code": "V.9.7.1",
+      "english": ":spray, Put",
+      "danish": ":sprøjte, Forsyning",
+      "kalaallisut": ":serpartarpaa, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.7.2",
+      "code": "V.9.7.2",
+      "english": ":heap, Put",
+      "danish": ":bunke, Forsyning",
+      "kalaallisut": ":qaleriaarpai, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.8.1",
+      "code": "V.9.8.1",
+      "english": ":cover_ize, Put",
+      "danish": ":tildække, Forsyning",
+      "kalaallisut": ":ulippaa, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.8.2",
+      "code": "V.9.8.2",
+      "english": ":pollute, Put",
+      "danish": ":forurene, Forsyning",
+      "kalaallisut": ":mingutserpaa, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.8.3",
+      "code": "V.9.8.3",
+      "english": ":fill, Put",
+      "danish": ":fylde, Forsyning",
+      "kalaallisut": ":immerpaa, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.8.4",
+      "code": "V.9.8.4",
+      "english": ":uncover_ize, Put",
+      "danish": ":afdække, Forsyning",
+      "kalaallisut": ":uleerpaa, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.8.5",
+      "code": "V.9.8.5",
+      "english": ":cover, Put",
+      "danish": ":dække, Forsyning",
+      "kalaallisut": ":qallerpaa, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.8.6",
+      "code": "V.9.8.6",
+      "english": ":uncover, Put",
+      "danish": ":dække af, Forsyning",
+      "kalaallisut": ":qaleerpaa, Pilersuineq"
+    },
+    {
+      "id": "sem_V.9.9",
+      "code": "V.9.9",
+      "english": ":adorn, Put",
+      "danish": ":smykke, Forsyning",
+      "kalaallisut": ":pinnersarpoq, Pilersuineq"
+    },
+    {
+      "id": "sem_V.90.1",
+      "code": "V.90.1",
+      "english": ":exceed, Relating",
+      "danish": ":overstige, Relatering",
+      "kalaallisut": ":qaangerpaa, Attuumassuteqarneq"
+    },
+    {
+      "id": "sem_V.90.2",
+      "code": "V.90.2",
+      "english": ":vanquish, Relating",
+      "danish": ":besejre, Relatering",
+      "kalaallisut": ":ajugaaffigaa, Attuumassuteqarneq"
+    },
+    {
+      "id": "sem_V.90.3",
+      "code": "V.90.3",
+      "english": ":exaggerate, Relating",
+      "danish": ":overdrive, Relatering",
+      "kalaallisut": ":ingattarserpoq, Attuumassuteqarneq"
+    },
+    {
+      "id": "sem_V.91",
+      "code": "V.91",
+      "english": ":matter, Relating",
+      "danish": ":være af betydning, Relatering",
+      "kalaallisut": ":pingaaruteqarpoq, Attuumassuteqarneq"
+    },
+    {
+      "id": "sem_V.92",
+      "code": "V.92",
+      "english": ":institutionalize, Misc",
+      "danish": ":institutionalisere, Diverse",
+      "kalaallisut": ":inissippaa/ileqqunngortippaa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.93",
+      "code": "V.93",
+      "english": ":adopt, Misc",
+      "danish": ":adoptere, Diverse",
+      "kalaallisut": ":qitornavissiartaaraa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.94",
+      "code": "V.94",
+      "english": ":risk, Misc",
+      "danish": ":risikere, Diverse",
+      "kalaallisut": ":sapiiserfigaa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.95",
+      "code": "V.95",
+      "english": ":surrender, Misc",
+      "danish": ":overgive, Diverse",
+      "kalaallisut": ":tunniutiinnarpoq, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.96",
+      "code": "V.96",
+      "english": ":accustom, Misc",
+      "danish": ":tilvænne, Diverse",
+      "kalaallisut": ":sungiuppaa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.97.1",
+      "code": "V.97.1",
+      "english": ":base, Misc",
+      "danish": ":basere, Diverse",
+      "kalaallisut": ":tunngavilersorpaa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.97.2",
+      "code": "V.97.2",
+      "english": ":deduce, Misc",
+      "danish": ":udlede, Diverse",
+      "kalaallisut": ":aniatippaa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.98",
+      "code": "V.98",
+      "english": ":confront, Misc",
+      "danish": ":konfrontere, Diverse",
+      "kalaallisut": ":kiinarsisippaa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.99.1",
+      "code": "V.99.1",
+      "english": ":ensure, Misc",
+      "danish": ":sikre, Diverse",
+      "kalaallisut": ":isumannaarpaa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_V.99.2",
+      "code": "V.99.2",
+      "english": ":insure, Misc",
+      "danish": ":forsikre, Diverse",
+      "kalaallisut": ":qularnaveeqquserpaa, Assigiinngitsut"
+    },
+    {
+      "id": "sem_VV",
+      "code": "VV",
+      "english": "Vehicle, group of",
+      "danish": "Køretøj, gruppe af",
+      "kalaallisut": "Qamut/angallat, arlallit"
+    },
+    {
+      "id": "sem_Vair",
+      "code": "Vair",
+      "english": "Vehicle, air",
+      "danish": "Køretøj, luft",
+      "kalaallisut": "Qamut/angallat, silaannakkut"
+    },
+    {
+      "id": "sem_Vground",
+      "code": "Vground",
+      "english": "Vehicle, ground",
+      "danish": "Køretøj, jord/terræn",
+      "kalaallisut": "Qamut/angallat, nunakkut"
+    },
+    {
+      "id": "sem_Vwater",
+      "code": "Vwater",
+      "english": "Vehicle, water",
+      "danish": "Køretøj, vand",
+      "kalaallisut": "Qamut/angallat, immakkut"
+    },
+    {
+      "id": "sem_ac",
+      "code": "ac",
+      "english": "Abstract Countable",
+      "danish": "Abstrakt tællelig",
+      "kalaallisut": "Tigussaanngitsoq kisinneqarsinnaasoq"
+    },
+    {
+      "id": "sem_ac-cat",
+      "code": "ac-cat",
+      "english": "Abstract Countable, category",
+      "danish": "Abstrakt tællelig, kategori",
+      "kalaallisut": "Tigussaanngitsoq kisinneqarsinnaasoq, suussuseq/kategori"
+    },
+    {
+      "id": "sem_ac-sign",
+      "code": "ac-sign",
+      "english": "Abstract Countable, sign, symbol",
+      "danish": "Abstrakt tællelig, tegn, symbol",
+      "kalaallisut": "Tigussaanngitsoq kisinneqarsinnaasoq, ilisarnaat, isumaqartitaq"
+    },
+    {
+      "id": "sem_act",
+      "code": "act",
+      "english": "Action",
+      "danish": "Aktion/handling",
+      "kalaallisut": "Iliuuseq"
+    },
+    {
+      "id": "sem_act-beat",
+      "code": "act-beat",
+      "english": "Action, beating",
+      "danish": "Aktion/handling, bank ",
+      "kalaallisut": "Iliuuseq, nakuuserneq"
+    },
+    {
+      "id": "sem_act-d",
+      "code": "act-d",
+      "english": "Action, doable",
+      "danish": "Aktion/handling, gørlig",
+      "kalaallisut": "Iliuuseq, pissusilersuut"
+    },
+    {
+      "id": "sem_act-move",
+      "code": "act-move",
+      "english": "Action, movement",
+      "danish": "Aktion/handling, bevægelse",
+      "kalaallisut": "Iliuuseq, aalaneq"
+    },
+    {
+      "id": "sem_act-s",
+      "code": "act-s",
+      "english": "Action, speech, communicate",
+      "danish": "Aktion/handling, tale, kommunikere",
+      "kalaallisut": "Iliuuseq, oqalunneq, oqaloqatigiinneq"
+    },
+    {
+      "id": "sem_act-trick",
+      "code": "act-trick",
+      "english": "Action, trick, cheat",
+      "danish": "Aktion/handling, trick, bedrageri",
+      "kalaallisut": "Iliuuseq, peqquserluut"
+    },
+    {
+      "id": "sem_activity",
+      "code": "activity",
+      "english": "Activity",
+      "danish": "Aktivitet",
+      "kalaallisut": "Suliniut"
+    },
+    {
+      "id": "sem_adv",
+      "code": "adv",
+      "english": "Adverb",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_am",
+      "code": "am",
+      "english": "Abstract Mass Noun",
+      "danish": "Abstrakt utælleligt nomen",
+      "kalaallisut": "Tigussaanngitsoq kisissaanngitsoq"
+    },
+    {
+      "id": "sem_amount",
+      "code": "amount",
+      "english": "Amount / Quantity",
+      "danish": "Mængde / Kvantitet",
+      "kalaallisut": "Annertussuseq / Amerlassuseq"
+    },
+    {
+      "id": "sem_an",
+      "code": "an",
+      "english": "Anatomical",
+      "danish": "Anatomisk",
+      "kalaallisut": "Timip ilusaanut tunngasoq"
+    },
+    {
+      "id": "sem_anbo",
+      "code": "anbo",
+      "english": "Anatomical, plant",
+      "danish": "Anatomisk, plante",
+      "kalaallisut": "Naasup ilusaanut tunngasoq"
+    },
+    {
+      "id": "sem_anent",
+      "code": "anent",
+      "english": "Anatomical, insect",
+      "danish": "Anatomisk, insekt",
+      "kalaallisut": "Sullernit sananeqaataannut tunngasoq"
+    },
+    {
+      "id": "sem_anich",
+      "code": "anich",
+      "english": "Anatomical, fish",
+      "danish": "Anatomisk, fisk",
+      "kalaallisut": "Aalisakkat sananeqaataannut tunngasoq"
+    },
+    {
+      "id": "sem_anmov",
+      "code": "anmov",
+      "english": "Anatomical, movable",
+      "danish": "Anatomisk, bevægelig",
+      "kalaallisut": "Sananeqaammut tunngasoq, nikissinnaasoq"
+    },
+    {
+      "id": "sem_anorg",
+      "code": "anorg",
+      "english": "Anatomical, organ",
+      "danish": "Anatomisk, organ",
+      "kalaallisut": "Sananeqaammut tunngasoq, timip ilaa"
+    },
+    {
+      "id": "sem_anost",
+      "code": "anost",
+      "english": "Anatomical, bone",
+      "danish": "Anatomisk, knogle",
+      "kalaallisut": "Sananeqaammut tunngasoq, saaneq"
+    },
+    {
+      "id": "sem_anzo",
+      "code": "anzo",
+      "english": "Anatomical, animal",
+      "danish": "Anatomisk, dyr",
+      "kalaallisut": "Uumasup ilusaanut tunngasoq"
+    },
+    {
+      "id": "sem_ax",
+      "code": "ax",
+      "english": "Abstract Concept",
+      "danish": "Abstrakt begreb",
+      "kalaallisut": "Tigussaanngitsumut taaguut"
+    },
+    {
+      "id": "sem_build",
+      "code": "build",
+      "english": "Building / Structure",
+      "danish": "Bygning / Struktur",
+      "kalaallisut": "Illuliaq / Sanaartugaq"
+    },
+    {
+      "id": "sem_cc",
+      "code": "cc",
+      "english": "Object Countable",
+      "danish": "Objekt tællelig",
+      "kalaallisut": "Tigussaasoq kisinneqarsinnaasoq"
+    },
+    {
+      "id": "sem_cc-beauty",
+      "code": "cc-beauty",
+      "english": "Object Countable, ornamental",
+      "danish": "Objekt tællelig, dekorativ",
+      "kalaallisut": "Tigussaasoq kisissaasoq, pinnersaasiaq"
+    },
+    {
+      "id": "sem_cc-board",
+      "code": "cc-board",
+      "english": "Object Countable, flat long",
+      "danish": "Objekt tællelig, flad lang",
+      "kalaallisut": "Tigussaasoq kisissaasoq, saattukujooq takisooq"
+    },
+    {
+      "id": "sem_cc-cord",
+      "code": "cc-cord",
+      "english": "Object Countable, cord",
+      "danish": "Objekt tællelig, kraftig snor",
+      "kalaallisut": "Tigussaasoq kisissaasoq, allunaasaq"
+    },
+    {
+      "id": "sem_cc-fire",
+      "code": "cc-fire",
+      "english": "Object Countable, fire",
+      "danish": "Objekt tællelig, ild",
+      "kalaallisut": "Tigussaasoq kisissaasoq, ikumasoq"
+    },
+    {
+      "id": "sem_cc-h",
+      "code": "cc-h",
+      "english": "Object Countable, human-made",
+      "danish": "Objekt tællelig, menneskeskabt",
+      "kalaallisut": "Tigussaasoq kisinneqarsinnaasoq, inummit pilersitaq"
+    },
+    {
+      "id": "sem_cc-handle",
+      "code": "cc-handle",
+      "english": "Object Countable, handle",
+      "danish": "Objekt tællelig, håndtag/skaft",
+      "kalaallisut": "Tigussaasoq kisissaasoq, assannik tiguneqarsinnaasoq/tigummivilik"
+    },
+    {
+      "id": "sem_cc-light",
+      "code": "cc-light",
+      "english": "Object Countable, light",
+      "danish": "Objekt tællelig, lys",
+      "kalaallisut": "Tigussaasoq kisissaasoq, qaammaqqut"
+    },
+    {
+      "id": "sem_cc-org",
+      "code": "cc-org",
+      "english": "Object Countable, organic",
+      "danish": "Objekt tællelig, organisk",
+      "kalaallisut": "Tigussaasoq kisissaasoq, uumassuseqartunut tunngasoq"
+    },
+    {
+      "id": "sem_cc-particle",
+      "code": "cc-particle",
+      "english": "Object Countable, particle",
+      "danish": "Objekt tællelig, partikel",
+      "kalaallisut": "Tigussaasoq kisissaasoq, partikeli"
+    },
+    {
+      "id": "sem_cc-play",
+      "code": "cc-play",
+      "english": "Object Countable, toy, play",
+      "danish": "Objekt tællelig, legetøj, leg",
+      "kalaallisut": "Tigussaasoq kisissaasoq, pinnguarneq, pinnguaat"
+    },
+    {
+      "id": "sem_cc-r",
+      "code": "cc-r",
+      "english": "Object Countable, read",
+      "danish": "Objekt tællelig, læse",
+      "kalaallisut": "Tigussaasoq kisissaasoq, atuarneq"
+    },
+    {
+      "id": "sem_cc-rag",
+      "code": "cc-rag",
+      "english": "Object Countable, cloth",
+      "danish": "Objekt tællelig, tøj",
+      "kalaallisut": "Tigussaasoq kisissaasoq, atisaq"
+    },
+    {
+      "id": "sem_cc-stick",
+      "code": "cc-stick",
+      "english": "Object Countable, long thin",
+      "danish": "Objekt tællelig, aflang",
+      "kalaallisut": "Tigussaasoq kisissaasoq, amitsukujooq, takkajaaq"
+    },
+    {
+      "id": "sem_cc-stone",
+      "code": "cc-stone",
+      "english": "Object Countable, round, stone-size",
+      "danish": "Objekt tællelig, rund, sten-størrelse",
+      "kalaallisut": "Tigussaasoq kisissaasoq, ammarlortoq, ujaqqatut angitigisoq"
+    },
+    {
+      "id": "sem_cloA",
+      "code": "cloA",
+      "english": "Clothing, animal",
+      "danish": "Tøj, dyr",
+      "kalaallisut": "Atisassiaq, uumasumut"
+    },
+    {
+      "id": "sem_cloH",
+      "code": "cloH",
+      "english": "Clothing, human",
+      "danish": "Tæj, menneske",
+      "kalaallisut": "Atisassiaq, inummut"
+    },
+    {
+      "id": "sem_cloH-beauty",
+      "code": "cloH-beauty",
+      "english": "Clothing, human, ornamental",
+      "danish": "Tøj, menneske, dekorativ",
+      "kalaallisut": "Atisassiaq, inummut pinnersaat"
+    },
+    {
+      "id": "sem_cloH-hat",
+      "code": "cloH-hat",
+      "english": "Clothing, human, hat",
+      "danish": "Tøj, menneske, hat",
+      "kalaallisut": "Atisassiaq, inuup niaquanut"
+    },
+    {
+      "id": "sem_cloH-shoe",
+      "code": "cloH-shoe",
+      "english": "Clothing, human, shoe",
+      "danish": "Tøj, menneske, sko",
+      "kalaallisut": "Atisassiaq, inuup isigaanut"
+    },
+    {
+      "id": "sem_cm",
+      "code": "cm",
+      "english": "Object Mass Noun",
+      "danish": "Objekt utællelig nomen",
+      "kalaallisut": "Tigussaasoq kisissaanngitsoq"
+    },
+    {
+      "id": "sem_cm-chem",
+      "code": "cm-chem",
+      "english": "Object Mass Noun, chemical",
+      "danish": "Objekt utællelig nomen, kemisk",
+      "kalaallisut": "Tigussaasoq kisissaanngitsoq, kemikaalia"
+    },
+    {
+      "id": "sem_cm-gas",
+      "code": "cm-gas",
+      "english": "Object Mass Noun, gas",
+      "danish": "Objekt tællelig nomen, gas",
+      "kalaallisut": "Tigussaasoq kisissaanngitsoq, gassi"
+    },
+    {
+      "id": "sem_cm-gas-h",
+      "code": "cm-gas-h",
+      "english": "Object Mass Noun, gas, human-made",
+      "danish": "Objekt utællelig nomen, gas, menneskeskabt",
+      "kalaallisut": "Tigussaasoq kisissaanngitsoq, gassi, inummit pilersitaq"
+    },
+    {
+      "id": "sem_cm-h",
+      "code": "cm-h",
+      "english": "Object Mass Noun, human-made",
+      "danish": "Objekt utællelig nomen, menneskeskabt",
+      "kalaallisut": "Tigussaasoq kisissaanngitsoq, inummit pilersitaq"
+    },
+    {
+      "id": "sem_cm-liq",
+      "code": "cm-liq",
+      "english": "Object Mass Noun, liquid",
+      "danish": "Objekt utællelig nomen, flydende",
+      "kalaallisut": "Tigussaasoq kisissaanngitsoq, imerpalasoq"
+    },
+    {
+      "id": "sem_cm-liq-h",
+      "code": "cm-liq-h",
+      "english": "Object Mass Noun, liquid, human-made",
+      "danish": "Objekt utællelig nomen, menneskeskabt",
+      "kalaallisut": "Tigussaasoq kisissaanngitsoq, inummit pilersitaq"
+    },
+    {
+      "id": "sem_cm-rem",
+      "code": "cm-rem",
+      "english": "Object Mass Noun, remedy",
+      "danish": "Objekt utællelig nomen, hjælpemiddel",
+      "kalaallisut": "Tigussaasoq kisissaanngitsoq, ikiorsiissut"
+    },
+    {
+      "id": "sem_col",
+      "code": "col",
+      "english": "Color",
+      "danish": "Farve",
+      "kalaallisut": "Qalipaat"
+    },
+    {
+      "id": "sem_coll",
+      "code": "coll",
+      "english": "Collection",
+      "danish": "Samling",
+      "kalaallisut": "Katersaatit"
+    },
+    {
+      "id": "sem_coll-B",
+      "code": "coll-B",
+      "english": "Plant, collection",
+      "danish": "Plante, samling",
+      "kalaallisut": "Naasoq, katersaatit"
+    },
+    {
+      "id": "sem_coll-cc",
+      "code": "coll-cc",
+      "english": "Collection, objects",
+      "danish": "Samling, objekter",
+      "kalaallisut": "Katersaatit, tigussaasut"
+    },
+    {
+      "id": "sem_coll-sem",
+      "code": "coll-sem",
+      "english": "Collection, semantic",
+      "danish": "Samling, semantisk",
+      "kalaallisut": "Katersaatit, allaatigisanut, eqqarsaatinut oqaatsinullu tunngasinnaasut"
+    },
+    {
+      "id": "sem_coll-tool",
+      "code": "coll-tool",
+      "english": "Collection, tools",
+      "danish": "Samling, værktøj",
+      "kalaallisut": "Katersaatit, sakkut"
+    },
+    {
+      "id": "sem_con",
+      "code": "con",
+      "english": "Container",
+      "danish": "Beholder",
+      "kalaallisut": "Pooq"
+    },
+    {
+      "id": "sem_conv",
+      "code": "conv",
+      "english": "Convention",
+      "danish": "Konvention",
+      "kalaallisut": "Malitassatut isumaqatigiissut"
+    },
+    {
+      "id": "sem_cur",
+      "code": "cur",
+      "english": "Currency",
+      "danish": "Valuta",
+      "kalaallisut": "Nunap aningaasai"
+    },
+    {
+      "id": "sem_dance",
+      "code": "dance",
+      "english": "Dance",
+      "danish": "Dans",
+      "kalaallisut": "Qitinneq"
+    },
+    {
+      "id": "sem_dir",
+      "code": "dir",
+      "english": "Direction",
+      "danish": "Retning",
+      "kalaallisut": "Sammivik"
+    },
+    {
+      "id": "sem_domain",
+      "code": "domain",
+      "english": "Domain",
+      "danish": "Domæne",
+      "kalaallisut": "Suliaqarfik"
+    },
+    {
+      "id": "sem_drink",
+      "code": "drink",
+      "english": "Drink",
+      "danish": "Drikke",
+      "kalaallisut": "Imerneqarsinnaasoq"
+    },
+    {
+      "id": "sem_drink-c",
+      "code": "drink-c",
+      "english": "Drink, countable",
+      "danish": "Drikke, tællelig",
+      "kalaallisut": "Imerneqarsinnaasoq, kisissaasoq"
+    },
+    {
+      "id": "sem_drink-c-h",
+      "code": "drink-c-h",
+      "english": "Drink, countable, human-made",
+      "danish": "Drikke, tællelig, menneskeskabt",
+      "kalaallisut": "Imerneqarsinnaasoq, kisissaasoq, inummit pilersitaq"
+    },
+    {
+      "id": "sem_drink-h",
+      "code": "drink-h",
+      "english": "Drink, human-made",
+      "danish": "Drikke, menneskeskabt",
+      "kalaallisut": "Imerneqarsinnasoq, inummit pilersitaq"
+    },
+    {
+      "id": "sem_drink-m",
+      "code": "drink-m",
+      "english": "Drink, mass/uncountable",
+      "danish": "Drikke, utællelig",
+      "kalaallisut": "Imerneqarsinnaasoq, kisissaanngitsoq"
+    },
+    {
+      "id": "sem_drink-m-h",
+      "code": "drink-m-h",
+      "english": "Drink, mass/uncountable, human-made",
+      "danish": "Drikke, utællelig, menneskeskabt",
+      "kalaallisut": "Imerneqarsinnaasoq, kisissaanngitsoq, inummit pilersitaq"
+    },
+    {
+      "id": "sem_dur",
+      "code": "dur",
+      "english": "Temporal, duration",
+      "danish": "Tidsmæssig, varighed",
+      "kalaallisut": "Piffissamut tunngasoq, sivisussuseq"
+    },
+    {
+      "id": "sem_event",
+      "code": "event",
+      "english": "Temporal, event",
+      "danish": "Tidsmæssig, begivenhed",
+      "kalaallisut": "Piffissamut tunngasoq, pisoq"
+    },
+    {
+      "id": "sem_f",
+      "code": "f",
+      "english": "Feature",
+      "danish": "Egenskab",
+      "kalaallisut": "Pissuseq"
+    },
+    {
+      "id": "sem_f-an",
+      "code": "f-an",
+      "english": "Feature, anatomical",
+      "danish": "Egenskab, anatomisk",
+      "kalaallisut": "Pissuseq, timip ilusaanut tunngasoq"
+    },
+    {
+      "id": "sem_f-h",
+      "code": "f-h",
+      "english": "Feature, human",
+      "danish": "Egenskab, menneske",
+      "kalaallisut": "Pissuseq, inuk"
+    },
+    {
+      "id": "sem_f-phys",
+      "code": "f-phys",
+      "english": "Feature, physical",
+      "danish": "Egenskab, fysisk",
+      "kalaallisut": "Pissuseq, timitalik"
+    },
+    {
+      "id": "sem_f-phys-h",
+      "code": "f-phys-h",
+      "english": "Feature, physical, human",
+      "danish": "Egenskab, fysisk, menneske",
+      "kalaallisut": "Pissuseq, timitalik, inuk"
+    },
+    {
+      "id": "sem_f-psych",
+      "code": "f-psych",
+      "english": "Feature, psychological",
+      "danish": "Egenskab, psykisk",
+      "kalaallisut": "Pissuseq, tarnikkut"
+    },
+    {
+      "id": "sem_f-q",
+      "code": "f-q",
+      "english": "Feature, quantifiable",
+      "danish": "Egenskab, kvantificerbar/målelig",
+      "kalaallisut": "Pissuseq, uuttorneqarsinnaasoq"
+    },
+    {
+      "id": "sem_f-right",
+      "code": "f-right",
+      "english": "Feature, social, right, duty",
+      "danish": "Egenskab, social, rettighed, pligt",
+      "kalaallisut": "Pissuseq, inooqatigiinnut tunngasoq, pisinnaatitaaffik, pisussaaffik"
+    },
+    {
+      "id": "sem_f-sick",
+      "code": "f-sick",
+      "english": "Feature, disease",
+      "danish": "Egenskab, sygdom",
+      "kalaallisut": "Pissuseq, nappaatinut tunngasoq"
+    },
+    {
+      "id": "sem_f-surf",
+      "code": "f-surf",
+      "english": "Feature, surface",
+      "danish": "Egenskab, overflade",
+      "kalaallisut": "Pissuseq, qaaq"
+    },
+    {
+      "id": "sem_fight",
+      "code": "fight",
+      "english": "Fight",
+      "danish": "Kamp",
+      "kalaallisut": "Akersuunnermut/akerleriinnermut tunngasoq"
+    },
+    {
+      "id": "sem_food",
+      "code": "food",
+      "english": "Food",
+      "danish": "Mad",
+      "kalaallisut": "Nerisassaq"
+    },
+    {
+      "id": "sem_food-c",
+      "code": "food-c",
+      "english": "Food, countable",
+      "danish": "Mad, tællelig",
+      "kalaallisut": "Nerisassaq, kisissaasoq"
+    },
+    {
+      "id": "sem_food-c-h",
+      "code": "food-c-h",
+      "english": "Food, countable, human made",
+      "danish": "Mad, tællelig, menneskeskabt",
+      "kalaallisut": "Nerisassaq, kisissaasoq, inummit pilersitaq"
+    },
+    {
+      "id": "sem_food-h",
+      "code": "food-h",
+      "english": "Food, human made",
+      "danish": "Mad, menneskeskabt",
+      "kalaallisut": "Nerisassaq, inummit pilersitaq"
+    },
+    {
+      "id": "sem_food-m",
+      "code": "food-m",
+      "english": "Food, mass noun",
+      "danish": "Mad, utællelig",
+      "kalaallisut": "Nerisassaq, kisissaanngitsoq"
+    },
+    {
+      "id": "sem_food-m-h",
+      "code": "food-m-h",
+      "english": "Food, mass noun, human-made",
+      "danish": "Mad, utællelig, menneskeskabt",
+      "kalaallisut": "Nerisassaq, kisissaanngitsoq, inummit pilersitaq"
+    },
+    {
+      "id": "sem_fruit",
+      "code": "fruit",
+      "english": "Fruit",
+      "danish": "Frugt",
+      "kalaallisut": "Naatitaq"
+    },
+    {
+      "id": "sem_fruit-c",
+      "code": "fruit-c",
+      "english": "Fruit, countable",
+      "danish": "Mad, tællelig",
+      "kalaallisut": "Nerisassaq, kisissaasoq"
+    },
+    {
+      "id": "sem_fruit-m",
+      "code": "fruit-m",
+      "english": "Fruit, mass noun",
+      "danish": "Frugt, utællelig",
+      "kalaallisut": "Naatitaq, kisissaanngitsoq"
+    },
+    {
+      "id": "sem_furn",
+      "code": "furn",
+      "english": "Furniture",
+      "danish": "Møbel",
+      "kalaallisut": "Pisataq"
+    },
+    {
+      "id": "sem_game",
+      "code": "game",
+      "english": "Game",
+      "danish": "Spil",
+      "kalaallisut": "Pinnguaat"
+    },
+    {
+      "id": "sem_genre",
+      "code": "genre",
+      "english": "Genre",
+      "danish": "Genre",
+      "kalaallisut": "Suussuseq"
+    },
+    {
+      "id": "sem_geom",
+      "code": "geom",
+      "english": "Geometry",
+      "danish": "Geometri",
+      "kalaallisut": "Geometrii"
+    },
+    {
+      "id": "sem_geom-line",
+      "code": "geom-line",
+      "english": "Geometry, line",
+      "danish": "Geometri, linje",
+      "kalaallisut": "Geometrii, titarneq"
+    },
+    {
+      "id": "sem_inst",
+      "code": "inst",
+      "english": "Institution",
+      "danish": "Institution",
+      "kalaallisut": "Suliffeqarfik"
+    },
+    {
+      "id": "sem_ism",
+      "code": "ism",
+      "english": "Ideology",
+      "danish": "Ideologi",
+      "kalaallisut": "Ideologii, eqqarsartaaseq"
+    },
+    {
+      "id": "sem_jA",
+      "code": "jA",
+      "english": "J: animal",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jB",
+      "code": "jB",
+      "english": "J: plant",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jL",
+      "code": "jL",
+      "english": "J: landscape attributes",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jN",
+      "code": "jN",
+      "english": "J: not human",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jV",
+      "code": "jV",
+      "english": "J: vehicle",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jVair",
+      "code": "jVair",
+      "english": "J: air vehicle",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jVground",
+      "code": "jVground",
+      "english": "J: ground vehicle",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jVwater",
+      "code": "jVwater",
+      "english": "J: ship",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jact",
+      "code": "jact",
+      "english": "J: action",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jact-h",
+      "code": "jact-h",
+      "english": "J: acting",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jaff",
+      "code": "jaff",
+      "english": "J: pychologically or state-wise, non-physically affecting humans, non-human",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jaff-h",
+      "code": "jaff-h",
+      "english": "J: non-physically affected",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jage",
+      "code": "jage",
+      "english": "J: age",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_janat",
+      "code": "janat",
+      "english": "J: anatomical and other physical human features",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_janat-bio",
+      "code": "janat-bio",
+      "english": "J: anatomical adjectives that are not human features",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jappear",
+      "code": "jappear",
+      "english": "J: appearance",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jappro",
+      "code": "jappro",
+      "english": "J: appropriate",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jauth",
+      "code": "jauth",
+      "english": "J: authenticity",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jbe",
+      "code": "jbe",
+      "english": "J: being, existing, new",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jbehave",
+      "code": "jbehave",
+      "english": "J: \"psychological\" behaviour",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jbio",
+      "code": "jbio",
+      "english": "J: biological",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jbrand",
+      "code": "jbrand",
+      "english": "J: brand",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jbuild",
+      "code": "jbuild",
+      "english": "J: building",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jcan",
+      "code": "jcan",
+      "english": "J: can",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jcause",
+      "code": "jcause",
+      "english": "J: cause",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jcause-h",
+      "code": "jcause-h",
+      "english": "J: responsibility",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jchance",
+      "code": "jchance",
+      "english": "J: chance, luck",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jchange",
+      "code": "jchange",
+      "english": "J: change, changing",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jchange-res",
+      "code": "jchange-res",
+      "english": "J: result of changing",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jchem",
+      "code": "jchem",
+      "english": "J: chemical",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jclo",
+      "code": "jclo",
+      "english": "J: clothing",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jclo-h",
+      "code": "jclo-h",
+      "english": "J: clothed, but also groomed",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jcog",
+      "code": "jcog",
+      "english": "J: cognitive, knowledge",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jcol",
+      "code": "jcol",
+      "english": "J: colour",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jcom",
+      "code": "jcom",
+      "english": "J: communication, discussion",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jcomp",
+      "code": "jcomp",
+      "english": "J: comparison",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jcont",
+      "code": "jcont",
+      "english": "J: content",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jcrea",
+      "code": "jcrea",
+      "english": "J: created, produced",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jdam",
+      "code": "jdam",
+      "english": "J: damaged or undamaged/protected",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jdegree",
+      "code": "jdegree",
+      "english": "J: degree, intensity",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jdir",
+      "code": "jdir",
+      "english": "J: direction",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jdomain",
+      "code": "jdomain",
+      "english": "J: domain",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jeff",
+      "code": "jeff",
+      "english": "J: effect",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jemo",
+      "code": "jemo",
+      "english": "J: emotion",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jetn",
+      "code": "jetn",
+      "english": "J: ethnic",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jevent",
+      "code": "jevent",
+      "english": "J: event",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jfact",
+      "code": "jfact",
+      "english": "J: facticity, potentiality",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jfame",
+      "code": "jfame",
+      "english": "J: famous, well-known, secret",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jfood",
+      "code": "jfood",
+      "english": "J: food",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jfreq",
+      "code": "jfreq",
+      "english": "J: frequency",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jgenre",
+      "code": "jgenre",
+      "english": "J: genre and style",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jgeo",
+      "code": "jgeo",
+      "english": "J: geographical",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jgeom",
+      "code": "jgeom",
+      "english": "J: geometrical",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jh",
+      "code": "jh",
+      "english": "J: human",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jhand",
+      "code": "jhand",
+      "english": "J: processed, handled",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jhave",
+      "code": "jhave",
+      "english": "J: with or without s.th.",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jident",
+      "code": "jident",
+      "english": "J: identity",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jideo",
+      "code": "jideo",
+      "english": "J: ideological",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jimp",
+      "code": "jimp",
+      "english": "J: importance, effectfulness",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jinst",
+      "code": "jinst",
+      "english": "J: institutional",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jjur",
+      "code": "jjur",
+      "english": "J: juridical",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jlight",
+      "code": "jlight",
+      "english": "J: light",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jlike",
+      "code": "jlike",
+      "english": "J: likeable, coveted, wanted, annoying, disliked",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jlike-h",
+      "code": "jlike-h",
+      "english": "J: liking, not-liking",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jling",
+      "code": "jling",
+      "english": "J: language",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jlink",
+      "code": "jlink",
+      "english": "J: link",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jloc",
+      "code": "jloc",
+      "english": "J: location",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jmanner",
+      "code": "jmanner",
+      "english": "J: manner",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jmanner-q",
+      "code": "jmanner-q",
+      "english": "J: manner-quantitative",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jmat",
+      "code": "jmat",
+      "english": "J: material",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jmay",
+      "code": "jmay",
+      "english": "J: allowed, rule-bound",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jmean",
+      "code": "jmean",
+      "english": "J: meaning",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jmed",
+      "code": "jmed",
+      "english": "J: medical",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jmeta",
+      "code": "jmeta",
+      "english": "J: meta",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jmethod",
+      "code": "jmethod",
+      "english": "J: method",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jmon",
+      "code": "jmon",
+      "english": "J: money",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jmon-h",
+      "code": "jmon-h",
+      "english": "J: human monetary",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jmove",
+      "code": "jmove",
+      "english": "J: movement",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jmust",
+      "code": "jmust",
+      "english": "J: must",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jname",
+      "code": "jname",
+      "english": "J: author/name derivative",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jnat",
+      "code": "jnat",
+      "english": "J: nationality",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jnormal",
+      "code": "jnormal",
+      "english": "J: (ab)normality, ordinary",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jopen",
+      "code": "jopen",
+      "english": "J: open, closed",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jord",
+      "code": "jord",
+      "english": "J: order",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jori",
+      "code": "jori",
+      "english": "J: origin",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jornam",
+      "code": "jornam",
+      "english": "J: ornamental",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jper",
+      "code": "jper",
+      "english": "J: period",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jpercep",
+      "code": "jpercep",
+      "english": "J: perceptual property",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jpercep-l",
+      "code": "jpercep-l",
+      "english": "J: audio perceptual property",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jpercep-o",
+      "code": "jpercep-o",
+      "english": "J: olfactory perceptual property",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jpercep-t",
+      "code": "jpercep-t",
+      "english": "J: taste perceptual property",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jpol",
+      "code": "jpol",
+      "english": "J: political",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jpos",
+      "code": "jpos",
+      "english": "J: position",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jposs",
+      "code": "jposs",
+      "english": "J: possession",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jposs-h",
+      "code": "jposs-h",
+      "english": "J: possessor",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jpower",
+      "code": "jpower",
+      "english": "J: power, strength, intensity",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jprocess",
+      "code": "jprocess",
+      "english": "J: process",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jprof",
+      "code": "jprof",
+      "english": "J: professional",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jprop",
+      "code": "jprop",
+      "english": "J: property",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jpsych",
+      "code": "jpsych",
+      "english": "J: psychological, feeling, intellectual, inherent character trait",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jqual",
+      "code": "jqual",
+      "english": "J: quality",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jquant",
+      "code": "jquant",
+      "english": "J: quantitive",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jreg",
+      "code": "jreg",
+      "english": "J: regular, regulated",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jrel",
+      "code": "jrel",
+      "english": "J: religious",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jrepr",
+      "code": "jrepr",
+      "english": "J: representation",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jres",
+      "code": "jres",
+      "english": "J: result, result-of-change, finished, done",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jres-h",
+      "code": "jres-h",
+      "english": "J: human result-of-change",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jresist",
+      "code": "jresist",
+      "english": "J: capacity to resist",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jright",
+      "code": "jright",
+      "english": "J: right",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jrisk",
+      "code": "jrisk",
+      "english": "J: dangerous, risky",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jsem",
+      "code": "jsem",
+      "english": "J: semantic",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jsetop",
+      "code": "jsetop",
+      "english": "J: set operation",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jshape",
+      "code": "jshape",
+      "english": "J: shape",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jsick",
+      "code": "jsick",
+      "english": "J: disease",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jsit",
+      "code": "jsit",
+      "english": "J: situation",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jsize",
+      "code": "jsize",
+      "english": "J: size",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jskill",
+      "code": "jskill",
+      "english": "J: skill",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jsoc",
+      "code": "jsoc",
+      "english": "J: social",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jspeed",
+      "code": "jspeed",
+      "english": "J: speed",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jsport",
+      "code": "jsport",
+      "english": "J: sport",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jstate",
+      "code": "jstate",
+      "english": "J: state",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jstate-h",
+      "code": "jstate-h",
+      "english": "J: human state",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jstruct",
+      "code": "jstruct",
+      "english": "J: structured",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jsub",
+      "code": "jsub",
+      "english": "J: substance feature, consistency, composition",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jsurf",
+      "code": "jsurf",
+      "english": "J: surface",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jtarget",
+      "code": "jtarget",
+      "english": "J: purpose, goal, target, destination",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jtech",
+      "code": "jtech",
+      "english": "J: technical",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jtemp",
+      "code": "jtemp",
+      "english": "J: temperature",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jtime",
+      "code": "jtime",
+      "english": "J: time",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jtype",
+      "code": "jtype",
+      "english": "J: type",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_juse",
+      "code": "juse",
+      "english": "J: use, can be used",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jval",
+      "code": "jval",
+      "english": "J: value, price",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jwea",
+      "code": "jwea",
+      "english": "J: weather",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jweight",
+      "code": "jweight",
+      "english": "J: weight",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_jwill",
+      "code": "jwill",
+      "english": "J: wanting to, willing to, preparedness",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_ling",
+      "code": "ling",
+      "english": "Language",
+      "danish": "Sprog",
+      "kalaallisut": "Oqaatsit"
+    },
+    {
+      "id": "sem_mach",
+      "code": "mach",
+      "english": "Machine",
+      "danish": "Maskine",
+      "kalaallisut": "Maskiina"
+    },
+    {
+      "id": "sem_mat",
+      "code": "mat",
+      "english": "Material",
+      "danish": "Materiale",
+      "kalaallisut": "Atortussiaq"
+    },
+    {
+      "id": "sem_mat-cloth",
+      "code": "mat-cloth",
+      "english": "Material, cloth",
+      "danish": "Materiale, tøj",
+      "kalaallisut": "Atortussiaq, atisanut"
+    },
+    {
+      "id": "sem_mat-h",
+      "code": "mat-h",
+      "english": "Material, human-made",
+      "danish": "Materiale, menneskeskabt",
+      "kalaallisut": "Atortussiaq, inummit pilersitaq"
+    },
+    {
+      "id": "sem_meta",
+      "code": "meta",
+      "english": "Meta",
+      "danish": "Meta (sprog om sprog)",
+      "kalaallisut": "Meta (sammisaq pillugu paasissutissat)"
+    },
+    {
+      "id": "sem_meta-cat",
+      "code": "meta-cat",
+      "english": "Meta, category",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_meta-cat-lib",
+      "code": "meta-cat-lib",
+      "english": "Meta, library category",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_meta-hypo",
+      "code": "meta-hypo",
+      "english": "Meta, hyponym",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_mon",
+      "code": "mon",
+      "english": "Money",
+      "danish": "Penge",
+      "kalaallisut": "Aningaasat"
+    },
+    {
+      "id": "sem_mon-c",
+      "code": "mon-c",
+      "english": "Money, countable",
+      "danish": "Penge, tællelig",
+      "kalaallisut": "Aningaasat, kisissaasut"
+    },
+    {
+      "id": "sem_mon-m",
+      "code": "mon-m",
+      "english": "Money, mass noun",
+      "danish": "Penge, utællelig",
+      "kalaallisut": "Aningaasat, kisissaanngitsut"
+    },
+    {
+      "id": "sem_month",
+      "code": "month",
+      "english": "Temporal, month",
+      "danish": "Tidsmæssig, måned",
+      "kalaallisut": "Piffissamut tunngasoq, qaammat"
+    },
+    {
+      "id": "sem_occ",
+      "code": "occ",
+      "english": "Temporal, occasion",
+      "danish": "Tidsmæssig, anledning",
+      "kalaallisut": "Piffissamut tunngasoq, pissut"
+    },
+    {
+      "id": "sem_part",
+      "code": "part",
+      "english": "Part, distinct, functional",
+      "danish": "Del, distinkt, funktionel",
+      "kalaallisut": "Ilaminertaq immikkoortittariaannaasoq"
+    },
+    {
+      "id": "sem_part-V",
+      "code": "part-V",
+      "english": "Part, vehicle",
+      "danish": "Del, køretøj",
+      "kalaallisut": "Qamutip/angallatip ilaa"
+    },
+    {
+      "id": "sem_part-build",
+      "code": "part-build",
+      "english": "Part, building",
+      "danish": "Del, bygning",
+      "kalaallisut": "Illuliap/sanaartukkap ilaa"
+    },
+    {
+      "id": "sem_part-clo",
+      "code": "part-clo",
+      "english": "Part, clothing",
+      "danish": "Del, tøj",
+      "kalaallisut": "Atisassiap ilaa"
+    },
+    {
+      "id": "sem_part-mach",
+      "code": "part-mach",
+      "english": "Part, machine",
+      "danish": "Del, maskine",
+      "kalaallisut": "Maskiinap ilaa"
+    },
+    {
+      "id": "sem_part-sem",
+      "code": "part-sem",
+      "english": "Part, semantic",
+      "danish": "Del, semantisk",
+      "kalaallisut": "Ilaminertaq, tigussaanngitsoq/isumaliutersornermut tunnganerusoq"
+    },
+    {
+      "id": "sem_part-tool",
+      "code": "part-tool",
+      "english": "Part, tool",
+      "danish": "Del, værktøj",
+      "kalaallisut": "Sakkup ilaa"
+    },
+    {
+      "id": "sem_per",
+      "code": "per",
+      "english": "Temporal, period of/in time",
+      "danish": "Tidsmæssig, periode",
+      "kalaallisut": "Piffissamut tunngasoq, piffissaq"
+    },
+    {
+      "id": "sem_percep",
+      "code": "percep",
+      "english": "Perception",
+      "danish": "Sansning",
+      "kalaallisut": "Misigineq"
+    },
+    {
+      "id": "sem_percep-c",
+      "code": "percep-c",
+      "english": "Perception, cognitive",
+      "danish": "Sansning, erkendelse",
+      "kalaallisut": "Misigineq, paasinninneq"
+    },
+    {
+      "id": "sem_percep-e",
+      "code": "percep-e",
+      "english": "Perception, emotion",
+      "danish": "Sansning, følelse",
+      "kalaallisut": "Misigineq, misigissuseq"
+    },
+    {
+      "id": "sem_percep-f",
+      "code": "percep-f",
+      "english": "Perception, felt",
+      "danish": "Sansning, følt",
+      "kalaallisut": "Misigineq, misigisaq"
+    },
+    {
+      "id": "sem_percep-l",
+      "code": "percep-l",
+      "english": "Perception, heard",
+      "danish": "Sansning, hørt",
+      "kalaallisut": "Misigineq, tusagaq"
+    },
+    {
+      "id": "sem_percep-o",
+      "code": "percep-o",
+      "english": "Perception, smell",
+      "danish": "Sansning, lugt",
+      "kalaallisut": "Misigineq, tipi/naamasaq"
+    },
+    {
+      "id": "sem_percep-t",
+      "code": "percep-t",
+      "english": "Perception, touch",
+      "danish": "Sansning, berøring",
+      "kalaallisut": "Misigineq, attuineq/attugaq"
+    },
+    {
+      "id": "sem_percep-w",
+      "code": "percep-w",
+      "english": "Perception, seen",
+      "danish": "Sansning, set",
+      "kalaallisut": "Misigineq, takunninneq/takusaq"
+    },
+    {
+      "id": "sem_pict",
+      "code": "pict",
+      "english": "Picture / Painting",
+      "danish": "Foto / Maleri ",
+      "kalaallisut": "Assiliaq / Qalipataq"
+    },
+    {
+      "id": "sem_piece",
+      "code": "piece",
+      "english": "Part, indistinctive",
+      "danish": "Del, uden klar afgrænsning",
+      "kalaallisut": "Ilaminertaq, immikkoortikkuminaatsoq"
+    },
+    {
+      "id": "sem_pos",
+      "code": "pos",
+      "english": "Position",
+      "danish": "Position",
+      "kalaallisut": "Inissisimaffik"
+    },
+    {
+      "id": "sem_pos-an",
+      "code": "pos-an",
+      "english": "Position, anatomical",
+      "danish": "Position, anatomisk",
+      "kalaallisut": "Inissisimaffik, timip pissusaanut tunngatillugu"
+    },
+    {
+      "id": "sem_pos-soc",
+      "code": "pos-soc",
+      "english": "Position, social",
+      "danish": "Position, sociel",
+      "kalaallisut": "Inissisimaneq, inuttut"
+    },
+    {
+      "id": "sem_proc-bio",
+      "code": "proc-bio",
+      "english": "Process, biological",
+      "danish": "",
+      "kalaallisut": ""
+    },
+    {
+      "id": "sem_process",
+      "code": "process",
+      "english": "Process",
+      "danish": "Forløb",
+      "kalaallisut": "Ingerlaarneq"
+    },
+    {
+      "id": "sem_quant",
+      "code": "quant",
+      "english": "Quantitative",
+      "danish": "Kvantitativt",
+      "kalaallisut": "Annertussutsimut tunngasoq"
+    },
+    {
+      "id": "sem_repr",
+      "code": "repr",
+      "english": "Representation",
+      "danish": "Repræsentation",
+      "kalaallisut": "Ilassinninneq"
+    },
+    {
+      "id": "sem_sem",
+      "code": "sem",
+      "english": "Semiotic",
+      "danish": "Semiotik",
+      "kalaallisut": "Semiotikki"
+    },
+    {
+      "id": "sem_sem-c",
+      "code": "sem-c",
+      "english": "Semiotic, cognitive",
+      "danish": "Semiotik, erkendelse",
+      "kalaallisut": "Semiotikki, paasinninnermut/nassuernermut/akuersinermut/eqqarsarnermut/siunersisaqarnermut tunngasoq"
+    },
+    {
+      "id": "sem_sem-l",
+      "code": "sem-l",
+      "english": "Semiotic, listenable",
+      "danish": "Semiotik, lytning",
+      "kalaallisut": "Semiotikki, tusarnaarneqarsinnaasoq/tusarnaarnermut tunngasoq"
+    },
+    {
+      "id": "sem_sem-nons",
+      "code": "sem-nons",
+      "english": "Semiotic, nonsense",
+      "danish": "Semiotik, nonsens",
+      "kalaallisut": "Semiotikki, oqaaserujuk/pissusilersuut isumaqanngitsoq"
+    },
+    {
+      "id": "sem_sem-r",
+      "code": "sem-r",
+      "english": "Semiotic, readable",
+      "danish": "Semiotik, læselig",
+      "kalaallisut": "Semiotikki, atuarneqarsinnaasoq"
+    },
+    {
+      "id": "sem_sem-s",
+      "code": "sem-s",
+      "english": "Semiotic, speech",
+      "danish": "Semiotik, tale",
+      "kalaallisut": "Semiotikki, oqaatigineqarsinnaasoq/oqalunnermut tunngasoq"
+    },
+    {
+      "id": "sem_sem-w",
+      "code": "sem-w",
+      "english": "Semiotic, watchable",
+      "danish": "Semiotik, underholdende/iagttagelig",
+      "kalaallisut": "Semiotikki, aliikkusersuut/isiginnaarneqarsinnaasoq"
+    },
+    {
+      "id": "sem_sick",
+      "code": "sick",
+      "english": "Disease",
+      "danish": "Sygdom",
+      "kalaallisut": "Nappaat"
+    },
+    {
+      "id": "sem_sick-c",
+      "code": "sick-c",
+      "english": "Disease, countable",
+      "danish": "Sygdom, tællelig",
+      "kalaallisut": "Nappaat, kisissaasoq"
+    },
+    {
+      "id": "sem_sick-m",
+      "code": "sick-m",
+      "english": "Disease, mass noun",
+      "danish": "Sygdom, utællelig",
+      "kalaallisut": "Nappaat, kisissaanngitsoq"
+    },
+    {
+      "id": "sem_sit",
+      "code": "sit",
+      "english": "Situation",
+      "danish": "Situation",
+      "kalaallisut": "Qanoq inissisimaneq"
+    },
+    {
+      "id": "sem_spice",
+      "code": "spice",
+      "english": "Spice",
+      "danish": "Krydderi",
+      "kalaallisut": "Akuutissaq"
+    },
+    {
+      "id": "sem_sport",
+      "code": "sport",
+      "english": "Sport",
+      "danish": "Sport",
+      "kalaallisut": "Timersuut"
+    },
+    {
+      "id": "sem_state",
+      "code": "state",
+      "english": "State",
+      "danish": "Tilstand",
+      "kalaallisut": "Qanoq issuseq"
+    },
+    {
+      "id": "sem_state-h",
+      "code": "state-h",
+      "english": "State, human",
+      "danish": "Tilstand, menneske",
+      "kalaallisut": "Qanoq issuseq, inummut tunngatillugu"
+    },
+    {
+      "id": "sem_system",
+      "code": "system",
+      "english": "System",
+      "danish": "System",
+      "kalaallisut": "Ataqatigiimmik aaqqissuussinermut tunngasoq"
+    },
+    {
+      "id": "sem_talk",
+      "code": "talk",
+      "english": "Action, talking",
+      "danish": "Aktion/handling, tale",
+      "kalaallisut": "Iliuuseq, oqalunneq"
+    },
+    {
+      "id": "sem_temp",
+      "code": "temp",
+      "english": "Temporal",
+      "danish": "Tidsmæssig",
+      "kalaallisut": "Piffissamut tunngasoq"
+    },
+    {
+      "id": "sem_temp-human",
+      "code": "temp-human",
+      "english": "Temporal, human",
+      "danish": "Tidsmæssig, menneske",
+      "kalaallisut": "Piffissamut tunngasoq, inummut tunngatillugu"
+    },
+    {
+      "id": "sem_therapy",
+      "code": "therapy",
+      "english": "Therapy",
+      "danish": "Terapi",
+      "kalaallisut": "Peqqissarneq"
+    },
+    {
+      "id": "sem_tool",
+      "code": "tool",
+      "english": "Tool",
+      "danish": "Værktøj",
+      "kalaallisut": "Sakkoq"
+    },
+    {
+      "id": "sem_tool-cut",
+      "code": "tool-cut",
+      "english": "Tool, cutting",
+      "danish": "Værktøj, skære",
+      "kalaallisut": "Sakkoq, avissinermut"
+    },
+    {
+      "id": "sem_tool-mus",
+      "code": "tool-mus",
+      "english": "Tool, musical",
+      "danish": "Værktøj, musik",
+      "kalaallisut": "Sakkoq, nipilersornermi"
+    },
+    {
+      "id": "sem_tool-sail",
+      "code": "tool-sail",
+      "english": "Tool, sail",
+      "danish": "Værktøj, sejle",
+      "kalaallisut": "Sakkoq, immakkut angalaarnermi"
+    },
+    {
+      "id": "sem_tool-shoot",
+      "code": "tool-shoot",
+      "english": "Tool, shoot, gun",
+      "danish": "Værktøj, skyde, våben",
+      "kalaallisut": "Sakkoq, aallaaseq, sakku"
+    },
+    {
+      "id": "sem_tool-w",
+      "code": "tool-w",
+      "english": "Tool, watchable",
+      "danish": "Værktøj, synlig",
+      "kalaallisut": "Sakkoq, takuneqarsinnaasoq"
+    },
+    {
+      "id": "sem_tube",
+      "code": "tube",
+      "english": "Tube",
+      "danish": "Tube",
+      "kalaallisut": "Tube/sullulik"
+    },
+    {
+      "id": "sem_unit",
+      "code": "unit",
+      "english": "Unit",
+      "danish": "Enhed",
+      "kalaallisut": "Uuttuut"
+    },
+    {
+      "id": "sem_wea",
+      "code": "wea",
+      "english": "Weather",
+      "danish": "Vejr",
+      "kalaallisut": "Sila"
+    },
+    {
+      "id": "sem_wea-c",
+      "code": "wea-c",
+      "english": "Weather, countable",
+      "danish": "Vejr, tællelig",
+      "kalaallisut": "Sila, kisissaasoq"
+    },
+    {
+      "id": "sem_wea-m",
+      "code": "wea-m",
+      "english": "Weather, mass noun",
+      "danish": "Vejr, utællelig",
+      "kalaallisut": "Sila, kisissaanngitsoq"
+    },
+    {
+      "id": "sem_wea-rain",
+      "code": "wea-rain",
+      "english": "Weather, precipitation",
+      "danish": "Vejret, nedbør",
+      "kalaallisut": "Sila, nakkaalaarneq"
+    },
+    {
+      "id": "sem_wea-wind",
+      "code": "wea-wind",
+      "english": "Weather, wind",
+      "danish": "Vejret, vind",
+      "kalaallisut": "Sila, anori"
+    }
+  ]
+}

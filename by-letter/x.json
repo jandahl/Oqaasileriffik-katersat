@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "version": "1",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "Oqaasileriffik / Greenland Language Secretariat",
+    "source": "https://github.com/Oqaasileriffik/katersat",
+    "generated_at": "2026-05-28T23:57:40.929727+00:00"
+  },
+  "lexemes": [
+    {
+      "id": "lex_31829",
+      "kalaallisut": "X-400",
+      "english": [],
+      "danish": [
+        "X-400"
+      ],
+      "word_class": "num",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "X-400+Err/Sub+Num+Rel+Pl",
+        "X-400+Num+Abs+Pl",
+        "X-400+Num+Abs+Sg"
+      ],
+      "definition": "Produkt, elektronisk post, hvormed data kan overføres via satellit mellem fx Grønland og Danmark. Udbydes af Tele Greenland A/S.\nNioqqut, elektronik iluaqusiullugu allakkanik nassitsissut, tassusuna paasissutissat qaammataasakkut assersuutigalugu Kalaallit Nunaata Danmarkillu akornanniittoq atorlugu nuunneqarsinnaallutik, taanna Tele Greenland A/S-imit neqeroorutaavoq.",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_184543",
+      "kalaallisut": "x-iliineq",
+      "english": [],
+      "danish": [
+        "afkrydsning"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "act"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_245084",
+      "kalaallisut": "x-ip nalinga",
+      "english": [],
+      "danish": [
+        "x- værdi"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_255160",
+      "kalaallisut": "xylofoni",
+      "english": [],
+      "danish": [
+        "xylofon"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    }
+  ]
+}

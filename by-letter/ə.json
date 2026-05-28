@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "version": "1",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "Oqaasileriffik / Greenland Language Secretariat",
+    "source": "https://github.com/Oqaasileriffik/katersat",
+    "generated_at": "2026-05-28T23:57:40.929727+00:00"
+  },
+  "lexemes": [
+    {
+      "id": "lex_242901",
+      "kalaallisut": "ə",
+      "english": [],
+      "danish": [
+        "schwa"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_44",
+        "code": "4.5.0",
+        "english": "SAMF Linguistic",
+        "danish": "SAMF Sprogvidenskab",
+        "kalaallisut": "SAMF Oqaatsinik ilisimatusarneq"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": "Ersiut /ə/ assigiinngitsutigut allanngorartarpoq, nipaqanngissinnaalluni, aappersarissamik tulleqaruni i-tut nipeqarsinnaalluni aamma ersiummik tulleqaruni a-tut nipeqarsinnaalluni, soorlu:\n- kigutə → kigut\n- kigutə+t → kigutit\t\n- kigutə+usaq → kigutaasaq",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    }
+  ]
+}

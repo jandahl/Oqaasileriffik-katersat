@@ -1,0 +1,6643 @@
+{
+  "meta": {
+    "version": "1",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "Oqaasileriffik / Greenland Language Secretariat",
+    "source": "https://github.com/Oqaasileriffik/katersat",
+    "generated_at": "2026-05-28T23:57:40.929727+00:00"
+  },
+  "lexemes": [
+    {
+      "id": "lex_7300",
+      "kalaallisut": "G7",
+      "english": [],
+      "danish": [
+        "G7"
+      ],
+      "word_class": "num",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "G7+Num+Abs+Pl",
+        "G7+Sem/inst+Sem/Hum+Prop+Abs+Sg"
+      ],
+      "definition": "Syv af verdens førende industrilande (Canada, Storbritannien, Frankrig, Italien, Japan, USA og Tyskland) der mødes årligt for at drøfte den økonomiske tilstand i verden; formindsket G-dur akkord (mus.)\nNunarsuarmi nunat 7 suliffissuaqarnikkut siuttuusut. (Canada, Tuluit Nunaat, Frankrig, Italien, Japan, USA aamma Tyskland); nipeqatigiit G-dur millisitat\nSyv af verdens førende industrilande (Canada, Storbritannien, Frankrig, Italien, Japan, USA og Tyskland) der mødes årligt for at drøfte den økonomiske tilstand i verden\nNunarsuarmi nunat 7 suliffissuaqarnikkut siuttuusut. (Canada, Tuluit Nunaat, Frankrig, Italien, Japan, USA aamma Tyskland)",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165023",
+      "kalaallisut": "GAJUP Der/vv",
+      "english": [
+        "be prone to"
+      ],
+      "danish": [
+        "tit",
+        "ofte",
+        "have tendens til",
+        "hyppigt",
+        "regelmæssigt",
+        "gerne",
+        "være tilbøjelig til"
+      ],
+      "word_class": "adv",
+      "semantic_classes": [],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165029",
+      "kalaallisut": "GAJUP Der/vv SSUSIQ Der/vn",
+      "english": [],
+      "danish": [
+        "frekvens",
+        "hyppighed"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "ac"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165027",
+      "kalaallisut": "GAJUP Der/vv TUQ Der/vn",
+      "english": [],
+      "danish": [
+        "jævnlig",
+        "regelmæssig",
+        "almindelig",
+        "udbredt"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "f"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_164704",
+      "kalaallisut": "GALLAR Der/vv",
+      "english": [],
+      "danish": [
+        "midlertidigt",
+        "foreløbigt",
+        "temporært"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.8.1"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_167178",
+      "kalaallisut": "GALLAR Der/vv TUQ Der/vn",
+      "english": [],
+      "danish": [
+        "midlertidig",
+        "provisorisk"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165281",
+      "kalaallisut": "GALUAQ Der/vn",
+      "english": [],
+      "danish": [
+        "egentlig",
+        "forhenværende",
+        "afdød",
+        "tidligere"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165707",
+      "kalaallisut": "GALUAR Der/vv",
+      "english": [
+        "actually"
+      ],
+      "danish": [
+        "ellers",
+        "forgæves",
+        "egentlig",
+        "nytteløst"
+      ],
+      "word_class": "v",
+      "semantic_classes": [],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165711",
+      "kalaallisut": "GALUAR Der/vv NNGIT Der/vv",
+      "english": [
+        "not at all",
+        "not in the least"
+      ],
+      "danish": [
+        "overhovedet ikke",
+        "slet ikke"
+      ],
+      "word_class": "v",
+      "semantic_classes": [],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165712",
+      "kalaallisut": "GALUTTUAR Der/vv",
+      "english": [],
+      "danish": [
+        "mere og mere"
+      ],
+      "word_class": "v",
+      "semantic_classes": [],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165731",
+      "kalaallisut": "GALUTTUAR Der/vv INNAR Der/vv",
+      "english": [],
+      "danish": [
+        "efterhånden mere og mere"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.47.1.1.2"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165732",
+      "kalaallisut": "GASAAR Der/nv",
+      "english": [],
+      "danish": [
+        "være plettet af"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.1.3"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "add",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165734",
+      "kalaallisut": "GASAP Der/nv",
+      "english": [
+        "be scattered of"
+      ],
+      "danish": [
+        "være plettet af"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.1.3"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "add",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165629",
+      "kalaallisut": "GASUAR Der/vv",
+      "english": [
+        "in a hurry",
+        "rapidly"
+      ],
+      "danish": [
+        "i en fart",
+        "skyndsomt",
+        "hurtig"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.53.2"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165634",
+      "kalaallisut": "GASUAR Der/vv TUQ Der/vn",
+      "english": [],
+      "danish": [
+        "skyndsom",
+        "hastig",
+        "hurtig"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165640",
+      "kalaallisut": "GASUGE Der/vv",
+      "english": [],
+      "danish": [
+        "formode",
+        "tro",
+        "antage",
+        "mene"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.29.5.1"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165641",
+      "kalaallisut": "GASUGE Der/vv",
+      "english": [],
+      "danish": [
+        "mene",
+        "antage",
+        "tro",
+        "formode"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.29.5.1"
+      ],
+      "valence": "vt",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165700",
+      "kalaallisut": "GE Der/nv Gram/TV",
+      "english": [
+        "have as"
+      ],
+      "danish": [
+        "have som",
+        "have til"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.5.0"
+      ],
+      "valence": "vt",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "add",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165974",
+      "kalaallisut": "GE Der/nv LIR Der/vv",
+      "english": [
+        "acquire possession of"
+      ],
+      "danish": [
+        "få til eje"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.13.5.2.1"
+      ],
+      "valence": "vt",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "add",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165702",
+      "kalaallisut": "GE Der/vv",
+      "english": [
+        "consider"
+      ],
+      "danish": [
+        "anse",
+        "betragte"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.29.9.3"
+      ],
+      "valence": "vt",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "add",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_261398",
+      "kalaallisut": "GHG-mik nalunaarsueriaaseq",
+      "english": [],
+      "danish": [
+        "Green House Gas Protokol"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_133",
+        "code": "11.9.0",
+        "english": "MILJØ Climate and sustainability",
+        "danish": "MILJØ Klima- og Bæredygtighed",
+        "kalaallisut": "MILJØ Silap pissusia piujuartitsinerlu"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_261396",
+      "kalaallisut": "GHG-mik nalunaarsuineq",
+      "english": [],
+      "danish": [
+        "GHG-rapportering"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_133",
+        "code": "11.9.0",
+        "english": "MILJØ Climate and sustainability",
+        "danish": "MILJØ Klima- og Bæredygtighed",
+        "kalaallisut": "MILJØ Silap pissusia piujuartitsinerlu"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165642",
+      "kalaallisut": "GIARTUAAR Der/vv",
+      "english": [
+        "increasingly",
+        "more and more"
+      ],
+      "danish": [
+        "stadig mere",
+        "i stigende grad"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.51.1.1"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_164048",
+      "kalaallisut": "GIARTUR Der/vv",
+      "english": [
+        "go to"
+      ],
+      "danish": [
+        "passere",
+        "gå",
+        "forløbe"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.51.1.1"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_172785",
+      "kalaallisut": "GIF",
+      "english": [],
+      "danish": [
+        "GIF"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "sem-w"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "GIF+N+Abs",
+        "GIF+N+Abs+Sg"
+      ],
+      "definition": "Graphic Interchange Format",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_166236",
+      "kalaallisut": "GIIAAR Der/nv",
+      "english": [
+        "be mutually"
+      ],
+      "danish": [
+        "være indbyrdes"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.1.1",
+        "V.86.1"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "add",
+      "attrs": {
+        "archaic": false,
+        "plural_only": true,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_166312",
+      "kalaallisut": "GIP Der/nv SI Der/vv",
+      "english": [
+        "have gotten better"
+      ],
+      "danish": [
+        "have fået bedre"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.2.5"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "add",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165645",
+      "kalaallisut": "GISSAAR Der/nv",
+      "english": [
+        "have a good"
+      ],
+      "danish": [
+        "have smuk",
+        "have god"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.5.1"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "add",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_172729",
+      "kalaallisut": "GM",
+      "english": [],
+      "danish": [
+        "grønlandsmesterskab"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "ac"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "GM+N+Abs",
+        "GM+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_162898",
+      "kalaallisut": "GTO",
+      "english": [],
+      "danish": [
+        "Grønlands Tekniske Organisation"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "HHorg",
+        "ac-sign"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "GTO+N+Abs"
+      ],
+      "definition": null,
+      "info": "Oqaasiliortut 2007",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_188544",
+      "kalaallisut": "GTO",
+      "english": [],
+      "danish": [
+        "Grønlands Tekniske Organisation"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "domain"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "GTO+N+Abs"
+      ],
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani oqaatsinut ujarliutinut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165647",
+      "kalaallisut": "GUMA Der/vv",
+      "english": [],
+      "danish": [
+        "ønske"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.32.1.1"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165649",
+      "kalaallisut": "GUMA Der/vv",
+      "english": [
+        "want"
+      ],
+      "danish": [
+        "ville",
+        "ønske"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.32.1.1"
+      ],
+      "valence": "vt",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165618",
+      "kalaallisut": "GUMA Der/vv GUNNAIR Der/vv",
+      "english": [
+        "don't want anymore"
+      ],
+      "danish": [
+        "ikke orke",
+        "ikke længere at ville"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.55.4.1",
+        "V.32.1.1"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165620",
+      "kalaallisut": "GUMA Der/vv GUNNAIR Der/vv",
+      "english": [
+        "don't want anymore"
+      ],
+      "danish": [
+        "ikke længere at ville med"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.55.4.1",
+        "V.32.1.1"
+      ],
+      "valence": "vt",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_175559",
+      "kalaallisut": "GUMA Der/vv NNGIT Der/vv TUQ Der/vn",
+      "english": [],
+      "danish": [
+        "utilbøjelig"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165651",
+      "kalaallisut": "GUMINAR Der/vv",
+      "english": [
+        "be easy",
+        "be good"
+      ],
+      "danish": [
+        "være let",
+        "være nem",
+        "være god"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.1.7.1"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_207675",
+      "kalaallisut": "GUMINAR Der/vv IT Der/vv",
+      "english": [
+        "be difficult"
+      ],
+      "danish": [
+        "være vanskeligt"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.1.7.1"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_177676",
+      "kalaallisut": "GUMINAR Der/vv IT Der/vv TUQ Der/vn",
+      "english": [],
+      "danish": [
+        "vanskelig"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165656",
+      "kalaallisut": "GUNAR Der/vv",
+      "english": [],
+      "danish": [
+        "vistnok",
+        "vist",
+        "antagelig",
+        "formentligt"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.29.5.1"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165661",
+      "kalaallisut": "GUNAR Der/vv NNGIT Der/vv",
+      "english": [],
+      "danish": [
+        "vistnok ikke"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.29.5.1"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_182041",
+      "kalaallisut": "GUNAR Der/vv TUQ Der/vn",
+      "english": [],
+      "danish": [
+        "formentlig"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165606",
+      "kalaallisut": "GUNNAIR Der/vv",
+      "english": [
+        "no longer"
+      ],
+      "danish": [
+        "ikke længere",
+        "ikke mere",
+        "holde op",
+        "vænne"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.55.4.1"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165608",
+      "kalaallisut": "GUNNAIR Der/vv",
+      "english": [],
+      "danish": [
+        "komme af med",
+        "blive fri for",
+        "holde op med",
+        "skaffe sig af med",
+        "vænne",
+        "slippe af med"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.55.4.1"
+      ],
+      "valence": "vt",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165662",
+      "kalaallisut": "GUNNAIR Der/vv TIP Der/vv",
+      "english": [],
+      "danish": [
+        "vænne",
+        "få til at stoppe"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.63",
+        "V.55.4.1"
+      ],
+      "valence": "vt",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_164005",
+      "kalaallisut": "GUP Der/nv",
+      "english": [
+        "thirst for",
+        "long for"
+      ],
+      "danish": [
+        "savne",
+        "længes"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.32.2"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "add",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165321",
+      "kalaallisut": "GUSUP Der/vv",
+      "english": [
+        "want to",
+        "will",
+        "would"
+      ],
+      "danish": [
+        "ville",
+        "ønske",
+        "have lyst til"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.32.1.1"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_165743",
+      "kalaallisut": "GUSUP Der/vv GUNNAIR Der/vv",
+      "english": [],
+      "danish": [
+        "ville ikke længere"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.32.1.1",
+        "V.55.4.1"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_175568",
+      "kalaallisut": "GUSUP Der/vv SSUSIQ Der/vn IRUTE Der/nv TIP Der/vv",
+      "english": [],
+      "danish": [],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.27.1"
+      ],
+      "valence": "vt",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": true,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_175560",
+      "kalaallisut": "GUSUP Der/vv SSUSIQ Der/vn QAR Der/nv Der/NNGIT Der/vv TUQ Der/vn",
+      "english": [],
+      "danish": [
+        "utilbøjelig"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_185962",
+      "kalaallisut": "GWh",
+      "english": [],
+      "danish": [
+        "gigawatt-time"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "unit"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_180809",
+      "kalaallisut": "Ghanamiu",
+      "english": [],
+      "danish": [
+        "ghanesisk"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "f",
+        "Hnat"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "Ghana+Sem/Geo+iProp+MIU+Der/nn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_210319",
+      "kalaallisut": "Gini-koefficienti",
+      "english": [],
+      "danish": [
+        "Gini-koefficient"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_21",
+        "code": "3.10.1",
+        "english": "ØK Income",
+        "danish": "ØK Indkomster",
+        "kalaallisut": "ØK Isertitat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": "Gini-koefficientip isertitat assigiinnginnerat ersersippaa – Gini-koefficienti annertusiartortillugit isertitat nikingassusaat angineruleriartortarpoq. Nunanut tamalaanut gini-koefficienti atorlugu sanilliussiniarluni inoqutigiit isertitaasa atoriaannaat naligiissinneri naatsorsuinermi atorneqartarput",
+      "info": "uuttuutaavoq agguaanermi assigiinngissutip annertussusianut, s.ass. isertitanik agguaanermi. Agguaanermi assigiilluinnartumi, isertitallit tamarmik assigiimmik itsertitaqarlutik Gini-koefficient 0-uvoq. Agguaanermilu assigiinngitsutip alliartornera peqatigalugu Gini-koefficient alliartuinnassaaq",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_145707",
+      "kalaallisut": "Gittekkuluk",
+      "english": [],
+      "danish": [],
+      "word_class": "prop",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_181178",
+      "kalaallisut": "GramTrans",
+      "english": [
+        "GramTrans"
+      ],
+      "danish": [
+        "GramTrans"
+      ],
+      "word_class": "prop",
+      "semantic_classes": [
+        "inst"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_174518",
+      "kalaallisut": "Great Greenland",
+      "english": [],
+      "danish": [
+        "Great Greenland"
+      ],
+      "word_class": "prop",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "Great Greenland+Sem/Hum+Prop+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_131231",
+      "kalaallisut": "Greenland Tourism A/S",
+      "english": [],
+      "danish": [
+        "Greenland Tourism A/S"
+      ],
+      "word_class": "prop",
+      "semantic_classes": [
+        "HH"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187029",
+      "kalaallisut": "Greenland and Barents Sea",
+      "english": [],
+      "danish": [],
+      "word_class": "prop",
+      "semantic_classes": [
+        "sem-l"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "Greenland and Barents Sea+Sem/Hum+Prop+Abs+Sg"
+      ],
+      "definition": null,
+      "info": "Konferencetitel",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_170007",
+      "kalaallisut": "Grønlands Biathlon Forbund",
+      "english": [],
+      "danish": [
+        "Grønlands Biathlon Forbund"
+      ],
+      "word_class": "prop",
+      "semantic_classes": [
+        "sport"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": "Ujkkaajutigaluni ooqattaasartut kattuffiat",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_162896",
+      "kalaallisut": "Grønlands Tekniske Organisation",
+      "english": [],
+      "danish": [
+        "Grønlands Tekniske Organisation"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "HHorg"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Oqaasiliortut 2007",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_184928",
+      "kalaallisut": "Guuti",
+      "english": [
+        "God"
+      ],
+      "danish": [
+        "Gud"
+      ],
+      "word_class": "prop",
+      "semantic_classes": [
+        "Hmyth"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "Guuti+Sem/Hum+Prop+Abs+Sg",
+        "guuti+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_122897",
+      "kalaallisut": "Guutigaa",
+      "english": [],
+      "danish": [
+        "være SUBJPOSS-hans Gud"
+      ],
+      "word_class": "v",
+      "semantic_classes": [],
+      "valence": "vt",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "guuti+GE+Der/nv+Gram/TV+Gram/Refl+Gram/IV+V+Int+3Sg",
+        "guuti+GE+Der/nv+Gram/TV+V+Ind+3Sg+3SgO"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": "Gûtigâ",
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_122898",
+      "kalaallisut": "Guutigisaq",
+      "english": [],
+      "danish": [],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "guuti+GE+Der/nv+Gram/TV+TAQ+Der/vn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": "Gûtigissaĸ",
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_238133",
+      "kalaallisut": "Guutimik mitaatiginninneq",
+      "english": [],
+      "danish": [
+        "blasfemi"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_254072",
+      "kalaallisut": "Guutip takkuani",
+      "english": [],
+      "danish": [
+        "åsyn"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_122900",
+      "kalaallisut": "Guutipilussiortoq",
+      "english": [
+        "idolater"
+      ],
+      "danish": [
+        "afgudsdyrker"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "guuti+PILUK+Der/nn+SIUR+Der/nv+Gram/IV+TUQ+Der/vn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": "Gûtipilugsiortoĸ",
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7336",
+      "kalaallisut": "Guutisiorneq",
+      "english": [
+        "religion"
+      ],
+      "danish": [
+        "gudsdyrkelse",
+        "gudstjeneste",
+        "kirkegang",
+        "religion"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "guuti+SIUR+Der/nv+Gram/IV+NIQ+Der/vn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": "Gûtisiorneq",
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_122899",
+      "kalaallisut": "Guutiunngitsoq",
+      "english": [
+        "idol"
+      ],
+      "danish": [
+        "afgud",
+        "idol"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "guuti+U+Der/nv+Gram/IV+NNGIT+Der/vv+Gram/IV+TUQ+Der/vn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": "Gûtiúngitsoĸ",
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_184191",
+      "kalaallisut": "g-strengi",
+      "english": [],
+      "danish": [
+        "g-streng"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cloH"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_145767",
+      "kalaallisut": "galease",
+      "english": [
+        "hermaphrodite brig",
+        "brigantine"
+      ],
+      "danish": [
+        "galease",
+        "brigantine"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Vwater"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "galease+Err/Sub+N+Abs+Sg",
+        "galease+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7301",
+      "kalaallisut": "galoche",
+      "english": [],
+      "danish": [
+        "galoche"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cloH-shoe"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "galoche+Err/Sub+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_185757",
+      "kalaallisut": "galvaniseerigaq",
+      "english": [],
+      "danish": [
+        "galvaniseret"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "galvaniseerer+Gram/TV+TAQ+Der/vn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187051",
+      "kalaallisut": "galvaniseeriisartoq",
+      "english": [
+        "electroplater"
+      ],
+      "danish": [
+        "galvanisør"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Hprof"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "galvaniseerer+Gram/TV+HTR+Der/vv+Gram/IV+SAR+Der/vv+Gram/TV+Gram/Refl+TUQ+Der/vn+N+Abs+Sg",
+        "galvaniseerer+Gram/TV+HTR+Der/vv+Gram/IV+SAR+Der/vv+Gram/TV+TUQ+Der/vn+N+Abs+Sg",
+        "galvaniseerer+Gram/TV+HTR+Der/vv+Gram/IV+TAR+Der/vv+Gram/IV+TUQ+Der/vn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_173345",
+      "kalaallisut": "gamache",
+      "english": [
+        "leggings"
+      ],
+      "danish": [
+        "gamache"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cloH"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_191614",
+      "kalaallisut": "gang",
+      "english": [
+        "hall"
+      ],
+      "danish": [
+        "gang"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Lh"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gang+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_243408",
+      "kalaallisut": "gangerpaa",
+      "english": [],
+      "danish": [
+        "gange"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_243838",
+      "kalaallisut": "gangerpaa",
+      "english": [],
+      "danish": [
+        "multiplicere"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_189805",
+      "kalaallisut": "gangerpaa; amerlisarpaa",
+      "english": [],
+      "danish": [
+        "gange"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "geom-line"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_243841",
+      "kalaallisut": "gangigassaq",
+      "english": [],
+      "danish": [
+        "multiplikand"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "ganger+Gram/TV+TAQ+Der/vn+SSAQ+Der/nn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_243412",
+      "kalaallisut": "gangigassiaq",
+      "english": [],
+      "danish": [
+        "gangestykke"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "ganger+Gram/TV+TAQ+Der/vn+SSAQ+Der/nn+LIAQ+Der/nn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_243855",
+      "kalaallisut": "gangigassiaq",
+      "english": [],
+      "danish": [
+        "multiplikationsstykke"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "ganger+Gram/TV+TAQ+Der/vn+SSAQ+Der/nn+LIAQ+Der/nn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_243844",
+      "kalaallisut": "gangiineq",
+      "english": [],
+      "danish": [
+        "multiplikation"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "ganger+Gram/TV+HTR+Der/vv+Gram/IV+NIQ+Der/vn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_151615",
+      "kalaallisut": "ganngiut",
+      "english": [
+        "multiplier"
+      ],
+      "danish": [
+        "multiplikator"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "ac"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_183519",
+      "kalaallisut": "gas",
+      "english": [
+        "gas"
+      ],
+      "danish": [
+        "gas"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cm-gas"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gas+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_177082",
+      "kalaallisut": "gasseqarfik",
+      "english": [],
+      "danish": [
+        "gasressource"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Lh"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gas+QAR+Der/nv+Gram/IV+VIK+Der/vn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_39703",
+      "kalaallisut": "gassi",
+      "english": [
+        "gas"
+      ],
+      "danish": [
+        "gas"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cm-gas"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gas+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_243126",
+      "kalaallisut": "gassi ingerlat",
+      "english": [],
+      "danish": [
+        "drivgas"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_186951",
+      "kalaallisut": "gassi kissaattoorut",
+      "english": [
+        "greenhouse gas"
+      ],
+      "danish": [
+        "drivhusgas"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cm-gas-h"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_258251",
+      "kalaallisut": "gassi kissatsikkiartortitsisoq",
+      "english": [],
+      "danish": [
+        "drivhusgas"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_200",
+        "code": "22.0.0",
+        "english": "Scientific terms",
+        "danish": "Naturfaglige termer",
+        "kalaallisut": "Pinngortitalerinermi taaguusersuutit"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_171075",
+      "kalaallisut": "gassi kissatsitsisartoq",
+      "english": [
+        "greenhouse gas"
+      ],
+      "danish": [
+        "drivhusgas"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cm-gas-h"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": true,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_174016",
+      "kalaallisut": "gassi naqitsinikkut immiussaq",
+      "english": [],
+      "danish": [
+        "gasser under tryk"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cm-gas-h"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_120",
+        "code": "10.0.0",
+        "english": "RÅSTOF RAW MATERIALS INDUSTRY",
+        "danish": "RÅSTOF RÅSTOFINDUSTRI",
+        "kalaallisut": "RÅSTOF AATSITASSALERINEQ IKUMMATISSALERINERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Oqaasiliortut 2017",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_218076",
+      "kalaallisut": "gassi naqitsinikkut immiussaq",
+      "english": [],
+      "danish": [
+        "gasser under tryk"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_125",
+        "code": "11.0.0",
+        "english": "MILJØ ECOLOGY and ENVIRONMENT",
+        "danish": "MILJØ ØKOLOGI OG MILJØ",
+        "kalaallisut": "MILJØ ØKOLOGII AVATANGIISILLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_172495",
+      "kalaallisut": "gassi silaannarmik kissakkiartortitsisartoq",
+      "english": [
+        "greenhouse gas"
+      ],
+      "danish": [
+        "drivhusgas"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cm-gas-h"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": true,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_39702",
+      "kalaallisut": "gassiliorfissuaq",
+      "english": [
+        "gas power station"
+      ],
+      "danish": [
+        "gasværk"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "inst"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gas+LIUR+Der/nv+Gram/IV+VIK+Der/vn+SUAQ+Der/nn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_172666",
+      "kalaallisut": "gassimik qalluivik",
+      "english": [],
+      "danish": [
+        "gasplatform"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "L"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_162124",
+      "kalaallisut": "gassinnguuttumik pujuliorneq",
+      "english": [
+        "flue-gas emission"
+      ],
+      "danish": [
+        "røggasemission"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cm-gas"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_125",
+        "code": "11.0.0",
+        "english": "MILJØ ECOLOGY and ENVIRONMENT",
+        "danish": "MILJØ ØKOLOGI OG MILJØ",
+        "kalaallisut": "MILJØ ØKOLOGII AVATANGIISILLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": "ikuallaanermi putsup gassinnguuttuanik* aniatitsineq",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_221625",
+      "kalaallisut": "gassinnguuttumik pujuliorneq",
+      "english": [
+        "flue-gas emission"
+      ],
+      "danish": [
+        "røggasemission"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_132",
+        "code": "11.7.0",
+        "english": "MILJØ Waste",
+        "danish": "MILJØ Affald",
+        "kalaallisut": "MILJØ Eqqakkat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": "ikuallaanermi putsup gassinnguuttuanik aniatitsineq",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_187204",
+      "kalaallisut": "gassisunni",
+      "english": [],
+      "danish": [
+        "gaslugt"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "percep-o"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gas+SUNNI+Der/nn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_170287",
+      "kalaallisut": "gassit kianneruleriartortitsisut",
+      "english": [],
+      "danish": [
+        "klimagasser"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cm-gas"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": true,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_39701",
+      "kalaallisut": "gassiusivik",
+      "english": [
+        "gas container"
+      ],
+      "danish": [
+        "gasbeholder",
+        "gastank"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cc-h"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gas+UTE+Der/nn+LIVIK+Der/nn+N+Abs+Sg",
+        "gassiusivik+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_247185",
+      "kalaallisut": "gaze",
+      "english": [],
+      "danish": [
+        "vat"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_102",
+        "code": "9.0.0",
+        "english": "MED MEDICINE",
+        "danish": "MED MEDICIN",
+        "kalaallisut": "MED NAKORSAANERMIK ILISIMATUSAATIT"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7304",
+      "kalaallisut": "general",
+      "english": [],
+      "danish": [],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "general+N+Abs+Sg"
+      ],
+      "definition": "sakkutuut naalagarsuat",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_120521",
+      "kalaallisut": "generaldirektør",
+      "english": [
+        "director general"
+      ],
+      "danish": [
+        "generaldirektør"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Hprof"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "generaldirektør+Sem/Hprof+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7303",
+      "kalaallisut": "generalforsamling",
+      "english": [
+        "congress"
+      ],
+      "danish": [
+        "kongres"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "inst"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "generalforsamling+N+Abs+Sg"
+      ],
+      "definition": "ataatsimeersuarneq",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7305",
+      "kalaallisut": "generator",
+      "english": [],
+      "danish": [],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "generator+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_177072",
+      "kalaallisut": "generatoreqarfik",
+      "english": [],
+      "danish": [
+        "generatorrum"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Lh"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "generator+QAR+Der/nv+Gram/IV+VIK+Der/vn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_216628",
+      "kalaallisut": "genre",
+      "english": [],
+      "danish": [
+        "genre"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_58",
+        "code": "5.8.0",
+        "english": "KUNST Literature",
+        "danish": "KUNST Litteratur",
+        "kalaallisut": "KUNST Atuakkialerineq"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": "allatap saqqummeeriaatsilluunniit allap suussusaanut ilusaanullu ilisarnaat; suussuseq marluinnut avinneqartarpoq: takorluukkiaanngitsoq aamma takorluukkiaq",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_184931",
+      "kalaallisut": "gentlemandi",
+      "english": [
+        "gentleman"
+      ],
+      "danish": [
+        "gentleman"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "H"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_150774",
+      "kalaallisut": "genus",
+      "english": [
+        "gender"
+      ],
+      "danish": [
+        "køn",
+        "genus"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "ac-cat"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_44",
+        "code": "4.5.0",
+        "english": "SAMF Linguistic",
+        "danish": "SAMF Sprogvidenskab",
+        "kalaallisut": "SAMF Oqaatsinik ilisimatusarneq"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "genus+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7306",
+      "kalaallisut": "geodæt",
+      "english": [],
+      "danish": [],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "geodæt+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7308",
+      "kalaallisut": "geolog",
+      "english": [
+        "geologist"
+      ],
+      "danish": [
+        "geolog",
+        "mineralog"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Hprof"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "geolog+Sem/Hprof+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7307",
+      "kalaallisut": "geologi",
+      "english": [
+        "geologist"
+      ],
+      "danish": [
+        "geolog"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Hprof"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "geolog+Sem/Hprof+Err/Sub+N+Abs+Sg",
+        "geologi+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_176063",
+      "kalaallisut": "geologi aningaasaqarnermut tunngatitaq",
+      "english": [],
+      "danish": [
+        "økonomisk geologi"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_188530",
+      "kalaallisut": "geologimut tunngasoq nunap assinga",
+      "english": [],
+      "danish": [
+        "geologiske kort"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "meta-cat-lib",
+        "domain"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_198",
+        "code": "20.1.0",
+        "english": "Subject headings",
+        "danish": "Emneord",
+        "kalaallisut": "Oqaatsit ujartugassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "Nunatta Atuagaateqarfiani oqaatsinut ujarliutinut nalunaarsuut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7310",
+      "kalaallisut": "geometrii",
+      "english": [],
+      "danish": [],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "geometri+N+Abs+Pl+3PlPoss",
+        "geometri+N+Abs+Pl+3PlPoss+Err/Sub",
+        "geometri+N+Abs+Pl+3SgPoss",
+        "geometri+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_189809",
+      "kalaallisut": "geometrii",
+      "english": [],
+      "danish": [
+        "geometri"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "geom-line"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "geometri+N+Abs+Pl+3PlPoss",
+        "geometri+N+Abs+Pl+3PlPoss+Err/Sub",
+        "geometri+N+Abs+Pl+3SgPoss",
+        "geometri+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_243420",
+      "kalaallisut": "geometrii",
+      "english": [],
+      "danish": [
+        "geometri"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "geometri+N+Abs+Pl+3PlPoss",
+        "geometri+N+Abs+Pl+3PlPoss+Err/Sub",
+        "geometri+N+Abs+Pl+3SgPoss",
+        "geometri+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7311",
+      "kalaallisut": "gesandt",
+      "english": [],
+      "danish": [],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gesandt+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7312",
+      "kalaallisut": "giffel",
+      "english": [],
+      "danish": [],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "giffel+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_174704",
+      "kalaallisut": "gigtertut peqatigiiffiat",
+      "english": [],
+      "danish": [
+        "gigtforening"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "HH"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_36463",
+      "kalaallisut": "gigti",
+      "english": [
+        "rheumatism"
+      ],
+      "danish": [
+        "gigt"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "sick"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gigt+Err/Sub+N+Abs+Sg"
+      ],
+      "definition": "avallunneq",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_247187",
+      "kalaallisut": "gigti, avalluut",
+      "english": [],
+      "danish": [
+        "gigt"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_102",
+        "code": "9.0.0",
+        "english": "MED MEDICINE",
+        "danish": "MED MEDICIN",
+        "kalaallisut": "MED NAKORSAANERMIK ILISIMATUSAATIT"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_5990",
+      "kalaallisut": "gigtipalaaq",
+      "english": [
+        "rheumatic fever"
+      ],
+      "danish": [
+        "gigtfeber"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "sick"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gigt+N+Abs+Sg+PALAAQ",
+        "gigt+PALAAQ+Der/nn+N+Abs+Sg"
+      ],
+      "definition": "latin / græsk: artritis rheumatica\navallunneq sakkortooq",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_247189",
+      "kalaallisut": "gigtipalaaq, toqqusaarlunnerup kingorna",
+      "english": [],
+      "danish": [
+        "gigtfeber"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_102",
+        "code": "9.0.0",
+        "english": "MED MEDICINE",
+        "danish": "MED MEDICIN",
+        "kalaallisut": "MED NAKORSAANERMIK ILISIMATUSAATIT"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_207990",
+      "kalaallisut": "gin",
+      "english": [
+        "gin"
+      ],
+      "danish": [
+        "gin"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "drink-h"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_192004",
+      "kalaallisut": "gini-koefficienti",
+      "english": [],
+      "danish": [
+        "gini-koefficient"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_36462",
+      "kalaallisut": "gipsi",
+      "english": [
+        "plaster"
+      ],
+      "danish": [
+        "gips"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cm-h"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gips+Err/Sub+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_247191",
+      "kalaallisut": "gipsi",
+      "english": [],
+      "danish": [
+        "gips"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_102",
+        "code": "9.0.0",
+        "english": "MED MEDICINE",
+        "danish": "MED MEDICIN",
+        "kalaallisut": "MED NAKORSAANERMIK ILISIMATUSAATIT"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "gips+Err/Sub+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_169814",
+      "kalaallisut": "gipsimik ilusiligaq",
+      "english": [],
+      "danish": [
+        "gipsmodel"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cc-h"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_230138",
+      "kalaallisut": "gipsimik ilusiligaq",
+      "english": [],
+      "danish": [
+        "gipsmodel"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_116",
+        "code": "9.14.0",
+        "english": "MED Medical equipment",
+        "danish": "MED Medicinske redskaber",
+        "kalaallisut": "MED Nakorsaanermi atortut"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_247193",
+      "kalaallisut": "gipsimik ilusiligaq",
+      "english": [],
+      "danish": [
+        "gipsmodel"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_102",
+        "code": "9.0.0",
+        "english": "MED MEDICINE",
+        "danish": "MED MEDICIN",
+        "kalaallisut": "MED NAKORSAANERMIK ILISIMATUSAATIT"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7313",
+      "kalaallisut": "girokort",
+      "english": [],
+      "danish": [],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "girokort+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_207167",
+      "kalaallisut": "glas",
+      "english": [
+        "glass"
+      ],
+      "danish": [
+        "glas"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "con"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "glas+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_131177",
+      "kalaallisut": "gluten",
+      "english": [],
+      "danish": [
+        "gluten"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "food"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gluten+N+Abs+Sg"
+      ],
+      "definition": "Qajuusiassat inuussutissartaat",
+      "info": "=<gluten> (Oqaasiliortut 03.2011)",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_218619",
+      "kalaallisut": "gluten",
+      "english": [],
+      "danish": [
+        "gluten"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_168",
+        "code": "18.12.0",
+        "english": "FISK Cultivation of special crops",
+        "danish": "FISK Dyrkning af specielle afgrøder",
+        "kalaallisut": "FISK Nunap inerititaanik immikkut ittunik naatitsineq"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "gluten+N+Abs+Sg"
+      ],
+      "definition": "qajuusiassat inuussutissartaat",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_36260",
+      "kalaallisut": "glyceriina",
+      "english": [
+        "glycerol"
+      ],
+      "danish": [
+        "glycerin",
+        "glycerol"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cm-liq"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "glycerin+Err/Sub+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_208688",
+      "kalaallisut": "gnejseqarfik",
+      "english": [],
+      "danish": [
+        "gnejsområde"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Lregion"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_86",
+        "code": "8.16.0",
+        "english": "NATUR General geology",
+        "danish": "NATUR Almen geologi",
+        "kalaallisut": "NATUR Geologii"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": true,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_208686",
+      "kalaallisut": "gnejsi",
+      "english": [],
+      "danish": [
+        "gnejs"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "mat"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_86",
+        "code": "8.16.0",
+        "english": "NATUR General geology",
+        "danish": "NATUR Almen geologi",
+        "kalaallisut": "NATUR Geologii"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": true,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_184444",
+      "kalaallisut": "golfimi anaalerut",
+      "english": [
+        "club"
+      ],
+      "danish": [
+        "golfkølle"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cc-h"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_36259",
+      "kalaallisut": "gongongi",
+      "english": [
+        "gong"
+      ],
+      "danish": [
+        "gongong",
+        "gong"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "tool-mus"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gongong+Err/Sub+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_162650",
+      "kalaallisut": "gonorre",
+      "english": [
+        "gonorrhea"
+      ],
+      "danish": [
+        "gonorre",
+        "gonorré"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "sick"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gonorré+Err/Sub+Err/Sub+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_73572",
+      "kalaallisut": "gonorré",
+      "english": [
+        "gonorrhea"
+      ],
+      "danish": [
+        "dryppert",
+        "gonorre",
+        "gonorré"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "sick"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gonorré+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_243199",
+      "kalaallisut": "gonorré",
+      "english": [],
+      "danish": [
+        "dryppert"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "gonorré+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_247195",
+      "kalaallisut": "gonorré, kinguaassiutitigut nappaat",
+      "english": [],
+      "danish": [
+        "gonorré"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_102",
+        "code": "9.0.0",
+        "english": "MED MEDICINE",
+        "danish": "MED MEDICIN",
+        "kalaallisut": "MED NAKORSAANERMIK ILISIMATUSAATIT"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_164968",
+      "kalaallisut": "googlerpoq",
+      "english": [],
+      "danish": [
+        "google"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.35.4"
+      ],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "googler+Gram/IV+V+Ind+3Sg",
+        "googler+Gram/TV+Gram/Refl+V+Ind+3Sg"
+      ],
+      "definition": "Google atorlugu paasissutissanik ujarlerpoq",
+      "info": "ORDBOGEN-ip nutarterneqarnissaanut naqqiutit ilassutissallu Oqaasiliortunit akuerisat, 2011-mi",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_36257",
+      "kalaallisut": "gradi",
+      "english": [
+        "degree"
+      ],
+      "danish": [
+        "grad"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "ac"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "grad+Err/Sub+N+Abs+Sg",
+        "grad+Sem/Unit+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_243436",
+      "kalaallisut": "gradi",
+      "english": [],
+      "danish": [
+        "grad"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "grad+Err/Sub+N+Abs+Sg",
+        "grad+Sem/Unit+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_243438",
+      "kalaallisut": "gradi",
+      "english": [],
+      "danish": [
+        "grad"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "grad+Err/Sub+N+Abs+Sg",
+        "grad+Sem/Unit+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_258626",
+      "kalaallisut": "gradi kiattoq",
+      "english": [],
+      "danish": [
+        "varmegrad"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_243441",
+      "kalaallisut": "grafi",
+      "english": [],
+      "danish": [
+        "graf"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_189824",
+      "kalaallisut": "grafisk afbildning",
+      "english": [],
+      "danish": [],
+      "word_class": "t",
+      "semantic_classes": [
+        "geom-line"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7315",
+      "kalaallisut": "gram",
+      "english": [
+        "gram"
+      ],
+      "danish": [
+        "gram"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "unit"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gram+N+Abs+Sg",
+        "gram+N+Sem/Unit+Abs+Sg",
+        "gram+Sem/Unit+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7317",
+      "kalaallisut": "grammatik",
+      "english": [],
+      "danish": [],
+      "word_class": "t",
+      "semantic_classes": [
+        "domain"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "grammatik+N+Abs+Sg"
+      ],
+      "definition": "oqaatsit oqaaseqatigiillu sananeqaataat",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_189829",
+      "kalaallisut": "grammi",
+      "english": [],
+      "danish": [
+        "gram"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "geom-line"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "gram+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_243447",
+      "kalaallisut": "grammi",
+      "english": [],
+      "danish": [
+        "gram"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_74",
+        "code": "7.0.0",
+        "english": "MAT MATHEMATIC",
+        "danish": "MAT MATEMATIK",
+        "kalaallisut": "MAT MATEMATIKKI"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "gram+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7318",
+      "kalaallisut": "granit",
+      "english": [],
+      "danish": [],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "granit+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_208694",
+      "kalaallisut": "graniti",
+      "english": [],
+      "danish": [
+        "granit"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "mat"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_86",
+        "code": "8.16.0",
+        "english": "NATUR General geology",
+        "danish": "NATUR Almen geologi",
+        "kalaallisut": "NATUR Geologii"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "granit+Err/Sub+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": true,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_180774",
+      "kalaallisut": "gregorianskisut",
+      "english": [],
+      "danish": [
+        "gregoriansk"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "sem-l"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_183396",
+      "kalaallisut": "greverpalaartoq",
+      "english": [],
+      "danish": [
+        "grevelig"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Hattr"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "greve+PALAAR+Der/nv+Gram/IV+TUQ+Der/vn+N+Abs+Sg",
+        "greve+R+Der/nv+Gram/IV+PALAAR+Der/vv+Gram/IV+TUQ+Der/vn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_177350",
+      "kalaallisut": "grillerineq",
+      "english": [],
+      "danish": [
+        "grillfest"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "occ"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_146534",
+      "kalaallisut": "grilli",
+      "english": [
+        "barbecue"
+      ],
+      "danish": [
+        "havegrill"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cc-h"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_205760",
+      "kalaallisut": "grillpølse",
+      "english": [],
+      "danish": [
+        "grillpølse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "food-h"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_203",
+        "code": "26.0.0",
+        "english": "FOOD Food products",
+        "danish": "FOOD Madvarer",
+        "kalaallisut": "FOOD Nerisassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_205765",
+      "kalaallisut": "grillspydi",
+      "english": [],
+      "danish": [
+        "grillspyd"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cc-h"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_203",
+        "code": "26.0.0",
+        "english": "FOOD Food products",
+        "danish": "FOOD Madvarer",
+        "kalaallisut": "FOOD Nerisassat"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_224758",
+      "kalaallisut": "grooming",
+      "english": [
+        "grooming"
+      ],
+      "danish": [
+        "grooming"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_45",
+        "code": "4.6.0",
+        "english": "SAMF Psychology",
+        "danish": "SAMF Psykologi",
+        "kalaallisut": "SAMF Psykologii"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_166228",
+      "kalaallisut": "grundlovimi aaliangersagaq",
+      "english": [],
+      "danish": [
+        "grundlovsbestemmelse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "sem-r"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_219113",
+      "kalaallisut": "gruppe",
+      "english": [],
+      "danish": [
+        "gruppe"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_60",
+        "code": "6.0.0",
+        "english": "FRITID LEISURE, SPORTS, GAMES and HOBBIES",
+        "danish": "FRITID FRITID, SPORT, SPIL og HOBBYER",
+        "kalaallisut": "FRITID SUNNGIFFIK, TIMERSORNEQ, PINNGUARNEQ SUKISAARSAATILLU"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "gruppe+Err/Sub+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_143180",
+      "kalaallisut": "gruppikkuutaarput",
+      "english": [],
+      "danish": [],
+      "word_class": "v",
+      "semantic_classes": [],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gruppe+KKUT+Der/nn+U+Der/nv+Gram/IV+TAAR+Der/vv+Gram/IV+V+Ind+3Pl",
+        "gruppe+KKUUTAAR+Der/nv+Gram/Refl+V+Ind+3Pl"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_151643",
+      "kalaallisut": "grågås",
+      "english": [
+        "goose",
+        "greylag goose"
+      ],
+      "danish": [
+        "grågås"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Aorn"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "grågås+N+Abs+Sg"
+      ],
+      "definition": "Anser anser",
+      "info": "nerlerit ilaat Europami Amerikamilu nalinginaasut",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_36258",
+      "kalaallisut": "grækeri",
+      "english": [
+        "Greek"
+      ],
+      "danish": [
+        "græker"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Hnat"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "græker+Err/Sub+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_234509",
+      "kalaallisut": "grækerit naqinnerisa ilaat siulleq",
+      "english": [],
+      "danish": [
+        "alfa"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7320",
+      "kalaallisut": "grønkål",
+      "english": [],
+      "danish": [],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "grønkål+N+Abs+Sg"
+      ],
+      "definition": "naatitat ilaat",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7321",
+      "kalaallisut": "grønlandsrulle",
+      "english": [],
+      "danish": [],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "grønlandsrulle+Err/Sub+N+Abs+Sg",
+        "grønlandsrulle+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7322",
+      "kalaallisut": "grønlangkål",
+      "english": [],
+      "danish": [],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "grønlangkål+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7323",
+      "kalaallisut": "grøntsag",
+      "english": [
+        "vegetable"
+      ],
+      "danish": [
+        "grønsag",
+        "grøntsag"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "fruit-c"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "grøntsag+N+Abs+Sg"
+      ],
+      "definition": "NB: Altid uden -t- i sammensætninger (grønsagssaft; grønsagsblanding)\nnaatitaq",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7326",
+      "kalaallisut": "guitar",
+      "english": [
+        "guitar"
+      ],
+      "danish": [
+        "guitar"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "tool-mus"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "guitar+N+Abs+Sg"
+      ],
+      "definition": "nipilersorluni appisimaarut",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_207976",
+      "kalaallisut": "guitarerpoq",
+      "english": [],
+      "danish": [
+        "spille guitar"
+      ],
+      "word_class": "v",
+      "semantic_classes": [
+        "V.26.7"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "guitar+R+Der/nv+Gram/IV+V+Ind+3Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_179968",
+      "kalaallisut": "guitarertartoq",
+      "english": [],
+      "danish": [
+        "guitarspiller"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Hprof"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "guitar+R+Der/nv+Gram/IV+TAR+Der/vv+Gram/IV+TUQ+Der/vn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_253825",
+      "kalaallisut": "guitarii innaallagiartortoq",
+      "english": [],
+      "danish": [
+        "elguitar"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_260682",
+      "kalaallisut": "guleruuaaraq",
+      "english": [],
+      "danish": [
+        "karotte"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "gulerod+Err/Sub+ARAQ+Der/nn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_260683",
+      "kalaallisut": "guleruuju",
+      "english": [],
+      "danish": [
+        "karotte"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_205645",
+      "kalaallisut": "gummi",
+      "english": [
+        "rubber boot"
+      ],
+      "danish": [
+        "gummistøvle"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "cloH-shoe"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gummi+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_184387",
+      "kalaallisut": "gummiusaq",
+      "english": [],
+      "danish": [
+        "celluloid",
+        "guttaperka"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gummi+USAQ+Der/nn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_184389",
+      "kalaallisut": "gummiusaq orpinnit pisoq",
+      "english": [],
+      "danish": [
+        "celluloid",
+        "guttaperka"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_177650",
+      "kalaallisut": "guuteqannginneraasoq",
+      "english": [],
+      "danish": [
+        "ateist"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Hideo"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "guuti+QAR+Der/nv+Gram/IV+NNGIT+Der/vv+Gram/IV+NIRAR+Der/vv+Gram/TV+HTR+Der/vv+Gram/IV+TUQ+Der/vn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7329",
+      "kalaallisut": "guuteqassuseq",
+      "english": [
+        "concept of God"
+      ],
+      "danish": [
+        "gudsbegreb"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "ac"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "guuti+QAR+Der/nv+Gram/IV+SSUSIQ+Der/vn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": "gûteqaqássuseq",
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_235715",
+      "kalaallisut": "guuteqassusermik miserratiginninneq",
+      "english": [],
+      "danish": [
+        "ateisme"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7330",
+      "kalaallisut": "guuti",
+      "english": [
+        "god"
+      ],
+      "danish": [
+        "gud"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Hmyth"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "guuti+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": "gûte",
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7331",
+      "kalaallisut": "guutiitsoq",
+      "english": [
+        "atheist"
+      ],
+      "danish": [
+        "gudløs",
+        "ateist"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Hideo"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "guutiitsoq+N+Abs+Sg"
+      ],
+      "definition": "guutinik upperisaqanngitsoq\nGuutinik upperisaqanngitsoq",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": "gûtîtsoq",
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_235719",
+      "kalaallisut": "guutiitsoq",
+      "english": [],
+      "danish": [
+        "ateist"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "guutiitsoq+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_235716",
+      "kalaallisut": "guutiitsuuneq",
+      "english": [],
+      "danish": [
+        "ateisme"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "guutiitsoq+U+Der/nv+Gram/IV+NIQ+Der/vn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7332",
+      "kalaallisut": "guutiliaq",
+      "english": [
+        "idol"
+      ],
+      "danish": [
+        "gudebillede",
+        "afgudsbillede",
+        "idol"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "sem-w"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "guuti+LIAQ+Der/nn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": "gûtiliaq",
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_184932",
+      "kalaallisut": "guutimik mianerinnittoq",
+      "english": [],
+      "danish": [
+        "gudfrygtig"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "H"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_184934",
+      "kalaallisut": "guutimik nalusoq",
+      "english": [
+        "heathen"
+      ],
+      "danish": [
+        "hedning"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "H"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7333",
+      "kalaallisut": "guutipiluk",
+      "english": [
+        "idol"
+      ],
+      "danish": [
+        "afgud",
+        "idol"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "H"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "guuti+PILUK+Der/nn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": "gûtipiluk",
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_233779",
+      "kalaallisut": "guutipiluk",
+      "english": [],
+      "danish": [
+        "afgud"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "guuti+PILUK+Der/nn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7334",
+      "kalaallisut": "guutipilussiorneq",
+      "english": [
+        "idolatry"
+      ],
+      "danish": [
+        "afgudsdyrkelse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "act"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "guuti+PILUK+Der/nn+SIUR+Der/nv+Gram/IV+NIQ+Der/vn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": "gûtipilugsiorneq",
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_233781",
+      "kalaallisut": "guutipilussiorneq",
+      "english": [],
+      "danish": [
+        "afgudsdyrkelse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_201",
+        "code": "24.0.0",
+        "english": "Oqaasersiuut (2012)",
+        "danish": "Oqaasersiuut (2012)",
+        "kalaallisut": "Oqaasersiuut (2012)"
+      },
+      "gender": null,
+      "fst_analyses": [
+        "guuti+PILUK+Der/nn+SIUR+Der/nv+Gram/IV+NIQ+Der/vn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7335",
+      "kalaallisut": "guutipilussiorpoq",
+      "english": [],
+      "danish": [],
+      "word_class": "v",
+      "semantic_classes": [],
+      "valence": "vi",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "guuti+PILUK+Der/nn+SIUR+Der/nv+Gram/IV+V+Ind+3Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": "gûtipilugsiorpoq",
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_7338",
+      "kalaallisut": "guutiussuseq",
+      "english": [
+        "deity"
+      ],
+      "danish": [
+        "guddom"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "Hmyth"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "guuti+U+Der/nv+Gram/IV+SSUSIQ+Der/vn+N+Abs+Sg"
+      ],
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": "gûtiússuseq",
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_180262",
+      "kalaallisut": "gylden",
+      "english": [
+        "guilder"
+      ],
+      "danish": [
+        "gylden"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "mon-c"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": "siornatigut hollandimiut aningaasaat",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    },
+    {
+      "id": "lex_33640",
+      "kalaallisut": "gymnasia",
+      "english": [
+        "high school"
+      ],
+      "danish": [
+        "gymnasium"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "inst"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": [
+        "gymnasia+N+Abs+Sg"
+      ],
+      "definition": "ilinniarnertuunngorniarfik",
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false
+      }
+    }
+  ]
+}
