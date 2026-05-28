@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/**'
+      - 'tests/**'
       - '.github/workflows/export.yml'
   schedule:
     - cron: '0 2 * * 0'   # weekly, Sunday 02:00 UTC
@@ -14,7 +15,24 @@ permissions:
   contents: write
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run tests
+        run: |
+          pip install pytest
+          pytest tests/ -v
+
   export:
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
