@@ -253,7 +253,7 @@ def main() -> None:
             key = first if first.isalpha() else '_'
             by_letter.setdefault(key, []).append(lex)
         for key, entries in sorted(by_letter.items()):
-            write_json({'meta': lexicon['meta'], 'lexemes': entries}, f'{out}/by-letter/{key}.json')
+            write_json({'meta': lexicon['meta'], 'lexemes': entries}, f'{out}/by-letter/{key}.json', args.compress)
         print(f'  {len(by_letter)} letter shards', file=sys.stderr)
 
     print('Done.', file=sys.stderr)
