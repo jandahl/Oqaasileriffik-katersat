@@ -55,9 +55,11 @@ python3 scripts/export.py [--db katersat.sqlite] [--output exports] [--compress]
 
 ## Exported files
 
-### `exports/lexicon.json`
+### `exports/lexicon.json` + `exports/by-letter/*.json`
 
 The main export. 87,000+ Kalaallisut lexemes with translations, semantic tagging, and morphological metadata.
+
+`lexicon.json` contains all lexemes. `by-letter/` contains one file per initial letter of the Kalaallisut headword (`a.json`, `e.json`, … `v.json`), each a valid subset with the same schema — useful for lazy-loading in browser tools. Both the full file and each shard share the same `meta.generated_at` timestamp.
 
 ```json
 {
