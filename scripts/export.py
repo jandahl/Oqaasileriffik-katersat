@@ -247,7 +247,7 @@ def main() -> None:
         write_json(lexicon, f'{out}/lexicon.json', args.compress)
 
         print('Splitting lexicon by first letter...', file=sys.stderr)
-        by_letter: dict[str, list] = {}
+        by_letter: dict[str, list[dict]] = {}
         for lex in lexicon['lexemes']:
             kalaallisut = lex.get('kalaallisut')
             kalaallisut_clean = kalaallisut.strip() if isinstance(kalaallisut, str) else ''
