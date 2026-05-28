@@ -7,7 +7,7 @@
 import hashlib
 import shutil
 import sys
-from datetime import date, datetime, timezone
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
@@ -21,7 +21,12 @@ def sha256(path: Path) -> str:
 
 
 def latest_archive_sha() -> str | None:
-    sql_files = sorted(DATA_DIR.glob('*.sql'))
+    def sort_key(path: Path):
+        parts = path.stem.split('-')
+        suffix = int(parts[3]) if len(parts) > 3 and parts[3].isdigit() else 0
+        return (parts[:3], suffix)
+
+    sql_files = sorted(DATA_DIR.glob('*.sql'), key=sort_key)
     return sha256(sql_files[-1]) if sql_files else None
 
 
@@ -41,7 +46,7 @@ def main() -> None:
         return
 
     # Content changed — find an unused filename for today
-    today = date.today().isoformat()
+    today = datetime.now(timezone.utc).date().isoformat()
     dest = DATA_DIR / f'{today}.sql'
     suffix = 1
     while dest.exists():
