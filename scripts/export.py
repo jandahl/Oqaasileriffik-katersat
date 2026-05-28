@@ -247,9 +247,10 @@ def main() -> None:
         write_json(lexicon, f'{out}/lexicon.json', args.compress)
 
         print('Splitting lexicon by first letter...', file=sys.stderr)
-        by_letter: dict = {}
+        by_letter: dict[str, list] = {}
         for lex in lexicon['lexemes']:
-            first = lex['kalaallisut'][0].lower() if lex.get('kalaallisut') else '_'
+            kalaallisut = lex.get('kalaallisut')
+            first = kalaallisut[0].lower() if kalaallisut else '_'
             key = first if first.isalpha() else '_'
             by_letter.setdefault(key, []).append(lex)
         for key, entries in sorted(by_letter.items()):
