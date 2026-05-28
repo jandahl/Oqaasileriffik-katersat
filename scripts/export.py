@@ -250,7 +250,8 @@ def main() -> None:
         by_letter: dict[str, list] = {}
         for lex in lexicon['lexemes']:
             kalaallisut = lex.get('kalaallisut')
-            first = kalaallisut[0].lower() if kalaallisut else '_'
+            kalaallisut_clean = kalaallisut.strip() if isinstance(kalaallisut, str) else ''
+            first = kalaallisut_clean[0].lower() if kalaallisut_clean else '_'
             key = first if first.isalpha() else '_'
             by_letter.setdefault(key, []).append(lex)
         for key, entries in sorted(by_letter.items()):
