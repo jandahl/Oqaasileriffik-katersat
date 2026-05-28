@@ -42,6 +42,7 @@ The exporter reads only from `katersat.sqlite` and writes five JSON files to the
 | `scripts/export.py` | Reads `katersat.sqlite`, writes JSON to `exports/` |
 | `scripts/validators.py` | Checks the exported JSON for integrity errors |
 | `scripts/schema_info.py` | Shared constants (attribute bitfield, sandhi enum, metadata) |
+| `scripts/archive_data.py` | Archives `data.sql` to `data/YYYY-MM-DD.sql` when upstream content changes |
 
 ### export.py options
 
@@ -241,9 +242,10 @@ Every file includes a top-level `meta` object:
 `.github/workflows/export.yml` runs weekly (Sunday 02:00 UTC) and on manual dispatch. It:
 
 1. Runs `update.py` to fetch the latest `data.sql` from upstream and rebuild `katersat.sqlite`
-2. Runs `scripts/export.py --compress` to regenerate all JSON exports
-3. Runs `scripts/validators.py` to verify integrity
-4. Force-pushes the contents of `exports/` to the `gh-pages` branch, which GitHub Pages serves directly
+2. Runs `scripts/archive_data.py` — if the upstream data has changed, archives `data.sql` to `data/YYYY-MM-DD.sql` and appends an entry to `data/CHANGELOG.md`, then commits back to `main`
+3. Runs `scripts/export.py --compress` to regenerate all JSON exports
+4. Runs `scripts/validators.py` to verify integrity
+5. Force-pushes the contents of `exports/` to the `gh-pages` branch, which GitHub Pages serves directly
 
 Trigger a manual run from the GitHub Actions tab if you need an out-of-cycle refresh.
 
