@@ -5,6 +5,7 @@
 """Archive data.sql to data/YYYY-MM-DD.sql when upstream content has changed."""
 
 import hashlib
+import re
 import shutil
 import sys
 from datetime import datetime, timezone
@@ -15,19 +16,26 @@ DATA_DIR = ROOT / 'data'
 SOURCE = ROOT / 'data.sql'
 CHANGELOG = DATA_DIR / 'CHANGELOG.md'
 
+_ARCHIVE_PAT = re.compile(r'^(\d{4})-(\d{2})-(\d{2})(?:-(\d+))?$')
+
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def latest_archive_sha() -> str | None:
-    def sort_key(path: Path):
-        parts = path.stem.split('-')
-        suffix = int(parts[3]) if len(parts) > 3 and parts[3].isdigit() else 0
-        return (parts[:3], suffix)
+def _sort_key(path: Path):
+    m = _ARCHIVE_PAT.match(path.stem)
+    if not m:
+        return (0, 0, 0, 0)
+    y, mo, d, s = m.groups()
+    return (int(y), int(mo), int(d), int(s) if s else 0)
 
-    sql_files = sorted(DATA_DIR.glob('*.sql'), key=sort_key)
-    return sha256(sql_files[-1]) if sql_files else None
+
+def latest_archive_sha() -> str | None:
+    sql_files = [p for p in DATA_DIR.glob('*.sql') if _ARCHIVE_PAT.match(p.stem)]
+    if not sql_files:
+        return None
+    return sha256(sorted(sql_files, key=_sort_key)[-1])
 
 
 def main() -> None:
