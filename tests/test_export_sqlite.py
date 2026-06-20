@@ -16,12 +16,13 @@ from validators import check_sqlite, check_sqlite_gz
 # Helpers
 # ---------------------------------------------------------------------------
 
+from contextlib import closing
+
 def _make_sqlite(tmp_path: Path, name: str = 'test.sqlite') -> Path:
     p = tmp_path / name
-    con = sqlite3.connect(p)
-    con.execute('CREATE TABLE _dummy (id INTEGER PRIMARY KEY)')
-    con.commit()
-    con.close()
+    with closing(sqlite3.connect(p)) as con:
+        con.execute('CREATE TABLE _dummy (id INTEGER PRIMARY KEY)')
+        con.commit()
     return p
 
 

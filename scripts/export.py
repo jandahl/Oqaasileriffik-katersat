@@ -7,6 +7,7 @@ import gzip
 import json
 import shutil
 import sys
+from contextlib import closing
 from datetime import datetime, timezone
 from pathlib import Path
 import sqlite3
@@ -218,7 +219,7 @@ def export_sqlite(db_path: Path, output_dir: Path, compress: bool) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     dest = output_dir / 'katersat.sqlite'
     tmp = dest.with_suffix('.sqlite.tmp')
-    with sqlite3.connect(db_path.as_uri() + '?mode=ro', uri=True) as src, sqlite3.connect(tmp) as dst:
+    with closing(sqlite3.connect(db_path.as_uri() + '?mode=ro', uri=True)) as src, closing(sqlite3.connect(tmp)) as dst:
         src.backup(dst)
     tmp.replace(dest)
     print(f'  {dest}  ({dest.stat().st_size:,} bytes)', file=sys.stderr)
