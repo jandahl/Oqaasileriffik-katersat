@@ -30,11 +30,19 @@ python3 update.py
 # 2. Export to JSON (outputs to exports/)
 python3 scripts/export.py
 
-# 3. Validate the output
+# 3. Validate the output (includes SQLite artifacts)
 python3 scripts/validators.py exports
 ```
 
-The exporter reads only from `katersat.sqlite` and writes JSON files to the output directory (full lexicon + per-letter shards + reference files). Dependencies are Python 3.11+ stdlib only.
+The exporter reads only from `katersat.sqlite` and writes JSON files to the output directory (full lexicon + per-letter shards + reference files). `scripts/validators.py` verifies both `katersat.sqlite` and `katersat.sqlite.gz` (SQLite header/magic-byte check) in addition to JSON integrity checks.
+
+Expected validator output includes:
+
+```text
+katersat.sqlite.gz: OK
+katersat.sqlite: OK
+All validations passed.
+```
 
 ---
 
