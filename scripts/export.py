@@ -219,17 +219,27 @@ def export_sqlite(db_path: Path, output_dir: Path, compress: bool) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     dest = output_dir / 'katersat.sqlite'
     tmp = dest.with_suffix('.sqlite.tmp')
-    with closing(sqlite3.connect(db_path.as_uri() + '?mode=ro', uri=True)) as src, closing(sqlite3.connect(tmp)) as dst:
-        src.backup(dst)
-    tmp.replace(dest)
-    print(f'  {dest}  ({dest.stat().st_size:,} bytes)', file=sys.stderr)
-    if compress:
-        gz = output_dir / 'katersat.sqlite.gz'
-        tmp_gz = gz.with_suffix('.gz.tmp')
-        with open(dest, 'rb') as src, gzip.open(tmp_gz, 'wb', compresslevel=9) as dst:
-            shutil.copyfileobj(src, dst)
-        tmp_gz.replace(gz)
-        print(f'  {gz}  ({gz.stat().st_size:,} bytes)', file=sys.stderr)
+    try:
+        with closing(sqlite3.connect(db_path.as_uri() + '?mode=ro', uri=True)) as src, closing(sqlite3.connect(tmp)) as dst:
+            src.backup(dst)
+        if compress:
+            gz = output_dir / 'katersat.sqlite.gz'
+            tmp_gz = gz.with_suffix('.gz.tmp')
+            try:
+                with open(tmp, 'rb') as src, gzip.open(tmp_gz, 'wb', compresslevel=9) as dst:
+                    shutil.copyfileobj(src, dst)
+                tmp_gz.replace(gz)
+            except Exception:
+                if tmp_gz.exists():
+                    tmp_gz.unlink()
+                raise
+            print(f'  {gz}  ({gz.stat().st_size:,} bytes)', file=sys.stderr)
+        tmp.replace(dest)
+        print(f'  {dest}  ({dest.stat().st_size:,} bytes)', file=sys.stderr)
+    except Exception:
+        if tmp.exists():
+            tmp.unlink()
+        raise
 
 
 def main() -> None:

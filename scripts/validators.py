@@ -223,7 +223,7 @@ def main() -> None:
 
     gz_path = out / 'katersat.sqlite.gz'
     if gz_path.exists():
-        errs = check_sqlite(gz_path, compressed=True)
+        errs = check_sqlite_gz(gz_path)
         if errs:
             all_errors.extend(f'katersat.sqlite.gz: {e}' for e in errs)
         else:
