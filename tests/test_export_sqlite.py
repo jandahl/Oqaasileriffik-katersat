@@ -1,4 +1,4 @@
-"""Tests for export_sqlite() in scripts/export.py and check_sqlite_gz() in scripts/validators.py"""
+"""Tests for export_sqlite() in scripts/export.py and check_sqlite()/check_sqlite_gz() in scripts/validators.py"""
 import gzip
 import shutil
 import sqlite3
@@ -9,7 +9,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent / 'scripts'))
 from export import export_sqlite
-from validators import check_sqlite_gz
+from validators import check_sqlite, check_sqlite_gz
 
 
 # ---------------------------------------------------------------------------
@@ -77,10 +77,23 @@ def test_export_sqlite_creates_output_dir(tmp_path):
 
 
 # ---------------------------------------------------------------------------
-# check_sqlite_gz validator
+# check_sqlite / check_sqlite_gz validator
 # ---------------------------------------------------------------------------
 
-def test_check_sqlite_gz_valid(tmp_path):
+def test_check_sqlite_valid_uncompressed(tmp_path):
+    db = _make_sqlite(tmp_path)
+    assert check_sqlite(db, compressed=False) == []
+
+
+def test_check_sqlite_valid_compressed(tmp_path):
+    db = _make_sqlite(tmp_path)
+    gz = tmp_path / 'katersat.sqlite.gz'
+    with open(db, 'rb') as src, gzip.open(gz, 'wb', compresslevel=9) as dst:
+        shutil.copyfileobj(src, dst)
+    assert check_sqlite(gz, compressed=True) == []
+
+
+def test_check_sqlite_gz_delegates_to_check_sqlite(tmp_path):
     db = _make_sqlite(tmp_path)
     gz = tmp_path / 'katersat.sqlite.gz'
     with open(db, 'rb') as src, gzip.open(gz, 'wb', compresslevel=9) as dst:
@@ -111,3 +124,19 @@ def test_check_sqlite_gz_not_a_gzip(tmp_path):
     gz.write_bytes(b'this is not a gzip file')
     errs = check_sqlite_gz(gz)
     assert errs
+
+
+def test_check_sqlite_uncompressed_bad_magic(tmp_path):
+    bad = tmp_path / 'bad.sqlite'
+    bad.write_bytes(b'NOT_SQLITE_DATA_AT_ALL')
+    errs = check_sqlite(bad, compressed=False)
+    assert errs
+    assert 'magic' in errs[0]
+
+
+def test_check_sqlite_uncompressed_empty(tmp_path):
+    empty = tmp_path / 'empty.sqlite'
+    empty.write_bytes(b'')
+    errs = check_sqlite(empty, compressed=False)
+    assert errs
+    assert 'empty' in errs[0]

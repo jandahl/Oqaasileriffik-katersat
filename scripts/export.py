@@ -218,7 +218,8 @@ def export_sqlite(db_path: Path, output_dir: Path, compress: bool) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     dest = output_dir / 'katersat.sqlite'
     tmp = dest.with_suffix('.sqlite.tmp')
-    shutil.copy2(db_path, tmp)
+    with sqlite3.connect(db_path.as_uri() + '?mode=ro', uri=True) as src, sqlite3.connect(tmp) as dst:
+        src.backup(dst)
     tmp.replace(dest)
     print(f'  {dest}  ({dest.stat().st_size:,} bytes)', file=sys.stderr)
     if compress:
