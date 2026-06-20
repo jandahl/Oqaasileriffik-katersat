@@ -1,5 +1,6 @@
 """Tests for export_sqlite() in scripts/export.py and check_sqlite_gz() in scripts/validators.py"""
 import gzip
+import shutil
 import sqlite3
 import sys
 from pathlib import Path
@@ -61,9 +62,10 @@ def test_export_sqlite_gz_has_sqlite_magic(tmp_path):
     db = _make_sqlite(tmp_path)
     out = tmp_path / 'exports'
     export_sqlite(db, out, compress=True)
+    _SQLITE_MAGIC = b'SQLite format 3\x00'
     with gzip.open(out / 'katersat.sqlite.gz', 'rb') as f:
         header = f.read(16)
-    assert header[:4] == b'SQLi'
+    assert header.startswith(_SQLITE_MAGIC)
 
 
 def test_export_sqlite_creates_output_dir(tmp_path):
@@ -82,7 +84,6 @@ def test_check_sqlite_gz_valid(tmp_path):
     db = _make_sqlite(tmp_path)
     gz = tmp_path / 'katersat.sqlite.gz'
     with open(db, 'rb') as src, gzip.open(gz, 'wb', compresslevel=9) as dst:
-        import shutil
         shutil.copyfileobj(src, dst)
     assert check_sqlite_gz(gz) == []
 

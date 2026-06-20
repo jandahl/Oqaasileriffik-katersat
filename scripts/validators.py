@@ -164,6 +164,7 @@ CHECKS = [
 
 def check_sqlite_gz(path: Path) -> list:
     """Return a list of error strings for katersat.sqlite.gz, or [] if valid."""
+    _SQLITE_MAGIC = b'SQLite format 3\x00'
     try:
         with gzip.open(path, 'rb') as f:
             header = f.read(16)
@@ -171,8 +172,8 @@ def check_sqlite_gz(path: Path) -> list:
         return [f'could not read gzip file: {exc}']
     if not header:
         return ['gzip file is empty']
-    if not header.startswith(b'SQLi'):
-        return [f'unexpected SQLite magic bytes: {header[:4]!r}']
+    if not header.startswith(_SQLITE_MAGIC):
+        return [f'unexpected SQLite magic bytes: {header[:16]!r}']
     return []
 
 
