@@ -226,8 +226,8 @@ def export_sqlite(db_path: Path, output_dir: Path, compress: bool) -> None:
         if compress:
             gz = output_dir / 'katersat.sqlite.gz'
             tmp_gz = gz.with_suffix('.gz.tmp')
-            with open(tmp, 'rb') as src, gzip.open(tmp_gz, 'wb', compresslevel=9) as dst:
-                shutil.copyfileobj(src, dst)
+            with open(tmp, 'rb') as src_file, gzip.open(tmp_gz, 'wb', compresslevel=9) as dst_file:
+                shutil.copyfileobj(src_file, dst_file)
         if compress:
             tmp_gz.replace(gz)
             print(f'  {gz}  ({gz.stat().st_size:,} bytes)', file=sys.stderr)

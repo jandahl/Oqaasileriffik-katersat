@@ -230,7 +230,9 @@ def main() -> None:
             print(f'  katersat.sqlite.gz: OK', file=sys.stderr)
 
     sqlite_path = out / 'katersat.sqlite'
-    if sqlite_path.exists():
+    if not sqlite_path.exists():
+        all_errors.append('missing file: katersat.sqlite')
+    else:
         errs = check_sqlite(sqlite_path, compressed=False)
         if errs:
             all_errors.extend(f'katersat.sqlite: {e}' for e in errs)
