@@ -2,6 +2,7 @@
 # Copyright 2024 Oqaasileriffik <oqaasileriffik@oqaasileriffik.gl>
 # Licensed under the GNU GPL v3 or later - https://www.gnu.org/licenses/gpl-3.0.en.html
 
+import gzip
 import json
 import sys
 from pathlib import Path
@@ -161,6 +162,28 @@ CHECKS = [
 ]
 
 
+def check_sqlite(path: Path, compressed: bool = False) -> list:
+    """Return a list of error strings for the SQLite file, or [] if valid."""
+    _SQLITE_MAGIC = b'SQLite format 3\x00'
+    try:
+        opener = gzip.open if compressed else open
+        with opener(path, 'rb') as f:
+            header = f.read(16)
+    except Exception as exc:
+        file_type = 'gzip' if compressed else 'SQLite'
+        return [f'could not read {file_type} file: {exc}']
+    if not header:
+        return ['file is empty']
+    if not header.startswith(_SQLITE_MAGIC):
+        return [f'unexpected SQLite magic bytes: {header[:16]!r}']
+    return []
+
+
+def check_sqlite_gz(path: Path) -> list:
+    """Return a list of error strings for katersat.sqlite.gz, or [] if valid."""
+    return check_sqlite(path, compressed=True)
+
+
 def main() -> None:
     if len(sys.argv) < 2:
         print('Usage: validators.py <output-dir>', file=sys.stderr)
@@ -197,6 +220,24 @@ def main() -> None:
             print(f'  {cross[0]}', file=sys.stderr)
         else:
             all_errors.extend(cross)
+
+    gz_path = out / 'katersat.sqlite.gz'
+    if gz_path.exists():
+        errs = check_sqlite_gz(gz_path)
+        if errs:
+            all_errors.extend(f'katersat.sqlite.gz: {e}' for e in errs)
+        else:
+            print(f'  katersat.sqlite.gz: OK', file=sys.stderr)
+
+    sqlite_path = out / 'katersat.sqlite'
+    if not sqlite_path.exists():
+        all_errors.append('missing file: katersat.sqlite')
+    else:
+        errs = check_sqlite(sqlite_path, compressed=False)
+        if errs:
+            all_errors.extend(f'katersat.sqlite: {e}' for e in errs)
+        else:
+            print(f'  katersat.sqlite: OK', file=sys.stderr)
 
     if all_errors:
         for e in all_errors:

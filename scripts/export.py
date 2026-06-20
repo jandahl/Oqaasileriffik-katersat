@@ -5,7 +5,9 @@
 import argparse
 import gzip
 import json
+import shutil
 import sys
+from contextlib import closing
 from datetime import datetime, timezone
 from pathlib import Path
 import sqlite3
@@ -213,6 +215,32 @@ def write_json(data: dict, path: str, compress: bool = False) -> None:
         print(f'  {gz}  ({gz.stat().st_size:,} bytes)', file=sys.stderr)
 
 
+def export_sqlite(db_path: Path, output_dir: Path, compress: bool) -> None:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    dest = output_dir / 'katersat.sqlite'
+    tmp = dest.with_suffix('.sqlite.tmp')
+    tmp_gz = None
+    try:
+        with closing(sqlite3.connect(db_path.as_uri() + '?mode=ro', uri=True)) as src, closing(sqlite3.connect(tmp)) as dst:
+            src.backup(dst)
+        if compress:
+            gz = output_dir / 'katersat.sqlite.gz'
+            tmp_gz = gz.with_suffix('.gz.tmp')
+            with open(tmp, 'rb') as src_file, gzip.open(tmp_gz, 'wb', compresslevel=9) as dst_file:
+                shutil.copyfileobj(src_file, dst_file)
+        if compress:
+            tmp_gz.replace(gz)
+            print(f'  {gz}  ({gz.stat().st_size:,} bytes)', file=sys.stderr)
+        tmp.replace(dest)
+        print(f'  {dest}  ({dest.stat().st_size:,} bytes)', file=sys.stderr)
+    except Exception:
+        if tmp.exists():
+            tmp.unlink()
+        if tmp_gz and tmp_gz.exists():
+            tmp_gz.unlink()
+        raise
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description='Export katersat.sqlite to JSON')
     parser.add_argument('--db', default='katersat.sqlite', help='Path to katersat.sqlite')
@@ -262,6 +290,9 @@ def main() -> None:
         for key, entries in sorted(by_letter.items()):
             write_json({'meta': lexicon['meta'], 'lexemes': entries}, f'{out}/by-letter/{key}.json', args.compress)
         print(f'  {len(by_letter)} letter shards', file=sys.stderr)
+
+    print('Exporting SQLite...', file=sys.stderr)
+    export_sqlite(db_path, Path(out), args.compress)
 
     print('Done.', file=sys.stderr)
 
