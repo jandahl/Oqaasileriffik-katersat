@@ -2,6 +2,7 @@
 # Copyright 2024 Oqaasileriffik <oqaasileriffik@oqaasileriffik.gl>
 # Licensed under the GNU GPL v3 or later - https://www.gnu.org/licenses/gpl-3.0.en.html
 
+import gzip
 import json
 import sys
 from pathlib import Path
@@ -161,6 +162,20 @@ CHECKS = [
 ]
 
 
+def check_sqlite_gz(path: Path) -> list:
+    """Return a list of error strings for katersat.sqlite.gz, or [] if valid."""
+    try:
+        with gzip.open(path, 'rb') as f:
+            header = f.read(16)
+    except Exception as exc:
+        return [f'could not read gzip file: {exc}']
+    if not header:
+        return ['gzip file is empty']
+    if not header.startswith(b'SQLi'):
+        return [f'unexpected SQLite magic bytes: {header[:4]!r}']
+    return []
+
+
 def main() -> None:
     if len(sys.argv) < 2:
         print('Usage: validators.py <output-dir>', file=sys.stderr)
@@ -197,6 +212,14 @@ def main() -> None:
             print(f'  {cross[0]}', file=sys.stderr)
         else:
             all_errors.extend(cross)
+
+    gz_path = out / 'katersat.sqlite.gz'
+    if gz_path.exists():
+        errs = check_sqlite_gz(gz_path)
+        if errs:
+            all_errors.extend(f'katersat.sqlite.gz: {e}' for e in errs)
+        else:
+            print(f'  katersat.sqlite.gz: OK', file=sys.stderr)
 
     if all_errors:
         for e in all_errors:

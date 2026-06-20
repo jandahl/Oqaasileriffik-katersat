@@ -13,6 +13,8 @@ https://jandahl.github.io/Oqaasileriffik-katersat/word_classes.json
 https://jandahl.github.io/Oqaasileriffik-katersat/semantic_classes.json
 https://jandahl.github.io/Oqaasileriffik-katersat/valence_frames.json
 https://jandahl.github.io/Oqaasileriffik-katersat/domains.json
+https://jandahl.github.io/Oqaasileriffik-katersat/katersat.sqlite
+https://jandahl.github.io/Oqaasileriffik-katersat/katersat.sqlite.gz
 ```
 
 > **Setup**: enable GitHub Pages in repo Settings → Pages → Source: `gh-pages` branch, `/ (root)`.
@@ -52,7 +54,7 @@ The exporter reads only from `katersat.sqlite` and writes JSON files to the outp
 python3 scripts/export.py [--db katersat.sqlite] [--output exports] [--compress]
 ```
 
-`--compress` writes a `.json.gz` alongside every `.json` file (~95% size reduction for the lexicon).
+`--compress` writes a `.json.gz` alongside every `.json` file (~95% size reduction for the lexicon), and also writes `katersat.sqlite.gz` — a gzip-compressed copy of the raw SQLite database.
 
 ---
 
@@ -252,6 +254,19 @@ Every file includes a top-level `meta` object:
 5. Force-pushes the contents of `exports/` to the `gh-pages` branch, which GitHub Pages serves directly
 
 Trigger a manual run from the GitHub Actions tab if you need an out-of-cycle refresh.
+
+---
+
+## SQLite endpoint
+
+The raw `katersat.sqlite` database (and its gzip-compressed counterpart) is published to GitHub Pages alongside the JSON exports:
+
+```
+https://jandahl.github.io/Oqaasileriffik-katersat/katersat.sqlite
+https://jandahl.github.io/Oqaasileriffik-katersat/katersat.sqlite.gz
+```
+
+This allows consumers that can query SQLite directly — for example via [SQLite WASM](https://sqlite.org/wasm/doc/trunk/index.md) in the browser — to fetch the entire database in one request and run arbitrary SQL queries client-side. The intended downstream consumer is [jandahl/oq](https://github.com/jandahl/oq).
 
 ---
 
