@@ -5,6 +5,7 @@
 import argparse
 import gzip
 import json
+import re
 import shutil
 import sys
 from contextlib import closing
@@ -277,6 +278,105 @@ def export_lexicon(db) -> dict:
     return {'meta': _meta(), 'lexemes': lexemes}
 
 
+# Der/XY derivation marker -> (morpheme category, category_shift, continuation_class).
+# X = input class, Y = output class (n = noun/N, v = verb/V).
+_DER_MAP = {
+    'nv': ('denominal_verbs', 'N -> V', 'V_POSTBASE'),
+    'vn': ('deverbal_nouns', 'V -> N', 'N_POSTBASE'),
+    'nn': ('denominal_nouns', 'N -> N', 'N_POSTBASE'),
+    'vv': ('verbal_modifiers', 'V -> V', 'V_POSTBASE'),
+}
+
+# katersat sandhi code -> grammarian boundary_behavior enum
+# (truncating|additive|assimilative|none). gem (gemination) is the closest to
+# 'assimilative'; rec/rep/dep have no enum value and fall back to 'none'. The raw
+# katersat code is preserved in application_logic.notes either way.
+_SANDHI_BEHAVIOR = {'tru': 'truncating', 'add': 'additive', 'gem': 'assimilative'}
+
+# A clean single derivational morpheme: "<MORPHEME> Der/<xy>" (e.g. "SSAQ Der/nn").
+_DER_TOKEN = re.compile(r'^(\S+)\s+Der/([nv][nv])$')
+
+
+def export_morphemes(db) -> dict:
+    """Export single derivational affixes from katersat's bound-morpheme (dermorph)
+    lexemes into the grammarian/oq morpheme shape ({meta, by_category, flat}).
+
+    Raw-data conversion only: each `dermorph` lexeme whose form is a single
+    "<MORPHEME> Der/<xy>" maps to one morpheme entry; the Der marker gives the
+    category/category_shift/continuation_class and lex_sandhi gives the boundary
+    behavior. Multi-morpheme compounds and bare (un-annotated) dermorph entries
+    are skipped and counted (logged), never silently dropped.
+    """
+    eng = _fetch_translations(db, 'eng')
+    dan = _fetch_translations(db, 'dan')
+    db.execute(
+        """
+        SELECT l.lex_id, l.lex_lexeme, a.let_attrs, a.lex_sandhi
+          FROM kat_lexemes l
+          JOIN kat_lexeme_attrs a ON a.lex_id = l.lex_id
+         WHERE l.lex_language = 'kal'
+           AND (a.let_attrs & ?)        -- dermorph
+           AND NOT (a.let_attrs & ?)    -- not hidden
+         ORDER BY l.lex_id
+        """,
+        [ATTR_BITS['dermorph'], ATTR_BITS['hidden']],
+    )
+    flat: list[dict] = []
+    skipped = 0
+    for lex_id, lexeme, _attrs, sandhi_int in db.fetchall():
+        m = _DER_TOKEN.match((lexeme or '').strip())
+        if not m:
+            skipped += 1  # compound (multi-Der) or bare/un-annotated affix
+            continue
+        morph, der = m.group(1), m.group(2)
+        category, shift, cont = _DER_MAP[der]
+        sandhi_code = SANDHI_VALUES.get(sandhi_int)
+        behavior = _SANDHI_BEHAVIOR.get(sandhi_code or '', 'none')
+        notes = [f'katersat lex_id={lex_id}', f'Der/{der}']
+        if sandhi_code:
+            notes.append(f'sandhi={sandhi_code}')
+        meaning = (eng.get(lex_id) or dan.get(lex_id) or [''])[0]
+        flat.append({
+            'id': f'kat_lex_{lex_id}',
+            'category': category,
+            'lexical_facts': {
+                'morpheme_type': 'derivational_affix',
+                'category_shift': shift,
+                **({'meaning': meaning} if meaning else {}),
+            },
+            'application_logic': {
+                'underlying_form': morph,
+                'boundary_behavior': behavior,
+                'continuation_class': cont,
+                'notes': notes,
+            },
+            'provenance': ['Oqaasileriffik/katersat', f'lex_{lex_id}'],
+        })
+
+    by_category: dict = {}
+    for e in flat:
+        by_category.setdefault(e['category'], {})[e['id']] = e
+
+    if skipped:
+        print(
+            f'  morphemes: skipped {skipped} compound/un-annotated dermorph entries '
+            f'(kept {len(flat)} single affixes)',
+            file=sys.stderr,
+        )
+    return {
+        'meta': {
+            **_meta(),
+            'schema_version': '1.0',
+            'note': (
+                'Single derivational affixes extracted from katersat dermorph lexemes. '
+                'Morpheme forms are katersat morphophonemic tags, not surface forms.'
+            ),
+        },
+        'by_category': by_category,
+        'flat': flat,
+    }
+
+
 def write_json(data: dict, path: str, compress: bool = False) -> None:
     p = Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
@@ -352,6 +452,9 @@ def main() -> None:
         print('Exporting lexicon...', file=sys.stderr)
         lexicon = export_lexicon(db)
         write_json(lexicon, f'{out}/lexicon.json', args.compress)
+
+        print('Exporting morphemes...', file=sys.stderr)
+        write_json(export_morphemes(db), f'{out}/morphemes.json', args.compress)
 
         print('Splitting lexicon by first letter...', file=sys.stderr)
         by_letter_dir = Path(out) / 'by-letter'
