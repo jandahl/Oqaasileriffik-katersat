@@ -51,6 +51,8 @@ def _semclass_parent_code(code: str, codes: set) -> str | None:
         prefix that exists (Adom -> Ado -> Ad -> A; single chars -> None).
     Returns None when no ancestor exists in the data.
     """
+    if not code:
+        return None
     if '.' in code:
         parts = code.split('.')
         candidates = ['.'.join(parts[:n]) for n in range(len(parts) - 1, 0, -1)]
@@ -117,6 +119,8 @@ def _domain_parent_code(code: str, codes: set) -> str | None:
     Returns None when the computed parent is absent from the data (a handful of
     mid-level codes are missing from the source taxonomy).
     """
+    if not code:
+        return None
     parts = code.split('.')
     if len(parts) != 3:
         # Defensive fallback for any non-3-part code: longest existing ancestor.

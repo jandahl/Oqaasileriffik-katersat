@@ -80,6 +80,10 @@ def check_parent_refs(entries: list, label: str) -> list:
             if cur in acyclic:
                 acyclic |= seen
                 break
+            if cur in visited:
+                # Reached a node from an earlier walk; any cycle beyond it was
+                # already reported, so stop without re-reporting.
+                break
             if cur in seen:
                 errors.append(f'{label} {cur}: parent_id chain forms a cycle')
                 break
