@@ -36,17 +36,55 @@ def export_word_classes(db) -> dict:
     }
 
 
+def _semclass_parent_code(code: str, codes: set) -> str | None:
+    """Return the parent code for a semantic class code, or None if it is a root.
+
+    Three code systems coexist; in each the parent is the longest *existing*
+    ancestor, so missing intermediate levels are skipped rather than orphaning
+    the entry:
+      - dot-notation (V.1.1, V.10.11.2): strip trailing .segments
+        (V.10.1.1 -> V.10.1 -> V.10 -> V). Intermediate dot levels are usually
+        absent in the data, so the walk continues up to the surviving root (V).
+      - hyphenated lowercase (act-move, cm-gas-h): strip trailing -segments
+        (cm-gas-h -> cm-gas -> cm).
+      - letter / plain codes (A, AA, Adom, act): longest proper character
+        prefix that exists (Adom -> Ado -> Ad -> A; single chars -> None).
+    Returns None when no ancestor exists in the data.
+    """
+    if '.' in code:
+        parts = code.split('.')
+        candidates = ['.'.join(parts[:n]) for n in range(len(parts) - 1, 0, -1)]
+    elif '-' in code:
+        parts = code.split('-')
+        candidates = ['-'.join(parts[:n]) for n in range(len(parts) - 1, 0, -1)]
+    else:
+        candidates = [code[:n] for n in range(len(code) - 1, 0, -1)]
+    for cand in candidates:
+        if cand and cand != code and cand in codes:
+            return cand
+    return None
+
+
 def export_semantic_classes(db) -> dict:
     db.execute(
         "SELECT sem_code, sem_eng, sem_dan, sem_kal FROM kat_semclasses ORDER BY sem_code"
     )
-    return {
-        'meta': _meta(),
-        'semantic_classes': [
-            {'id': f'sem_{r[0]}', 'code': r[0], 'english': r[1], 'danish': r[2], 'kalaallisut': r[3]}
-            for r in db.fetchall()
-        ],
-    }
+    rows = db.fetchall()
+    codes = {r[0] for r in rows}
+    classes = []
+    for code, eng, dan, kal in rows:
+        parent_code = _semclass_parent_code(code, codes)
+        classes.append({
+            'id': f'sem_{code}',
+            'code': code,
+            'english': eng,
+            'danish': dan,
+            'kalaallisut': kal,
+            # ids are derived as sem_<code>, and parent_code is guaranteed to be
+            # a code present in `codes`, so sem_<parent_code> is the parent's id.
+            'parent_id': f'sem_{parent_code}' if parent_code is not None else None,
+        })
+    return {'meta': _meta(), 'semantic_classes': classes}
 
 
 def export_valence_frames(db) -> dict:
@@ -68,23 +106,58 @@ def export_valence_frames(db) -> dict:
     }
 
 
+def _domain_parent_code(code: str, codes: set) -> str | None:
+    """Return the parent code for a domain code, or None for the root.
+
+    Domain codes are zero-padded 3-part dot-notation (a.b.c) where trailing
+    zeros mark unused levels. The parent zeroes the deepest non-zero segment:
+      X.Y.Z -> X.Y.0 ; X.Y.0 -> X.0.0 ; X.0.0 -> 0.0.0 ; 0.0.0 -> None.
+    Returns None when the computed parent is absent from the data (a handful of
+    mid-level codes are missing from the source taxonomy).
+    """
+    parts = code.split('.')
+    if len(parts) != 3:
+        # Defensive fallback for any non-3-part code: longest existing ancestor.
+        candidates = ['.'.join(parts[:n]) for n in range(len(parts) - 1, 0, -1)]
+        for cand in candidates:
+            if cand and cand != code and cand in codes:
+                return cand
+        return None
+    a, b, c = parts
+    if a == '0' and b == '0' and c == '0':
+        return None
+    if c != '0':
+        parent = f'{a}.{b}.0'
+    elif b != '0':
+        parent = f'{a}.0.0'
+    elif a != '0':
+        parent = '0.0.0'
+    else:
+        return None
+    return parent if (parent != code and parent in codes) else None
+
+
 def export_domains(db) -> dict:
     db.execute(
         "SELECT dom_id, dom_code, dom_eng, dom_dan, dom_kal FROM kat_domains ORDER BY dom_id"
     )
-    return {
-        'meta': _meta(),
-        'domains': [
-            {
-                'id': f'dom_{r[0]}',
-                'code': r[1],
-                'english': r[2],
-                'danish': r[3],
-                'kalaallisut': r[4],
-            }
-            for r in db.fetchall()
-        ],
-    }
+    rows = db.fetchall()
+    code_to_id = {r[1]: f'dom_{r[0]}' for r in rows}
+    codes = set(code_to_id)
+    domains = []
+    for dom_id, code, eng, dan, kal in rows:
+        parent_code = _domain_parent_code(code, codes)
+        domains.append({
+            'id': f'dom_{dom_id}',
+            'code': code,
+            'english': eng,
+            'danish': dan,
+            'kalaallisut': kal,
+            # Domain ids are dom_<dom_id>, not derived from the code, so resolve
+            # the parent code back to its id via the code->id map.
+            'parent_id': code_to_id.get(parent_code) if parent_code is not None else None,
+        })
+    return {'meta': _meta(), 'domains': domains}
 
 
 def _fetch_translations(db, lang: str) -> dict:
