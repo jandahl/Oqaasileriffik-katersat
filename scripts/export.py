@@ -60,7 +60,9 @@ def _semclass_parent_code(code: str, codes: set) -> str | None:
     else:
         candidates = [code[:n] for n in range(len(code) - 1, 0, -1)]
     for cand in candidates:
-        if cand and cand != code and cand in codes:
+        # Each candidate is a proper prefix of `code` (strictly shorter, never
+        # empty), so it can never equal `code`; a plain membership test suffices.
+        if cand in codes:
             return cand
     return None
 
@@ -126,15 +128,15 @@ def _domain_parent_code(code: str, codes: set) -> str | None:
     a, b, c = parts
     if a == '0' and b == '0' and c == '0':
         return None
+    # The all-zero root is handled above, so at least one segment is non-zero
+    # and zeroing the deepest one always yields a different, shorter code.
     if c != '0':
         parent = f'{a}.{b}.0'
     elif b != '0':
         parent = f'{a}.0.0'
-    elif a != '0':
-        parent = '0.0.0'
     else:
-        return None
-    return parent if (parent != code and parent in codes) else None
+        parent = '0.0.0'
+    return parent if parent in codes else None
 
 
 def export_domains(db) -> dict:
