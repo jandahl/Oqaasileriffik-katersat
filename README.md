@@ -157,17 +157,35 @@ Hidden lexemes (internal database entries) are excluded from the export.
   "meta": { ... },
   "semantic_classes": [
     {
+      "id": "sem_HH",
+      "code": "HH",
+      "english": "Group of humans",
+      "danish": null,
+      "kalaallisut": null,
+      "parent_id": "sem_H"
+    },
+    {
       "id": "sem_H",
       "code": "H",
       "english": "Human",
       "danish": "Menneskelig",
-      "kalaallisut": null
+      "kalaallisut": null,
+      "parent_id": null
     }
   ]
 }
 ```
 
 Codes prefixed `V.` are verbal semantic classes; all others are nominal.
+
+`parent_id` links each class to its parent in the same file (`null` at the
+root). Three code systems coexist, and the parent is the longest *existing*
+ancestor in each, so callers can build the tree without string-parsing codes:
+
+- dot-notation (`V.1.1` → `V`): trailing `.segments` are stripped; absent
+  intermediate levels are skipped up to the surviving root.
+- hyphenated lowercase (`act-move` → `act`): trailing `-segments` are stripped.
+- letter / plain codes (`Adom` → `A`): longest character prefix that exists.
 
 ---
 
@@ -223,11 +241,17 @@ Note: katersat uses lowercase codes (`t`, `v`) internally; these differ from the
       "code": "1.0.0",
       "english": "STAT STATE, PUBLIC ADMINISTRATION and POLITICS",
       "danish": "STAT Staten, offentlig forvaltning og politik",
-      "kalaallisut": null
+      "kalaallisut": null,
+      "parent_id": "dom_0"
     }
   ]
 }
 ```
+
+`parent_id` links each domain to its parent in the same file. Codes are
+zero-padded 3-part dot-notation; the parent zeroes the deepest non-zero segment
+(`X.Y.Z` → `X.Y.0` → `X.0.0` → `0.0.0`), and the root `0.0.0` plus a few codes
+whose mid-level parent is absent from the taxonomy have `parent_id: null`.
 
 Lexemes with `domain: null` belong to domain 0 ("General / Not Special").
 

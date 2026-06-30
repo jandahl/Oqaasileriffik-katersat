@@ -52,6 +52,49 @@ def check_lexicon(data: dict) -> list:
     return errors
 
 
+def check_parent_refs(entries: list, label: str) -> list:
+    """Verify each entry's parent_id is null or references an id present in the
+    same list, and that the parent chains contain no cycles."""
+    errors = []
+    parent_of: dict = {}
+    for e in entries:
+        if not isinstance(e, dict):
+            continue
+        eid = e.get('id')
+        if eid:
+            parent_of[eid] = e.get('parent_id')
+    ids = set(parent_of)
+    for eid, pid in parent_of.items():
+        if pid is not None and pid not in ids:
+            errors.append(f'{label} {eid}: parent_id {pid!r} not found')
+    # Walk each chain to detect cycles; memoize visited/acyclic nodes to stay
+    # fast and report each cycle once, at the node where it closes.
+    visited: set = set()
+    acyclic: set = set()
+    for start in parent_of:
+        if start in visited:
+            continue
+        seen: set = set()
+        cur = start
+        while cur is not None and cur in parent_of:
+            if cur in acyclic:
+                acyclic |= seen
+                break
+            if cur in visited:
+                # Reached a node from an earlier walk; any cycle beyond it was
+                # already reported, so stop without re-reporting.
+                break
+            if cur in seen:
+                errors.append(f'{label} {cur}: parent_id chain forms a cycle')
+                break
+            seen.add(cur)
+            cur = parent_of[cur]
+        else:
+            acyclic |= seen
+        visited |= seen
+    return errors
+
+
 def check_semantic_classes(data: dict) -> list:
     sem_classes = data.get('semantic_classes')
     if not isinstance(sem_classes, list):
@@ -66,6 +109,7 @@ def check_semantic_classes(data: dict) -> list:
         if code in codes:
             errors.append(f'duplicate semantic class code: {code}')
         codes.add(code)
+    errors.extend(check_parent_refs(sem_classes, 'semantic class'))
     return errors
 
 
@@ -117,6 +161,7 @@ def check_domains(data: dict) -> list:
         if did in ids:
             errors.append(f'duplicate domain id: {did}')
         ids.add(did)
+    errors.extend(check_parent_refs(domains, 'domain'))
     return errors
 
 
