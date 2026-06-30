@@ -367,6 +367,12 @@ def export_morphemes(db) -> dict:
         'meta': {
             **_meta(),
             'schema_version': '1.0',
+            # underlying_form values are katersat morphophonemic tags (e.g. "SSAQ"),
+            # NOT surface forms. Consumers MUST NOT feed them to a surface-form
+            # concatenation/sandhi builder; they would produce wrong words. This
+            # is an affix *inventory*, not a buildable morpheme set.
+            'morpheme_form': 'morphophonemic',
+            'buildable': False,
             'note': (
                 'Single derivational affixes extracted from katersat dermorph lexemes. '
                 'Morpheme forms are katersat morphophonemic tags, not surface forms.'

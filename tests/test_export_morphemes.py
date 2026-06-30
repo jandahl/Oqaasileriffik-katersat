@@ -35,14 +35,18 @@ def _make_db(tmp_path: Path) -> sqlite3.Cursor:
     )
     lexemes = [
         (1, 'SSAQ Der/nn', 'kal'),       # nn, sandhi add
-        (2, 'IR Der/nv', 'kal'),         # nv, sandhi tru
+        (2, 'IR Der/nv', 'kal'),         # nv, sandhi tru, no gloss
         (3, 'TUQ Der/vn', 'kal'),        # vn, sandhi gem -> assimilative
         (4, 'GALLAR Der/vv', 'kal'),     # vv, sandhi rec -> none
         (5, 'IR Der/nv NIAQ Der/nn', 'kal'),  # compound -> skipped
         (6, 'IP', 'kal'),                # bare, no Der -> skipped
         (7, 'illu', 'kal'),              # not dermorph -> not selected
         (8, 'XXX Der/nn', 'kal'),        # dermorph + hidden -> excluded
+        (9, 'REP Der/vv', 'kal'),        # vv, sandhi rep (5) -> none
+        (10, 'DEP Der/nn', 'kal'),       # nn, sandhi dep (6) -> none
+        (11, 'SIUR Der/nv', 'kal'),      # nv, Danish-only gloss
         (100, 'small one', 'eng'),       # english gloss target for lex 1
+        (201, 'finde', 'dan'),           # danish-only gloss target for lex 11
     ]
     attrs = [
         (1, DERMORPH, 2),                # add
@@ -53,10 +57,16 @@ def _make_db(tmp_path: Path) -> sqlite3.Cursor:
         (6, DERMORPH, 1),
         (7, ROOT, 0),
         (8, DERMORPH | HIDDEN, 2),
+        (9, DERMORPH, 5),                # rep (no enum)
+        (10, DERMORPH, 6),               # dep (no enum)
+        (11, DERMORPH, 2),               # add
     ]
     con.executemany('INSERT INTO kat_lexemes VALUES (?,?,?)', lexemes)
     con.executemany('INSERT INTO kat_lexeme_attrs VALUES (?,?,?)', attrs)
-    con.execute('INSERT INTO glue_lexeme_synonyms VALUES (1, 100, 0)')
+    con.executemany(
+        'INSERT INTO glue_lexeme_synonyms VALUES (?,?,?)',
+        [(1, 100, 0), (11, 201, 0)],
+    )
     con.commit()
     return con.cursor()
 
@@ -68,8 +78,11 @@ def _by_id(doc):
 def test_clean_single_affixes_only(tmp_path: Path):
     doc = export_morphemes(_make_db(tmp_path))
     ids = _by_id(doc)
-    # Only the four clean single-Der affixes survive.
-    assert set(ids) == {'kat_lex_1', 'kat_lex_2', 'kat_lex_3', 'kat_lex_4'}
+    # Only the clean single-Der affixes survive.
+    assert set(ids) == {
+        'kat_lex_1', 'kat_lex_2', 'kat_lex_3', 'kat_lex_4',
+        'kat_lex_9', 'kat_lex_10', 'kat_lex_11',
+    }
     # Compound, bare, non-dermorph and hidden entries are excluded.
     for absent in ('kat_lex_5', 'kat_lex_6', 'kat_lex_7', 'kat_lex_8'):
         assert absent not in ids
@@ -94,9 +107,13 @@ def test_sandhi_to_boundary_behavior(tmp_path: Path):
     assert ids['kat_lex_1']['application_logic']['boundary_behavior'] == 'additive'   # add
     assert ids['kat_lex_2']['application_logic']['boundary_behavior'] == 'truncating'  # tru
     assert ids['kat_lex_3']['application_logic']['boundary_behavior'] == 'assimilative'  # gem
-    # rec has no enum value -> none, but the raw code is preserved in notes.
+    # rec/rep/dep have no enum value -> none, but the raw code is preserved in notes.
     assert ids['kat_lex_4']['application_logic']['boundary_behavior'] == 'none'
     assert 'sandhi=rec' in ids['kat_lex_4']['application_logic']['notes']
+    assert ids['kat_lex_9']['application_logic']['boundary_behavior'] == 'none'   # rep
+    assert 'sandhi=rep' in ids['kat_lex_9']['application_logic']['notes']
+    assert ids['kat_lex_10']['application_logic']['boundary_behavior'] == 'none'  # dep
+    assert 'sandhi=dep' in ids['kat_lex_10']['application_logic']['notes']
     assert 'sandhi=add' in ids['kat_lex_1']['application_logic']['notes']
     assert 'Der/nn' in ids['kat_lex_1']['application_logic']['notes']
 
@@ -105,7 +122,9 @@ def test_gloss_and_provenance(tmp_path: Path):
     ids = _by_id(export_morphemes(_make_db(tmp_path)))
     # English synonym becomes the meaning.
     assert ids['kat_lex_1']['lexical_facts']['meaning'] == 'small one'
-    # Affix without a gloss simply omits meaning (schema does not require it).
+    # No English gloss → fall back to the Danish synonym.
+    assert ids['kat_lex_11']['lexical_facts']['meaning'] == 'finde'
+    # Affix without any gloss simply omits meaning (schema does not require it).
     assert 'meaning' not in ids['kat_lex_2']['lexical_facts']
     # Provenance always cites katersat + the lex id.
     assert ids['kat_lex_1']['provenance'] == ['Oqaasileriffik/katersat', 'lex_1']
@@ -114,6 +133,9 @@ def test_gloss_and_provenance(tmp_path: Path):
 def test_envelope_shape(tmp_path: Path):
     doc = export_morphemes(_make_db(tmp_path))
     assert 'generated_at' in doc['meta'] and doc['meta']['schema_version'] == '1.0'
+    # Non-buildability is signalled explicitly so consumers never surface-build these.
+    assert doc['meta']['buildable'] is False
+    assert doc['meta']['morpheme_form'] == 'morphophonemic'
     # by_category mirrors flat; boundary_behavior stays within the grammarian enum.
     allowed = {'truncating', 'additive', 'assimilative', 'none'}
     flat_ids = {e['id'] for e in doc['flat']}
