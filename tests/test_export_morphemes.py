@@ -5,7 +5,6 @@ as a plain script: `python3 tests/test_export_morphemes.py` (exit 1 on failure).
 """
 import sqlite3
 import sys
-from contextlib import closing
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / 'scripts'))
@@ -16,10 +15,12 @@ HIDDEN = 1
 ROOT = 2
 
 
-def _make_db(tmp_path: Path) -> sqlite3.Cursor:
-    """Build a minimal katersat-shaped DB with a handful of morpheme rows."""
-    p = tmp_path / 'm.sqlite'
-    con = sqlite3.connect(p)
+def _make_db() -> sqlite3.Cursor:
+    """Build a minimal katersat-shaped DB with a handful of morpheme rows.
+
+    In-memory: the returned cursor keeps its connection (and thus the DB) alive.
+    """
+    con = sqlite3.connect(':memory:')
     con.executescript(
         """
         CREATE TABLE kat_lexemes (
@@ -75,8 +76,8 @@ def _by_id(doc):
     return {e['id']: e for e in doc['flat']}
 
 
-def test_clean_single_affixes_only(tmp_path: Path):
-    doc = export_morphemes(_make_db(tmp_path))
+def test_clean_single_affixes_only():
+    doc = export_morphemes(_make_db())
     ids = _by_id(doc)
     # Only the clean single-Der affixes survive.
     assert set(ids) == {
@@ -88,8 +89,8 @@ def test_clean_single_affixes_only(tmp_path: Path):
         assert absent not in ids
 
 
-def test_der_marker_mapping(tmp_path: Path):
-    ids = _by_id(export_morphemes(_make_db(tmp_path)))
+def test_der_marker_mapping():
+    ids = _by_id(export_morphemes(_make_db()))
     e1 = ids['kat_lex_1']
     assert e1['category'] == 'denominal_nouns'
     assert e1['lexical_facts']['category_shift'] == 'N -> N'
@@ -102,8 +103,8 @@ def test_der_marker_mapping(tmp_path: Path):
     assert ids['kat_lex_4']['category'] == 'verbal_modifiers'
 
 
-def test_sandhi_to_boundary_behavior(tmp_path: Path):
-    ids = _by_id(export_morphemes(_make_db(tmp_path)))
+def test_sandhi_to_boundary_behavior():
+    ids = _by_id(export_morphemes(_make_db()))
     assert ids['kat_lex_1']['application_logic']['boundary_behavior'] == 'additive'   # add
     assert ids['kat_lex_2']['application_logic']['boundary_behavior'] == 'truncating'  # tru
     assert ids['kat_lex_3']['application_logic']['boundary_behavior'] == 'assimilative'  # gem
@@ -118,8 +119,8 @@ def test_sandhi_to_boundary_behavior(tmp_path: Path):
     assert 'Der/nn' in ids['kat_lex_1']['application_logic']['notes']
 
 
-def test_gloss_and_provenance(tmp_path: Path):
-    ids = _by_id(export_morphemes(_make_db(tmp_path)))
+def test_gloss_and_provenance():
+    ids = _by_id(export_morphemes(_make_db()))
     # English synonym becomes the meaning.
     assert ids['kat_lex_1']['lexical_facts']['meaning'] == 'small one'
     # No English gloss → fall back to the Danish synonym.
@@ -130,8 +131,8 @@ def test_gloss_and_provenance(tmp_path: Path):
     assert ids['kat_lex_1']['provenance'] == ['Oqaasileriffik/katersat', 'lex_1']
 
 
-def test_envelope_shape(tmp_path: Path):
-    doc = export_morphemes(_make_db(tmp_path))
+def test_envelope_shape():
+    doc = export_morphemes(_make_db())
     assert 'generated_at' in doc['meta'] and doc['meta']['schema_version'] == '1.0'
     # Non-buildability is signalled explicitly so consumers never surface-build these.
     assert doc['meta']['buildable'] is False
@@ -147,23 +148,17 @@ def test_envelope_shape(tmp_path: Path):
 
 
 if __name__ == '__main__':
-    import inspect
-    import tempfile
     import traceback
 
     failures = 0
     for _name, _fn in sorted(globals().items()):
         if _name.startswith('test_') and callable(_fn):
-            with tempfile.TemporaryDirectory() as d:
-                try:
-                    if 'tmp_path' in inspect.signature(_fn).parameters:
-                        _fn(Path(d))
-                    else:
-                        _fn()
-                    print(f'ok - {_name}')
-                except Exception:
-                    failures += 1
-                    traceback.print_exc()
-                    print(f'FAIL - {_name}')
+            try:
+                _fn()
+                print(f'ok - {_name}')
+            except Exception:
+                failures += 1
+                traceback.print_exc()
+                print(f'FAIL - {_name}')
     print('SUCCESS' if not failures else f'FAILURE ({failures})')
     sys.exit(1 if failures else 0)

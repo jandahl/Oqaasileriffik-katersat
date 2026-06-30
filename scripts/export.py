@@ -335,7 +335,8 @@ def export_morphemes(db) -> dict:
         notes = [f'katersat lex_id={lex_id}', f'Der/{der}']
         if sandhi_code:
             notes.append(f'sandhi={sandhi_code}')
-        meaning = (eng.get(lex_id) or dan.get(lex_id) or [''])[0]
+        glosses = eng.get(lex_id) or dan.get(lex_id)
+        meaning = glosses[0] if glosses else ''
         flat.append({
             'id': f'kat_lex_{lex_id}',
             'category': category,
