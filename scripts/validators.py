@@ -67,19 +67,27 @@ def check_parent_refs(entries: list, label: str) -> list:
     for eid, pid in parent_of.items():
         if pid is not None and pid not in ids:
             errors.append(f'{label} {eid}: parent_id {pid!r} not found')
-    # Walk each chain to detect cycles; memoize known-acyclic nodes to stay fast.
+    # Walk each chain to detect cycles; memoize visited/acyclic nodes to stay
+    # fast and report each cycle once, at the node where it closes.
+    visited: set = set()
     acyclic: set = set()
     for start in parent_of:
+        if start in visited:
+            continue
         seen: set = set()
         cur = start
-        while cur is not None and cur in parent_of and cur not in acyclic:
+        while cur is not None and cur in parent_of:
+            if cur in acyclic:
+                acyclic |= seen
+                break
             if cur in seen:
-                errors.append(f'{label} {start}: parent_id chain forms a cycle')
+                errors.append(f'{label} {cur}: parent_id chain forms a cycle')
                 break
             seen.add(cur)
             cur = parent_of[cur]
         else:
             acyclic |= seen
+        visited |= seen
     return errors
 
 
