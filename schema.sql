@@ -89,7 +89,7 @@ CREATE TABLE kat_lexemes (
 	lex_stem TEXT DEFAULT NULL, -- word stem
 	lex_semclass TEXT NOT NULL DEFAULT 'UNK', -- semantic class
 	lex_sem2 TEXT NOT NULL DEFAULT 'UNK',
-	lex_register TEXT NOT NULL DEFAULT 'nnn',
+	lex_domain INTEGER NOT NULL DEFAULT 0,
 	lex_gender TEXT DEFAULT NULL,
 	lex_tiebreak TEXT NOT NULL DEFAULT '',
 	lex_info TEXT DEFAULT NULL,
@@ -102,14 +102,14 @@ CREATE TABLE kat_lexemes (
 	wp_uid INTEGER DEFAULT NULL,
 
 	PRIMARY KEY (lex_id AUTOINCREMENT),
-	UNIQUE (lex_lexeme,lex_language,lex_wordclass,lex_valence,lex_semclass,lex_sem2,lex_register,lex_tiebreak),
+	UNIQUE (lex_lexeme,lex_language,lex_wordclass,lex_valence,lex_semclass,lex_sem2,lex_domain,lex_tiebreak),
 
 	FOREIGN KEY (lex_sem2) REFERENCES kat_semclasses (sem_code) ON UPDATE CASCADE,
 	FOREIGN KEY (lex_valence) REFERENCES kat_valence (val_id) ON UPDATE CASCADE,
 	FOREIGN KEY (lex_wordclass) REFERENCES kat_wordclasses (wc_class) ON UPDATE CASCADE,
 	FOREIGN KEY (lex_language) REFERENCES kat_languages (lang_code) ON UPDATE CASCADE,
 	FOREIGN KEY (lex_semclass) REFERENCES kat_semclasses (sem_code) ON UPDATE CASCADE,
-	FOREIGN KEY (lex_register) REFERENCES kat_registers (reg_code) ON UPDATE CASCADE,
+	FOREIGN KEY (lex_domain) REFERENCES kat_domains (dom_id) ON UPDATE CASCADE,
 	FOREIGN KEY (lex_gender) REFERENCES kat_genders (gen_code) ON UPDATE CASCADE
 );
 
@@ -117,15 +117,17 @@ CREATE INDEX kat_lexemes_lex_language ON kat_lexemes (lex_language);
 CREATE INDEX kat_lexemes_lex_wordclass ON kat_lexemes (lex_wordclass);
 CREATE INDEX kat_lexemes_lex_semclass ON kat_lexemes (lex_semclass);
 CREATE INDEX kat_lexemes_lex_gender ON kat_lexemes (lex_gender);
-CREATE INDEX kat_lexemes_lex_register ON kat_lexemes (lex_register);
+CREATE INDEX kat_lexemes_lex_domain ON kat_lexemes (lex_domain);
 CREATE INDEX kat_lexemes_lex_sem2 ON kat_lexemes (lex_sem2);
 CREATE INDEX kat_lexemes_lex_valence ON kat_lexemes (lex_valence);
 
 
 CREATE TABLE kat_lexeme_attrs (
 	lex_id INTEGER NOT NULL,
-	-- lex_attrs set('hidden','root','artificial','archaic','alternate','plural','mass','abbreviation','acronym','dermorph','enclitic','strict-stem','qual-plus','qual-minus','quant-plus','quant-minus') NOT NULL,
+	-- MySQL / MariaDB SET bitfield, reduced to integer for SQLite
+	-- lex_attrs set('hidden','root','artificial','archaic','alternate','plural','mass','abbreviation','acronym','dermorph','enclitic','strict-stem','qual-plus','qual-minus','quant-plus','quant-minus','see-instead','symbol','taaguutit') NOT NULL,
 	let_attrs INTEGER NOT NULL,
+	-- MySQL / MariaDB ENUM enumerator, reduced to integer for SQLite
 	-- lex_sandhi enum('tru','add','gem','rec','rep','dep') NOT NULL,
 	lex_sandhi INTEGER NOT NULL,
 
