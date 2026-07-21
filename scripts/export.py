@@ -188,10 +188,17 @@ def _fetch_translations(db, lang: str) -> dict:
 
 
 # --- Known upstream data-issue patches --------------------------------------
-# katersat's source data occasionally contains malformed lexeme rows (e.g. two
-# entries whose text got concatenated together upstream, such as lex_262026 ->
-# "A Der/vv TUR Der/vv"). Rather than let a bad row export silently as-is, or
-# drop it, patches are declared here and applied in export_lexicon().
+# katersat's source data occasionally contains a genuinely malformed lexeme
+# row — e.g. one row's text accidentally concatenates two unrelated entries.
+# Rather than let a bad row export silently as-is, or drop it, patches for
+# *confirmed one-off corruption* are declared here and applied in
+# export_lexicon().
+#
+# NOTE: multi-`Der/xy` chains (e.g. "A Der/vv TUR Der/vv") are NOT corruption
+# — katersat legitimately catalogues those as attested postbase-combination
+# entries (see the dermorph-chain handling below, which applies to ~3,800
+# such rows automatically). Don't add one here just because a lexeme looks
+# like a concatenation; only use this registry for rows verified to be wrong.
 #
 # To patch a newly-discovered bad row:
 #   1. Add an entry to LEXEME_PATCHES keyed by the source lex_id.
@@ -215,14 +222,7 @@ def _fetch_translations(db, lang: str) -> dict:
 # 'flag':  the text is left as upstream has it (no confident correction yet),
 #          but the entry is marked with `data_issue` so it doesn't slip
 #          through downstream consumers unnoticed.
-LEXEME_PATCHES: dict[int, dict] = {
-    262026: {
-        'type': 'split',
-        'expected': 'A Der/vv TUR Der/vv',
-        'reason': 'source row concatenates two dermorph entries into one lexeme field',
-        'parts': ['A Der/vv', 'TUR Der/vv'],
-    },
-}
+LEXEME_PATCHES: dict[int, dict] = {}
 
 # Ids minted for patched rows live in a namespace that can never collide with
 # a real katersat lex_<int> id (those are always plain integers).
@@ -257,8 +257,31 @@ _PATCH_HANDLERS = {
     'flag': _patch_flag,
 }
 
+# A lexeme string carrying 2+ "Der/xy" derivation markers (e.g.
+# "A Der/vv TUR Der/vv") is a katersat dermorph *chain* entry: it documents an
+# attested sequence of postbases that combine in that order, not a
+# citation-form dictionary headword. These aren't corruption (see the
+# LEXEME_PATCHES note above) and export_morphemes() already can't treat them
+# as a single buildable affix (only clean "STEM Der/xy" forms qualify there),
+# so they don't belong in the general lexicon export either — a user
+# searching a dictionary shouldn't get "A Der/vv TUR Der/vv" as a headword.
+# Detected by shape (not by the dermorph attr bit, since a handful of chain
+# rows lack it) and routed into dermorph_chains.json instead of lexicon.json.
+_DER_MARKER = re.compile(r'Der/[nv][nv]')
 
-def export_lexicon(db) -> dict:
+
+def _is_dermorph_chain(lexeme: str) -> bool:
+    return len(_DER_MARKER.findall(lexeme or '')) >= 2
+
+
+def export_lexicon(db) -> tuple[dict, dict]:
+    """Return (lexicon_doc, dermorph_chains_doc).
+
+    lexicon_doc is the general dictionary export ({meta, lexemes}).
+    dermorph_chains_doc collects multi-Der chain entries excluded from it
+    ({meta, dermorph_chains}), kept in the same shape as a lexeme entry plus
+    a `data_issue` note, for downstream tools that specifically want them.
+    """
     # lex_register stores dom_id as a string after the registers→domains rename.
     # dom_id=0 ("General / Not Special") is treated as unspecified and exported as null.
     db.execute("SELECT dom_id, dom_code, dom_eng, dom_dan, dom_kal FROM kat_domains")
@@ -299,6 +322,7 @@ def export_lexicon(db) -> dict:
     rows = db.fetchall()
 
     lexemes = []
+    dermorph_chains = []
     for row in rows:
         (lex_id, lexeme, wc, semclass, sem2, dom_key,
          gender, stem, definition, info, verbframe, oldspelling,
@@ -356,16 +380,34 @@ def export_lexicon(db) -> dict:
             )
             patch = None
 
-        if patch is None:
-            lexemes.append(base)
-        else:
+        if patch is not None:
             handler = _PATCH_HANDLERS.get(patch['type'])
             if handler is None:
                 raise ValueError(f'unknown patch type {patch["type"]!r} for lex_id {lex_id}')
             print(f'  lexicon: patched lex_{lex_id} ({patch["type"]}): {patch["reason"]}', file=sys.stderr)
             lexemes.extend(handler(lex_id, base, patch))
+        elif _is_dermorph_chain(lexeme):
+            dermorph_chains.append({
+                **base,
+                'data_issue': {
+                    'type': 'dermorph_chain',
+                    'reason': (
+                        'katersat dermorph entry documenting a multi-postbase '
+                        'derivation chain, not a citation-form headword'
+                    ),
+                },
+            })
+        else:
+            lexemes.append(base)
 
-    return {'meta': _meta(), 'lexemes': lexemes}
+    if dermorph_chains:
+        print(f'  lexicon: routed {len(dermorph_chains)} dermorph chain entries to dermorph_chains.json', file=sys.stderr)
+
+    meta = _meta()
+    return (
+        {'meta': meta, 'lexemes': lexemes},
+        {'meta': meta, 'dermorph_chains': dermorph_chains},
+    )
 
 
 # Der/XY derivation marker -> (morpheme category, category_shift, continuation_class).
@@ -547,8 +589,9 @@ def main() -> None:
             write_json(fn(db), f'{out}/{fname}', args.compress)
 
         print('Exporting lexicon...', file=sys.stderr)
-        lexicon = export_lexicon(db)
+        lexicon, dermorph_chains = export_lexicon(db)
         write_json(lexicon, f'{out}/lexicon.json', args.compress)
+        write_json(dermorph_chains, f'{out}/dermorph_chains.json', args.compress)
 
         print('Exporting morphemes...', file=sys.stderr)
         write_json(export_morphemes(db), f'{out}/morphemes.json', args.compress)

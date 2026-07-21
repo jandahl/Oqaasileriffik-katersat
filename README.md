@@ -121,7 +121,7 @@ The main export. 87,000+ Kalaallisut lexemes with translations, semantic tagging
 
 | Field | Type | Notes |
 |---|---|---|
-| `id` | string | Stable identifier (`lex_<int>`), or `lex_patch_<int>_<n>` for a lexeme split out of a corrected source row — see `data_issue` |
+| `id` | string | Stable identifier (`lex_<int>`), or `lex_patch_<int>_<n>` for a lexeme split out of a confirmed corrupted source row — see `data_issue` |
 | `kalaallisut` | string | The Kalaallisut lexeme |
 | `english` | string[] | English translations, ordered by preference |
 | `danish` | string[] | Danish translations, ordered by preference |
@@ -143,9 +143,34 @@ The main export. 87,000+ Kalaallisut lexemes with translations, semantic tagging
 | `attrs.acronym` | bool | Acronym |
 | `attrs.derived_morph` | bool | Derivational morpheme (not a free lexeme) |
 | `attrs.enclitic` | bool | Enclitic element |
-| `data_issue` | object\|absent | Present only on entries corrected for a known upstream katersat data error (see `scripts/export.py:LEXEME_PATCHES`). `type` is `"split"` (one malformed source row corrected into several lexemes; `source_lex_id` gives the original `lex_<int>` id) or `"flag"` (text left as-is upstream, no confident correction yet). `reason` explains the issue. |
+| `data_issue` | object\|absent | Present only on entries corrected for a confirmed one-off upstream katersat data error (see `scripts/export.py:LEXEME_PATCHES`). `type` is `"split"` (one corrupted source row split into several lexemes; `source_lex_id` gives the original `lex_<int>` id) or `"flag"` (text left as-is upstream, no confident correction yet). `reason` explains the issue. |
 
-Hidden lexemes (internal database entries) are excluded from the export.
+Hidden lexemes (internal database entries) are excluded from the export. Dermorph *chain* entries — a lexeme whose text carries 2+ `Der/xy` derivation markers, e.g. `"A Der/vv TUR Der/vv"` — are also excluded and exported separately; see `exports/dermorph_chains.json` below. These are not errors: katersat legitimately catalogues attested multi-postbase combinations this way, but the concatenated tag string isn't a real dictionary headword, so it's kept out of the general lexicon.
+
+---
+
+### `exports/dermorph_chains.json`
+
+Multi-postbase derivational chain entries excluded from `lexicon.json` (see above) — katersat rows whose `lex_lexeme` documents an attested sequence of 2+ derivational postbases combining in a fixed order (e.g. `"VALLAAR Der/vv RUJUP Der/vv SUAR Der/vv NNGIT Der/vv TUQ Der/vn"`), rather than a citation-form word. Roughly 3,800 entries. Not covered by `morphemes.json` either, since that export only extracts single clean `"STEM Der/xy"` affixes.
+
+```json
+{
+  "meta": { ... },
+  "dermorph_chains": [
+    {
+      "id": "lex_262026",
+      "kalaallisut": "A Der/vv TUR Der/vv",
+      "...": "... same shape as a lexicon.json lexeme entry ...",
+      "data_issue": {
+        "type": "dermorph_chain",
+        "reason": "katersat dermorph entry documenting a multi-postbase derivation chain, not a citation-form headword"
+      }
+    }
+  ]
+}
+```
+
+Each entry has the same shape as a `lexicon.json` lexeme (see field notes above), plus `data_issue`. Intended for downstream tools that want to work with attested postbase-combination data specifically (e.g. building suggestions, linguistic analysis) rather than general dictionary lookup.
 
 ---
 
