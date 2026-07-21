@@ -197,7 +197,14 @@ def _fetch_translations(db, lang: str) -> dict:
 #   1. Add an entry to LEXEME_PATCHES keyed by the source lex_id.
 #   2. Set 'type' to an existing handler ('split' or 'flag'), or add a new
 #      handler function below and register it in _PATCH_HANDLERS.
-#   3. Always set 'reason' — it is logged and written into the exported
+#   3. Set 'expected' to the exact current (raw, malformed) lex_lexeme text.
+#      This is a tripwire: if upstream katersat later fixes the row (edits it,
+#      splits it into proper separate rows, whatever), the live value will no
+#      longer match 'expected' and the patch is skipped — the row exports as
+#      upstream now has it, with a warning logged, instead of a stale patch
+#      silently clobbering the fix forever. Remove the LEXEME_PATCHES entry
+#      once that warning confirms upstream is fixed.
+#   4. Always set 'reason' — it is logged and written into the exported
 #      entry's `data_issue` field so consumers (and future maintainers) can
 #      see why the row looks the way it does.
 #
@@ -211,6 +218,7 @@ def _fetch_translations(db, lang: str) -> dict:
 LEXEME_PATCHES: dict[int, dict] = {
     262026: {
         'type': 'split',
+        'expected': 'A Der/vv TUR Der/vv',
         'reason': 'source row concatenates two dermorph entries into one lexeme field',
         'parts': ['A Der/vv', 'TUR Der/vv'],
     },
@@ -338,6 +346,16 @@ def export_lexicon(db) -> dict:
         }
 
         patch = LEXEME_PATCHES.get(lex_id)
+        if patch is not None and patch.get('expected') is not None and (lexeme or '').strip() != patch['expected']:
+            print(
+                f'  lexicon: WARNING lex_{lex_id} no longer matches its LEXEME_PATCHES '
+                f'entry (expected {patch["expected"]!r}, got {lexeme!r}) — upstream may '
+                f'have fixed it; skipping patch and exporting as-is. Remove the '
+                f'LEXEME_PATCHES entry once confirmed.',
+                file=sys.stderr,
+            )
+            patch = None
+
         if patch is None:
             lexemes.append(base)
         else:

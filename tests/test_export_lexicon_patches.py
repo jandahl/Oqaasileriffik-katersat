@@ -48,6 +48,38 @@ def _make_db() -> sqlite3.Cursor:
     return con.cursor()
 
 
+def _make_db_with_lexeme(lex_id: int, lexeme: str) -> sqlite3.Cursor:
+    """Like _make_db(), but lets the caller override the text of the patched row
+    (lex_id 262026), to simulate upstream having fixed/changed it."""
+    con = sqlite3.connect(':memory:')
+    con.executescript(
+        """
+        CREATE TABLE kat_lexemes (
+            lex_id INTEGER PRIMARY KEY, lex_lexeme TEXT, lex_wordclass TEXT,
+            lex_semclass TEXT, lex_sem2 TEXT, lex_register TEXT, lex_gender TEXT,
+            lex_stem TEXT, lex_definition TEXT, lex_info TEXT, lex_verbframe TEXT,
+            lex_oldspelling TEXT, lex_valence INTEGER, lex_language TEXT
+        );
+        CREATE TABLE kat_lexeme_attrs (
+            lex_id INTEGER PRIMARY KEY, let_attrs INTEGER, lex_sandhi INTEGER
+        );
+        CREATE TABLE kat_valence (val_id INTEGER PRIMARY KEY, val_code TEXT);
+        CREATE TABLE kat_domains (
+            dom_id INTEGER PRIMARY KEY, dom_code TEXT, dom_eng TEXT, dom_dan TEXT, dom_kal TEXT
+        );
+        CREATE TABLE glue_lexeme_synonyms (
+            lex_id INTEGER, lex_syn INTEGER, syn_order INTEGER
+        );
+        """
+    )
+    con.execute(
+        'INSERT INTO kat_lexemes VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+        (lex_id, lexeme, 'v', 'UNK', 'UNK', '0', '', '', '', '', '', '', None, 'kal'),
+    )
+    con.commit()
+    return con.cursor()
+
+
 def _by_id(doc):
     return {e['id']: e for e in doc['lexemes']}
 
@@ -90,6 +122,26 @@ def test_split_parts_inherit_shared_fields():
     # only the lexeme text and id are overridden.
     assert ids['lex_patch_262026_1']['word_class'] == 'v'
     assert ids['lex_patch_262026_2']['word_class'] == 'v'
+
+
+def test_patch_skipped_when_upstream_text_no_longer_matches():
+    # Simulate katersat having fixed lex_262026 upstream to something new.
+    doc = export_lexicon(_make_db_with_lexeme(262026, 'illuttoq'))
+    ids = _by_id(doc)
+    # The stale patch must NOT fire and clobber the now-correct upstream value.
+    assert 'lex_patch_262026_1' not in ids
+    assert 'lex_patch_262026_2' not in ids
+    assert 'lex_262026' in ids
+    assert ids['lex_262026']['kalaallisut'] == 'illuttoq'
+    assert 'data_issue' not in ids['lex_262026']
+
+
+def test_patch_still_fires_when_upstream_text_unchanged():
+    doc = export_lexicon(_make_db_with_lexeme(262026, 'A Der/vv TUR Der/vv'))
+    ids = _by_id(doc)
+    assert 'lex_262026' not in ids
+    assert 'lex_patch_262026_1' in ids
+    assert 'lex_patch_262026_2' in ids
 
 
 if __name__ == '__main__':
