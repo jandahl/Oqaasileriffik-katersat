@@ -187,6 +187,77 @@ def _fetch_translations(db, lang: str) -> dict:
     return result
 
 
+# --- Known upstream data-issue patches --------------------------------------
+# katersat's source data occasionally contains malformed lexeme rows (e.g. two
+# entries whose text got concatenated together upstream, such as lex_262026 ->
+# "A Der/vv TUR Der/vv"). Rather than let a bad row export silently as-is, or
+# drop it, patches are declared here and applied in export_lexicon().
+#
+# To patch a newly-discovered bad row:
+#   1. Add an entry to LEXEME_PATCHES keyed by the source lex_id.
+#   2. Set 'type' to an existing handler ('split' or 'flag'), or add a new
+#      handler function below and register it in _PATCH_HANDLERS.
+#   3. Set 'expected' to the exact current (raw, malformed) lex_lexeme text.
+#      This is a tripwire: if upstream katersat later fixes the row (edits it,
+#      splits it into proper separate rows, whatever), the live value will no
+#      longer match 'expected' and the patch is skipped — the row exports as
+#      upstream now has it, with a warning logged, instead of a stale patch
+#      silently clobbering the fix forever. Remove the LEXEME_PATCHES entry
+#      once that warning confirms upstream is fixed.
+#   4. Always set 'reason' — it is logged and written into the exported
+#      entry's `data_issue` field so consumers (and future maintainers) can
+#      see why the row looks the way it does.
+#
+# 'split': the row's text is actually N distinct lexemes concatenated
+#          together; 'parts' lists the corrected text for each. Each part
+#          gets its own id, minted from _PATCH_ID_PREFIX so it can never
+#          collide with a real katersat lex_<int> id.
+# 'flag':  the text is left as upstream has it (no confident correction yet),
+#          but the entry is marked with `data_issue` so it doesn't slip
+#          through downstream consumers unnoticed.
+LEXEME_PATCHES: dict[int, dict] = {
+    262026: {
+        'type': 'split',
+        'expected': 'A Der/vv TUR Der/vv',
+        'reason': 'source row concatenates two dermorph entries into one lexeme field',
+        'parts': ['A Der/vv', 'TUR Der/vv'],
+    },
+}
+
+# Ids minted for patched rows live in a namespace that can never collide with
+# a real katersat lex_<int> id (those are always plain integers).
+_PATCH_ID_PREFIX = 'lex_patch'
+
+
+def _patch_split(lex_id: int, base: dict, patch: dict) -> list[dict]:
+    """Break one malformed lexeme row into its N constituent clean rows."""
+    entries = []
+    for i, part in enumerate(patch['parts'], start=1):
+        entry = {**base, 'id': f'{_PATCH_ID_PREFIX}_{lex_id}_{i}', 'kalaallisut': part}
+        entry['data_issue'] = {
+            'type': 'split',
+            'source_lex_id': f'lex_{lex_id}',
+            'reason': patch['reason'],
+        }
+        entries.append(entry)
+    return entries
+
+
+def _patch_flag(lex_id: int, base: dict, patch: dict) -> list[dict]:
+    """Keep the lexeme text as-is, but mark it as a known upstream data issue."""
+    entry = {**base, 'data_issue': {'type': 'flag', 'reason': patch['reason']}}
+    return [entry]
+
+
+# Registry of patch-type -> handler(lex_id, base_entry, patch) -> list[entry].
+# Add new patch types here as they're needed; LEXEME_PATCHES entries reference
+# them by the 'type' string.
+_PATCH_HANDLERS = {
+    'split': _patch_split,
+    'flag': _patch_flag,
+}
+
+
 def export_lexicon(db) -> dict:
     # lex_register stores dom_id as a string after the registers→domains rename.
     # dom_id=0 ("General / Not Special") is treated as unspecified and exported as null.
@@ -247,7 +318,7 @@ def export_lexicon(db) -> dict:
 
         fst_analyses = [s for s in (stem or '').splitlines() if s.strip()] or None
 
-        entry = {
+        base = {
             'id': f'lex_{lex_id}',
             'kalaallisut': lexeme,
             'english': eng.get(lex_id, []),
@@ -273,7 +344,26 @@ def export_lexicon(db) -> dict:
                 'enclitic': has_attr(attrs_bits, 'enclitic'),
             },
         }
-        lexemes.append(entry)
+
+        patch = LEXEME_PATCHES.get(lex_id)
+        if patch is not None and patch.get('expected') is not None and (lexeme or '').strip() != patch['expected']:
+            print(
+                f'  lexicon: WARNING lex_{lex_id} no longer matches its LEXEME_PATCHES '
+                f'entry (expected {patch["expected"]!r}, got {lexeme!r}) — upstream may '
+                f'have fixed it; skipping patch and exporting as-is. Remove the '
+                f'LEXEME_PATCHES entry once confirmed.',
+                file=sys.stderr,
+            )
+            patch = None
+
+        if patch is None:
+            lexemes.append(base)
+        else:
+            handler = _PATCH_HANDLERS.get(patch['type'])
+            if handler is None:
+                raise ValueError(f'unknown patch type {patch["type"]!r} for lex_id {lex_id}')
+            print(f'  lexicon: patched lex_{lex_id} ({patch["type"]}): {patch["reason"]}', file=sys.stderr)
+            lexemes.extend(handler(lex_id, base, patch))
 
     return {'meta': _meta(), 'lexemes': lexemes}
 

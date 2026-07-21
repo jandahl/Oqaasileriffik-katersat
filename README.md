@@ -121,7 +121,7 @@ The main export. 87,000+ Kalaallisut lexemes with translations, semantic tagging
 
 | Field | Type | Notes |
 |---|---|---|
-| `id` | string | Stable identifier (`lex_<int>`) |
+| `id` | string | Stable identifier (`lex_<int>`), or `lex_patch_<int>_<n>` for a lexeme split out of a corrected source row — see `data_issue` |
 | `kalaallisut` | string | The Kalaallisut lexeme |
 | `english` | string[] | English translations, ordered by preference |
 | `danish` | string[] | Danish translations, ordered by preference |
@@ -143,6 +143,7 @@ The main export. 87,000+ Kalaallisut lexemes with translations, semantic tagging
 | `attrs.acronym` | bool | Acronym |
 | `attrs.derived_morph` | bool | Derivational morpheme (not a free lexeme) |
 | `attrs.enclitic` | bool | Enclitic element |
+| `data_issue` | object\|absent | Present only on entries corrected for a known upstream katersat data error (see `scripts/export.py:LEXEME_PATCHES`). `type` is `"split"` (one malformed source row corrected into several lexemes; `source_lex_id` gives the original `lex_<int>` id) or `"flag"` (text left as-is upstream, no confident correction yet). `reason` explains the issue. |
 
 Hidden lexemes (internal database entries) are excluded from the export.
 
