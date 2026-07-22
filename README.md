@@ -461,6 +461,7 @@ This allows consumers that can query SQLite directly — for example via [SQLite
 - **Brotli compression** — Brotli typically gives ~15% better ratio than gzip for text; useful for GitHub Pages serving
 - **Latin/French/German translations** — tracked in [issue #6](https://github.com/jandahl/Oqaasileriffik-katersat/issues/6); the DB already has `lat` (902 entries), `fra` (12), and `deu` (1) linked via `glue_lexeme_synonyms`
 - **Structured `fst_analyses`** — currently exported as raw strings; could be parsed into structured objects (`{"lemma": "nammineq", "tags": ["Pron", "Abs", "Sg"]}`)
+- **Curiosity, not a claimed bug: a handful of `t` (Noun)-tagged multi-word entries look verbal, not nominal** — e.g. `lex_250063` (`-mik ilisimasaqalerpoq`) ends in `-poq`, a finite 3sg indicative verb ending, not nominalizing morphology like the `-lik`/`-toq`/`-soq` endings on similar-looking neighbors (which do look correctly tagged as nominal/participial forms). Only ~4 entries share this exact shape (case-clitic prefix + full word, tagged `t`) out of 87k+, so low priority either way. This is *not* upstream feedback for Oqaasileriffik to act on — nobody here has the linguistic standing to make that call from outside the project — just a note for whoever wants to dig into katersat's `-`-prefixed collocation entries someday and understands the convention better than this export pipeline does.
 
 ---
 
