@@ -2,22 +2,24 @@
 
 This is a fork of [Oqaasileriffik/katersat](https://github.com/Oqaasileriffik/katersat), the linguistic database underlying Oqaasileriffik's NLP tools for Kalaallisut (West Greenlandic). This fork adds a JSON export pipeline so the data can be consumed by web tools such as [KalaalliCut](https://github.com/jandahl/kalaalliCut).
 
-Pre-built exports are published to **GitHub Pages**:
+Pre-built exports are published to **GitHub Pages**. Every file below is also available with a `.gz` suffix (gzip-compressed):
 
 ```
 https://jandahl.github.io/Oqaasileriffik-katersat/lexicon.json
-https://jandahl.github.io/Oqaasileriffik-katersat/lexicon.json.gz
-https://jandahl.github.io/Oqaasileriffik-katersat/by-letter/a.json
-https://jandahl.github.io/Oqaasileriffik-katersat/by-letter/n.json
 https://jandahl.github.io/Oqaasileriffik-katersat/dermorph.json
 https://jandahl.github.io/Oqaasileriffik-katersat/enclitics.json
+https://jandahl.github.io/Oqaasileriffik-katersat/morphemes.json
 https://jandahl.github.io/Oqaasileriffik-katersat/word_classes.json
 https://jandahl.github.io/Oqaasileriffik-katersat/semantic_classes.json
 https://jandahl.github.io/Oqaasileriffik-katersat/valence_frames.json
 https://jandahl.github.io/Oqaasileriffik-katersat/domains.json
 https://jandahl.github.io/Oqaasileriffik-katersat/katersat.sqlite
-https://jandahl.github.io/Oqaasileriffik-katersat/katersat.sqlite.gz
+https://jandahl.github.io/Oqaasileriffik-katersat/by-letter/<letter>.json
 ```
+
+`by-letter/` has 31 shards: one per letter of the Kalaallisut alphabet (`a`–`z`, plus `å`, `æ`, `ø`, `ə`), and one catch-all `_.json` for headwords that don't start with a letter (e.g. leading digits or punctuation) — e.g. `by-letter/a.json`, `by-letter/n.json`, `by-letter/_.json`.
+
+Full inventory of every file, with schema details for each: see [Exported files](#exported-files) below.
 
 > **Setup**: enable GitHub Pages in repo Settings → Pages → Source: `gh-pages` branch, `/ (root)`.
 
@@ -36,7 +38,7 @@ python3 scripts/export.py
 python3 scripts/validators.py exports
 ```
 
-The exporter reads only from `katersat.sqlite` and writes JSON files to the output directory (full lexicon + per-letter shards + reference files). `scripts/validators.py` verifies both `katersat.sqlite` and `katersat.sqlite.gz` (SQLite header/magic-byte check) in addition to JSON integrity checks.
+The exporter reads only from `katersat.sqlite` and writes JSON files to the output directory (full lexicon + per-letter shards + reference files). `scripts/validators.py` checks structural integrity of every exported JSON file (required fields, no duplicate/dangling ids, referential integrity against `word_classes.json`/`valence_frames.json`/`semantic_classes.json`/`domains.json`) and both `katersat.sqlite`/`katersat.sqlite.gz` (SQLite header/magic-byte check). It also runs a **regression guard**, `FORBIDDEN_LEXEME_PATTERNS`, against every `lexicon.json` entry's `kalaallisut` field: any text matching a known non-headword shape (currently: a `Der/xy` dermorph postbase marker) fails validation. This exists because a classification bug once let 95 such entries reach `lexicon.json` undetected (see `scripts/export.py`'s `LEXEME_CLASSES` history) — the guard runs against the *actual generated output*, so any future regression in that pipeline, from any cause, fails the build instead of silently reaching consumers. Extend it by appending `(pattern, reason)` tuples in `scripts/validators.py`.
 
 Expected validator output includes:
 
@@ -54,9 +56,11 @@ All validations passed.
 |---|---|
 | `update.py` | Fetches `data.sql` from upstream and (re)builds `katersat.sqlite` |
 | `scripts/export.py` | Reads `katersat.sqlite`, writes JSON to `exports/` |
-| `scripts/validators.py` | Checks the exported JSON for integrity errors |
+| `scripts/validators.py` | Checks the exported JSON for integrity errors, including the `FORBIDDEN_LEXEME_PATTERNS` non-headword guard on `lexicon.json` |
 | `scripts/schema_info.py` | Shared constants (attribute bitfield, sandhi enum, metadata) |
 | `scripts/archive_data.py` | Archives `data.sql` to `data/YYYY-MM-DD.sql` when upstream content changes |
+
+See [Testing](#testing) below for `tests/`, which is separate from `scripts/validators.py`: the tests exercise the export/validation code itself against small synthetic databases, while `validators.py` checks the real generated output.
 
 ### export.py options
 
@@ -77,20 +81,30 @@ python3 scripts/export.py [--db katersat.sqlite] [--output exports] [--compress]
 | class | rule | file | notes |
 |---|---|---|---|
 | `lexicon` (default) | everything not matched below | `lexicon.json` | real dictionary headwords only |
-| `dermorph` | `attrs.derived_morph` bit set | `dermorph.json` | see subtypes below |
+| `dermorph` | `attrs.derived_morph` bit set **or** the lexeme text contains a `Der/xy` marker | `dermorph.json` | see subtypes below |
 | `enclitic` | `attrs.enclitic` bit set | `enclitics.json` | bound clitic morphemes in katersat's internal notation |
 
-Classification is keyed off katersat's existing attrs bits, not lexeme text shape — checked against the live data: an all-uppercase heuristic, for example, would misclassify ~90 legitimate real headwords (`EU`, `DNA`, `USB`, `FIFA`, `ADHD`, …) that are uppercase but carry no special attr bit.
+Classification is keyed off katersat's existing attrs bits, not lexeme text shape, wherever the bit is reliable — checked against the live data: an all-uppercase heuristic, for example, would misclassify ~90 legitimate real headwords (`EU`, `DNA`, `USB`, `FIFA`, `ADHD`, …) that are uppercase but carry no special attr bit. The one exception is `dermorph`, which also matches on text shape (a `Der/[nv][nv]` marker): katersat's own `dermorph` bit is inconsistently applied upstream — the identical postbase text sometimes exists as several rows under different `lex_id`s, only some flagged, and a few chain entries have exactly one row and it's unflagged. Bit-only matching let 95 such rows leak into `lexicon.json` before this was caught; the shape check is a safety net specifically for that gap, not a general design pattern to reach for elsewhere.
 
 Hidden lexemes (`attrs.hidden`, internal database entries) never reach classification at all — they're excluded in SQL before this step.
+
+**Attribute bits not yet surfaced as `attrs.*` fields:** `scripts/schema_info.py:ATTR_BITS` decodes 19 bits from katersat's `let_attrs` bitfield, but `lexicon.json`'s `attrs` object (see field notes below) only exposes 7 of them. Three were only recently identified (by diffing against upstream's current `schema.sql`, which has 3 more SET members than the copy in this repo) and aren't exposed anywhere in the JSON export yet:
+
+| bit name | value | kal rows | meaning |
+|---|---|---|---|
+| `see_instead` | 65536 | 176 | loanword/spelling-variant entries pointing to a preferred alternate form (e.g. `albummi`, `aritmetikki`) |
+| `symbol` | 131072 | 3 | the headword is a symbol character itself (`≈`, `ə`, `∨`) |
+| `taaguutit` | 262144 | 27,529 | provenance marker for entries sourced from katersat's official terminology ("taaguut") database — not a content-quality signal by itself |
+
+`root`, `artificial`, `alternate`, `strict_stem`, `qual_plus`, `qual_minus`, `quant_plus`, `quant_minus` are also decoded but unexposed. Exposing any of these as new `attrs.*` fields is a deliberate scope decision, not done yet.
 
 ---
 
 ### `exports/lexicon.json` + `exports/by-letter/*.json`
 
-The main export. 83,000+ real Kalaallisut dictionary headwords with translations, semantic tagging, and morphological metadata — the `lexicon` class from the table above.
+The main export. 86,000+ real Kalaallisut dictionary headwords with translations, semantic tagging, and morphological metadata — the `lexicon` class from the table above.
 
-`lexicon.json` contains all lexemes. `by-letter/` contains one file per initial letter of the Kalaallisut headword (`a.json`, `e.json`, … `v.json`), each a valid subset with the same schema — useful for lazy-loading in browser tools. Both the full file and each shard share the same `meta.generated_at` timestamp.
+`lexicon.json` contains all lexemes. `by-letter/` splits the same lexemes into 31 shards by initial letter of the Kalaallisut headword (see the top of this README for the full shard list), each a valid subset with the same schema — useful for lazy-loading in browser tools. Both the full file and each shard share the same `meta.generated_at` timestamp.
 
 ```json
 {
@@ -169,7 +183,7 @@ The main export. 83,000+ real Kalaallisut dictionary headwords with translations
 
 ### `exports/dermorph.json`
 
-Every katersat lexeme flagged `dermorph` (`attrs.derived_morph`) — roughly 4,400 entries, none of which appear in `lexicon.json`. Each entry has the same shape as a `lexicon.json` lexeme, plus `class_subtype`:
+Every katersat lexeme matching the `dermorph` class rule above — roughly 4,500 entries, none of which appear in `lexicon.json`. Each entry has the same shape as a `lexicon.json` lexeme, plus `class_subtype`:
 
 | `class_subtype` | meaning | example |
 |---|---|---|
@@ -198,6 +212,62 @@ None of these are errors — katersat legitimately catalogues its derivational-m
 ### `exports/enclitics.json`
 
 Katersat lexemes flagged `enclitic` (`attrs.enclitic`) — a handful of bound clitic morphemes written in katersat's internal notation (e.g. `"AASIIT"`, `"LU"`), not citation-form words. Same shape as `lexicon.json`, no `class_subtype`.
+
+---
+
+### `exports/morphemes.json`
+
+A structured, buildable-affix-oriented view of the `single_affix` subset of `dermorph.json` (~580 entries) — different envelope shape from every other export, purpose-built for postbase/derivation tooling (e.g. a grammar-aware morpheme picker) rather than dictionary lookup. Derived independently from `dermorph.json`: both come from the same underlying `dermorph`-shaped rows, but `export_morphemes()` re-queries and re-filters rather than reusing `export_lexicon()`'s output.
+
+```json
+{
+  "meta": {
+    "version": "1",
+    "schema_version": "1.0",
+    "morpheme_form": "morphophonemic",
+    "buildable": false,
+    "note": "Single derivational affixes extracted from katersat dermorph lexemes. Morpheme forms are katersat morphophonemic tags, not surface forms.",
+    "...": "... plus the standard meta fields (license, attribution, source, generated_at) ..."
+  },
+  "by_category": {
+    "denominal_nouns": {
+      "kat_lex_163342": { "...": "same object as the matching entry in flat, below" }
+    }
+  },
+  "flat": [
+    {
+      "id": "kat_lex_163342",
+      "category": "verbal_modifiers",
+      "lexical_facts": {
+        "morpheme_type": "derivational_affix",
+        "category_shift": "V -> V",
+        "meaning": "..."
+      },
+      "application_logic": {
+        "underlying_form": "SSA",
+        "boundary_behavior": "additive",
+        "continuation_class": "V_POSTBASE",
+        "notes": ["katersat lex_id=163342", "Der/vv", "sandhi=add"]
+      },
+      "provenance": ["Oqaasileriffik/katersat", "lex_163342"]
+    }
+  ]
+}
+```
+
+**Field notes**
+
+| Field | Notes |
+|---|---|
+| `id` | `kat_lex_<lex_id>` (a different prefix from `lex_<id>` elsewhere, to signal this is a katersat-derived derivational unit, not a lexicon entry) |
+| `category` | One of `denominal_verbs` (N→V), `deverbal_nouns` (V→N), `denominal_nouns` (N→N), `verbal_modifiers` (V→V), from the `Der/xy` marker |
+| `lexical_facts.meaning` | First English gloss, falling back to Danish; omitted entirely if neither exists |
+| `application_logic.underlying_form` | The katersat **morphophonemic tag** (e.g. `"SSA"`), not a surface form — see `meta.buildable` below |
+| `application_logic.boundary_behavior` | `truncating`, `additive`, `assimilative`, or `none`, mapped from katersat's sandhi code; the raw code is preserved in `notes` |
+| `meta.buildable` | Always `false`. This is an affix *inventory*, not a buildable morpheme set — consumers must not feed `underlying_form` values into a surface-form concatenation/sandhi builder, since they aren't surface forms |
+| `by_category` | The same entries as `flat`, grouped by `category`, keyed by `id`, for lookups that don't want to filter the flat list |
+
+`chain` and `bare` subtype entries in `dermorph.json` are **not** covered here — only clean single affixes can be represented in this buildable-unit shape.
 
 ---
 
@@ -328,14 +398,39 @@ Every file includes a top-level `meta` object:
 
 ---
 
+## Testing
+
+```bash
+pip install pytest
+pytest tests/ -v
+```
+
+Every test file is also runnable standalone without pytest — `python3 tests/test_export_lexicon_patches.py` etc. — printing `ok`/`FAIL` per test and exiting 1 on failure; useful in a sandbox without pytest installed. All tests use small hand-built in-memory SQLite databases (no `data.sql` required) and run in well under a second.
+
+| File | Covers |
+|---|---|
+| `tests/test_export_lexicon_patches.py` | `export_lexicon()`'s `LEXEME_CLASSES` classifier (dermorph/enclitic routing, `class_subtype`) and the `LEXEME_PATCHES` registry (split/flag handlers, the upstream-fixed-it tripwire) |
+| `tests/test_export_morphemes.py` | `export_morphemes()` — Der marker → category mapping, sandhi → boundary_behavior, compound/bare skip-and-count |
+| `tests/test_export_sqlite.py` | `export_sqlite()` and the SQLite/gzip magic-byte checks in `scripts/validators.py` |
+| `tests/test_validators.py` | `check_lexicon()`'s `FORBIDDEN_LEXEME_PATTERNS` non-headword guard, including the exact strings from the production leak this guard was built to catch |
+| `tests/test_archive_data.py` | `scripts/archive_data.py`'s archive-filename sort order and changelog/dedup logic |
+
+CI runs the full suite via `pytest tests/ -v` as a **required gate**: `export.yml`'s `export` job (which fetches data, regenerates JSON, and deploys to `gh-pages`) only runs after the `test` job passes — a test failure blocks the deploy, it doesn't just get logged.
+
+---
+
 ## CI / automation
 
-`.github/workflows/export.yml` runs weekly (Sunday 02:00 UTC) and on manual dispatch. It:
+`.github/workflows/export.yml` runs weekly (Sunday 02:00 UTC), on manual dispatch, and on every push to `main` that touches `scripts/**`, `tests/**`, or the workflow file itself. It has two jobs:
 
+**`test`** (always runs first):
+1. Runs `pytest tests/ -v`. If this fails, the `export` job below does not run at all.
+
+**`export`** (`needs: test`):
 1. Runs `update.py` to fetch the latest `data.sql` from upstream and rebuild `katersat.sqlite`
 2. Runs `scripts/archive_data.py` — if the upstream data has changed, archives `data.sql` to `data/YYYY-MM-DD.sql` and appends an entry to `data/CHANGELOG.md`, then commits back to `main`
 3. Runs `scripts/export.py --compress` to regenerate all JSON exports
-4. Runs `scripts/validators.py` to verify integrity
+4. Runs `scripts/validators.py` to verify integrity (including the `FORBIDDEN_LEXEME_PATTERNS` guard — see [Scripts](#scripts) above)
 5. Force-pushes the contents of `exports/` to the `gh-pages` branch, which GitHub Pages serves directly
 
 Trigger a manual run from the GitHub Actions tab if you need an out-of-cycle refresh.
