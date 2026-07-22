@@ -187,18 +187,71 @@ def _fetch_translations(db, lang: str) -> dict:
     return result
 
 
+# --- Lexeme classification ---------------------------------------------------
+# katersat's kat_lexemes table holds several structurally different *kinds* of
+# rows behind one shared schema: real dictionary headwords, plus a handful of
+# internal morphology-catalog entry types (bound postbases/affixes, clitics)
+# that reuse the same table but aren't citation-form words a dictionary user
+# would ever search for. Rather than special-case each shape as it's found,
+# every row is classified once against LEXEME_CLASSES and routed to the file
+# registered for its class. Unmatched rows fall through to the 'lexicon'
+# class (lexicon.json) — the only class real end-user lookups should see.
+#
+# To add a new class: add one entry to LEXEME_CLASSES below. `match` receives
+# (lexeme_text, attrs_bits) and returns True/False; the FIRST matching class
+# wins (order matters — put narrower/more specific rules first), so pick
+# reliable signals. Prefer keying off existing katersat attrs bits over text
+# shape alone: an all-uppercase heuristic, for example, would misclassify the
+# ~90 legitimate real headwords (EU, DNA, USB, FIFA, ADHD, ...) that are
+# uppercase but carry no special attr bit — checked against the live data
+# before adopting this design. `subtype` (optional) receives the same args
+# and returns a short string distinguishing entries within the class
+# (written into each entry's `class_subtype`); omit it if the class has none.
+
+# A clean single derivational morpheme: "<MORPHEME> Der/<xy>" (e.g. "SSAQ Der/nn").
+# Shared with export_morphemes(), which extracts exactly this subtype into a
+# richer, structured postbase-building shape.
+_DER_TOKEN = re.compile(r'^(\S+)\s+Der/([nv][nv])$')
+_DER_MARKER = re.compile(r'Der/[nv][nv]')
+
+
+def _dermorph_subtype(lexeme: str, attrs_bits: int) -> str:
+    text = (lexeme or '').strip()
+    if _DER_TOKEN.match(text):
+        return 'single_affix'
+    if len(_DER_MARKER.findall(text)) >= 2:
+        return 'chain'
+    return 'bare'
+
+
+LEXEME_CLASSES = [
+    # (class_name, match(lexeme, attrs_bits) -> bool, output_filename, subtype_fn_or_None)
+    (
+        'dermorph',
+        lambda lexeme, attrs_bits: has_attr(attrs_bits, 'dermorph'),
+        'dermorph.json',
+        _dermorph_subtype,
+    ),
+    (
+        'enclitic',
+        lambda lexeme, attrs_bits: has_attr(attrs_bits, 'enclitic'),
+        'enclitics.json',
+        None,
+    ),
+]
+
 # --- Known upstream data-issue patches --------------------------------------
 # katersat's source data occasionally contains a genuinely malformed lexeme
 # row — e.g. one row's text accidentally concatenates two unrelated entries.
 # Rather than let a bad row export silently as-is, or drop it, patches for
-# *confirmed one-off corruption* are declared here and applied in
-# export_lexicon().
+# *confirmed one-off corruption* are declared here and applied to rows that
+# fall through to the default 'lexicon' class in export_lexicon().
 #
-# NOTE: multi-`Der/xy` chains (e.g. "A Der/vv TUR Der/vv") are NOT corruption
-# — katersat legitimately catalogues those as attested postbase-combination
-# entries (see the dermorph-chain handling below, which applies to ~3,800
-# such rows automatically). Don't add one here just because a lexeme looks
-# like a concatenation; only use this registry for rows verified to be wrong.
+# NOTE: don't reach for this just because a lexeme's text looks concatenated
+# or odd — check LEXEME_CLASSES above first. What initially looked like
+# corruption in lex_262026 ("A Der/vv TUR Der/vv") turned out to be one of
+# ~3,800 legitimate dermorph chain entries, now handled generically by the
+# 'dermorph' class instead. Only use this registry for rows verified wrong.
 #
 # To patch a newly-discovered bad row:
 #   1. Add an entry to LEXEME_PATCHES keyed by the source lex_id.
@@ -257,30 +310,14 @@ _PATCH_HANDLERS = {
     'flag': _patch_flag,
 }
 
-# A lexeme string carrying 2+ "Der/xy" derivation markers (e.g.
-# "A Der/vv TUR Der/vv") is a katersat dermorph *chain* entry: it documents an
-# attested sequence of postbases that combine in that order, not a
-# citation-form dictionary headword. These aren't corruption (see the
-# LEXEME_PATCHES note above) and export_morphemes() already can't treat them
-# as a single buildable affix (only clean "STEM Der/xy" forms qualify there),
-# so they don't belong in the general lexicon export either — a user
-# searching a dictionary shouldn't get "A Der/vv TUR Der/vv" as a headword.
-# Detected by shape (not by the dermorph attr bit, since a handful of chain
-# rows lack it) and routed into dermorph_chains.json instead of lexicon.json.
-_DER_MARKER = re.compile(r'Der/[nv][nv]')
 
-
-def _is_dermorph_chain(lexeme: str) -> bool:
-    return len(_DER_MARKER.findall(lexeme or '')) >= 2
-
-
-def export_lexicon(db) -> tuple[dict, dict]:
-    """Return (lexicon_doc, dermorph_chains_doc).
-
-    lexicon_doc is the general dictionary export ({meta, lexemes}).
-    dermorph_chains_doc collects multi-Der chain entries excluded from it
-    ({meta, dermorph_chains}), kept in the same shape as a lexeme entry plus
-    a `data_issue` note, for downstream tools that specifically want them.
+def export_lexicon(db) -> dict[str, dict]:
+    """Classify every kal lexeme row into one of LEXEME_CLASSES (or the
+    default 'lexicon' class) and return {class_name: doc, ...}, one doc per
+    output file: doc = {meta, <class_name>: [entries]}. 'lexicon' (the
+    general dictionary export) is always present; the other keys match
+    LEXEME_CLASSES, always present even when empty, so file shape is stable
+    across runs.
     """
     # lex_register stores dom_id as a string after the registers→domains rename.
     # dom_id=0 ("General / Not Special") is treated as unspecified and exported as null.
@@ -321,8 +358,14 @@ def export_lexicon(db) -> tuple[dict, dict]:
     )
     rows = db.fetchall()
 
-    lexemes = []
-    dermorph_chains = []
+    # Each doc's entry-list key matches its file's stem, except 'lexicon' ->
+    # 'lexemes' (kept for backward compatibility with existing consumers).
+    doc_key = {'lexicon': 'lexemes'}
+    buckets: dict[str, list] = {'lexicon': []}
+    for class_name, _match, fname, _subtype_fn in LEXEME_CLASSES:
+        buckets[class_name] = []
+        doc_key[class_name] = Path(fname).stem
+
     for row in rows:
         (lex_id, lexeme, wc, semclass, sem2, dom_key,
          gender, stem, definition, info, verbframe, oldspelling,
@@ -369,6 +412,19 @@ def export_lexicon(db) -> tuple[dict, dict]:
             },
         }
 
+        matched_class = None
+        for class_name, match, _fname, subtype_fn in LEXEME_CLASSES:
+            if match(lexeme, attrs_bits):
+                matched_class = class_name
+                entry = dict(base)
+                if subtype_fn is not None:
+                    entry['class_subtype'] = subtype_fn(lexeme, attrs_bits)
+                buckets[class_name].append(entry)
+                break
+
+        if matched_class is not None:
+            continue
+
         patch = LEXEME_PATCHES.get(lex_id)
         if patch is not None and patch.get('expected') is not None and (lexeme or '').strip() != patch['expected']:
             print(
@@ -385,29 +441,16 @@ def export_lexicon(db) -> tuple[dict, dict]:
             if handler is None:
                 raise ValueError(f'unknown patch type {patch["type"]!r} for lex_id {lex_id}')
             print(f'  lexicon: patched lex_{lex_id} ({patch["type"]}): {patch["reason"]}', file=sys.stderr)
-            lexemes.extend(handler(lex_id, base, patch))
-        elif _is_dermorph_chain(lexeme):
-            dermorph_chains.append({
-                **base,
-                'data_issue': {
-                    'type': 'dermorph_chain',
-                    'reason': (
-                        'katersat dermorph entry documenting a multi-postbase '
-                        'derivation chain, not a citation-form headword'
-                    ),
-                },
-            })
+            buckets['lexicon'].extend(handler(lex_id, base, patch))
         else:
-            lexemes.append(base)
+            buckets['lexicon'].append(base)
 
-    if dermorph_chains:
-        print(f'  lexicon: routed {len(dermorph_chains)} dermorph chain entries to dermorph_chains.json', file=sys.stderr)
+    for class_name, _match, fname, _subtype_fn in LEXEME_CLASSES:
+        if buckets[class_name]:
+            print(f'  lexicon: routed {len(buckets[class_name])} {class_name} entries to {fname}', file=sys.stderr)
 
     meta = _meta()
-    return (
-        {'meta': meta, 'lexemes': lexemes},
-        {'meta': meta, 'dermorph_chains': dermorph_chains},
-    )
+    return {name: {'meta': meta, doc_key[name]: entries} for name, entries in buckets.items()}
 
 
 # Der/XY derivation marker -> (morpheme category, category_shift, continuation_class).
@@ -424,9 +467,7 @@ _DER_MAP = {
 # 'assimilative'; rec/rep/dep have no enum value and fall back to 'none'. The raw
 # katersat code is preserved in application_logic.notes either way.
 _SANDHI_BEHAVIOR = {'tru': 'truncating', 'add': 'additive', 'gem': 'assimilative'}
-
-# A clean single derivational morpheme: "<MORPHEME> Der/<xy>" (e.g. "SSAQ Der/nn").
-_DER_TOKEN = re.compile(r'^(\S+)\s+Der/([nv][nv])$')
+# _DER_TOKEN is shared with the 'dermorph' LEXEME_CLASSES entry above.
 
 
 def export_morphemes(db) -> dict:
@@ -589,9 +630,11 @@ def main() -> None:
             write_json(fn(db), f'{out}/{fname}', args.compress)
 
         print('Exporting lexicon...', file=sys.stderr)
-        lexicon, dermorph_chains = export_lexicon(db)
+        docs = export_lexicon(db)
+        lexicon = docs['lexicon']
         write_json(lexicon, f'{out}/lexicon.json', args.compress)
-        write_json(dermorph_chains, f'{out}/dermorph_chains.json', args.compress)
+        for class_name, _match, fname, _subtype_fn in LEXEME_CLASSES:
+            write_json(docs[class_name], f'{out}/{fname}', args.compress)
 
         print('Exporting morphemes...', file=sys.stderr)
         write_json(export_morphemes(db), f'{out}/morphemes.json', args.compress)
