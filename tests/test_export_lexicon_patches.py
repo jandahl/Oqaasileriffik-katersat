@@ -58,6 +58,9 @@ def _make_db(lexemes):
 DERMORPH = 512
 HIDDEN = 1
 ENCLITIC = 1024
+SEE_INSTEAD = 65536
+SYMBOL = 131072
+TAAGUUTIT = 262144
 
 
 def _by_id(entries):
@@ -118,6 +121,29 @@ def test_ordinary_uppercase_word_without_special_attrs_stays_in_lexicon():
     # any shape-based heuristic.
     docs = export_lexicon(_make_db([(2, 'DNA', 't', None)]))
     assert 'lex_2' in _by_id(docs['lexicon']['lexemes'])
+
+
+def test_see_instead_symbol_taaguutit_surface_as_attrs_fields():
+    # None of these bits classify a row out of lexicon.json (unlike dermorph
+    # and enclitic) -- they're ordinary attrs flags on real headwords.
+    docs = export_lexicon(_make_db([
+        (10, 'albummi', 't', SEE_INSTEAD),
+        (11, '≈', 't', SYMBOL),
+        (12, 'taaguut', 't', TAAGUUTIT),
+    ]))
+    ids = _by_id(docs['lexicon']['lexemes'])
+    assert ids['lex_10']['attrs']['see_instead'] is True
+    assert ids['lex_10']['attrs']['symbol'] is False
+    assert ids['lex_10']['attrs']['taaguutit'] is False
+    assert ids['lex_11']['attrs']['symbol'] is True
+    assert ids['lex_12']['attrs']['taaguutit'] is True
+
+
+def test_attrs_default_false_when_no_attrs_row():
+    docs = export_lexicon(_make_db([(13, 'illu', 'n', None)]))
+    attrs = _by_id(docs['lexicon']['lexemes'])['lex_13']['attrs']
+    for key in ('see_instead', 'symbol', 'taaguutit'):
+        assert attrs[key] is False
 
 
 # --- 'dermorph' class ---------------------------------------------------------

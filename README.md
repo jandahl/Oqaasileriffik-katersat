@@ -88,7 +88,7 @@ Classification is keyed off katersat's existing attrs bits, not lexeme text shap
 
 Hidden lexemes (`attrs.hidden`, internal database entries) never reach classification at all — they're excluded in SQL before this step.
 
-**Attribute bits not yet surfaced as `attrs.*` fields:** `scripts/schema_info.py:ATTR_BITS` decodes 19 bits from katersat's `let_attrs` bitfield, but `lexicon.json`'s `attrs` object (see field notes below) only exposes 7 of them. Three were only recently identified (by diffing against upstream's current `schema.sql`, which has 3 more SET members than the copy in this repo) and aren't exposed anywhere in the JSON export yet:
+**Attribute bits recently added to `attrs.*`:** `scripts/schema_info.py:ATTR_BITS` decodes 19 bits from katersat's `let_attrs` bitfield. Three were only recently identified (by diffing against upstream's current `schema.sql`, which has 3 more SET members than the copy in this repo) and are now exposed as `attrs.*` fields (see field notes below):
 
 | bit name | value | kal rows | meaning |
 |---|---|---|---|
@@ -96,7 +96,7 @@ Hidden lexemes (`attrs.hidden`, internal database entries) never reach classific
 | `symbol` | 131072 | 3 | the headword is a symbol character itself (`≈`, `ə`, `∨`) |
 | `taaguutit` | 262144 | 27,529 | provenance marker for entries sourced from katersat's official terminology ("taaguut") database — not a content-quality signal by itself |
 
-`root`, `artificial`, `alternate`, `strict_stem`, `qual_plus`, `qual_minus`, `quant_plus`, `quant_minus` are also decoded but unexposed. Exposing any of these as new `attrs.*` fields is a deliberate scope decision, not done yet.
+None of these three classify a row out of `lexicon.json` — unlike `dermorph`/`enclitic`, they're ordinary attrs flags on real headwords. `root`, `artificial`, `alternate`, `strict_stem`, `qual_plus`, `qual_minus`, `quant_plus`, `quant_minus` are also decoded in `ATTR_BITS` but still not exposed as `attrs.*` fields — a deliberate scope decision, not done yet.
 
 ---
 
@@ -142,7 +142,10 @@ The main export. 86,000+ real Kalaallisut dictionary headwords with translations
         "abbreviation": false,
         "acronym": false,
         "derived_morph": false,
-        "enclitic": false
+        "enclitic": false,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": false
       }
     }
   ]
@@ -175,6 +178,9 @@ The main export. 86,000+ real Kalaallisut dictionary headwords with translations
 | `attrs.acronym` | bool | Acronym |
 | `attrs.derived_morph` | bool | Derivational morpheme (not a free lexeme) |
 | `attrs.enclitic` | bool | Enclitic element |
+| `attrs.see_instead` | bool | Loanword/spelling-variant entry with a preferred alternate form somewhere else in the dictionary. Flag only — katersat doesn't structurally record *which* entry is preferred (checked: `glue_lexeme_synonyms` isn't it — same-language links there exist on ~23,400 unrelated lexemes and cover only 43 of the 176 `see_instead` rows), so this can't resolve to a target id |
+| `attrs.symbol` | bool | Headword is a symbol character itself (e.g. `≈`, `ə`, `∨`) |
+| `attrs.taaguutit` | bool | Sourced from katersat's official terminology ("taaguut") database; provenance only, not a content-quality signal |
 | `data_issue` | object\|absent | Present only on entries corrected for a confirmed one-off upstream katersat data error (see `scripts/export.py:LEXEME_PATCHES`). `type` is `"split"` (one corrupted source row split into several lexemes; `source_lex_id` gives the original `lex_<int>` id) or `"flag"` (text left as-is upstream, no confident correction yet). `reason` explains the issue. Never set on entries routed to `dermorph.json`/`enclitics.json` — those use `class_subtype` instead; see below. |
 
 `lexicon.json` never contains a `dermorph`- or `enclitic`-classified entry — see "Lexeme classification" above.
