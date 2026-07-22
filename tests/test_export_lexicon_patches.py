@@ -12,7 +12,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / 'scripts'))
 import export  # noqa: E402
-from export import export_lexicon, LEXEME_CLASSES  # noqa: E402
+from export import export_lexicon, split_by_letter, LEXEME_CLASSES  # noqa: E402
 
 
 def _make_db(lexemes):
@@ -324,6 +324,51 @@ def test_symbol_notation_legend_entries_are_flagged_not_removed():
         assert key in ids  # flagged, not split/removed -- text stays as-is
         assert ids[key]['kalaallisut'] == expected_text
         assert ids[key]['data_issue']['type'] == 'flag'
+
+
+# --- split_by_letter (by-letter/*.json) --------------------------------------
+# The property README documents: by-letter shards are a true partition of
+# lexicon.json's lexemes, not a separate or reduced dataset.
+
+def test_split_by_letter_is_a_partition_of_lexicon_entries():
+    lexicon = {
+        'meta': {'generated_at': 'x'},
+        'lexemes': [
+            {'id': 'lex_1', 'kalaallisut': 'illu'},
+            {'id': 'lex_2', 'kalaallisut': 'Ateq'},   # leading uppercase -> case-folded
+            {'id': 'lex_3', 'kalaallisut': '  qajaq'},  # leading whitespace -> stripped
+            {'id': 'lex_4', 'kalaallisut': '2/3'},    # non-alphabetic first char -> '_'
+            {'id': 'lex_5', 'kalaallisut': None},     # missing text -> '_'
+        ],
+    }
+    shards = split_by_letter(lexicon)
+    union = [lex for doc in shards.values() for lex in doc['lexemes']]
+    assert {lex['id'] for lex in union} == {lex['id'] for lex in lexicon['lexemes']}
+    assert len(union) == len(lexicon['lexemes'])  # no duplicates across shards
+    assert shards['i']['lexemes'][0]['id'] == 'lex_1'
+    assert shards['a']['lexemes'][0]['id'] == 'lex_2'
+    assert shards['q']['lexemes'][0]['id'] == 'lex_3'
+    assert {lex['id'] for lex in shards['_']['lexemes']} == {'lex_4', 'lex_5'}
+
+
+def test_split_by_letter_shards_share_lexicon_meta():
+    lexicon = {'meta': {'generated_at': 'x', 'version': '1'}, 'lexemes': [{'id': 'lex_1', 'kalaallisut': 'illu'}]}
+    shards = split_by_letter(lexicon)
+    assert shards['i']['meta'] is lexicon['meta']
+
+
+def test_split_by_letter_of_real_export_matches_lexicon():
+    # Same partition property, exercised through export_lexicon()'s real output
+    # shape rather than a hand-built lexicon dict.
+    docs = export_lexicon(_make_db([
+        (1, 'illu', 'n', None),
+        (2, 'qajaq', 'n', None),
+        (262026, 'A Der/vv TUR Der/vv', 'v', DERMORPH),  # not in lexicon.json at all
+    ]))
+    shards = split_by_letter(docs['lexicon'])
+    union_ids = {lex['id'] for doc in shards.values() for lex in doc['lexemes']}
+    assert union_ids == {lex['id'] for lex in docs['lexicon']['lexemes']}
+    assert 'lex_262026' not in union_ids  # dermorph-classified, never reaches by-letter either
 
 
 if __name__ == '__main__':
