@@ -4,6 +4,7 @@
 
 import gzip
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -11,6 +12,25 @@ from pathlib import Path
 def load(path: Path) -> dict:
     with path.open('r', encoding='utf-8') as f:
         return json.load(f)
+
+
+# Patterns that must never appear in a lexicon.json lexeme's `kalaallisut`
+# text: internal morphology-catalog notation that scripts/export.py's
+# LEXEME_CLASSES should have routed to dermorph.json (or another class file)
+# instead, never a real dictionary headword. A previous export regression
+# (dermorph classification keyed on katersat's attrs bit alone, which is
+# inconsistently set -- the same postbase text sometimes exists as several
+# rows and only some carry the bit) let 95 such entries slip into
+# lexicon.json undetected. This check fails the build if it ever happens
+# again, regardless of which code path in export.py caused it.
+#
+# To add another forbidden pattern: append (compiled_regex, reason) here.
+FORBIDDEN_LEXEME_PATTERNS = [
+    (
+        re.compile(r'Der/[nv][nv]'),
+        'looks like a dermorph postbase marker (Der/xy) -- should be classified into dermorph.json, not lexicon.json',
+    ),
+]
 
 
 def check_lexicon(data: dict) -> list:
@@ -34,8 +54,13 @@ def check_lexicon(data: dict) -> list:
         if lid in ids:
             errors.append(f'duplicate id: {lid}')
         ids.add(lid)
-        if not lex.get('kalaallisut'):
+        kalaallisut = lex.get('kalaallisut')
+        if not kalaallisut:
             errors.append(f'{lid}: missing kalaallisut field')
+        else:
+            for pattern, reason in FORBIDDEN_LEXEME_PATTERNS:
+                if pattern.search(kalaallisut):
+                    errors.append(f'{lid}: kalaallisut {kalaallisut!r} {reason}')
         if not lex.get('word_class'):
             errors.append(f'{lid}: missing word_class field')
         if not isinstance(lex.get('english'), list):
