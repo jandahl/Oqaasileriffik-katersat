@@ -4,7 +4,19 @@
 #
 # Shared constants derived from the katersat schema.
 
-# MySQL SET bitfield order for kat_lexeme_attrs.let_attrs
+# MySQL SET bitfield order for kat_lexeme_attrs.let_attrs. The local schema.sql
+# comment only documented the first 16 members; upstream's current schema.sql
+# (github.com/Oqaasileriffik/katersat) has 3 more appended to the SET --
+# 'see-instead', 'symbol', 'taaguutit' -- confirmed against the live data:
+#   - see_instead (176 kal rows): loanword/spelling-variant entries pointing
+#     to a preferred alternate form, e.g. 'albummi', 'aritmetikki', 'balletti'.
+#   - symbol (3 kal rows): the headword IS a symbol character itself, e.g.
+#     '≈', 'ə', '∨'.
+#   - taaguutit (27,529 kal rows, all bulk-stamped 2025-12-30): provenance
+#     marker for entries sourced from katersat's official terminology
+#     ("taaguut") database, not a content-quality signal by itself -- most are
+#     ordinary real headwords, though a handful of non-lexeme meta-notation
+#     rows (see LEXEME_PATCHES in export.py) also happen to carry it.
 ATTR_BITS = {
     'hidden':      1,
     'root':        2,
@@ -22,6 +34,9 @@ ATTR_BITS = {
     'qual_minus':  8192,
     'quant_plus':  16384,
     'quant_minus': 32768,
+    'see_instead': 65536,
+    'symbol':      131072,
+    'taaguutit':   262144,
 }
 
 # MySQL ENUM order for kat_lexeme_attrs.lex_sandhi

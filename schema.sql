@@ -124,7 +124,7 @@ CREATE INDEX kat_lexemes_lex_valence ON kat_lexemes (lex_valence);
 
 CREATE TABLE kat_lexeme_attrs (
 	lex_id INTEGER NOT NULL,
-	-- lex_attrs set('hidden','root','artificial','archaic','alternate','plural','mass','abbreviation','acronym','dermorph','enclitic','strict-stem','qual-plus','qual-minus','quant-plus','quant-minus') NOT NULL,
+	-- lex_attrs set('hidden','root','artificial','archaic','alternate','plural','mass','abbreviation','acronym','dermorph','enclitic','strict-stem','qual-plus','qual-minus','quant-plus','quant-minus','see-instead','symbol','taaguutit') NOT NULL,
 	let_attrs INTEGER NOT NULL,
 	-- lex_sandhi enum('tru','add','gem','rec','rep','dep') NOT NULL,
 	lex_sandhi INTEGER NOT NULL,

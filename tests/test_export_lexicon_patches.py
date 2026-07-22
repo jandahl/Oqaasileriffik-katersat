@@ -270,10 +270,34 @@ def test_patch_never_applies_to_a_classified_row():
     assert entry['class_subtype'] == 'single_affix'
 
 
-def test_default_registry_is_empty():
-    # lex_262026 is no longer a special case in LEXEME_PATCHES -- it's just
-    # one of many dermorph entries, handled generically by LEXEME_CLASSES.
-    assert export.LEXEME_PATCHES == {}
+def test_default_registry_holds_only_confirmed_one_off_corruption():
+    # lex_262026 is NOT in here -- it's just one of many dermorph entries,
+    # handled generically by LEXEME_CLASSES. Only rows verified by direct
+    # translation to be non-headword content belong in LEXEME_PATCHES.
+    assert set(export.LEXEME_PATCHES) == {244765, 244768, 244771}
+    for patch in export.LEXEME_PATCHES.values():
+        assert patch['type'] == 'flag'
+
+
+def test_symbol_notation_legend_entries_are_flagged_not_removed():
+    # The real katersat text for these three rows (legend entries documenting
+    # "/" and "\" notation used elsewhere in the dictionary), verified against
+    # LEXEME_PATCHES' 'expected' tripwire.
+    docs = export_lexicon(_make_db([
+        (244765, '[ilisarnaatit pineqartut: \\ aamma / ]', 't', None),
+        (244768, '[ilisarnaat pineqartoq: / ]', 't', None),
+        (244771, '[ilisarnaat pineqartoq: \\ ]', 't', None),
+    ]))
+    ids = _by_id(docs['lexicon']['lexemes'])
+    for lid, expected_text in (
+        (244765, '[ilisarnaatit pineqartut: \\ aamma / ]'),
+        (244768, '[ilisarnaat pineqartoq: / ]'),
+        (244771, '[ilisarnaat pineqartoq: \\ ]'),
+    ):
+        key = f'lex_{lid}'
+        assert key in ids  # flagged, not split/removed -- text stays as-is
+        assert ids[key]['kalaallisut'] == expected_text
+        assert ids[key]['data_issue']['type'] == 'flag'
 
 
 if __name__ == '__main__':
