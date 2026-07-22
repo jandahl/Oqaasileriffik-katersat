@@ -9,6 +9,8 @@ https://jandahl.github.io/Oqaasileriffik-katersat/lexicon.json
 https://jandahl.github.io/Oqaasileriffik-katersat/lexicon.json.gz
 https://jandahl.github.io/Oqaasileriffik-katersat/by-letter/a.json
 https://jandahl.github.io/Oqaasileriffik-katersat/by-letter/n.json
+https://jandahl.github.io/Oqaasileriffik-katersat/dermorph.json
+https://jandahl.github.io/Oqaasileriffik-katersat/enclitics.json
 https://jandahl.github.io/Oqaasileriffik-katersat/word_classes.json
 https://jandahl.github.io/Oqaasileriffik-katersat/semantic_classes.json
 https://jandahl.github.io/Oqaasileriffik-katersat/valence_frames.json
@@ -68,9 +70,25 @@ python3 scripts/export.py [--db katersat.sqlite] [--output exports] [--compress]
 
 ## Exported files
 
+### Lexeme classification
+
+`kat_lexemes` holds several structurally different *kinds* of rows behind one shared schema: real dictionary headwords, plus a few internal morphology-catalog entry types (bound postbases/affixes, clitics) that reuse the same table but aren't citation-form words a dictionary user would search for. `scripts/export.py` classifies every row exactly once, against `LEXEME_CLASSES`, and routes it to the file registered for its class:
+
+| class | rule | file | notes |
+|---|---|---|---|
+| `lexicon` (default) | everything not matched below | `lexicon.json` | real dictionary headwords only |
+| `dermorph` | `attrs.derived_morph` bit set | `dermorph.json` | see subtypes below |
+| `enclitic` | `attrs.enclitic` bit set | `enclitics.json` | bound clitic morphemes in katersat's internal notation |
+
+Classification is keyed off katersat's existing attrs bits, not lexeme text shape — checked against the live data: an all-uppercase heuristic, for example, would misclassify ~90 legitimate real headwords (`EU`, `DNA`, `USB`, `FIFA`, `ADHD`, …) that are uppercase but carry no special attr bit.
+
+Hidden lexemes (`attrs.hidden`, internal database entries) never reach classification at all — they're excluded in SQL before this step.
+
+---
+
 ### `exports/lexicon.json` + `exports/by-letter/*.json`
 
-The main export. 87,000+ Kalaallisut lexemes with translations, semantic tagging, and morphological metadata.
+The main export. 83,000+ real Kalaallisut dictionary headwords with translations, semantic tagging, and morphological metadata — the `lexicon` class from the table above.
 
 `lexicon.json` contains all lexemes. `by-letter/` contains one file per initial letter of the Kalaallisut headword (`a.json`, `e.json`, … `v.json`), each a valid subset with the same schema — useful for lazy-loading in browser tools. Both the full file and each shard share the same `meta.generated_at` timestamp.
 
@@ -143,34 +161,43 @@ The main export. 87,000+ Kalaallisut lexemes with translations, semantic tagging
 | `attrs.acronym` | bool | Acronym |
 | `attrs.derived_morph` | bool | Derivational morpheme (not a free lexeme) |
 | `attrs.enclitic` | bool | Enclitic element |
-| `data_issue` | object\|absent | Present only on entries corrected for a confirmed one-off upstream katersat data error (see `scripts/export.py:LEXEME_PATCHES`). `type` is `"split"` (one corrupted source row split into several lexemes; `source_lex_id` gives the original `lex_<int>` id) or `"flag"` (text left as-is upstream, no confident correction yet). `reason` explains the issue. |
+| `data_issue` | object\|absent | Present only on entries corrected for a confirmed one-off upstream katersat data error (see `scripts/export.py:LEXEME_PATCHES`). `type` is `"split"` (one corrupted source row split into several lexemes; `source_lex_id` gives the original `lex_<int>` id) or `"flag"` (text left as-is upstream, no confident correction yet). `reason` explains the issue. Never set on entries routed to `dermorph.json`/`enclitics.json` — those use `class_subtype` instead; see below. |
 
-Hidden lexemes (internal database entries) are excluded from the export. Dermorph *chain* entries — a lexeme whose text carries 2+ `Der/xy` derivation markers, e.g. `"A Der/vv TUR Der/vv"` — are also excluded and exported separately; see `exports/dermorph_chains.json` below. These are not errors: katersat legitimately catalogues attested multi-postbase combinations this way, but the concatenated tag string isn't a real dictionary headword, so it's kept out of the general lexicon.
+`lexicon.json` never contains a `dermorph`- or `enclitic`-classified entry — see "Lexeme classification" above.
 
 ---
 
-### `exports/dermorph_chains.json`
+### `exports/dermorph.json`
 
-Multi-postbase derivational chain entries excluded from `lexicon.json` (see above) — katersat rows whose `lex_lexeme` documents an attested sequence of 2+ derivational postbases combining in a fixed order (e.g. `"VALLAAR Der/vv RUJUP Der/vv SUAR Der/vv NNGIT Der/vv TUQ Der/vn"`), rather than a citation-form word. Roughly 3,800 entries. Not covered by `morphemes.json` either, since that export only extracts single clean `"STEM Der/xy"` affixes.
+Every katersat lexeme flagged `dermorph` (`attrs.derived_morph`) — roughly 4,400 entries, none of which appear in `lexicon.json`. Each entry has the same shape as a `lexicon.json` lexeme, plus `class_subtype`:
+
+| `class_subtype` | meaning | example |
+|---|---|---|
+| `single_affix` | one clean postbase, `"STEM Der/xy"` | `"SSAQ Der/nn"` |
+| `chain` | an attested sequence of 2+ postbases combining in a fixed order | `"A Der/vv TUR Der/vv"`, `"VALLAAR Der/vv RUJUP Der/vv SUAR Der/vv NNGIT Der/vv TUQ Der/vn"` |
+| `bare` | an internal morphophonemic stub with no `Der/xy` marker at all | `"IP"`, `"NIARIUTAA"`, `"NNGIT=INNAR=SINNAAvv"` |
 
 ```json
 {
   "meta": { ... },
-  "dermorph_chains": [
+  "dermorph": [
     {
       "id": "lex_262026",
       "kalaallisut": "A Der/vv TUR Der/vv",
       "...": "... same shape as a lexicon.json lexeme entry ...",
-      "data_issue": {
-        "type": "dermorph_chain",
-        "reason": "katersat dermorph entry documenting a multi-postbase derivation chain, not a citation-form headword"
-      }
+      "class_subtype": "chain"
     }
   ]
 }
 ```
 
-Each entry has the same shape as a `lexicon.json` lexeme (see field notes above), plus `data_issue`. Intended for downstream tools that want to work with attested postbase-combination data specifically (e.g. building suggestions, linguistic analysis) rather than general dictionary lookup.
+None of these are errors — katersat legitimately catalogues its derivational-morpheme system this way — but a concatenated tag string like `"A Der/vv TUR Der/vv"` or a bare code like `"IP"` isn't a real dictionary headword, so all three subtypes are kept out of the general lexicon. `single_affix` entries are also covered, in a richer structured shape for postbase-building, by `morphemes.json` (see below) — `chain` and `bare` are not, since that export only extracts clean single affixes.
+
+---
+
+### `exports/enclitics.json`
+
+Katersat lexemes flagged `enclitic` (`attrs.enclitic`) — a handful of bound clitic morphemes written in katersat's internal notation (e.g. `"AASIIT"`, `"LU"`), not citation-form words. Same shape as `lexicon.json`, no `class_subtype`.
 
 ---
 

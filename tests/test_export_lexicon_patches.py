@@ -1,5 +1,7 @@
-"""Tests for export_lexicon() (scripts/export.py): the dermorph-chain filter
-and the LEXEME_PATCHES known-issue registry.
+"""Tests for export_lexicon() (scripts/export.py): the LEXEME_CLASSES
+classifier (one output file per lexeme class) and the LEXEME_PATCHES
+known-issue registry (for confirmed one-off corruption within the default
+'lexicon' class).
 
 Uses a tiny hand-built sqlite (no 55 MB data.sql needed). Runs under pytest or
 as a plain script: `python3 tests/test_export_lexicon_patches.py` (exit 1 on failure).
@@ -10,11 +12,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / 'scripts'))
 import export  # noqa: E402
-from export import export_lexicon  # noqa: E402
+from export import export_lexicon, LEXEME_CLASSES  # noqa: E402
 
 
 def _make_db(lexemes):
-    """Build a minimal katersat-shaped DB from (lex_id, lex_lexeme, lex_wordclass) tuples.
+    """Build a minimal katersat-shaped DB from (lex_id, lex_lexeme, lex_wordclass,
+    attrs_bits) tuples. attrs_bits may be None to omit the attrs row entirely.
 
     In-memory: the returned cursor keeps its connection (and thus the DB) alive.
     """
@@ -41,11 +44,20 @@ def _make_db(lexemes):
     )
     rows = [
         (lex_id, lexeme, wc, 'UNK', 'UNK', '0', '', '', '', '', '', '', None, 'kal')
-        for lex_id, lexeme, wc in lexemes
+        for lex_id, lexeme, wc, _attrs in lexemes
     ]
     con.executemany('INSERT INTO kat_lexemes VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)', rows)
+    attrs_rows = [
+        (lex_id, attrs, 0) for lex_id, _lexeme, _wc, attrs in lexemes if attrs is not None
+    ]
+    con.executemany('INSERT INTO kat_lexeme_attrs VALUES (?,?,?)', attrs_rows)
     con.commit()
     return con.cursor()
+
+
+DERMORPH = 512
+HIDDEN = 1
+ENCLITIC = 1024
 
 
 def _by_id(entries):
@@ -66,48 +78,104 @@ class _patched_registry:
         export.LEXEME_PATCHES = self._orig
 
 
-# --- dermorph chain routing --------------------------------------------------
+# --- class registry shape ----------------------------------------------------
 
-def test_ordinary_lexeme_passes_through_unchanged():
-    lexicon, chains = export_lexicon(_make_db([(1, 'illu', 'n')]))
-    ids = _by_id(lexicon['lexemes'])
+def test_lexicon_always_present_even_if_empty():
+    docs = export_lexicon(_make_db([]))
+    assert docs['lexicon'] == {'meta': docs['lexicon']['meta'], 'lexemes': []}
+
+
+def test_every_registered_class_present_even_if_empty():
+    docs = export_lexicon(_make_db([(1, 'illu', 'n', None)]))
+    names = {c[0] for c in LEXEME_CLASSES}
+    assert names == {'dermorph', 'enclitic'}
+    for name in names:
+        assert name in docs
+        key = list(docs[name].keys())
+        assert 'meta' in key
+
+
+def test_all_docs_share_one_generated_at_timestamp():
+    docs = export_lexicon(_make_db([(1, 'illu', 'n', None)]))
+    stamps = {doc['meta']['generated_at'] for doc in docs.values()}
+    assert len(stamps) == 1
+
+
+# --- default 'lexicon' class -------------------------------------------------
+
+def test_ordinary_lexeme_goes_to_lexicon():
+    docs = export_lexicon(_make_db([(1, 'illu', 'n', None)]))
+    ids = _by_id(docs['lexicon']['lexemes'])
     assert ids['lex_1']['kalaallisut'] == 'illu'
-    assert 'data_issue' not in ids['lex_1']
-    assert chains['dermorph_chains'] == []
+    assert 'class_subtype' not in ids['lex_1']
+    assert docs['dermorph']['dermorph'] == []
+    assert docs['enclitic']['enclitics'] == []
 
 
-def test_multi_der_chain_is_routed_to_dermorph_chains_not_lexicon():
-    lexicon, chains = export_lexicon(_make_db([(262026, 'A Der/vv TUR Der/vv', 'v')]))
-    lex_ids = _by_id(lexicon['lexemes'])
-    chain_ids = _by_id(chains['dermorph_chains'])
-    # No longer split, no longer flagged as an error: exported whole, but kept
-    # out of the general dictionary lexicon since it's not a real headword.
-    assert 'lex_262026' not in lex_ids
-    assert 'lex_262026' in chain_ids
-    entry = chain_ids['lex_262026']
+def test_ordinary_uppercase_word_without_special_attrs_stays_in_lexicon():
+    # Real acronyms/initialisms (EU, DNA, USB, ...) are uppercase but carry no
+    # dermorph/enclitic bit in the live data -- must not be misclassified by
+    # any shape-based heuristic.
+    docs = export_lexicon(_make_db([(2, 'DNA', 't', None)]))
+    assert 'lex_2' in _by_id(docs['lexicon']['lexemes'])
+
+
+# --- 'dermorph' class ---------------------------------------------------------
+
+def test_dermorph_single_affix_routed_with_subtype():
+    docs = export_lexicon(_make_db([(5, 'SSAQ Der/nn', 'n', DERMORPH)]))
+    assert 'lex_5' not in _by_id(docs['lexicon']['lexemes'])
+    entry = _by_id(docs['dermorph']['dermorph'])['lex_5']
+    assert entry['kalaallisut'] == 'SSAQ Der/nn'
+    assert entry['class_subtype'] == 'single_affix'
+
+
+def test_dermorph_chain_routed_with_subtype():
+    docs = export_lexicon(_make_db([(262026, 'A Der/vv TUR Der/vv', 'v', DERMORPH)]))
+    assert 'lex_262026' not in _by_id(docs['lexicon']['lexemes'])
+    entry = _by_id(docs['dermorph']['dermorph'])['lex_262026']
     assert entry['kalaallisut'] == 'A Der/vv TUR Der/vv'
-    assert entry['data_issue']['type'] == 'dermorph_chain'
+    assert entry['class_subtype'] == 'chain'
 
 
-def test_single_der_entry_stays_in_lexicon():
-    # A single "STEM Der/xy" form is a legitimate single-affix entry, not a
-    # chain -- only 2+ Der markers trigger routing to dermorph_chains.json.
-    lexicon, chains = export_lexicon(_make_db([(5, 'SSAQ Der/nn', 'n')]))
-    assert 'lex_5' in _by_id(lexicon['lexemes'])
-    assert chains['dermorph_chains'] == []
+def test_dermorph_bare_stub_routed_with_subtype():
+    # Flagged dermorph but no "Der/xy" marker at all -- an internal
+    # morphophonemic stub (e.g. "IP", "NIARIUTAA" in the real data).
+    docs = export_lexicon(_make_db([(163321, 'IP', 'v', DERMORPH)]))
+    assert 'lex_163321' not in _by_id(docs['lexicon']['lexemes'])
+    entry = _by_id(docs['dermorph']['dermorph'])['lex_163321']
+    assert entry['kalaallisut'] == 'IP'
+    assert entry['class_subtype'] == 'bare'
 
 
-def test_longer_chain_is_also_routed():
-    lexicon, chains = export_lexicon(_make_db([
-        (9, 'IR Der/nv NIAQ Der/nn TUQ Der/vn', 'n'),
-    ]))
-    assert 'lex_9' not in _by_id(lexicon['lexemes'])
-    assert 'lex_9' in _by_id(chains['dermorph_chains'])
+def test_dermorph_class_ignores_hidden_filter_scope():
+    # Sanity: hidden entries never reach export_lexicon's row set at all
+    # (filtered in SQL), independent of classification.
+    docs = export_lexicon(_make_db([(9, 'SSAQ Der/nn', 'n', DERMORPH | HIDDEN)]))
+    assert docs['lexicon']['lexemes'] == []
+    assert docs['dermorph']['dermorph'] == []
+    assert docs['enclitic']['enclitics'] == []
+
+
+# --- 'enclitic' class ---------------------------------------------------------
+
+def test_enclitic_routed_out_of_lexicon():
+    docs = export_lexicon(_make_db([(163838, 'AASIIT', 'encl', ENCLITIC)]))
+    assert 'lex_163838' not in _by_id(docs['lexicon']['lexemes'])
+    entry = _by_id(docs['enclitic']['enclitics'])['lex_163838']
+    assert entry['kalaallisut'] == 'AASIIT'
+    assert 'class_subtype' not in entry  # enclitic has no subtype_fn
+
+
+def test_dermorph_takes_priority_over_enclitic_when_both_set():
+    docs = export_lexicon(_make_db([(1, 'SSAQ Der/nn', 'n', DERMORPH | ENCLITIC)]))
+    assert 'lex_1' in _by_id(docs['dermorph']['dermorph'])
+    assert 'lex_1' not in _by_id(docs['enclitic']['enclitics'])
 
 
 # --- LEXEME_PATCHES registry (for confirmed one-off corruption only) --------
 
-def test_patch_split_creates_distinct_ids_and_leaves_lexicon():
+def test_patch_split_creates_distinct_ids_within_lexicon():
     patches = {
         999: {
             'type': 'split',
@@ -117,8 +185,8 @@ def test_patch_split_creates_distinct_ids_and_leaves_lexicon():
         },
     }
     with _patched_registry(patches):
-        lexicon, _chains = export_lexicon(_make_db([(999, 'FOO BAR', 'v')]))
-    ids = _by_id(lexicon['lexemes'])
+        docs = export_lexicon(_make_db([(999, 'FOO BAR', 'v', None)]))
+    ids = _by_id(docs['lexicon']['lexemes'])
     assert 'lex_999' not in ids
     assert ids['lex_patch_999_1']['kalaallisut'] == 'FOO'
     assert ids['lex_patch_999_2']['kalaallisut'] == 'BAR'
@@ -133,8 +201,8 @@ def test_patch_flag_keeps_text_in_lexicon_with_data_issue():
         998: {'type': 'flag', 'expected': 'weird text', 'reason': 'test: unclear correction'},
     }
     with _patched_registry(patches):
-        lexicon, _chains = export_lexicon(_make_db([(998, 'weird text', 'v')]))
-    ids = _by_id(lexicon['lexemes'])
+        docs = export_lexicon(_make_db([(998, 'weird text', 'v', None)]))
+    ids = _by_id(docs['lexicon']['lexemes'])
     assert ids['lex_998']['kalaallisut'] == 'weird text'
     assert ids['lex_998']['data_issue'] == {'type': 'flag', 'reason': 'test: unclear correction'}
 
@@ -150,17 +218,33 @@ def test_patch_skipped_when_upstream_text_no_longer_matches():
     }
     with _patched_registry(patches):
         # Simulate upstream having fixed the row to something new.
-        lexicon, chains = export_lexicon(_make_db([(999, 'illuttoq', 'v')]))
-    ids = _by_id(lexicon['lexemes'])
+        docs = export_lexicon(_make_db([(999, 'illuttoq', 'v', None)]))
+    ids = _by_id(docs['lexicon']['lexemes'])
     assert 'lex_patch_999_1' not in ids and 'lex_patch_999_2' not in ids
     assert ids['lex_999']['kalaallisut'] == 'illuttoq'
     assert 'data_issue' not in ids['lex_999']
-    assert chains['dermorph_chains'] == []
+
+
+def test_patch_never_applies_to_a_classified_row():
+    # A dermorph-classified row is routed before LEXEME_PATCHES is even
+    # consulted -- patches only apply within the default 'lexicon' class.
+    patches = {
+        5: {
+            'type': 'flag',
+            'expected': 'SSAQ Der/nn',
+            'reason': 'should never fire: row is dermorph-classified first',
+        },
+    }
+    with _patched_registry(patches):
+        docs = export_lexicon(_make_db([(5, 'SSAQ Der/nn', 'n', DERMORPH)]))
+    entry = _by_id(docs['dermorph']['dermorph'])['lex_5']
+    assert 'data_issue' not in entry
+    assert entry['class_subtype'] == 'single_affix'
 
 
 def test_default_registry_is_empty():
     # lex_262026 is no longer a special case in LEXEME_PATCHES -- it's just
-    # one of many dermorph chains, handled generically (see tests above).
+    # one of many dermorph entries, handled generically by LEXEME_CLASSES.
     assert export.LEXEME_PATCHES == {}
 
 
