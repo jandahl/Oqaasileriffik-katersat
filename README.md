@@ -104,7 +104,7 @@ None of these three classify a row out of `lexicon.json` — unlike `dermorph`/`
 
 The main export. 86,000+ real Kalaallisut dictionary headwords with translations, semantic tagging, and morphological metadata — the `lexicon` class from the table above.
 
-`lexicon.json` contains all lexemes. `by-letter/` splits the same lexemes into 31 shards by initial letter of the Kalaallisut headword (see the top of this README for the full shard list), each a valid subset with the same schema — useful for lazy-loading in browser tools. Both the full file and each shard share the same `meta.generated_at` timestamp.
+`by-letter/` is a **partition** of `lexicon.json`, computed by `scripts/export.py:split_by_letter()`: every lexeme appears in exactly one shard (by the case-folded first character of `kalaallisut`, non-alphabetic/missing first characters bucketed into `_.json`), and the union of all 31 shards equals `lexicon.json`'s lexeme list exactly — same entries, same schema, no additions, no drops. This is enforced by a test (`tests/test_export_lexicon_patches.py`), not just documented as a convention. Both the full file and each shard share the identical `meta.generated_at` timestamp (literally the same object, not independently regenerated). Use `by-letter/` for lazy-loading in browser tools; use `lexicon.json` when you need the whole thing at once.
 
 ```json
 {
@@ -156,7 +156,7 @@ The main export. 86,000+ real Kalaallisut dictionary headwords with translations
 
 | Field | Type | Notes |
 |---|---|---|
-| `id` | string | Stable identifier (`lex_<int>`), or `lex_patch_<int>_<n>` for a lexeme split out of a confirmed corrupted source row — see `data_issue` |
+| `id` | string | Stable identifier (`lex_<int>`). The `LEXEME_PATCHES` `'split'` handler *can* mint `lex_patch_<int>_<n>` ids for a lexeme split out of a corrupted source row — see `data_issue` — but as of this writing no `split` patch is active, so no `lex_patch_*` id currently appears in the real output; only `'flag'` patches (3 of them) are currently in use |
 | `kalaallisut` | string | The Kalaallisut lexeme |
 | `english` | string[] | English translations, ordered by preference |
 | `danish` | string[] | Danish translations, ordered by preference |
@@ -181,7 +181,7 @@ The main export. 86,000+ real Kalaallisut dictionary headwords with translations
 | `attrs.see_instead` | bool | Loanword/spelling-variant entry with a preferred alternate form somewhere else in the dictionary. Flag only — katersat doesn't structurally record *which* entry is preferred (checked: `glue_lexeme_synonyms` isn't it — same-language links there exist on ~23,400 unrelated lexemes and cover only 43 of the 176 `see_instead` rows), so this can't resolve to a target id |
 | `attrs.symbol` | bool | Headword is a symbol character itself (e.g. `≈`, `ə`, `∨`) |
 | `attrs.taaguutit` | bool | Sourced from katersat's official terminology ("taaguut") database; provenance only, not a content-quality signal |
-| `data_issue` | object\|absent | Present only on entries corrected for a confirmed one-off upstream katersat data error (see `scripts/export.py:LEXEME_PATCHES`). `type` is `"split"` (one corrupted source row split into several lexemes; `source_lex_id` gives the original `lex_<int>` id) or `"flag"` (text left as-is upstream, no confident correction yet). `reason` explains the issue. Never set on entries routed to `dermorph.json`/`enclitics.json` — those use `class_subtype` instead; see below. |
+| `data_issue` | object\|absent | Present only on entries corrected for a confirmed one-off upstream katersat data error (see `scripts/export.py:LEXEME_PATCHES`). `type` is `"split"` (one corrupted source row split into several `lex_patch_*` lexemes; `source_lex_id` gives the original `lex_<int>` id — supported by the code, but no `split` patch is currently registered) or `"flag"` (text left as-is upstream, tagged rather than corrected — currently the only type in active use, on 3 entries: `lex_244765`, `lex_244768`, `lex_244771`, legend entries documenting katersat's own `/`/`\` notation). `reason` explains the issue. Never set on entries routed to `dermorph.json`/`enclitics.json` — those use `class_subtype` instead; see below. |
 
 `lexicon.json` never contains a `dermorph`- or `enclitic`-classified entry — see "Lexeme classification" above.
 
@@ -415,7 +415,7 @@ Every test file is also runnable standalone without pytest — `python3 tests/te
 
 | File | Covers |
 |---|---|
-| `tests/test_export_lexicon_patches.py` | `export_lexicon()`'s `LEXEME_CLASSES` classifier (dermorph/enclitic routing, `class_subtype`) and the `LEXEME_PATCHES` registry (split/flag handlers, the upstream-fixed-it tripwire) |
+| `tests/test_export_lexicon_patches.py` | `export_lexicon()`'s `LEXEME_CLASSES` classifier (dermorph/enclitic routing, `class_subtype`), the `LEXEME_PATCHES` registry (split/flag handlers, the upstream-fixed-it tripwire), and `split_by_letter()`'s partition property (union of shards == lexicon entries, no drops/duplicates) |
 | `tests/test_export_morphemes.py` | `export_morphemes()` — Der marker → category mapping, sandhi → boundary_behavior, compound/bare skip-and-count |
 | `tests/test_export_sqlite.py` | `export_sqlite()` and the SQLite/gzip magic-byte checks in `scripts/validators.py` |
 | `tests/test_validators.py` | `check_lexicon()`'s `FORBIDDEN_LEXEME_PATTERNS` non-headword guard, including the exact strings from the production leak this guard was built to catch |
@@ -453,6 +453,69 @@ https://jandahl.github.io/Oqaasileriffik-katersat/katersat.sqlite.gz
 ```
 
 This allows consumers that can query SQLite directly — for example via [SQLite WASM](https://sqlite.org/wasm/doc/trunk/index.md) in the browser — to fetch the entire database in one request and run arbitrary SQL queries client-side. The intended downstream consumer is [jandahl/oq](https://github.com/jandahl/oq).
+
+---
+
+## Example queries
+
+All examples below were run against real exported data (not hand-written) before being added here. Table/column names use katersat's original prefixed names (`lex_lexeme`, `let_attrs`, …) — see [`schema.sql`](schema.sql) for the full schema; there's no separate "clean" naming layer in the SQLite file itself, only in the JSON export field names.
+
+### jq — querying the JSON exports
+
+```bash
+# Look up a headword exactly (a spelling can have several senses -- "illu"
+# below returns 6 entries, one per sense/domain, this is normal)
+jq '.lexemes[] | select(.kalaallisut == "illu")' lexicon.json
+
+# Count verbs
+jq '[.lexemes[] | select(.word_class == "v")] | length' lexicon.json
+
+# Count archaic-flagged entries
+jq '[.lexemes[] | select(.attrs.archaic == true)] | length' lexicon.json
+
+# List every entry with a known data-quality flag (currently 3, see LEXEME_PATCHES)
+jq '.lexemes[] | select(.data_issue != null) | {id, kalaallisut, data_issue}' lexicon.json
+
+# Count dermorph.json entries by class_subtype
+jq '.dermorph | group_by(.class_subtype) | map({subtype: .[0].class_subtype, count: length})' dermorph.json
+
+# List root (top-level) domains
+jq '.domains[] | select(.parent_id == null) | {code, english}' domains.json
+
+# Search a by-letter shard instead of the full lexicon.json (faster for one letter)
+jq '.lexemes[] | select(.kalaallisut | startswith("qajaq"))' by-letter/q.json
+```
+
+### sqlite3 — querying `katersat.sqlite` directly
+
+```bash
+# Exact headword lookup
+sqlite3 katersat.sqlite \
+  "SELECT lex_id, lex_lexeme, lex_wordclass FROM kat_lexemes WHERE lex_language='kal' AND lex_lexeme = 'illu';"
+
+# Decode the let_attrs bitfield with a bitwise AND -- values are in
+# scripts/schema_info.py:ATTR_BITS (e.g. archaic = 8)
+sqlite3 katersat.sqlite \
+  "SELECT l.lex_lexeme FROM kat_lexemes l JOIN kat_lexeme_attrs a ON l.lex_id = a.lex_id
+    WHERE l.lex_language='kal' AND (a.let_attrs & 8) LIMIT 10;"
+
+# Translations for a headword, via the same glue_lexeme_synonyms join export.py uses
+sqlite3 katersat.sqlite \
+  "SELECT tr.lex_lexeme, tr.lex_language FROM kat_lexemes l
+    JOIN glue_lexeme_synonyms g ON g.lex_id = l.lex_id
+    JOIN kat_lexemes tr ON tr.lex_id = g.lex_syn
+    WHERE l.lex_lexeme = 'illu' AND l.lex_language='kal'
+    ORDER BY g.syn_order;"
+
+# Lexeme count per word class
+sqlite3 katersat.sqlite \
+  "SELECT lex_wordclass, COUNT(*) FROM kat_lexemes WHERE lex_language='kal'
+    GROUP BY lex_wordclass ORDER BY COUNT(*) DESC;"
+
+# Combine with jq via -json output mode for structured post-processing
+sqlite3 -json katersat.sqlite \
+  "SELECT * FROM kat_lexemes WHERE lex_lexeme LIKE '%Der/vv%' LIMIT 3;" | jq .
+```
 
 ---
 

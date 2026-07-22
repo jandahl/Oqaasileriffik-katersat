@@ -595,6 +595,28 @@ def export_morphemes(db) -> dict:
     }
 
 
+def split_by_letter(lexicon: dict) -> dict[str, dict]:
+    """Partition lexicon_doc's lexemes by the first letter of `kalaallisut`
+    (case-folded; non-alphabetic or missing first char -> '_').
+
+    Returns {letter_key: {meta, lexemes}}, one doc per shard, each sharing
+    lexicon's `meta` unchanged. This is a true partition: every lexeme in
+    `lexicon['lexemes']` appears in exactly one shard, and the union of all
+    shards' lexemes equals `lexicon['lexemes']` (see
+    tests/test_export_lexicon_patches.py for the property test) -- by-letter
+    files are a lazy-loading split of lexicon.json's content, not a separate
+    or reduced dataset.
+    """
+    by_letter: dict[str, list[dict]] = {}
+    for lex in lexicon['lexemes']:
+        kalaallisut = lex.get('kalaallisut')
+        kalaallisut_clean = kalaallisut.strip() if isinstance(kalaallisut, str) else ''
+        first = kalaallisut_clean[0].lower() if kalaallisut_clean else '_'
+        key = first if first.isalpha() else '_'
+        by_letter.setdefault(key, []).append(lex)
+    return {key: {'meta': lexicon['meta'], 'lexemes': entries} for key, entries in by_letter.items()}
+
+
 def write_json(data: dict, path: str, compress: bool = False) -> None:
     p = Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
@@ -683,15 +705,9 @@ def main() -> None:
             for f in by_letter_dir.iterdir():
                 if f.is_file():
                     f.unlink()
-        by_letter: dict[str, list[dict]] = {}
-        for lex in lexicon['lexemes']:
-            kalaallisut = lex.get('kalaallisut')
-            kalaallisut_clean = kalaallisut.strip() if isinstance(kalaallisut, str) else ''
-            first = kalaallisut_clean[0].lower() if kalaallisut_clean else '_'
-            key = first if first.isalpha() else '_'
-            by_letter.setdefault(key, []).append(lex)
-        for key, entries in sorted(by_letter.items()):
-            write_json({'meta': lexicon['meta'], 'lexemes': entries}, f'{out}/by-letter/{key}.json', args.compress)
+        by_letter = split_by_letter(lexicon)
+        for key, doc in sorted(by_letter.items()):
+            write_json(doc, f'{out}/by-letter/{key}.json', args.compress)
         print(f'  {len(by_letter)} letter shards', file=sys.stderr)
 
     print('Exporting SQLite...', file=sys.stderr)
