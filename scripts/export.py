@@ -444,6 +444,9 @@ def export_lexicon(db) -> dict[str, dict]:
                 'acronym': has_attr(attrs_bits, 'acronym'),
                 'derived_morph': has_attr(attrs_bits, 'dermorph'),
                 'enclitic': has_attr(attrs_bits, 'enclitic'),
+                'see_instead': has_attr(attrs_bits, 'see_instead'),
+                'symbol': has_attr(attrs_bits, 'symbol'),
+                'taaguutit': has_attr(attrs_bits, 'taaguutit'),
             },
         }
 
