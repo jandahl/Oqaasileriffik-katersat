@@ -207,12 +207,25 @@ def _fetch_translations(db, lang: str) -> dict:
 # before adopting this design. `subtype` (optional) receives the same args
 # and returns a short string distinguishing entries within the class
 # (written into each entry's `class_subtype`); omit it if the class has none.
+#
+# 'dermorph' matches on the attrs bit OR the text shape, not the bit alone:
+# katersat's own dermorph flagging is inconsistent — the identical postbase
+# text often exists as several rows (different lex_id), only some of which
+# carry the dermorph bit, and a handful of chain entries (e.g.
+# "SINNAA Der/vv RUJUP Der/vv SUAR Der/vv") have exactly one row and it's
+# unflagged. A bit-only check let 95 of these leak into lexicon.json (all
+# unambiguous postbase-catalog text, checked against the live data — no real
+# headword false-positive risk from the shape check).
 
 # A clean single derivational morpheme: "<MORPHEME> Der/<xy>" (e.g. "SSAQ Der/nn").
 # Shared with export_morphemes(), which extracts exactly this subtype into a
 # richer, structured postbase-building shape.
 _DER_TOKEN = re.compile(r'^(\S+)\s+Der/([nv][nv])$')
 _DER_MARKER = re.compile(r'Der/[nv][nv]')
+
+
+def _is_dermorph(lexeme: str, attrs_bits: int) -> bool:
+    return has_attr(attrs_bits, 'dermorph') or bool(_DER_MARKER.search(lexeme or ''))
 
 
 def _dermorph_subtype(lexeme: str, attrs_bits: int) -> str:
@@ -228,7 +241,7 @@ LEXEME_CLASSES = [
     # (class_name, match(lexeme, attrs_bits) -> bool, output_filename, subtype_fn_or_None)
     (
         'dermorph',
-        lambda lexeme, attrs_bits: has_attr(attrs_bits, 'dermorph'),
+        _is_dermorph,
         'dermorph.json',
         _dermorph_subtype,
     ),

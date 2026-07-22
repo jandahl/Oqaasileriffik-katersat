@@ -148,6 +148,34 @@ def test_dermorph_bare_stub_routed_with_subtype():
     assert entry['class_subtype'] == 'bare'
 
 
+def test_dermorph_shape_catches_rows_katersat_forgot_to_flag():
+    # katersat's own dermorph flagging is inconsistent: the same postbase text
+    # often exists as several rows, only some carrying the dermorph bit, and
+    # some chain rows (e.g. real "SINNAA Der/vv RUJUP Der/vv SUAR Der/vv") have
+    # exactly one row and it's unflagged. Bit-only classification let these
+    # leak into lexicon.json; the text shape must be checked too.
+    docs = export_lexicon(_make_db([
+        (165580, 'SINNAA Der/vv RUJUP Der/vv SUAR Der/vv', 'v', 0),  # bits=0, real data shape
+        (165649, 'GUMA Der/vv', 'v', 0),  # bits=0, real data shape
+    ]))
+    lex_ids = _by_id(docs['lexicon']['lexemes'])
+    assert 'lex_165580' not in lex_ids
+    assert 'lex_165649' not in lex_ids
+    chain = _by_id(docs['dermorph']['dermorph'])['lex_165580']
+    assert chain['class_subtype'] == 'chain'
+    single = _by_id(docs['dermorph']['dermorph'])['lex_165649']
+    assert single['class_subtype'] == 'single_affix'
+
+
+def test_dermorph_shape_check_ignores_unrelated_bits():
+    # A row with some other attrs bit set (e.g. plural) but Der/xy-shaped text
+    # is still routed by shape, regardless of which unrelated bit is set.
+    PLURAL = 32
+    docs = export_lexicon(_make_db([(165738, 'A Der/vv', 'v', PLURAL)]))
+    assert 'lex_165738' not in _by_id(docs['lexicon']['lexemes'])
+    assert 'lex_165738' in _by_id(docs['dermorph']['dermorph'])
+
+
 def test_dermorph_class_ignores_hidden_filter_scope():
     # Sanity: hidden entries never reach export_lexicon's row set at all
     # (filtered in SQL), independent of classification.
