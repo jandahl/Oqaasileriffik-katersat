@@ -288,7 +288,29 @@ LEXEME_CLASSES = [
 # 'flag':  the text is left as upstream has it (no confident correction yet),
 #          but the entry is marked with `data_issue` so it doesn't slip
 #          through downstream consumers unnoticed.
-LEXEME_PATCHES: dict[int, dict] = {}
+LEXEME_PATCHES: dict[int, dict] = {
+    # Legend/glossary entries documenting katersat's own "/" and "\" notation
+    # conventions (used elsewhere in the dictionary), not Kalaallisut words.
+    # Confirmed by direct translation, not by any attrs bit or shape rule --
+    # they carry the same 'taaguutit' (terminology-batch) attr as ~27,500
+    # legitimate entries, so no general classifier could isolate just these
+    # three without also catching real content.
+    244765: {
+        'type': 'flag',
+        'expected': '[ilisarnaatit pineqartut: \\ aamma / ]',
+        'reason': 'legend entry documenting katersat\'s "\\" and "/" notation, not a Kalaallisut headword',
+    },
+    244768: {
+        'type': 'flag',
+        'expected': '[ilisarnaat pineqartoq: / ]',
+        'reason': 'legend entry documenting katersat\'s "/" notation, not a Kalaallisut headword',
+    },
+    244771: {
+        'type': 'flag',
+        'expected': '[ilisarnaat pineqartoq: \\ ]',
+        'reason': 'legend entry documenting katersat\'s "\\" notation, not a Kalaallisut headword',
+    },
+}
 
 # Ids minted for patched rows live in a namespace that can never collide with
 # a real katersat lex_<int> id (those are always plain integers).
