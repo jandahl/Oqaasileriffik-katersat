@@ -394,7 +394,7 @@ Every file includes a top-level `meta` object:
 {
   "meta": {
     "version": "1",
-    "license": "CC-BY-SA-4.0",
+    "license": "GPL-3.0-or-later",
     "attribution": "Oqaasileriffik / Greenland Language Secretariat",
     "source": "https://github.com/Oqaasileriffik/katersat",
     "generated_at": "2024-01-01T02:00:00+00:00"
@@ -530,6 +530,18 @@ sqlite3 -json katersat.sqlite \
 
 ## License
 
-**Code** (scripts in this repository): GPL-3.0-or-later — see [`LICENSE.md`](LICENSE.md)
+**Everything in this repository — code and data alike — is GPL-3.0-or-later.** See
+[`LICENSE.md`](LICENSE.md) for the full text.
 
-**Data** (files in `exports/`): CC-BY-SA-4.0 — © Oqaasileriffik / Greenland Language Secretariat
+Earlier versions of this README (and every exported file's `meta.license` field) claimed the
+data in `exports/` was CC-BY-SA-4.0. That claim was never backed by any actual grant — not from
+upstream `Oqaasileriffik/katersat`, not anywhere in this fork. It appears to have been assumed by
+analogy to the separate `Oqaasileriffik/dicts` repo, which genuinely is CC-BY-SA-4.0, and then
+propagated as fact into downstream consumers without anyone checking. This repo has exactly one
+license document, `LICENSE.md`, and it is GPLv3 — which makes no code/data distinction absent an
+explicit separate grant, and no such grant exists here. Attribution ("Oqaasileriffik / Greenland
+Language Secretariat") is still owed and still correct; the license under which that attribution
+applies is GPL-3.0-or-later, not CC-BY-SA.
+
+If Oqaasileriffik ever grants a separate data license for katersat's content, that would need to
+come from Oqaasileriffik directly and be recorded here explicitly — it cannot be assumed.
