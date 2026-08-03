@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "version": "1",
+    "license": "GPL-3.0-or-later",
+    "attribution": "Oqaasileriffik / Greenland Language Secretariat",
+    "source": "https://github.com/Oqaasileriffik/katersat",
+    "generated_at": "2026-08-03T09:52:35.393930+00:00"
+  },
+  "enclitics": [
+    {
+      "id": "lex_163838",
+      "kalaallisut": "AASIIT",
+      "english": [],
+      "danish": [
+        "som sædvanlig"
+      ],
+      "word_class": "encl",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": true,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": false
+      }
+    },
+    {
+      "id": "lex_166916",
+      "kalaallisut": "LU",
+      "english": [],
+      "danish": [
+        "også",
+        "og"
+      ],
+      "word_class": "conj",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": true,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": false
+      }
+    },
+    {
+      "id": "lex_172117",
+      "kalaallisut": "LU",
+      "english": [],
+      "danish": [
+        "straks da"
+      ],
+      "word_class": "adv",
+      "semantic_classes": [],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": "(nutsigassaq) angiver underordnet verbalhandlings samtidighed med overordnet verbalhandling, jf også UTIGE",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": "gem",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": true,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": false
+      }
+    }
+  ]
+}
