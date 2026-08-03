@@ -531,17 +531,6 @@ sqlite3 -json katersat.sqlite \
 ## License
 
 **Everything in this repository — code and data alike — is GPL-3.0-or-later.** See
-[`LICENSE.md`](LICENSE.md) for the full text.
-
-Earlier versions of this README (and every exported file's `meta.license` field) claimed the
-data in `exports/` was CC-BY-SA-4.0. That claim was never backed by any actual grant — not from
-upstream `Oqaasileriffik/katersat`, not anywhere in this fork. It appears to have been assumed by
-analogy to the separate `Oqaasileriffik/dicts` repo, which genuinely is CC-BY-SA-4.0, and then
-propagated as fact into downstream consumers without anyone checking. This repo has exactly one
-license document, `LICENSE.md`, and it is GPLv3 — which makes no code/data distinction absent an
-explicit separate grant, and no such grant exists here. Attribution ("Oqaasileriffik / Greenland
-Language Secretariat") is still owed and still correct; the license under which that attribution
-applies is GPL-3.0-or-later, not CC-BY-SA.
-
-If Oqaasileriffik ever grants a separate data license for katersat's content, that would need to
-come from Oqaasileriffik directly and be recorded here explicitly — it cannot be assumed.
+[`LICENSE.md`](LICENSE.md) for the full text. There is no separate CC-BY-SA grant for
+`exports/`; attribution ("Oqaasileriffik / Greenland Language Secretariat") is still owed,
+under GPL-3.0-or-later.
