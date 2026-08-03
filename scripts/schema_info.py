@@ -53,9 +53,14 @@ WC_KATERSAT_TO_FST = {
     'Adj': 'Adj', 'Part': 'Part', 'Prep': 'Prep',
 }
 
+# No CC-BY-SA grant has ever existed for this data -- this repo's only
+# license document (LICENSE.md) is GPLv3, with no separate carve-out for
+# data vs code. The 'license' field below previously read 'CC-BY-SA-4.0',
+# copied from the unrelated Oqaasileriffik/dicts repo's terms without a
+# matching grant here. See README.md's License section.
 META = {
     'version': '1',
-    'license': 'CC-BY-SA-4.0',
+    'license': 'GPL-3.0-or-later',
     'attribution': 'Oqaasileriffik / Greenland Language Secretariat',
     'source': 'https://github.com/Oqaasileriffik/katersat',
 }
