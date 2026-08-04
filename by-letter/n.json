@@ -4,7 +4,7 @@
     "license": "GPL-3.0-or-later",
     "attribution": "Oqaasileriffik / Greenland Language Secretariat",
     "source": "https://github.com/Oqaasileriffik/katersat",
-    "generated_at": "2026-08-03T09:52:35.393930+00:00"
+    "generated_at": "2026-08-04T04:31:22.852931+00:00"
   },
   "lexemes": [
     {
@@ -335003,6 +335003,47 @@
         "see_instead": false,
         "symbol": false,
         "taaguutit": false
+      }
+    },
+    {
+      "id": "lex_266335",
+      "kalaallisut": "nunami ingerlatassanut pilersaarut",
+      "english": [
+        "Land Based Activities Plan"
+      ],
+      "danish": [
+        "landbaseret aktivitetsplan"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "sem-c"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_120",
+        "code": "10.0.0",
+        "english": "RÅSTOF RAW MATERIALS INDUSTRY",
+        "danish": "RÅSTOF RÅSTOFINDUSTRI",
+        "kalaallisut": "RÅSTOF AATSITASSALERINEQ IKUMMATISSALERINERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": true
       }
     },
     {
