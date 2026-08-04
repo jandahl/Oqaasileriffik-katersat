@@ -45,12 +45,30 @@ jobs:
           python-version: '3.11'
 
       - name: Fetch latest katersat data
+        id: update
         run: python3 update.py
 
+      # Weekly cron exists purely to catch upstream katersat changes; when
+      # update.py finds nothing new there's nothing for export/deploy to do.
+      # A push (scripts/tests/workflow changed) or a manual dispatch always
+      # proceeds regardless, since the *export code* may have changed even
+      # when the underlying data hasn't.
+      - name: Decide whether to proceed
+        id: gate
+        run: |
+          if [ "${{ steps.update.outputs.data_changed }}" = "true" ] || [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+            echo "No katersat data change on a scheduled run -- skipping export/deploy."
+          fi
+
       - name: Archive data if changed
+        if: steps.gate.outputs.proceed == 'true'
         run: python3 scripts/archive_data.py
 
       - name: Commit data archive to main
+        if: steps.gate.outputs.proceed == 'true'
         run: |
           git config user.name "katersat-bot"
           git config user.email "actions@github.com"
@@ -59,20 +77,46 @@ jobs:
             git commit -m "data: archive katersat $(date -u +%Y-%m-%d) [skip ci]" && git push
 
       - name: Export to JSON
+        if: steps.gate.outputs.proceed == 'true'
         run: python3 scripts/export.py --output exports --compress
 
       - name: Validate exports
+        if: steps.gate.outputs.proceed == 'true'
         run: python3 scripts/validators.py exports
 
+      # Reuses the existing gh-pages history instead of force-pushing a fresh
+      # orphan tree every run (the old `git init -b gh-pages` + `push --force`
+      # rewrote the entire branch's history unconditionally, even in runs
+      # where nothing in the exported content changed). Commits only when the
+      # new exports actually differ from what's already published, so an
+      # unchanged run leaves gh-pages untouched -- stable objects/URLs for
+      # downstream consumers (oq's schema-drift checker, its live fetches)
+      # instead of a full rewrite every week.
       - name: Deploy to GitHub Pages
+        if: steps.gate.outputs.proceed == 'true'
         run: |
-          cd exports
-          git init -b gh-pages
-          git config user.name "katersat-bot"
-          git config user.email "actions@github.com"
-          touch .nojekyll
-          git add .
-          git commit -m "chore: update JSON exports $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          git push --force \
-            "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" \
-            gh-pages
+          set -euo pipefail
+          git config --global user.name "katersat-bot"
+          git config --global user.email "actions@github.com"
+
+          REMOTE="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+
+          rm -rf gh-pages-deploy
+          if git ls-remote --exit-code --heads "$REMOTE" gh-pages > /dev/null 2>&1; then
+            git clone --depth 1 --branch gh-pages "$REMOTE" gh-pages-deploy
+          else
+            mkdir gh-pages-deploy
+            git -C gh-pages-deploy init -b gh-pages
+          fi
+
+          rsync -a --delete --exclude='.git' exports/ gh-pages-deploy/
+          touch gh-pages-deploy/.nojekyll
+
+          cd gh-pages-deploy
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No export changes -- gh-pages already up to date, nothing to push"
+          else
+            git commit -m "chore: update JSON exports $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push "$REMOTE" gh-pages
+          fi

@@ -10,6 +10,9 @@ import hashlib
 from pathlib import Path
 import sqlite3
 
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'scripts'))
+from gh_actions_output import set_output as _set_output
+
 def sha1_file(fn):
 	d = Path(fn).read_bytes()
 	h = hashlib.sha1(d)
@@ -44,7 +47,10 @@ if os.path.getmtime('etag.txt') <= os.path.getmtime('data.sql'):
 
 if sha == new:
 	print('Katersat is already up to date')
+	_set_output('data_changed', 'false')
 	sys.exit()
+
+_set_output('data_changed', 'true')
 
 
 print('Loading new Katersat data...')
