@@ -8,11 +8,22 @@ on:
       - 'tests/**'
       - '.github/workflows/export.yml'
   schedule:
-    - cron: '0 2 * * 0'   # weekly, Sunday 02:00 UTC
+    - cron: '0 2 1 * *'   # monthly, 1st of month 02:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write
+
+# Serializes the export job so a manual dispatch/push can never overlap a
+# scheduled run (or another dispatch): the deploy step now does a plain
+# `git push` against gh-pages instead of `push --force`, which fails with a
+# non-fast-forward error if two runs race to push from the same cloned base.
+# cancel-in-progress stays false -- an in-flight deploy should finish and
+# commit cleanly rather than being killed mid-push, so a second trigger
+# queues behind it instead of cancelling it.
+concurrency:
+  group: export-deploy
+  cancel-in-progress: false
 
 jobs:
   test:
@@ -48,7 +59,7 @@ jobs:
         id: update
         run: python3 update.py
 
-      # Weekly cron exists purely to catch upstream katersat changes; when
+      # Scheduled cron exists purely to catch upstream katersat changes; when
       # update.py finds nothing new there's nothing for export/deploy to do.
       # A push (scripts/tests/workflow changed) or a manual dispatch always
       # proceeds regardless, since the *export code* may have changed even
@@ -109,7 +120,7 @@ jobs:
             git -C gh-pages-deploy init -b gh-pages
           fi
 
-          rsync -a --delete --exclude='.git' exports/ gh-pages-deploy/
+          rsync -a --delete --exclude='.git' --exclude='CHANGELOG.md' exports/ gh-pages-deploy/
           touch gh-pages-deploy/.nojekyll
 
           cd gh-pages-deploy
@@ -117,6 +128,19 @@ jobs:
           if git diff --cached --quiet; then
             echo "No export changes -- gh-pages already up to date, nothing to push"
           else
-            git commit -m "chore: update JSON exports $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            NOW="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            CHANGED_FILES="$(git diff --cached --name-only | grep -v '^CHANGELOG.md$' | sort | paste -sd, -)"
+
+            # Append-only record of what actually changed each publish, mirroring
+            # data/CHANGELOG.md's convention (archive_data.py) -- a log entry per
+            # commit, never rewritten, so "what changed and when" is readable
+            # without digging through gh-pages' git history.
+            if [ ! -f CHANGELOG.md ]; then
+              printf '# Katersat export changelog\n\nEntries appear only when a publish actually changed content.\n\n| UTC timestamp | Changed files |\n|---|---|\n' > CHANGELOG.md
+            fi
+            printf '| %s | %s |\n' "$NOW" "$CHANGED_FILES" >> CHANGELOG.md
+            git add CHANGELOG.md
+
+            git commit -m "chore: update JSON exports $NOW"
             git push "$REMOTE" gh-pages
           fi
