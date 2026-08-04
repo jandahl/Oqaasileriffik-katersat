@@ -48,7 +48,7 @@ jobs:
         id: update
         run: python3 update.py
 
-      # Weekly cron exists purely to catch upstream katersat changes; when
+      # Scheduled cron exists purely to catch upstream katersat changes; when
       # update.py finds nothing new there's nothing for export/deploy to do.
       # A push (scripts/tests/workflow changed) or a manual dispatch always
       # proceeds regardless, since the *export code* may have changed even
