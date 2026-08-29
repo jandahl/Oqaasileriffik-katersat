@@ -26,7 +26,7 @@ def _make_db(lexemes):
         """
         CREATE TABLE kat_lexemes (
             lex_id INTEGER PRIMARY KEY, lex_lexeme TEXT, lex_wordclass TEXT,
-            lex_semclass TEXT, lex_sem2 TEXT, lex_register TEXT, lex_gender TEXT,
+            lex_semclass TEXT, lex_sem2 TEXT, lex_domain TEXT, lex_gender TEXT,
             lex_stem TEXT, lex_definition TEXT, lex_info TEXT, lex_verbframe TEXT,
             lex_oldspelling TEXT, lex_valence INTEGER, lex_language TEXT
         );

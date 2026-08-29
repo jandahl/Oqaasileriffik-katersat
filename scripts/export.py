@@ -354,7 +354,7 @@ def export_lexicon(db) -> dict[str, dict]:
     LEXEME_CLASSES, always present even when empty, so file shape is stable
     across runs.
     """
-    # lex_register stores dom_id as a string after the registers→domains rename.
+    # lex_domain stores dom_id as a string.
     # dom_id=0 ("General / Not Special") is treated as unspecified and exported as null.
     db.execute("SELECT dom_id, dom_code, dom_eng, dom_dan, dom_kal FROM kat_domains")
     domains = {
@@ -373,7 +373,7 @@ def export_lexicon(db) -> dict[str, dict]:
             l.lex_wordclass,
             l.lex_semclass,
             l.lex_sem2,
-            l.lex_register,
+            l.lex_domain,
             NULLIF(l.lex_gender, ''),
             l.lex_stem,
             l.lex_definition,
