@@ -4,7 +4,7 @@
     "license": "GPL-3.0-or-later",
     "attribution": "Oqaasileriffik / Greenland Language Secretariat",
     "source": "https://github.com/Oqaasileriffik/katersat",
-    "generated_at": "2026-08-04T05:02:06.951695+00:00"
+    "generated_at": "2026-08-29T20:52:33.366384+00:00"
   },
   "lexemes": [
     {
@@ -158146,6 +158146,88 @@
       }
     },
     {
+      "id": "lex_266361",
+      "kalaallisut": "akilersinnaassutsimik aallaqqaatitut misissuineq",
+      "english": [
+        "pre-feasibility study"
+      ],
+      "danish": [
+        "lønsomhedsforundersøgelse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "activity"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_120",
+        "code": "10.0.0",
+        "english": "RÅSTOF RAW MATERIALS INDUSTRY",
+        "danish": "RÅSTOF RÅSTOFINDUSTRI",
+        "kalaallisut": "RÅSTOF AATSITASSALERINEQ IKUMMATISSALERINERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": true
+      }
+    },
+    {
+      "id": "lex_266364",
+      "kalaallisut": "akilersinnaassutsimik misissuineq",
+      "english": [
+        "feasibility study"
+      ],
+      "danish": [
+        "lønsomhedsundersøgelse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "activity"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_120",
+        "code": "10.0.0",
+        "english": "RÅSTOF RAW MATERIALS INDUSTRY",
+        "danish": "RÅSTOF RÅSTOFINDUSTRI",
+        "kalaallisut": "RÅSTOF AATSITASSALERINEQ IKUMMATISSALERINERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": true
+      }
+    },
+    {
       "id": "lex_1552",
       "kalaallisut": "akilersinniarpaa",
       "english": [],
@@ -196845,6 +196927,47 @@
       }
     },
     {
+      "id": "lex_266350",
+      "kalaallisut": "akuersissutilik",
+      "english": [
+        "licensee"
+      ],
+      "danish": [
+        "licenshaver"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "H"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_120",
+        "code": "10.0.0",
+        "english": "RÅSTOF RAW MATERIALS INDUSTRY",
+        "danish": "RÅSTOF RÅSTOFINDUSTRI",
+        "kalaallisut": "RÅSTOF AATSITASSALERINEQ IKUMMATISSALERINERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": true
+      }
+    },
+    {
       "id": "lex_163349",
       "kalaallisut": "akuersissutinik nakkutilliisoq",
       "english": [],
@@ -196947,6 +197070,47 @@
         "see_instead": false,
         "symbol": false,
         "taaguutit": false
+      }
+    },
+    {
+      "id": "lex_266356",
+      "kalaallisut": "akuersissutip atuuffia",
+      "english": [
+        "license period"
+      ],
+      "danish": [
+        "licensperiode"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "per"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_120",
+        "code": "10.0.0",
+        "english": "RÅSTOF RAW MATERIALS INDUSTRY",
+        "danish": "RÅSTOF RÅSTOFINDUSTRI",
+        "kalaallisut": "RÅSTOF AATSITASSALERINEQ IKUMMATISSALERINERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": true
       }
     },
     {
@@ -197869,6 +198033,47 @@
       }
     },
     {
+      "id": "lex_266372",
+      "kalaallisut": "akuiagassaq",
+      "english": [
+        "ore"
+      ],
+      "danish": [
+        "malm"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "mat"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_120",
+        "code": "10.0.0",
+        "english": "RÅSTOF RAW MATERIALS INDUSTRY",
+        "danish": "RÅSTOF RÅSTOFINDUSTRI",
+        "kalaallisut": "RÅSTOF AATSITASSALERINEQ IKUMMATISSALERINERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": true
+      }
+    },
+    {
       "id": "lex_261825",
       "kalaallisut": "akuiagassaq piiagaq",
       "english": [
@@ -197894,6 +198099,88 @@
       "fst_analyses": null,
       "definition": null,
       "info": "Oqaasiliortut 2025",
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": true
+      }
+    },
+    {
+      "id": "lex_266375",
+      "kalaallisut": "akuiagassaqarfik",
+      "english": [
+        "orebody",
+        "ore resource"
+      ],
+      "danish": [
+        "malmlegeme",
+        "malmressource"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "mat"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_120",
+        "code": "10.0.0",
+        "english": "RÅSTOF RAW MATERIALS INDUSTRY",
+        "danish": "RÅSTOF RÅSTOFINDUSTRI",
+        "kalaallisut": "RÅSTOF AATSITASSALERINEQ IKUMMATISSALERINERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": true
+      }
+    },
+    {
+      "id": "lex_266381",
+      "kalaallisut": "akuiagassaqarfik akilersinnaasoq",
+      "english": [
+        "ore reserve"
+      ],
+      "danish": [],
+      "word_class": "t",
+      "semantic_classes": [
+        "part"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_120",
+        "code": "10.0.0",
+        "english": "RÅSTOF RAW MATERIALS INDUSTRY",
+        "danish": "RÅSTOF RÅSTOFINDUSTRI",
+        "kalaallisut": "RÅSTOF AATSITASSALERINEQ IKUMMATISSALERINERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
       "verb_frame": null,
       "old_spelling": null,
       "sandhi": null,
@@ -198150,6 +198437,47 @@
         "see_instead": false,
         "symbol": false,
         "taaguutit": false
+      }
+    },
+    {
+      "id": "lex_266358",
+      "kalaallisut": "akuissuseq",
+      "english": [
+        "grade"
+      ],
+      "danish": [
+        "lødighed"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "f-q"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_120",
+        "code": "10.0.0",
+        "english": "RÅSTOF RAW MATERIALS INDUSTRY",
+        "danish": "RÅSTOF RÅSTOFINDUSTRI",
+        "kalaallisut": "RÅSTOF AATSITASSALERINEQ IKUMMATISSALERINERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": true
       }
     },
     {
@@ -510414,6 +510742,47 @@
       }
     },
     {
+      "id": "lex_266397",
+      "kalaallisut": "avatangiisinik innarlitsaaliuineq",
+      "english": [
+        "environmental protection"
+      ],
+      "danish": [
+        "miljøbeskyttelse"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "activity"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_120",
+        "code": "10.0.0",
+        "english": "RÅSTOF RAW MATERIALS INDUSTRY",
+        "danish": "RÅSTOF RÅSTOFINDUSTRI",
+        "kalaallisut": "RÅSTOF AATSITASSALERINEQ IKUMMATISSALERINERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": true
+      }
+    },
+    {
       "id": "lex_180991",
       "kalaallisut": "avatangiisinik innarlitsaaliuinermut inatsit",
       "english": [],
@@ -512219,6 +512588,49 @@
         "see_instead": false,
         "symbol": false,
         "taaguutit": false
+      }
+    },
+    {
+      "id": "lex_266404",
+      "kalaallisut": "avatangiisit mianeralugit aqutseriaaseq",
+      "english": [
+        "Environmental Management System",
+        "EMS"
+      ],
+      "danish": [
+        "miljøforvaltningssystem",
+        "EMS"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "sem-c"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_120",
+        "code": "10.0.0",
+        "english": "RÅSTOF RAW MATERIALS INDUSTRY",
+        "danish": "RÅSTOF RÅSTOFINDUSTRI",
+        "kalaallisut": "RÅSTOF AATSITASSALERINEQ IKUMMATISSALERINERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": true
       }
     },
     {

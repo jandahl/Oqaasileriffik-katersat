@@ -4,7 +4,7 @@
     "license": "GPL-3.0-or-later",
     "attribution": "Oqaasileriffik / Greenland Language Secretariat",
     "source": "https://github.com/Oqaasileriffik/katersat",
-    "generated_at": "2026-08-04T05:02:06.951695+00:00"
+    "generated_at": "2026-08-29T20:52:33.366384+00:00"
   },
   "lexemes": [
     {
@@ -62104,6 +62104,48 @@
       "verb_frame": null,
       "old_spelling": null,
       "sandhi": "tru",
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": true
+      }
+    },
+    {
+      "id": "lex_266387",
+      "kalaallisut": "tangertussuseq",
+      "english": [
+        "density"
+      ],
+      "danish": [
+        "massefylde",
+        "densitet"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "f-q"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_120",
+        "code": "10.0.0",
+        "english": "RÅSTOF RAW MATERIALS INDUSTRY",
+        "danish": "RÅSTOF RÅSTOFINDUSTRI",
+        "kalaallisut": "RÅSTOF AATSITASSALERINEQ IKUMMATISSALERINERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
       "attrs": {
         "archaic": false,
         "plural_only": false,

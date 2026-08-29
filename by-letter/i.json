@@ -4,7 +4,7 @@
     "license": "GPL-3.0-or-later",
     "attribution": "Oqaasileriffik / Greenland Language Secretariat",
     "source": "https://github.com/Oqaasileriffik/katersat",
-    "generated_at": "2026-08-04T05:02:06.951695+00:00"
+    "generated_at": "2026-08-29T20:52:33.366384+00:00"
   },
   "lexemes": [
     {
@@ -211388,6 +211388,47 @@
       }
     },
     {
+      "id": "lex_266348",
+      "kalaallisut": "ingerlatseqatigiiffik akuersissutilik",
+      "english": [
+        "licensee company"
+      ],
+      "danish": [
+        "licensehaverselskab"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "HHorg"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_120",
+        "code": "10.0.0",
+        "english": "RÅSTOF RAW MATERIALS INDUSTRY",
+        "danish": "RÅSTOF RÅSTOFINDUSTRI",
+        "kalaallisut": "RÅSTOF AATSITASSALERINEQ IKUMMATISSALERINERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": true
+      }
+    },
+    {
       "id": "lex_173317",
       "kalaallisut": "ingerlatseqatigiiffik aqutaq",
       "english": [],
@@ -243121,7 +243162,8 @@
       "id": "lex_131913",
       "kalaallisut": "inoqatinut attaveqaat",
       "english": [
-        "social media"
+        "social media",
+        "SoMe"
       ],
       "danish": [
         "socialt medie",
@@ -243156,9 +243198,11 @@
     {
       "id": "lex_218587",
       "kalaallisut": "inoqatinut attaveqaat",
-      "english": [],
+      "english": [
+        "SoMe"
+      ],
       "danish": [
-        "sociale medier"
+        "socialt medie"
       ],
       "word_class": "t",
       "semantic_classes": [],
