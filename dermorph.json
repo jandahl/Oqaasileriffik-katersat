@@ -4,7 +4,7 @@
     "license": "GPL-3.0-or-later",
     "attribution": "Oqaasileriffik / Greenland Language Secretariat",
     "source": "https://github.com/Oqaasileriffik/katersat",
-    "generated_at": "2026-09-01T02:18:49.602978+00:00"
+    "generated_at": "2026-10-01T02:28:02.400421+00:00"
   },
   "dermorph": [
     {
@@ -74001,7 +74001,7 @@
       "info": null,
       "verb_frame": null,
       "old_spelling": null,
-      "sandhi": "rep",
+      "sandhi": "add",
       "attrs": {
         "archaic": false,
         "plural_only": false,
@@ -104182,7 +104182,9 @@
     {
       "id": "lex_165209",
       "kalaallisut": "SIUR Der/nv",
-      "english": [],
+      "english": [
+        "celebrate"
+      ],
       "danish": [
         "holde",
         "fejre"
@@ -104243,7 +104245,7 @@
         "mass": false,
         "abbreviation": false,
         "acronym": false,
-        "derived_morph": false,
+        "derived_morph": true,
         "enclitic": false,
         "see_instead": false,
         "symbol": false,
@@ -104345,7 +104347,7 @@
         "mass": false,
         "abbreviation": false,
         "acronym": false,
-        "derived_morph": false,
+        "derived_morph": true,
         "enclitic": false,
         "see_instead": false,
         "symbol": false,

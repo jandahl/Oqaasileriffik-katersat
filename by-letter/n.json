@@ -4,7 +4,7 @@
     "license": "GPL-3.0-or-later",
     "attribution": "Oqaasileriffik / Greenland Language Secretariat",
     "source": "https://github.com/Oqaasileriffik/katersat",
-    "generated_at": "2026-09-01T02:18:49.602978+00:00"
+    "generated_at": "2026-10-01T02:28:02.400421+00:00"
   },
   "lexemes": [
     {
@@ -147255,7 +147255,8 @@
       "id": "lex_5873",
       "kalaallisut": "nangippoq",
       "english": [
-        "continue"
+        "continue",
+        "go on"
       ],
       "danish": [
         "fortsætte",
@@ -147901,17 +147902,17 @@
       "english": [],
       "danish": [],
       "word_class": "v",
-      "semantic_classes": [],
+      "semantic_classes": [
+        "V.55.3"
+      ],
       "valence": "vi",
       "domain": null,
       "gender": null,
-      "fst_analyses": [
-        "nangip+Gram/TV+HTR+Der/vv+Gram/IV+V+Ind+3Sg"
-      ],
+      "fst_analyses": null,
       "definition": null,
       "info": null,
       "verb_frame": null,
-      "old_spelling": "nangitsivoq",
+      "old_spelling": null,
       "sandhi": null,
       "attrs": {
         "archaic": false,

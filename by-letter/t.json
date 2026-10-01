@@ -4,7 +4,7 @@
     "license": "GPL-3.0-or-later",
     "attribution": "Oqaasileriffik / Greenland Language Secretariat",
     "source": "https://github.com/Oqaasileriffik/katersat",
-    "generated_at": "2026-09-01T02:18:49.602978+00:00"
+    "generated_at": "2026-10-01T02:28:02.400421+00:00"
   },
   "lexemes": [
     {
@@ -42133,20 +42133,20 @@
     {
       "id": "lex_146864",
       "kalaallisut": "takussutissippaa",
-      "english": [],
+      "english": [
+        "visualize"
+      ],
       "danish": [
         "visualisere"
       ],
       "word_class": "v",
-      "semantic_classes": [],
+      "semantic_classes": [
+        "V.62"
+      ],
       "valence": "vt",
       "domain": null,
       "gender": null,
-      "fst_analyses": [
-        "taku+Gram/HV+UTE+Der/vn+SSIP+Der/nv+Gram/TV+V+Ind+3Sg+3SgO",
-        "taku+Gram/TV+Gram/Refl+UTE+Der/vn+SSIP+Der/nv+Gram/TV+V+Ind+3Sg+3SgO",
-        "taku+Gram/TV+UTE+Der/vn+SSIP+Der/nv+Gram/TV+V+Ind+3Sg+3SgO"
-      ],
+      "fst_analyses": null,
       "definition": null,
       "info": null,
       "verb_frame": null,

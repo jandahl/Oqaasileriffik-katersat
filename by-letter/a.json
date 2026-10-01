@@ -4,7 +4,7 @@
     "license": "GPL-3.0-or-later",
     "attribution": "Oqaasileriffik / Greenland Language Secretariat",
     "source": "https://github.com/Oqaasileriffik/katersat",
-    "generated_at": "2026-09-01T02:18:49.602978+00:00"
+    "generated_at": "2026-10-01T02:28:02.400421+00:00"
   },
   "lexemes": [
     {
@@ -398899,7 +398899,6 @@
         "ball game"
       ],
       "danish": [
-        "nordlys",
         "boldspil"
       ],
       "word_class": "t",
@@ -399157,7 +399156,10 @@
     {
       "id": "lex_164950",
       "kalaallisut": "arsarnerit",
-      "english": [],
+      "english": [
+        "northern lights",
+        "aurora borealis"
+      ],
       "danish": [
         "nordlys"
       ],
@@ -510966,6 +510968,47 @@
       }
     },
     {
+      "id": "lex_266421",
+      "kalaallisut": "avatangiisinik nakkutiginninneq",
+      "english": [
+        "environmental monitoring"
+      ],
+      "danish": [
+        "miljøovervågning"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "sem-c"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_120",
+        "code": "10.0.0",
+        "english": "RÅSTOF RAW MATERIALS INDUSTRY",
+        "danish": "RÅSTOF RÅSTOFINDUSTRI",
+        "kalaallisut": "RÅSTOF AATSITASSALERINEQ IKUMMATISSALERINERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": true
+      }
+    },
+    {
       "id": "lex_182980",
       "kalaallisut": "avatangiisinik nakkutilliineq",
       "english": [],
@@ -512025,6 +512068,47 @@
       }
     },
     {
+      "id": "lex_266418",
+      "kalaallisut": "avatangiisinut tunngasoq",
+      "english": [
+        "environmental"
+      ],
+      "danish": [
+        "miljømæssig"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "domain"
+      ],
+      "valence": "!v",
+      "domain": {
+        "id": "dom_120",
+        "code": "10.0.0",
+        "english": "RÅSTOF RAW MATERIALS INDUSTRY",
+        "danish": "RÅSTOF RÅSTOFINDUSTRI",
+        "kalaallisut": "RÅSTOF AATSITASSALERINEQ IKUMMATISSALERINERLU"
+      },
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": true
+      }
+    },
+    {
       "id": "lex_172628",
       "kalaallisut": "avatangiisinut tunngasunik aqutsisoqarfik",
       "english": [],
@@ -512488,7 +512572,9 @@
     {
       "id": "lex_183113",
       "kalaallisut": "avatangiisit eqqarsaatigalugit aqutsinissamut pilersaarut",
-      "english": [],
+      "english": [
+        "environmental management plan"
+      ],
       "danish": [
         "miljøledelsesplan"
       ],
@@ -512498,11 +512584,11 @@
       ],
       "valence": "!v",
       "domain": {
-        "id": "dom_125",
-        "code": "11.0.0",
-        "english": "MILJØ ECOLOGY and ENVIRONMENT",
-        "danish": "MILJØ ØKOLOGI OG MILJØ",
-        "kalaallisut": "MILJØ ØKOLOGII AVATANGIISILLU"
+        "id": "dom_120",
+        "code": "10.0.0",
+        "english": "RÅSTOF RAW MATERIALS INDUSTRY",
+        "danish": "RÅSTOF RÅSTOFINDUSTRI",
+        "kalaallisut": "RÅSTOF AATSITASSALERINEQ IKUMMATISSALERINERLU"
       },
       "gender": null,
       "fst_analyses": null,
@@ -512521,7 +512607,7 @@
         "enclitic": false,
         "see_instead": false,
         "symbol": false,
-        "taaguutit": false
+        "taaguutit": true
       }
     },
     {

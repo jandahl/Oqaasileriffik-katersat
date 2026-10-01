@@ -4,7 +4,7 @@
     "license": "GPL-3.0-or-later",
     "attribution": "Oqaasileriffik / Greenland Language Secretariat",
     "source": "https://github.com/Oqaasileriffik/katersat",
-    "generated_at": "2026-09-01T02:18:49.602978+00:00"
+    "generated_at": "2026-10-01T02:28:02.400421+00:00"
   },
   "lexemes": [
     {
@@ -356312,16 +356312,18 @@
       "id": "lex_34550",
       "kalaallisut": "isumatuvoq",
       "english": [],
-      "danish": [],
+      "danish": [
+        "være dybsindig",
+        "være betænksom"
+      ],
       "word_class": "v",
-      "semantic_classes": [],
+      "semantic_classes": [
+        "V.1.7.1"
+      ],
       "valence": "vi",
       "domain": null,
       "gender": null,
-      "fst_analyses": [
-        "isuma+TU+Der/nv+Gram/IV+V+Ind+3Sg",
-        "isumatu+Gram/IV+V+Ind+3Sg"
-      ],
+      "fst_analyses": null,
       "definition": null,
       "info": null,
       "verb_frame": null,

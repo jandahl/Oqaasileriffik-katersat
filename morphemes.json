@@ -4,7 +4,7 @@
     "license": "GPL-3.0-or-later",
     "attribution": "Oqaasileriffik / Greenland Language Secretariat",
     "source": "https://github.com/Oqaasileriffik/katersat",
-    "generated_at": "2026-09-01T02:18:54.291519+00:00",
+    "generated_at": "2026-10-01T02:28:07.005889+00:00",
     "schema_version": "1.0",
     "morpheme_form": "morphophonemic",
     "buildable": false,
@@ -156,7 +156,7 @@
         "lexical_facts": {
           "morpheme_type": "derivational_affix",
           "category_shift": "N -> V",
-          "meaning": "holde"
+          "meaning": "celebrate"
         },
         "application_logic": {
           "underlying_form": "SIUR",
@@ -171,6 +171,28 @@
         "provenance": [
           "Oqaasileriffik/katersat",
           "lex_165209"
+        ]
+      },
+      "kat_lex_165211": {
+        "id": "kat_lex_165211",
+        "category": "denominal_verbs",
+        "lexical_facts": {
+          "morpheme_type": "derivational_affix",
+          "category_shift": "N -> V",
+          "meaning": "være ude"
+        },
+        "application_logic": {
+          "underlying_form": "SIUR",
+          "boundary_behavior": "none",
+          "continuation_class": "V_POSTBASE",
+          "notes": [
+            "katersat lex_id=165211",
+            "Der/nv"
+          ]
+        },
+        "provenance": [
+          "Oqaasileriffik/katersat",
+          "lex_165211"
         ]
       },
       "kat_lex_165645": {
@@ -804,12 +826,12 @@
         },
         "application_logic": {
           "underlying_form": "PALUP",
-          "boundary_behavior": "none",
+          "boundary_behavior": "additive",
           "continuation_class": "V_POSTBASE",
           "notes": [
             "katersat lex_id=207362",
             "Der/nv",
-            "sandhi=rep"
+            "sandhi=add"
           ]
         },
         "provenance": [
@@ -13374,7 +13396,7 @@
       "lexical_facts": {
         "morpheme_type": "derivational_affix",
         "category_shift": "N -> V",
-        "meaning": "holde"
+        "meaning": "celebrate"
       },
       "application_logic": {
         "underlying_form": "SIUR",
@@ -13389,6 +13411,28 @@
       "provenance": [
         "Oqaasileriffik/katersat",
         "lex_165209"
+      ]
+    },
+    {
+      "id": "kat_lex_165211",
+      "category": "denominal_verbs",
+      "lexical_facts": {
+        "morpheme_type": "derivational_affix",
+        "category_shift": "N -> V",
+        "meaning": "være ude"
+      },
+      "application_logic": {
+        "underlying_form": "SIUR",
+        "boundary_behavior": "none",
+        "continuation_class": "V_POSTBASE",
+        "notes": [
+          "katersat lex_id=165211",
+          "Der/nv"
+        ]
+      },
+      "provenance": [
+        "Oqaasileriffik/katersat",
+        "lex_165211"
       ]
     },
     {
@@ -15447,12 +15491,12 @@
       },
       "application_logic": {
         "underlying_form": "PALUP",
-        "boundary_behavior": "none",
+        "boundary_behavior": "additive",
         "continuation_class": "V_POSTBASE",
         "notes": [
           "katersat lex_id=207362",
           "Der/nv",
-          "sandhi=rep"
+          "sandhi=add"
         ]
       },
       "provenance": [

@@ -4,7 +4,7 @@
     "license": "GPL-3.0-or-later",
     "attribution": "Oqaasileriffik / Greenland Language Secretariat",
     "source": "https://github.com/Oqaasileriffik/katersat",
-    "generated_at": "2026-09-01T02:18:49.602978+00:00"
+    "generated_at": "2026-10-01T02:28:02.400421+00:00"
   },
   "lexemes": [
     {
@@ -139401,6 +139401,42 @@
       }
     },
     {
+      "id": "lex_266414",
+      "kalaallisut": "kinequt",
+      "english": [
+        "thickener",
+        "slurry"
+      ],
+      "danish": [
+        "jævning"
+      ],
+      "word_class": "t",
+      "semantic_classes": [
+        "food-m-h"
+      ],
+      "valence": "!v",
+      "domain": null,
+      "gender": null,
+      "fst_analyses": null,
+      "definition": null,
+      "info": null,
+      "verb_frame": null,
+      "old_spelling": null,
+      "sandhi": null,
+      "attrs": {
+        "archaic": false,
+        "plural_only": false,
+        "mass": false,
+        "abbreviation": false,
+        "acronym": false,
+        "derived_morph": false,
+        "enclitic": false,
+        "see_instead": false,
+        "symbol": false,
+        "taaguutit": false
+      }
+    },
+    {
       "id": "lex_10777",
       "kalaallisut": "kinequtaavoq",
       "english": [],
@@ -139719,8 +139755,9 @@
       "id": "lex_10784",
       "kalaallisut": "kinersaat",
       "english": [
-        "thickening",
-        "arrowroot"
+        "arrowroot",
+        "thickener",
+        "slurry"
       ],
       "danish": [
         "jævning",
